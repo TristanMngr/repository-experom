@@ -1,0 +1,480 @@
+/*General*/
+html   {
+    height:100%;
+}
+body {
+    font-family:Arial,sans-serif;
+    padding:0px;
+    margin:0px;
+    min-height :90%;
+    background: #EAEDF4 ;
+    position:relative;
+    padding-bottom:100px;
+
+}
+a {
+    text-decoration: none;
+    color:#DBDDDB;
+}
+a:visited {
+    color:#DBDDDB;
+    text-decoration:none;
+}
+/*Header*/
+header {
+    height:100px;
+    background: #3F4E5F;
+    color : #DBDDDB;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+header > .inline {
+    text-align: center;
+    display:inline-block;
+}
+
+/*logo*/
+#logo {
+    width:20%;
+    color:#3BB1DB;
+    border-bottom: 3px solid #3BB1DB;
+    margin-left:10px;
+}
+
+/*menu*/
+nav {
+    width:50%;
+    margin-left:50px;
+
+}
+
+nav.inline  ul {
+    list-style: none;
+    padding:0px;
+}
+/*fleche menu*/
+#fleche{
+    width:0;
+    border:1px solid black;
+    border:5px solid transparent;
+    border-top:5px solid white;
+    display:inline-block;
+    position:relative;
+    top:20px;
+    right:65px;
+}
+#fleche:hover {
+    border-top: solid #3BB1DB 5px;
+}
+
+#deroulant > li:hover {
+
+    border: solid #3BB1DB 2px;
+}
+
+nav > ul li.nonderoulant a:hover {
+    border-bottom: solid #3BB1DB 1px;
+    color:#3BB1DB;
+    cursor:pointer;
+}
+
+.inline > ul > li {
+    display: inline-block;
+    margin : 0px 20px 0px 20px;
+    vertical-align: top;
+    line-height: 40px;
+
+}
+#deroulant {
+    position:relative;
+    top:0;
+    left:0;
+}
+
+
+
+/*cacher menu*/
+ul#deroulant li {
+    display:none;
+}
+li.deroulant a {
+    font-style :normal;
+
+}
+li.deroulant a:hover {
+    font-style :normal;
+    border-bottom: solid #3BB1DB 1px;
+    color:#3BB1DB;
+    cursor: pointer;
+}
+
+li:hover > ul#deroulant li {
+    background: #3F4E5F;
+    display: block;
+    cursor:pointer;
+}
+li:hover > ul#deroulant li {
+    opacity:0;
+    animation-name:deroulant;
+    animation-duration:400ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes deroulant {
+    0% {opacity: 0;}
+    100% {opacity:1;}
+}
+
+/*search*/
+
+form.inline {
+    position:absolute;
+    top: 20px;
+    right:20px;
+    width:20%;
+}
+
+/*section*/
+section {
+    display:block;
+    color: #3F4E5F;
+    min-height: 65vh;
+    text-align: center;
+    margin-top:50px;
+}
+
+section > article {
+    display: inline-block;
+    width:45%;
+    vertical-align: top;
+    text-align: justify;
+}
+
+section #news {
+    border-top: solid #62C0C3 3px;
+    margin-right: 25px
+}
+section #news h1 {
+    padding-top: 0px;
+    margin-top: 0px;
+    color: #62C0C3;
+}
+section #apropos {
+    border-top: solid #E53E1A 3px;
+    margin-left:25px;
+}
+section #apropos h1 {
+    padding-top: 0px;
+    margin-top: 0px;
+    color: #E53E1A;
+}
+
+/*footer*/
+footer {
+    margin-top:100px;
+    height :100px;
+    width:100%;
+    position:absolute;
+    bottom: 0px;
+    background-color: #3F4E5F;
+    color: #DBDDDB;
+}
+#footer li {
+    margin-top:30px;
+    display:inline-block;
+    text-align: center;
+    width:24%;
+
+}
+
+/*==========================*/
+/*========= ma maison ======*/
+#mamaison a {
+    color:#6A737A;
+}
+
+section#mamaison {
+    margin-top:20px;
+
+}
+section#mamaison > h1 {
+
+    text-transform: uppercase;
+    margin-top:0px;
+    color: #3F4D5E;
+    margin-bottom: 10px
+}
+.navSalle {
+    line-height: 50px;
+    border-top: solid  #3F4D5E 4px;
+    border-bottom: solid  #3F4D5E 4px;
+}
+div.navSalle {
+    text-align: center;
+}
+div.navSalle div {
+    display:inline-block;
+    width: 19%;
+    overflow-x: scroll
+
+}
+
+.navSalle div:hover {
+    line-height: 30px;
+    border-bottom: solid #3F4D5E 3px;
+    border-top: solid #3F4D5E 3px;
+    cursor:pointer;
+}
+
+/*bloc salles*/
+
+#salles > div {
+    display:block;
+    vertical-align: top;
+    margin-top:10px;
+    width:500px;
+    height:750px;
+    margin:auto;
+    margin-top: 20px;
+    padding-left:20px;
+    padding-right: 20px;
+
+    border:1px solid #3F4D5E;
+    box-shadow:1px 1px 3px #3F4D5E;
+    background:#E9ECF4;
+}
+
+/*interieur div vue générale*/
+
+
+#salles > div >h2 {
+    color :#3F4D5E;
+    margin-bottom: 20px
+
+}
+#salles > div > h3 {
+    text-align: left;
+    color:#3F4D5E;
+    border-bottom: 3px solid #3F4D5E;
+}
+h3#consommation {
+    display: block;
+    margin-top: 50px;
+}
+
+
+#salleConteneur form div.conteneurModif {
+
+    border:solid black 1px;
+    padding-left:20px;
+    margin:5px;
+    border:1px solid #3F4D5E;
+    box-shadow:1px 1px 3px #3F4D5E;
+    border-radius: 5px;
+
+}
+
+#salleConteneur form  p {
+    line-height: 20px;
+    text-align:left;
+}
+#salleConteneur form  ul {
+    text-align:left;
+}
+#salleConteneur form  ul > li > label, #salleConteneur form ul > li > p {
+    display:inline-block;
+    width:180px;
+}
+#salleConteneur form  ul > li .saisieUtilisateur {
+    display:inline-block;
+    width:30px;
+    margin-left:7px;
+}
+form ul p.radio {
+    display: inline-block;
+}
+
+.conteneurModif p {
+    line-height: 20px
+}
+.inputBloc {
+    display:inline-block;
+    line-height: 20px;
+}
+
+
+/*Config de la salle espace_client*/
+#salleConteneur form div.conteneurModif {
+
+    border:solid black 1px;
+    padding-left:20px;
+    margin:5px;
+    border:1px solid #3F4D5E;
+    box-shadow:1px 1px 3px #3F4D5E;
+    border-radius: 5px;
+
+}
+
+#salleConteneur form  p {
+    line-height: 20px;
+    text-align:left;
+}
+#salleConteneur form  ul {
+    text-align:left;
+}
+#salleConteneur form  ul > li > label, #salleConteneur form ul > li > p {
+    display:inline-block;
+    width:180px;
+}
+#salleConteneur form  ul > li .saisieUtilisateur {
+    display:inline-block;
+    width:30px;
+    margin-left:7px;
+}
+form ul p.radio {
+    display: inline-block;
+}
+
+.conteneurModif p {
+    line-height: 20px
+}
+.inputBloc {
+    display:inline-block;
+    line-height: 20px;
+}
+
+
+
+/*page d'inscription*/
+
+section#conteneur {
+    height: 450px;
+    color: #0F100F;
+}
+section#conteneur article#inscription {
+    margin-top: 50px;
+    width: 450px;
+    padding:40px 0px 40px 40px;
+    border: solid #3F4D5E 1px;
+    border-radius:5px;
+    box-shadow: 1px 1px 10px #3F4D5E;
+    margin:auto;
+    vertical-align: center;
+}
+
+
+section#conteneur> h1 {
+    text-align:center;
+
+}
+section#conteneur form  {
+
+    display:inline-block;
+    line-height: 35px;
+}
+section#conteneur form div label {
+    display:inline-block;
+    width:250px;
+}
+div#envoyer {
+    display:block;
+}
+article#inscription a {
+    display:block;
+    width:250px;
+    color:#0F100F;
+    line-height: 35px;
+    border:solid #3F4D5E 1px;
+    border-radius:5px;
+    margin-top:15px;
+    padding-left:55px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+}
+
+/*modifier mes donnees personnel*/
+
+section#modifierDonnerPersonnel >h1 {
+    text-align: center;
+}
+div#profil,div#modifier {
+
+    display: block;
+    border: solid black 1px;
+    border-radius :5px;
+    box-shadow: 1px 1px 4px black;
+    height : 200px;
+    width: 500px;
+    text-align:left;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 30px;
+    padding: 20px;
+}
+section #modifier > form > div {
+    display:block;
+    margin-left:50px;
+}
+div#modifier input {
+    display:inline-block;
+}
+div#modifier #modifierPseudo, div#modifier #modifierMdp {
+    margin-left:10px;
+}
+#profil ul {
+    list-style: none;
+}
+div#modifier label {
+    display:inline-block;
+    width:200px;
+}
+section div#modifier input.envoyer {
+    display:block;
+    margin:10px 10px 10px 50px;
+
+
+}
+
+/*Mode*/
+section#mode {
+    margin-top:20px;
+}
+
+section#mode h1 {
+    display: block;
+    margin:auto;
+}
+
+section#mode div {
+    display: block;
+    border: solid black 1px;
+    width:500px;
+    margin :auto;
+    margin-top:10px;
+    border-radius:5px;
+    box-shadow: 1px 1px 2px black;
+
+}
+section#mode label {
+    margin-left:10px;
+}
+section#mode .inputMode {
+    display: inline-block;
+    width:30px;
+    margin-left:10px;
+}
+section#mode ul {
+
+}
+section#mode ul li {
+    text-align: left;
+}
+
+
+
+
+
+
+
