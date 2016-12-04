@@ -2,7 +2,10 @@
 
 <?php
 
-
+/**
+ * Insertion de données dans le tableau utilisateur
+ * @param object PDO $db
+ */
 function insertDansTableUsers($db)
 {
     $reqPrepare = $db->prepare('INSERT INTO users(nom, mail, adresse, mdp, dateInscription) VALUES(:nom,:mail,:adresse,:mdp,NOW())');
@@ -17,17 +20,39 @@ function insertDansTableUsers($db)
     $reqPrepare->closeCursor();
 
 }
-function getDansTableUsers($db,$nom)
+
+/**
+ * Récupère des données dans le tableau utilisateur
+ * @param object PDO $db
+ * @param string $where
+ * @param string $post
+ * @return array
+ */
+function getDansTableUsers($db,$where,$post )
 {
-    $requete = $db->prepare('SELECT userID, mail, mdp,nom FROM users WHERE nom=:nom');
-    $requete -> execute(array(
-            "nom"=> $nom
-    ));
+    if ($where == "nom") {
 
-    $donnees = $requete->fetch();
-    $requete->closeCursor();
 
-    return $donnees;
+        $requete = $db->prepare('SELECT userID, mail, mdp,nom, adresse FROM users WHERE nom=:nom');
+        $requete->execute(array(
+            "nom" => $post
+        ));
+
+        $donnees = $requete->fetch();
+        $requete->closeCursor();
+        return $donnees;
+    }
+    else if ($where == "mail"){
+        $requete = $db->prepare('SELECT userID, mail, mdp,nom, adresse FROM users WHERE mail=:mail');
+        $requete -> execute(array(
+            "mail"=> $post
+        ));
+
+        $donnees = $requete->fetch();
+        $requete->closeCursor();
+        return $donnees;
+    }
+
 }
 
 ?>

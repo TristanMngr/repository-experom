@@ -1,19 +1,18 @@
 <?php
+/**
+ * redirection suivant la variable de l'url
+ */
 
-/*test l'url et amène a la page indiqué par l'url*/
-
-
-/*if (isset($_SESSION["userID"])) {
-    include("vue/accueil/accueil");
-}*/
-
+$messageErreur = null;
 
 if (!isset($_GET["cible"])) {
     include("vue/accueil/accueil.php");
 }
 else if (isset($_GET["cible"])) {
     if ($_GET["cible"] == "espaceclient") {
-        $messageErreur = null;
+        include("vue/espaceClient/connexion.php");
+    }
+    else if ($_GET["cible"] == "inscriptionRedirige") {
         include("vue/espaceClient/inscription.php");
     }
     else if ($_GET["cible"] == "inscription") {
@@ -22,7 +21,7 @@ else if (isset($_GET["cible"])) {
     else if ($_GET["cible"] == "accueil") {
         include("vue/accueil/accueil.php");
     }
-    else if ($_GET["cible"] == "deconnexion"){  //ne marche pas encore
+    else if ($_GET["cible"] == "deconnexion"){
         include("deconnexion.php");
     }
     else if ($_GET["cible"] == "ceConnecter") {
@@ -31,8 +30,16 @@ else if (isset($_GET["cible"])) {
     else if ($_GET["cible"] == "connexion") {
         include("controller/connexion.php");
     }
+    else if ($_GET["cible"] == "espaceclient-creerUnMode") {
+        include("vue/espaceClient/creerUnMode.php");
+    }
+    else if ($_GET["cible"] == "espaceclient-mesConfigurations") {
+        include("vue/espaceClient/mesConfigurations.php");
+    }
+    else if ($_GET["cible"] == "espaceclient-modifierDonneesPerso") {
+        include("vue/espaceClient/modifierDonnerPerso.php");
+    }
 
 }
 
 
-?>

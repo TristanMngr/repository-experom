@@ -407,11 +407,12 @@ div#profil,div#modifier {
     height : 200px;
     width: 500px;
     text-align:left;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin:20px auto 20px auto;
     line-height: 30px;
     padding: 20px;
+}
+div#modifier {
+    margin-bottom: 50px;
 }
 section #modifier > form > div {
     display:block;
