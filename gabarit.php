@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="vue/style/style.css" />
 
     <title>
-        <?php echo($titre); ?>
+        <?php echo $titre ?>
     </title>
 </head>
 <body>

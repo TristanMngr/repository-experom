@@ -1,6 +1,18 @@
-<!--fonction qui insert les données de l'inscription-->
-
 <?php
+
+/**
+ * Création des variables de session à partir de getDansTableUsers()
+ * @param array $donneesUtilisateur
+ */
+function variablesSession($donneesUtilisateur) {
+
+    $_SESSION["userID"] = $donneesUtilisateur["userID"];
+    $_SESSION["mail"] = $donneesUtilisateur["mail"];
+    $_SESSION["nom"] = $donneesUtilisateur["nom"];
+    $_SESSION["adresse"] = $donneesUtilisateur["adresse"];
+    $_SESSION["dateInscription"] = $donneesUtilisateur["dateInscription"];
+}
+
 
 /**
  * Insertion de données dans le tableau utilisateur
@@ -21,6 +33,7 @@ function insertDansTableUsers($db)
 
 }
 
+
 /**
  * Récupère des données dans le tableau utilisateur
  * @param object PDO $db
@@ -30,10 +43,18 @@ function insertDansTableUsers($db)
  */
 function getDansTableUsers($db,$where,$post )
 {
-    if ($where == "nom") {
+    if ($where == "userId"){
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE userID=:userID');
+        $requete->execute(array(
+            "userID" => $post
+        ));
 
-
-        $requete = $db->prepare('SELECT userID, mail, mdp,nom, adresse FROM users WHERE nom=:nom');
+        $donnees = $requete->fetch();
+        $requete->closeCursor();
+        return $donnees;
+    }
+    else if ($where == "nom") {
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE nom=:nom');
         $requete->execute(array(
             "nom" => $post
         ));
@@ -43,7 +64,7 @@ function getDansTableUsers($db,$where,$post )
         return $donnees;
     }
     else if ($where == "mail"){
-        $requete = $db->prepare('SELECT userID, mail, mdp,nom, adresse FROM users WHERE mail=:mail');
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE mail=:mail');
         $requete -> execute(array(
             "mail"=> $post
         ));
@@ -51,8 +72,66 @@ function getDansTableUsers($db,$where,$post )
         $donnees = $requete->fetch();
         $requete->closeCursor();
         return $donnees;
-    }
 
+    }else if ($where == "mdp"){
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE mdp=:mdp');
+        $requete -> execute(array(
+            "mdp"=> $post
+        ));
+
+        $donnees = $requete->fetch();
+        $requete->closeCursor();
+        return $donnees;
+
+    }else if ($where == "adresse"){
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE adresse=:adresse');
+        $requete -> execute(array(
+            "adresse"=> $post
+        ));
+
+        $donnees = $requete->fetch();
+        $requete->closeCursor();
+        return $donnees;
+    }
 }
 
+
+/**
+ * modifie la table users suivant les données envoyées par l'utilisateur
+ * @param object PDO $db
+ * @param String $set : le champs qu'on veut changer
+ * @param String $userID : l'id de l'utilisateur connécté
+ * @param $setChange : la string envoyé par l'utilisateurs (celui qu'il veut changer)
+ */
+function updateDansTableUsers($db,$set,$userID,$setChange){
+
+
+    if ($set == "mail") {
+
+        $requete = $db->prepare('UPDATE users SET mail=:mail WHERE userID=:id');
+        $requete->execute(array(
+            'mail' => $setChange,
+            'id' => $userID
+        ));
+        $requete->closeCursor();
+    }
+    else if ($set == "adresse") {
+
+        $requete = $db->prepare('UPDATE users SET adresse=:adresse WHERE userID=:id');
+        $requete->execute(array(
+            'adresse' => $setChange,
+            'id' => $userID
+        ));
+        $requete->closeCursor();
+    }
+    else if ($set == "mdp") {
+
+        $requete = $db->prepare('UPDATE users SET mdp=:mdp WHERE userID=:id');
+        $requete->execute(array(
+            'mdp' => $setChange,
+            'id' => $userID
+        ));
+        $requete->closeCursor();
+    }
+}
 ?>

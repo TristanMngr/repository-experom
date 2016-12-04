@@ -1,6 +1,5 @@
 <?php
 include("controller/pages.php");
-$messageErreur = null;
 $titre = "accueil";
 $header = headerPage();
 

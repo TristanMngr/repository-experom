@@ -1,6 +1,5 @@
 <?php
 include("controller/pages.php");
-$messageErreur = null;
 $titre = "Creation d'un mode";
 $header = headerPage();
 

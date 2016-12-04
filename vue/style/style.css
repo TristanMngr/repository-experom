@@ -392,8 +392,15 @@ article#inscription a {
     padding-left:55px;
     box-shadow: 1px 1px 3px #3F4D5E;
 }
-
+section#conteneur .message {
+    margin-top: 15px;
+    color: #CC3366;
+}
 /*modifier mes donnees personnel*/
+
+section#modifierDonnerPersonnel {
+    margin-top: 0px;
+}
 
 section#modifierDonnerPersonnel >h1 {
     text-align: center;
@@ -404,7 +411,7 @@ div#profil,div#modifier {
     border: solid black 1px;
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
-    height : 200px;
+    height : 240px;
     width: 500px;
     text-align:left;
     margin:20px auto 20px auto;
@@ -421,8 +428,9 @@ section #modifier > form > div {
 div#modifier input {
     display:inline-block;
 }
-div#modifier #modifierPseudo, div#modifier #modifierMdp {
-    margin-left:10px;
+div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse {
+    margin-left: 20px;
+    width:200px;
 }
 #profil ul {
     list-style: none;
@@ -433,9 +441,22 @@ div#modifier label {
 }
 section div#modifier input.envoyer {
     display:block;
+    width :150px;
     margin:10px 10px 10px 50px;
+}
+section#modifierDonnerPersonnel div.informations {
+    display: inline-block;
+    width:300px;
+}
+section#modifierDonnerPersonnel em.informations{
+    display:inline-block;
+    width:80px;
+    font-style: normal;
+}
 
 
+div#modifier .message {
+    color: #CC3366;
 }
 
 /*Mode*/

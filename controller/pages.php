@@ -4,6 +4,7 @@
  * @param string $page
  * @param string $messageErreur
  * @return null|string
+
  */
 
 function section($page,$messageErreur) {
@@ -54,7 +55,7 @@ function section($page,$messageErreur) {
             <section id="conteneur">
                 <article id="inscription">
                     <h1>Connexion</h1>
-                    <form method="post" action="index.php?cible=connexion">
+                    <form method="post" action="index.php?cible=controllerConnexion">
 
                         <div><label for="mail">Adresse e-mail</label><input type="text" name="mail" id="mail"></div>
 
@@ -69,13 +70,14 @@ function section($page,$messageErreur) {
 
                     </form>
                     <a href="index.php?cible=inscriptionRedirige">Créer ton compte Experom</a>
-                    <p><?php echo $messageErreur; ?></p>
+                    <div class="message"><?php echo $messageErreur; ?></div>
 
                 </article>
             </section>
             <?php
             $section = ob_get_clean();
             break;
+
         case "espaceClientCreerUnMode";
             ob_start();
             ?>
@@ -128,7 +130,7 @@ function section($page,$messageErreur) {
             <section id="conteneur">
                 <article id="inscription">
                     <h1>Inscription</h1>
-                    <form method="post" action="index.php?cible=inscription">
+                    <form method="post" action="index.php?cible=controllerInscription">
                         <div><label for="nom">Nom</label><input type="text" name="nom" id="nom"></div>
                         <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail"></div>
                         <div><label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse"></div>
@@ -138,10 +140,10 @@ function section($page,$messageErreur) {
                         <div id="envoyer"><input type="submit" name="submit" value="Envoyer"></div>
                     </form>
 
-                    <a href="index.php?cible=ceConnecter">Déja inscrit ? Connecte-toi !</a>
-                    <p><?php {
+                    <a href="index.php?cible=connecterRedirige">Déja inscrit ? Connecte-toi !</a>
+                    <div class="message"><?php {
                             echo $messageErreur;
-                        } ?> </p>
+                        } ?> </div>
                 </article>
             </section>
 
@@ -320,25 +322,33 @@ function section($page,$messageErreur) {
                 <div id="profil">
                     <h2>Profil du membre</h2>
                     <ul>
-                        <li>E-mail: </li>
-                        <li>Nom: </li>
-                        <li>Adresse:</li>
+                        <li><em class="informations">E-mail: </em><div class="informations"><?php echo $_SESSION['mail'] ?></div></li>
+                        <li><em class="informations">Nom: </em><div class="informations"><?php echo $_SESSION['nom'] ?> </div></li>
+                        <li><em class="informations">Adresse: </em><div class="informations"><?php echo $_SESSION['adresse'] ?></div></li>
+                        <li><em class="informations">Inscrit le: </em><div class="informations"><?php echo $_SESSION['dateInscription'] ?></div></li>
                     </ul>
                 </div>
                 <div id="modifier">
                     <h2>Modifier mes informations</h2>
-                    <form>
-                        <div><label for="modifierPseudo">Modifier mon E-mail</label><input type="text"
-                                                                                           name="modifierPseudo"
-                                                                                           id="modifierPseudo"></div>
+                    <form method="post" action="index.php?cible=controllerModifierDonneesPerso">
+                        <div><label for="modifierMail">Modifier mon E-mail</label><input type="text"
+                                                                                           name="modifierMail"
+                                                                                           id="modifierMail"></div>
                         <div><label for="modifierMdp">Modifier mon mot de passe</label><input type="text"
                                                                                               name="modifierMdp"
                                                                                               id="modifierMdp"></div>
+                        <div><label for="modifierAdresse">Modifier adresse</label><input type="text"
+                                                                                              name="modifierAdresse"
+                                                                                              id="modifierAdresse"></div>
+                        <div class="message"><?php echo $messageErreur ?></div>
                         <input type="submit" value="Valider" class="envoyer">
 
+
+                    </form>
+                    <form action="#" method="post">
+                        <input type="submit" name="modifierDroit" value="Modifier les droits utilisateurs" class="envoyer">
                     </form>
 
-                    <input type="submit" name="modifierDroit" value="Modifier les droits utilisateurs" class="envoyer">
 
                 </div>
             </section>

@@ -1,6 +1,7 @@
 <?php
 /**
  * header et footer des pages du site
+ * @String $messageErreur
  * @return string
  */
 function headerPage()
@@ -13,9 +14,12 @@ ob_start();
         <ul>
             <li class="nonderoulant"><a href="index.php?cible=accueil">accueil</a></li>
             <li class="deroulant"><a href="index.php?cible=espaceclient">espace client</a>
+            <?php if (isset($_SESSION["userID"])) { ?>
                 <div id="fleche"></div>
+            <?php } ?>
+
                 <ul id="deroulant">
-                    <?php if (isset($_SESSION["userID"])) { ?>
+                    <?php if (isset($_SESSION["userID"])) { ?> <!--si session on n'affiche pas le menu déroulant-->
                         <li><a href="index.php?cible=espaceclient-maMaison">ma maison</a></li>
                         <li><a href="index.php?cible=espaceclient-creerUnMode">créer un mode</a></li>
                         <li><a href="index.php?cible=espaceclient-mesConfigurations">mes configurations</a></li>
@@ -26,15 +30,17 @@ ob_start();
             <li class="nonderoulant"><a href="index.php?cible=contact">contact</a></li>
         </ul>
     </nav>
-    <?php if (isset($_SESSION["userID"])) {?>
+    <?php if (isset($_SESSION["userID"])) {?> <!--si la session afficher le bouton déco-->
         <form method = "post" class="inline" action = "index.php?cible=deconnexion" >
-            <input type = "submit" value = "deconnexion" >
+            <input type = "submit" value = "deconnexion" ><br/><br/>
+        <?php if (isset($_GET["cible"]) && $_GET["cible"] == "inscription") {echo $_SESSION['message'];}?>
+            <!--si session et si cible existe et si cible=inscription afficher le message-->
         </form >
     <?php } ?>
 </header>
 <?php
 $header = ob_get_clean();
-return $header;
+    return $header;
 }
 
 
