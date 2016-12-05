@@ -21,6 +21,8 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
     else {
         $messageErreur = "Le ou les Champs sont vides";
         include("vue/espaceClient/connexion.php");
+
+        blblalabal
     }
 
 }

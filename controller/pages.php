@@ -361,7 +361,7 @@ function section($page,$messageErreur) {
 
             ob_start();
             ?>
-           <<section id="contact">
+           <section id="contact">
 					<h1>Nous contacter</h1>
                     <div class="contact">
 					 <ul>
