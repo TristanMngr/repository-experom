@@ -47,7 +47,11 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
         case "controllerModifierDonneesPerso":
             include("controller/modifierDonneesPerso.php");
             break;
+        case "contact":
+            include("vue/contact/contact.php");
+            break;
         }
+
 }
 
 

@@ -497,6 +497,42 @@ section#mode ul li {
 }
 
 
+/*Page de contacts*/
+
+section#contact {
+
+    line-height: 40px;
+}
+section#contact .contact {
+    width :500px;
+    height: 250px;
+    border : solid black 1px;
+    border-radius : 5px;
+    box-shadow: 1px 1px 3px black;
+}
+section#contact li {
+    display:block;
+    text-align: left;
+}
+section#contact div {
+    display: inline-block;
+    width:200px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+section#contact em {
+    display:inline-block;
+    width:200px;
+}
+
+.email {
+    text-decoration: none;
+    color: #3BB1DB;
+}
+.email:hover {
+    color: cadetblue;
+}
+
 
 
 
