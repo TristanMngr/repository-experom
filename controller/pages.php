@@ -322,6 +322,7 @@ function section($page,$messageErreur) {
                 <div id="profil">
                     <h2>Profil du membre</h2>
                     <ul>
+                        <li><em class="informations">Rôle : </em><div class="informations"><?php echo $_SESSION['role'] ?></div></li>
                         <li><em class="informations">E-mail: </em><div class="informations"><?php echo $_SESSION['mail'] ?></div></li>
                         <li><em class="informations">Nom: </em><div class="informations"><?php echo $_SESSION['nom'] ?> </div></li>
                         <li><em class="informations">Adresse: </em><div class="informations"><?php echo $_SESSION['adresse'] ?></div></li>

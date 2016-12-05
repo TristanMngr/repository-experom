@@ -11,6 +11,9 @@ function variablesSession($donneesUtilisateur) {
     $_SESSION["nom"] = $donneesUtilisateur["nom"];
     $_SESSION["adresse"] = $donneesUtilisateur["adresse"];
     $_SESSION["dateInscription"] = $donneesUtilisateur["dateInscription"];
+    if ($donneesUtilisateur["role"] == 0) {
+        $_SESSION["role"] = "Utilisateur principal";
+    }
 }
 
 
@@ -44,7 +47,7 @@ function insertDansTableUsers($db)
 function getDansTableUsers($db,$where,$post )
 {
     if ($where == "userId"){
-        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE userID=:userID');
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE userID=:userID');
         $requete->execute(array(
             "userID" => $post
         ));
@@ -54,7 +57,7 @@ function getDansTableUsers($db,$where,$post )
         return $donnees;
     }
     else if ($where == "nom") {
-        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE nom=:nom');
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE nom=:nom');
         $requete->execute(array(
             "nom" => $post
         ));
@@ -64,7 +67,7 @@ function getDansTableUsers($db,$where,$post )
         return $donnees;
     }
     else if ($where == "mail"){
-        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE mail=:mail');
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE mail=:mail');
         $requete -> execute(array(
             "mail"=> $post
         ));
@@ -74,7 +77,7 @@ function getDansTableUsers($db,$where,$post )
         return $donnees;
 
     }else if ($where == "mdp"){
-        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE mdp=:mdp');
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE mdp=:mdp');
         $requete -> execute(array(
             "mdp"=> $post
         ));
@@ -84,7 +87,7 @@ function getDansTableUsers($db,$where,$post )
         return $donnees;
 
     }else if ($where == "adresse"){
-        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse, dateInscription FROM users WHERE adresse=:adresse');
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE adresse=:adresse');
         $requete -> execute(array(
             "adresse"=> $post
         ));
@@ -93,6 +96,7 @@ function getDansTableUsers($db,$where,$post )
         $requete->closeCursor();
         return $donnees;
     }
+
 }
 
 

@@ -5,16 +5,13 @@
  * On creer un tableau vide
  * On verifie que les variables envoyés par l'utilisateurs existe et qu'elles ne sont pas vides
  * Dans ce cas on ajoute a la clef, la variables envoyé par l'utilisateur
+ * Et on change les variables de sessions
  * On boucle sur la fonction updateDansTableUsers (modele/users.php)
  */
 
 include("modele/users.php");
 
-
-
 $tableauUtilisateurs = array();
-
-
 
 
 if (isset($_POST['modifierMail']) && !empty($_POST['modifierMail'])) {

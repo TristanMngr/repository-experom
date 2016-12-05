@@ -447,6 +447,8 @@ section div#modifier input.envoyer {
 section#modifierDonnerPersonnel div.informations {
     display: inline-block;
     width:300px;
+    font-style: italic;
+    font-weight:bold;
 }
 section#modifierDonnerPersonnel em.informations{
     display:inline-block;
