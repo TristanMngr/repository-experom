@@ -45,7 +45,7 @@ else if ($utilisateurSecondaire == True) {
                     insertDansTableUsers($db, "secondaire",$_SESSION["adresse"]);
                     $donneesUtilisateur = getDansTableUsers($db, "nom", $_POST["nom"]);
 
-                    $messageErreur = "L'Utilisateur secondaire a bien été créer";
+                    $_SESSION['message'] = "L'Utilisateur secondaire a bien été créer";
                     include("vue/espaceClient/modifierDonneesPerso.php");
 
                 } else {

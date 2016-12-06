@@ -35,7 +35,8 @@ ob_start();
     <?php if (isset($_SESSION["userID"])) {?> <!--si la session afficher le bouton déco-->
         <form method = "post" class="inline" action = "index.php?cible=deconnexion" >
             <input type = "submit" value = "deconnexion" ><br/><br/>
-        <?php if (isset($_GET["cible"]) && $_GET["cible"] == "inscription") {echo $_SESSION['message'];}?>
+        <?php if (isset($_GET["cible"]) && ($_GET["cible"] == "controllerInscription" || $_GET["cible"] == "controllerConnexion"))
+        {echo $_SESSION["message"];}?>
             <!--si session et si cible existe et si cible=inscription afficher le message-->
         </form >
     <?php } ?>

@@ -48,18 +48,31 @@ function insertDansTableUsers($db,$role,$adresse)
  * @param string $post
  * @return array
  */
-function getDansTableUsers($db,$where,$post )
+
+function select($db, $query, $param) {
+    $requete = $db->prepare($query);
+    $requete->execute($param);
+
+    $donnees = $requete->fetch();
+    $requete->closeCursor();
+    return $donnees;
+}
+
+
+
+function getDansTableUsers($db,$where,$post)
 {
-    if ($where == "userId"){
-        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE userID=:userID');
+    if ($where == "userId") {
+        $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE nom=:nom');
         $requete->execute(array(
-            "userID" => $post
+            "nom" => $post
         ));
 
         $donnees = $requete->fetch();
         $requete->closeCursor();
         return $donnees;
     }
+
     else if ($where == "nom") {
         $requete = $db->prepare('SELECT userID, mail, mdp, nom, adresse,role, dateInscription FROM users WHERE nom=:nom');
         $requete->execute(array(

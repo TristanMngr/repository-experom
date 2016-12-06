@@ -11,7 +11,14 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
         if ($donneesUtilisateur["mdp"] == $_POST["mdp"]) { //verif de mot de passe(table et envoyé)
             variablesSession($donneesUtilisateur);  //fonction qui déclare les variables de sessions (modele/users)
             $_SESSION['message'] = "Tu es bien connecté";
-            include("vue/espaceClient/mesConfigurations.php");
+            if ($_SESSION["role"] == "Utilisateur principal") {
+
+                include("vue/espaceClient/mesConfigurations.php");
+            }
+            else if ($_SESSION["role"] == "Utilisateur secondaire"){
+
+                include("vue/accueil/accueil.php");
+            }
         }
         else {
             $messageErreur = "Le mail ou le mot de passe est incorrect";
