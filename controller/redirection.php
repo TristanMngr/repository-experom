@@ -6,7 +6,6 @@
 $messageErreur = null;
 $message = null;
 $utilisateurSecondaire = False;
-$display = False;
 
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("vue/accueil/accueil.php");
@@ -16,7 +15,13 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             if (!isset($_SESSION["userID"])) {
                 include("vue/espaceClient/connexion.php");
             } else {
+                if ($_SESSION["role"]=="Utilisateur principal") {
                 include("vue/espaceClient/mesConfigurations.php");
+
+                }
+                else {
+                    include("vue/accueil/accueil.php");
+                }
             }
             break;
         case "inscriptionRedirige":

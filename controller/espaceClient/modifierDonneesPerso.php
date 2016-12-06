@@ -51,7 +51,7 @@ if ($_GET["cible"] == "controllerModifierDonneesPerso") {
         }
     }
 }
-
+include('vue/espaceClient/modifierDonneesPerso.php');
 ?>
 
 
