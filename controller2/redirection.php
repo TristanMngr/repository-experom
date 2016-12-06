@@ -22,7 +22,7 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             include("controller/espaceClient/inscription.php");
             break;
         case "controllerInscription":
-            include("controller/inscription.php");
+            include("controller2/inscription.php");
             break;
         case "accueil":
             include("controller/accueil/accueil.php");
@@ -46,7 +46,7 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             include("controller/espaceClient/modifierDonneesPerso.php");
             break;
         case "controllerModifierDonneesPerso":
-            include("controller/modifierDonneesPerso.php");
+            include("controller2/modifierDonneesPerso.php");
             break;
         case "contact":
             include("controller/contact/contact.php");
@@ -57,7 +57,7 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             break;
         case "controllerInscriptionSecondaire":
             $utilisateurSecondaire = True;
-            include("controller/inscription.php");
+            include("controller2/inscription.php");
             break;
     }
 
