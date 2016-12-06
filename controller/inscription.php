@@ -16,23 +16,23 @@ if ($utilisateurSecondaire == False) {
                     variablesSession($donneesUtilisateur);
 
                     $_SESSION['message'] = "Vous êtes bien inscrit";
-                    include("vue/accueil/accueil.php");
+                    include("vue2/accueil/accueil.php");
                 } else {
                     $messageErreur = "Ce mail ou nom est déja utilisé";
-                    include("vue/espaceClient/inscription.php");
+                    include("vue2/espaceClient/inscription.php");
                 }
             } else {
                 $messageErreur = "Les mots de passe ne sont pas identiques";
-                include("vue/espaceClient/inscription.php");
+                include("vue2/espaceClient/inscription.php");
             }
         } else {
             $messageErreur = "Le/les champs est/sont vide(s)";
-            include("vue/espaceClient/inscription.php");
+            include("vue2/espaceClient/inscription.php");
 
         }
     } else {
         $messageErreur = "Les variables n'existe pas";
-        include("vue/espaceClient/inscription.php");
+        include("vue2/espaceClient/inscription.php");
 
     }
 }
@@ -46,23 +46,23 @@ else if ($utilisateurSecondaire == True) {
                     $donneesUtilisateur = getDansTableUsers($db, "nom", $_POST["nom"]);
 
                     $_SESSION['message'] = "L'Utilisateur secondaire a bien été créer";
-                    include("vue/espaceClient/modifierDonneesPerso.php");
+                    include("vue2/espaceClient/modifierDonneesPerso.php");
 
                 } else {
                     $messageErreur = "Ce mail ou nom est déja utilisé";
-                    include("vue/espaceClient/inscription.php");
+                    include("vue2/espaceClient/inscription.php");
                 }
             } else {
                 $messageErreur = "Les mots de passe ne sont pas identiques";
-                include("vue/espaceClient/inscription.php");
+                include("vue2/espaceClient/inscription.php");
 
             }
         } else {
             $messageErreur = "Le/les champs est/sont vide(s)";
-            include("vue/espaceClient/inscription.php");
+            include("vue2/espaceClient/inscription.php");
         }
     }else {
         $messageErreur = "Les variables n'existe pas";
-        include("vue/espaceClient/inscription.php");
+        include("vue2/espaceClient/inscription.php");
     }
 }

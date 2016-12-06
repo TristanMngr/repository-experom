@@ -13,21 +13,21 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
             $_SESSION['message'] = "Tu es bien connecté";
             if ($_SESSION["role"] == "Utilisateur principal") {
 
-                include("vue/espaceClient/mesConfigurations.php");
+                include("vue2/espaceClient/mesConfigurations.php");
             }
             else if ($_SESSION["role"] == "Utilisateur secondaire"){
 
-                include("vue/accueil/accueil.php");
+                include("vue2/accueil/accueil.php");
             }
         }
         else {
             $messageErreur = "Le mail ou le mot de passe est incorrect";
-            include("vue/espaceClient/connexion.php");
+            include("vue2/espaceClient/connexion.php");
         }
     }
     else {
         $messageErreur = "Le ou les Champs sont vides";
-        include("vue/espaceClient/connexion.php");
+        include("vue2/espaceClient/connexion.php");
 
     }
 

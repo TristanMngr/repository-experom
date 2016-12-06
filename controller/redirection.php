@@ -8,57 +8,57 @@ $message = null;
 $utilisateurSecondaire = False;
 
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
-    include("vue/accueil/accueil.php");
+    include("vue2/accueil/accueil.php");
 } else {
     switch ($_GET["cible"]) {
         case "espaceclient":
             if (!isset($_SESSION["userID"])) {
-                include("vue/espaceClient/connexion.php");
+                include("vue2/espaceClient/connexion.php");
             } else {
-                include("vue/espaceClient/mesConfigurations.php");
+                include("vue2/espaceClient/mesConfigurations.php");
             }
             break;
         case "inscriptionRedirige":
-            include("vue/espaceClient/inscription.php");
+            include("vue2/espaceClient/inscription.php");
             break;
         case "controllerInscription":
             include("controller/inscription.php");
             break;
         case "accueil":
-            include("vue/accueil/accueil.php");
+            include("vue2/accueil/accueil.php");
             break;
         case "deconnexion":
             include("deconnexion.php");
             break;
         case "connecterRedirige":
-            include("vue/espaceClient/connexion.php");
+            include("vue2/espaceClient/connexion.php");
             break;
         case "controllerConnexion":
             include("controller/connexion.php");
             break;
         case "espaceclient-creerUnMode";
-            include("vue/espaceClient/creerUnMode.php");
+            include("vue2/espaceClient/creerUnMode.php");
             break;
         case "espaceclient-mesConfigurations":
-            include("vue/espaceClient/mesConfigurations.php");
+            include("vue2/espaceClient/mesConfigurations.php");
             break;
         case "espaceclient-modifierDonneesPerso":
-            include("vue/espaceClient/modifierDonneesPerso.php");
+            include("vue2/espaceClient/modifierDonneesPerso.php");
             break;
         case "controllerModifierDonneesPerso":
             include("controller/modifierDonneesPerso.php");
             break;
         case "contact":
-            include("vue/contact/contact.php");
+            include("vue2/contact/contact.php");
             break;
         case "ajouterUnUtilisateur":
             $utilisateurSecondaire = True;
-            include("vue/espaceClient/inscription.php");
+            include("vue2/espaceClient/inscription.php");
             break;
         case "controllerInscriptionSecondaire":
             $utilisateurSecondaire = True;
             include("controller/inscription.php");
-            break;
+            break;g
     }
 
 }

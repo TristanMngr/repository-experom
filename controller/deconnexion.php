@@ -4,4 +4,4 @@
  */
 unset($_SESSION);   //détruit la variable SESSION
 session_destroy();  //détruit la session
-include("vue/accueil/accueil.php");
+include("vue2/accueil/accueil.php");
