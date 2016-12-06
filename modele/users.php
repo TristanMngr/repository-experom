@@ -11,8 +11,11 @@ function variablesSession($donneesUtilisateur) {
     $_SESSION["nom"] = $donneesUtilisateur["nom"];
     $_SESSION["adresse"] = $donneesUtilisateur["adresse"];
     $_SESSION["dateInscription"] = $donneesUtilisateur["dateInscription"];
-    if ($donneesUtilisateur["role"] == 0) {
+    if ($donneesUtilisateur["role"] == "principal") {
         $_SESSION["role"] = "Utilisateur principal";
+    }
+    else if ($donneesUtilisateur["role"] == "secondaire"){
+        $_SESSION["role"] = "Utilisateur secondaire";
     }
 }
 
@@ -21,15 +24,16 @@ function variablesSession($donneesUtilisateur) {
  * Insertion de données dans le tableau utilisateur
  * @param object PDO $db
  */
-function insertDansTableUsers($db)
+function insertDansTableUsers($db,$role,$adresse)
 {
-    $reqPrepare = $db->prepare('INSERT INTO users(nom, mail, adresse, mdp, dateInscription) VALUES(:nom,:mail,:adresse,:mdp,NOW())');
+    $reqPrepare = $db->prepare('INSERT INTO users(nom, mail, adresse, mdp, dateInscription, role) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role)');
 
     $reqPrepare->execute(array(
         "nom" => $_POST["nom"],
         "mail" => $_POST["mail"],
-        "adresse" => $_POST["adresse"],
-        "mdp" => $_POST["mdp"]
+        "adresse" => $adresse,
+        "mdp" => $_POST["mdp"],
+        "role" => $role
 
     ));
     $reqPrepare->closeCursor();

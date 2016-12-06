@@ -7,7 +7,7 @@
 
  */
 
-function section($page,$messageErreur) {
+function section($page,$messageErreur,$utilisateurSecondaire) {
     $section = null;
     switch ($page) {
         case "accueil";
@@ -129,21 +129,21 @@ function section($page,$messageErreur) {
             ?>
             <section id="conteneur">
                 <article id="inscription">
-                    <h1>Inscription</h1>
-                    <form method="post" action="index.php?cible=controllerInscription">
+                    <h1><?php if ($utilisateurSecondaire == False){echo "Inscription" ;} else {echo "Création d'un utilisateur secondaire";} ?></h1>
+                    <form method="post" action=<?php if ($utilisateurSecondaire == False) {echo "index.php?cible=controllerInscription";} else if ($utilisateurSecondaire == True) {echo "index.php?cible=controllerInscriptionSecondaire";}?>>
                         <div><label for="nom">Nom</label><input type="text" name="nom" id="nom"></div>
                         <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail"></div>
-                        <div><label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse"></div>
-                        <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
+                        <?php if ($utilisateurSecondaire == False){ ?><div><label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse"></div><?php } ?>
+                       <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
                         <div><label for="rmdp">Votre mot de passe, encore</label><input type="password" name="rmdp"
                                                                                         id="rmdp"></div>
                         <div id="envoyer"><input type="submit" name="submit" value="Envoyer"></div>
                     </form>
 
-                    <a href="index.php?cible=connecterRedirige">Déja inscrit ? Connecte-toi !</a>
-                    <div class="message"><?php {
-                            echo $messageErreur;
-                        } ?> </div>
+                    <?php if ($utilisateurSecondaire == False){ ?><a href="index.php?cible=connecterRedirige">Déja inscrit ? Connecte-toi !</a> <?php } ?>
+                    <div class="message">
+                        <?php {echo $messageErreur;} ?>
+                    </div>
                 </article>
             </section>
 
@@ -346,9 +346,7 @@ function section($page,$messageErreur) {
 
 
                     </form>
-                    <form action="#" method="post">
-                        <input type="submit" name="modifierDroit" value="Modifier les droits utilisateurs" class="envoyer">
-                    </form>
+                    <div><a href="index.php?cible=ajouterUnUtilisateur">Ajouter un utilisateur secondaire</a></div>
 
 
                 </div>

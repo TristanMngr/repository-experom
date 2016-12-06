@@ -5,6 +5,7 @@
 
 $messageErreur = null;
 $message = null;
+$utilisateurSecondaire = False;
 
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("vue/accueil/accueil.php");
@@ -50,7 +51,15 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
         case "contact":
             include("vue/contact/contact.php");
             break;
-        }
+        case "ajouterUnUtilisateur":
+            $utilisateurSecondaire = True;
+            include("vue/espaceClient/inscription.php");
+            break;
+        case "controllerInscriptionSecondaire":
+            $utilisateurSecondaire = True;
+            include("controller/inscription.php");
+            break;
+    }
 
 }
 

@@ -461,6 +461,22 @@ div#modifier .message {
     color: #CC3366;
 }
 
+section#modifierDonnerPersonnel div#modifier > div {
+    margin-top: 10px;
+    border: solid black 1px;
+    text-align: center;
+    border-radius: 5px;
+    width: 300px;
+}
+section#modifierDonnerPersonnel a {
+
+    color : #3F4E5F;
+}
+section#modifierDonnerPersonnel div#modifier > div:hover {
+    background: white;
+}
+
+
 /*Mode*/
 section#mode {
     margin-top:20px;

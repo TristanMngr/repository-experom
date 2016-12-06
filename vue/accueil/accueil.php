@@ -3,7 +3,7 @@ include("controller/pages.php");
 $titre = "accueil";
 $header = headerPage();
 
-$section = section("accueil",$messageErreur);
+$section = section("accueil",$messageErreur,$utilisateurSecondaire);
 
 $footer = footer();
 

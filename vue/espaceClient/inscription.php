@@ -4,7 +4,7 @@ include("controller/pages.php");
 $titre = "Inscription";
 $header = headerPage();
 
-$section = section("espaceClientInscription",$messageErreur);
+$section = section("espaceClientInscription",$messageErreur, $utilisateurSecondaire);
 
 $footer = footer();
 

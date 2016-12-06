@@ -22,8 +22,10 @@ ob_start();
                     <?php if (isset($_SESSION["userID"])) { ?> <!--si session on n'affiche pas le menu déroulant-->
                         <li><a href="index.php?cible=espaceclient-maMaison">ma maison</a></li>
                         <li><a href="index.php?cible=espaceclient-creerUnMode">créer un mode</a></li>
+                        <?php if ($_SESSION["role"] == "Utilisateur principal"){?>
                         <li><a href="index.php?cible=espaceclient-mesConfigurations">mes configurations</a></li>
                         <li><a href="index.php?cible=espaceclient-modifierDonneesPerso">modifier son compte</a></li>
+                        <?php }?>
                     <?php } ?>
                 </ul>
             </li>

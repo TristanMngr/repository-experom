@@ -3,7 +3,7 @@ include("controller/pages.php");
 $titre = "Contacts";
 $header = headerPage();
 
-$section = section("contact",$messageErreur);
+$section = section("contact",$messageErreur,$utilisateurSecondaire);
 
 $footer = footer();
 
