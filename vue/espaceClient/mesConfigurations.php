@@ -1,4 +1,6 @@
+<?php
 ob_start();
+?>
 <section id="mamaison">
     <!-- header de section -->
     <h1>ma maison</h1>

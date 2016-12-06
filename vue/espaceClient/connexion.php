@@ -1,4 +1,6 @@
 <?php
+$titre = "connexion";
+include("../header.php");
 ob_start();
 ?>
 <section id="conteneur">
@@ -25,3 +27,4 @@ ob_start();
 </section>
 <?php
 $section = ob_get_clean();
+include("../footer.php");

@@ -6,6 +6,7 @@
 $messageErreur = null;
 $message = null;
 $utilisateurSecondaire = False;
+$display = False;
 
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("controller/accueil/accueil.php");
@@ -22,7 +23,7 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             include("controller/espaceClient/inscription.php");
             break;
         case "controllerInscription":
-            include("controller/inscription.php");
+            include("controller/espaceClient/inscription.php");
             break;
         case "accueil":
             include("controller/accueil/accueil.php");
@@ -34,7 +35,7 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             include("controller/espaceClient/connexion.php");
             break;
         case "controllerConnexion":
-            include("controller2/connexion.php");
+            include("controller/espaceClient/connexion.php");
             break;
         case "espaceclient-creerUnMode";
             include("controller/espaceClient/creerUnMode.php");
@@ -46,10 +47,10 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             include("controller/espaceClient/modifierDonneesPerso.php");
             break;
         case "controllerModifierDonneesPerso":
-            include("controller/modifierDonneesPerso.php");
+            include("controller/espaceClient/modifierDonneesPerso.php");
             break;
         case "contact":
-            include("controller/contact/contact.php");
+            include("controller/espaceClient/contact.php");
             break;
         case "ajouterUnUtilisateur":
             $utilisateurSecondaire = True;
@@ -57,7 +58,7 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
             break;
         case "controllerInscriptionSecondaire":
             $utilisateurSecondaire = True;
-            include("controller/inscription.php");
+            include("controller/espaceClient/inscription.php");
             break;
     }
 
