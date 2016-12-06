@@ -1,4 +1,7 @@
 <?php
+include("vue/header.php");
+include("vue/footer.php");
+$titre = "contact";
 ob_start();
 ?>
 <section id="contact">
@@ -13,3 +16,4 @@ ob_start();
 </section>
 <?php
 $section = ob_get_clean();
+include("gabarit.php");

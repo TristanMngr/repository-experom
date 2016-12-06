@@ -1,5 +1,8 @@
 <?php
+include("vue/header.php");
+include("vue/footer.php");
 ob_start();
+$titre = "créer un mode";
 ?>
 <section id="mode">
     <h1>Paramétrer mes modes</h1>
@@ -43,3 +46,4 @@ ob_start();
 
 <?php
 $section = ob_get_clean();
+include("gabarit.php");

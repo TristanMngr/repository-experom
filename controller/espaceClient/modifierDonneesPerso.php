@@ -52,13 +52,6 @@ if ($_GET["cible"] == "controllerModifierDonneesPerso") {
     }
 }
 
-
-
-include("vue/header.php");
-include("vue/espaceClient/modifierDonneesPerso.php");
-include("vue/footer.php");
-
-include("gabarit.php");
 ?>
 
 

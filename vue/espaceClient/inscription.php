@@ -1,5 +1,8 @@
 <?php
+include("vue/header.php");
+include("vue/footer.php");
 ob_start();
+$titre = "inscription";
 ?>
 <section id="conteneur">
     <article id="inscription">
@@ -23,6 +26,7 @@ ob_start();
 
 <?php
 $section = ob_get_clean();
+include("gabarit.php");
 ?>
 
 

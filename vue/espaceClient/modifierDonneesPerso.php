@@ -1,5 +1,8 @@
 <?php
+include("vue/header.php");
+include("vue/footer.php");
 ob_start();
+$titre = "donnée perso";
 ?>
 <section id="modifierDonnerPersonnel">
     <h1>Mon compte</h1>
@@ -38,6 +41,7 @@ ob_start();
 </section>
 <?php
 $section = ob_get_clean();
+include("gabarit.php");
 
 
 

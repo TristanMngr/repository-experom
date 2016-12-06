@@ -1,5 +1,8 @@
 <?php
+include("vue/header.php");
+include("vue/footer.php");
 ob_start();
+$titre = "mes configurations";
 ?>
 <section id="mamaison">
     <!-- header de section -->
@@ -160,6 +163,7 @@ ob_start();
 
 <?php
 $section = ob_get_clean();
+include("gabarit.php");
 
 
 

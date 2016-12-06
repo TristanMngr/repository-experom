@@ -15,22 +15,20 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
 
             variablesSession($donneesUtilisateur);  //fonction qui déclare les variables de sessions (modele/users)
             $_SESSION['message'] = "Tu es bien connecté";
-            $repeat = False;
             if ($_SESSION["role"] == "Utilisateur principal") {
 
-                include("controller/espaceClient/mesConfigurations.php");
+                include("vue/espaceClient/mesConfigurations.php");
             } else if ($_SESSION["role"] == "Utilisateur secondaire") {
 
-                $repeat = False;
-                include("controller/accueil/accueil.php");
+                include("vue/accueil/accueil.php");
             }
         } else {
             $messageErreur = "Le mail ou le mot de passe est incorrect";
-            include("controller/espaceClient/connexion.php");
+            include("vue/espaceClient/connexion.php");
         }
     } else {
         $messageErreur = "Le ou les Champs sont vides";
-        include("controller/espaceClient/connexion.php");
+        include("vue/espaceClient/connexion.php");
     }
 }
 
