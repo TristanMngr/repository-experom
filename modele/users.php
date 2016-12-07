@@ -1,5 +1,44 @@
 <?php
 
+
+
+
+
+function select($db, $query, $param) {
+    $requete = $db->prepare($query);
+    $requete->execute(array($param));
+
+    $donnees = $requete->fetch();
+    $requete->closeCursor();
+    return $donnees;
+}
+
+
+
+function requeteDansTable($db,$typeDeRequete,$param,$champ,$setValeur,$table){
+    {
+        if ($typeDeRequete == "select") {
+            $query = 'SELECT * FROM '.$table.' WHERE '.$champ.'=:champ';
+        }
+        else if ($typeDeRequete == "update") {
+            $query = 'UPDATE '.$table.' SET '.$setValeur.'=:setValeur WHERE '.$champ.'=:champ';
+        }
+        else if ($typeDeRequete == "insert"){
+            $query = 'INSERT INTO '.$table.'(nom, mail, adresse, mdp, dateInscription, role) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role)';
+        }
+
+        $requete = $db->prepare($query);
+        $requete->execute($param);
+
+        $donnees = $requete->fetch();
+        $requete->closeCursor();
+        return $donnees;
+    }
+}
+
+
+
+
 /**
  * Création des variables de session à partir de getDansTableUsers()
  * @param array $donneesUtilisateur
@@ -49,14 +88,6 @@ function insertDansTableUsers($db,$role,$adresse)
  * @return array
  */
 
-function select($db, $query, $param) {
-    $requete = $db->prepare($query);
-    $requete->execute($param);
-
-    $donnees = $requete->fetch();
-    $requete->closeCursor();
-    return $donnees;
-}
 
 
 
