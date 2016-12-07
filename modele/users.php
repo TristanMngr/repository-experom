@@ -35,6 +35,7 @@ function requeteDansTable($db,$typeDeRequete,$param,$champ,$setValeur,$table){
         return $donnees;
     }
 }
+fqmljfkmlqzgjzmlgkjzmlgjz
 
 
 
