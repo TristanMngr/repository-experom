@@ -4,60 +4,60 @@
 
 
 
-function select($db, $query, $param) {
-    $requete = $db->prepare($query);
-    $requete->execute(array($param));
 
-    $donnees = $requete->fetch();
-    $requete->closeCursor();
-    return $donnees;
-}
+/**
+ * @param PDO $db: acces à la base de donné
+ * @param mix $tableau array(type => ?, setValeur=> ?, champ=> ?, table => ?, param=>array(param1=> ?,param2=> ?,...))
+ * @return mixed
+ *
+ * exemple1 :
+ * $tableau = array(
+ *  'typeDeRequete'=>'select',              choisie la methode select
+ *  'table'=> 'users',                      dans quelles tables
+ *  'champ'=> 'nom',                        le nom du champ
+ *  'param'=> array('champ'=>'pomme'));     une nouvelle array dans l'array avec les paramètre(tout les $_GET ou $_POST qu'on aura)
+ *
+ * exemple2 :
+ * $tableau = array(
+ *  'typeDeRequete'=>'insert',              choisie la methode select
+ *  'table'=> 'users',                      dans quelles tables
+ *  'param'=> array('nom'=>'choco',         l'array qui renseigne tout les paramètres
+ *      'mail'=>'choco@gmail.com',
+ *      'adresse'=> '14 rue saint lazare',
+ *      'mdp'=>'cocos',
+ *      'role'=>'primaire'));
+ *
+ * La fonction ne renvoie rien dans le cas de update ou insert.
+ */
 
-
-
-function requeteDansTable($db,$typeDeRequete,$param,$champ,$setValeur,$table){
+function requeteDansTable($db,$tableau){
     {
-        if ($typeDeRequete == "select") {
-            $query = 'SELECT * FROM '.$table.' WHERE '.$champ.'=:champ';
+        if ($tableau['typeDeRequete'] == "select") {
+            $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champ'].'=:champ';
         }
-        else if ($typeDeRequete == "update") {
-            $query = 'UPDATE '.$table.' SET '.$setValeur.'=:setValeur WHERE '.$champ.'=:champ';
-        }
-        else if ($typeDeRequete == "insert"){
-            $query = 'INSERT INTO '.$table.'(nom, mail, adresse, mdp, dateInscription, role) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role)';
-        }
+        else if ($tableau['typeDeRequete'] == "update") {
 
+            $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
+        }
+        else if ($tableau['typeDeRequete'] == "insert"){
+
+            $query = 'INSERT INTO '.$tableau['table'].'(nom, mail, adresse, mdp, dateInscription, role) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role)';
+        }
+        $param = $tableau['param'];
         $requete = $db->prepare($query);
         $requete->execute($param);
 
-        $donnees = $requete->fetch();
+        if ($tableau['typeDeRequete'] == "select") {
+            $donnees = $requete->fetch();
+            return $donnees;
+        }
+
         $requete->closeCursor();
-        return $donnees;
+
     }
 }
-fqmljfkmlqzgjzmlgkjzmlgjz
 
 
-
-
-/**
- * Création des variables de session à partir de getDansTableUsers()
- * @param array $donneesUtilisateur
- */
-function variablesSession($donneesUtilisateur) {
-
-    $_SESSION["userID"] = $donneesUtilisateur["userID"];
-    $_SESSION["mail"] = $donneesUtilisateur["mail"];
-    $_SESSION["nom"] = $donneesUtilisateur["nom"];
-    $_SESSION["adresse"] = $donneesUtilisateur["adresse"];
-    $_SESSION["dateInscription"] = $donneesUtilisateur["dateInscription"];
-    if ($donneesUtilisateur["role"] == "principal") {
-        $_SESSION["role"] = "Utilisateur principal";
-    }
-    else if ($donneesUtilisateur["role"] == "secondaire"){
-        $_SESSION["role"] = "Utilisateur secondaire";
-    }
-}
 
 
 /**

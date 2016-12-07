@@ -1,9 +1,5 @@
 <?php
-
-
-
-$titre = "modifier mes capteurs";
-
+include("modele/users.php");
 /**
  * modifier ses données perso
  *
@@ -14,18 +10,24 @@ $titre = "modifier mes capteurs";
  * On boucle sur la fonction updateDansTableUsers (modele/users.php)
  */
 
-include("modele/users.php");
+
 
 $tableauUtilisateurs = array();
 
 if ($_GET["cible"] == "controllerModifierDonneesPerso") {
 
     if (isset($_POST['modifierMail']) && !empty($_POST['modifierMail'])) {
-        if (getDansTableUsers($db, 'mail', $_POST['modifierMail']) == array()) {
-            $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
-            $_SESSION["mail"] = $_POST['modifierMail'];
-        } else {
-            $messageErreur = "Ce mail est déja utilisé";
+        if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['modifierMail'])) {
+            if (getDansTableUsers($db, 'mail', $_POST['modifierMail']) == array()) {
+
+                $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
+                $_SESSION["mail"] = $_POST['modifierMail'];
+            } else {
+                $messageErreur = "Ce mail est déja utilisé";
+            }
+        }
+        else {
+            $messageErreur = "Attention ce mail n'est pas valide";
         }
     }
     if (isset($_POST['modifierMdp']) && !empty($_POST['modifierMdp'])) {
