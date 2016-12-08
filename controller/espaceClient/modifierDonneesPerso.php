@@ -18,7 +18,14 @@ if ($_GET["cible"] == "controllerModifierDonneesPerso") {
 
     if (isset($_POST['modifierMail']) && !empty($_POST['modifierMail'])) {
         if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['modifierMail'])) {
-            if (getDansTableUsers($db, 'mail', $_POST['modifierMail']) == array()) {
+            $tableau = array(
+
+                'typeDeRequete'=> 'select',
+                'table'=>'users',
+                'champ'=>'mail',
+                'param'=>array('champ'=>$_POST['modifierMail']));
+
+            if (requeteDansTable($db, $tableau) == array()) {
 
                 $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
                 $_SESSION["mail"] = $_POST['modifierMail'];
@@ -36,7 +43,14 @@ if ($_GET["cible"] == "controllerModifierDonneesPerso") {
 
     }
     if (isset($_POST['modifierAdresse']) && !empty($_POST['modifierAdresse'])) {
-        if (getDansTableUsers($db, 'adresse', $_POST['modifierAdresse']) == array()) {
+        $tableau = array(
+
+            'typeDeRequete'=> 'select',
+            'table'=>'users',
+            'champ'=>'adresse',
+            'param'=>array('champ'=>$_POST['modifierAdresse']));
+
+        if (requeteDansTable($db, $tableau) == array()) {
             $tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];
             $_SESSION['adresse'] = $_POST['modifierAdresse'];
         } else {
@@ -48,8 +62,18 @@ if ($_GET["cible"] == "controllerModifierDonneesPerso") {
     }
     if ($messageErreur == "") {
         $messageErreur = "Vos données ont été modifiés";
+
         foreach ($tableauUtilisateurs as $set => $setChange) {
-            updateDansTableUsers($db, $set, $_SESSION['userID'], $setChange);
+
+            $tableau = array(
+                'typeDeRequete' => 'update',
+                'table'=>'users',
+                'setValeur'=>$set,
+                'champ'=>'userID',
+                'param'=>array('setValeur'=>$setChange,
+                    'champ'=>$_SESSION['userID']));
+
+            requeteDansTable($db, $tableau);
         }
     }
 }
