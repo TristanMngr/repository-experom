@@ -1,23 +1,12 @@
 <?php
 
 
-
-
-
-
 /**
  * @param PDO $db: acces à la base de donné
  * @param mix $tableau array(type => ?, setValeur=> ?, champ=> ?, table => ?, param=>array(param1=> ?,param2=> ?,...))
  * @return mixed
  *
- * exemple1 :
- * $tableau = array(
- *  'typeDeRequete'=>'select',              choisie la methode select
- *  'table'=> 'users',                      dans quelles tables
- *  'champ'=> 'nom',                        le nom du champ
- *  'param'=> array('champ'=>'pomme'));     une nouvelle array dans l'array avec les paramètre(tout les $_GET ou $_POST qu'on aura)
- *
- * exemple2 :
+ * exemple :
  * $tableau = array(
  *  'typeDeRequete'=>'insert',              choisie la methode select
  *  'table'=> 'users',                      dans quelles tables
