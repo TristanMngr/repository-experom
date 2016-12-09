@@ -11,6 +11,7 @@ $titre = "inscription";
             <div><label for="nom">Nom</label><input type="text" name="nom" id="nom"></div>
             <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail"></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse"></div><?php } ?>
+            <?php if ($utilisateurSecondaire == False){ ?><div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero"></div><?php }?>
             <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
             <div><label for="rmdp">Votre mot de passe, encore</label><input type="password" name="rmdp"
                                                                             id="rmdp"></div>

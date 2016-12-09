@@ -42,6 +42,9 @@ if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
         case "controllerConnexion":
             include("controller/espaceClient/connexion.php");
             break;
+        case "espaceclient-maMaison":
+            include('vue/espaceClient/maMaison.php');
+            break;
         case "espaceclient-creerUnMode";
             include("vue/espaceClient/creerUnMode.php");
             break;

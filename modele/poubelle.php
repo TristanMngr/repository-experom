@@ -128,3 +128,77 @@ function updateDansTableUsers($db,$set,$userID,$setChange){
         $requete->closeCursor();
     }
 }
+
+
+
+
+/*
+
+function requeteDansTable($db,$tableau){
+    {
+    if ($tableau['typeDeRequete'] == "select") {
+    $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champ'].'=:champ';
+    }
+    else if ($tableau['typeDeRequete'] == "update") {
+
+    $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
+    }
+    else if ($tableau['typeDeRequete'] == "insert"){
+        $nouveauTableau = array();
+        foreach ($tableau['param'] as $key => $value) {
+            array_push($nouveauTableau,$key);
+        }
+        $stringChamps = implode(', ',$nouveauTableau);
+        $nouveauTableau = array();
+        foreach ($tableau['param'] as $key => $value) {
+            if ($key == "dateInscription") {
+                $key = 'NOW()';
+            }
+            array_push($nouveauTableau,':'.$key);
+
+        }
+        $stringChampsValue = implode(', ',$nouveauTableau);
+        $stringChampsValue = str_replace("'",' ',$stringChampsValue);
+        $stringChamps = str_replace("'",' ',$stringChamps);
+
+
+        $query = 'INSERT INTO '.$tableau['table'].'('.$stringChampsValue.') VALUES('.$stringChampsValue.')';
+    }
+    $param = $tableau['param'];
+    $requete = $db->prepare($query);
+    $requete->execute($param);
+
+    if ($tableau['typeDeRequete'] == "select") {
+    $donnees = $requete->fetch();
+    return $donnees;
+    }
+
+    $requete->closeCursor();
+
+    }
+}
+
+
+$tableau = array("typeDeRequete"=>"insert","table"=>"users","param"=>array('nom'=>'nom','mail'=>'mail','adresse'=>'adresse','mdp'=>'mdp','role'=>'role','numero'=>'numero'));
+requeteDansTable($db,$tableau);
+
+$nouveauTableau = array();
+foreach ($tableau['param'] as $key => $value) {
+    array_push($nouveauTableau,$key);
+}
+$stringChamps = implode(', ',$nouveauTableau);
+$nouveauTableau = array();
+foreach ($tableau['param'] as $key => $value) {
+    array_push($nouveauTableau,':'.$key);
+
+}
+$stringChampsValue = implode(', ',$nouveauTableau);
+$stringChampsValue = str_replace("'",' ',$stringChampsValue);
+$stringChamps = str_replace("'",' ',$stringChamps);
+
+print_r($stringChamps);
+echo "<br/>";
+print_r($stringChampsValue);
+
+
+*/

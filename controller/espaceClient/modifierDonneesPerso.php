@@ -57,7 +57,30 @@ if ($_GET["cible"] == "controllerModifierDonneesPerso") {
             if ($messageErreur != "") {
                 $messageErreur .= ", ";
             }
-            $messageErreur .= " L'adresse est déja utilisé";
+            $messageErreur .= " Le numéro est déja utilisé";
+        }
+    }
+    if (isset($_POST['modifierNumero']) && !empty($_POST['modifierNumero'])) {
+        if (preg_match("#^0[1-68]([ .-]?[0-9]{2}){4}$#",$_POST['modifierNumero'])) {
+            $tableau = array(
+                'typeDeRequete' => 'select',
+                'table' => 'users',
+                'champ' => 'numero',
+                'param' => array('champ' => $_POST['modifierNumero']));
+
+            if (requeteDansTable($db, $tableau) == array()) {
+                $tableauUtilisateurs['numero'] = $_POST['modifierNumero'];
+                $_SESSION['numero'] = $_POST['modifierNumero'];
+
+            } else {
+                if ($messageErreur != "") {
+                    $messageErreur .= ", ";
+                }
+                $messageErreur .= " L'adresse est déja utilisé";
+            }
+        }
+        else {
+            $messageErreur = "Attention ce numéro n'es pas valide";
         }
     }
     if ($messageErreur == "") {

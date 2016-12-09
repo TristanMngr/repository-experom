@@ -12,6 +12,7 @@ function variablesSession($db,$champ,$param) {
     $_SESSION["nom"] = $donneesUtilisateur["nom"];
     $_SESSION["adresse"] = $donneesUtilisateur["adresse"];
     $_SESSION["dateInscription"] = $donneesUtilisateur["dateInscription"];
+    $_SESSION["numero"] = $donneesUtilisateur["numero"];
     if ($donneesUtilisateur["role"] == "principal") {
         $_SESSION["role"] = "Utilisateur principal";
     }

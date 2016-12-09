@@ -30,7 +30,7 @@ function requeteDansTable($db,$tableau){
         }
         else if ($tableau['typeDeRequete'] == "insert"){
 
-            $query = 'INSERT INTO '.$tableau['table'].'(nom, mail, adresse, mdp, dateInscription, role) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role)';
+            $query = 'INSERT INTO '.$tableau['table'].'(nom, mail, adresse, mdp, dateInscription, role, numero) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role, :numero)';
         }
         $param = $tableau['param'];
         $requete = $db->prepare($query);
