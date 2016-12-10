@@ -20,7 +20,7 @@ $titre = "donnée perso";
     </div>
     <div id="modifier">
         <h2>Modifier mes informations</h2>
-        <form method="post" action="index.php?cible=controllerModifierDonneesPerso">
+        <form method="post" action="/espace-client/modifier-donnees-perso-control">
             <div><label for="modifierMail">Modifier mon E-mail</label><input type="text"
                                                                              name="modifierMail"
                                                                              id="modifierMail"></div>
@@ -38,7 +38,7 @@ $titre = "donnée perso";
 
 
         </form>
-        <div><a href="index.php?cible=ajouterUnUtilisateur">Ajouter un utilisateur secondaire</a></div>
+        <div><a href="/espace-client/modifier-donnees-perso/ajouter-un-utilisateur">Ajouter un utilisateur secondaire</a></div>
 
 
     </div>

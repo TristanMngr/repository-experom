@@ -10,12 +10,31 @@ $titre = "vue des capteurs";
         <ul>
             <li><a href="#VueGenerale"> Vue Générale</a></li>
             <li><a href="#Salle1"> Salle 1</a> </li>
+            <li><a href="/espace-client/ma-maison/creation">ajouter salle</a></li>
         </ul>
     </div>
 
 </section>
 
 <section id="corps">
+    <?php if(isset($_GET['target2']) & $_GET['target2']== 'creation') {?>
+    <div id="creation">
+        <h1>Création d'une salle</h1>
+        <form action="/espace-client/ma-maison" method="post">
+            <ul>
+                <li><em>ajouter température</em>
+                    <label for="temperatureOui">Oui</label><input type="radio" name="temperature" value="oui" id="temperatureOui" checked>
+                    <label for="temperatureNon">Non</label><input type="radio" name="temperature" value="non" id="temperatureNon">
+                </li>
+                <li><em>ajouter température</em>
+                    <label for="humiditeOui">Oui</label><input type="radio" name="humidite" value="oui" id="humiditeOui" checked>
+                    <label for="humiditeNon">Non</label><input type="radio" name="humidite" value="non" id="humiditeNon">
+                </li>
+            </ul>
+            <input type="submit" value="créer" id="creation">
+        </form>
+    </div>
+    <?php } ?>
     <div id="VueGenerale">
         <h1> Vue Générale </h1>
         <ul>

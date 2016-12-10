@@ -8,7 +8,7 @@ ob_start();
 <section id="conteneur">
     <article id="inscription">
         <h1>Connexion</h1>
-        <form method="post" action="index.php?cible=controllerConnexion">
+        <form method="post" action="/espace-client/connexion-control">
 
             <div><label for="mail">Adresse e-mail</label><input type="text" name="mail" id="mail"></div>
 
@@ -22,7 +22,7 @@ ob_start();
             <div id="connexion"><input type="submit" name="connexion" value="connexion"></div>
 
         </form>
-        <a href="index.php?cible=inscriptionRedirige">Créer ton compte Experom</a>
+        <a href="/espace-client/redirection-inscription">Créer ton compte Experom</a>
         <div class="message"><?php echo $messageErreur; ?></div>
 
     </article>

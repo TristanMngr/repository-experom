@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+
+RewriteRule ^index index.php [L]
+RewriteRule ^([a-z-]+)/?([a-z-]+)?/?([a-z-]+)?$ index.php?cible=$1&target=$2&target2=$3
+

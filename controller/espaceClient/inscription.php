@@ -13,7 +13,7 @@ include("modele/users.php");
 
 // inscription utilisateur principal
 if ($utilisateurSecondaire == False) {
-    if (isset($_POST["nom"]) && isset($_POST["mail"]) && isset($_POST['numero']) && isset($_POST["adresse"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && $_GET['cible'] == "controllerInscription") {
+    if (isset($_POST["nom"]) && isset($_POST["mail"]) && isset($_POST['numero']) && isset($_POST["adresse"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && $_GET['target'] == "inscription-control") {
         //même principe que pour connexion
         if (!empty($_POST["nom"]) && !empty($_POST["mail"]) && !empty($_POST['numero']) && !empty($_POST["adresse"]) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"])) {
             if ($_POST["mdp"] == $_POST["rmdp"]) {
@@ -94,7 +94,7 @@ if ($utilisateurSecondaire == False) {
 } // Pour ajouter un nouvelle utilisateur à partir de l'utilisateur principal
 
 if ($utilisateurSecondaire == True) {
-    if (isset($_POST["nom"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_GET['cible'] == "controllerInscriptionSecondaire") {
+    if (isset($_POST["nom"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_GET['target2'] == "ajouter-un-utilisateur-control") {
         if (!empty($_POST["nom"]) && !empty($_POST["mail"]) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"])) {
             if ($_POST["mdp"] == $_POST["rmdp"]) {
                 if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['mail'])) {

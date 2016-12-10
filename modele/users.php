@@ -20,30 +20,36 @@
  */
 
 function requeteDansTable($db,$tableau){
-    {
-        if ($tableau['typeDeRequete'] == "select") {
-            $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champ'].'=:champ';
-        }
-        else if ($tableau['typeDeRequete'] == "update") {
+        /*foreach ($tableau['param'] as $keys=>$values) {
+            $values = html_entity_decode($values);
+            array_push()
+        }*/
 
-            $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
-        }
-        else if ($tableau['typeDeRequete'] == "insert"){
 
-            $query = 'INSERT INTO '.$tableau['table'].'(nom, mail, adresse, mdp, dateInscription, role, numero) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role, :numero)';
-        }
-        $param = $tableau['param'];
-        $requete = $db->prepare($query);
-        $requete->execute($param);
-
-        if ($tableau['typeDeRequete'] == "select") {
-            $donnees = $requete->fetch();
-            return $donnees;
-        }
-
-        $requete->closeCursor();
-
+    if ($tableau['typeDeRequete'] == "select") {
+        $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champ'].'=:champ';
     }
+    else if ($tableau['typeDeRequete'] == "update") {
+
+        $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
+    }
+    else if ($tableau['typeDeRequete'] == "insert"){
+
+        $query = 'INSERT INTO '.$tableau['table'].'(nom, mail, adresse, mdp, dateInscription, role, numero) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role, :numero)';
+    }
+
+    $param = $tableau['param'];
+    $requete = $db->prepare($query);
+    $requete->execute($param);
+
+    if ($tableau['typeDeRequete'] == "select") {
+        $donnees = $requete->fetch();
+        return $donnees;
+    }
+
+    $requete->closeCursor();
+
+
 }
 
 

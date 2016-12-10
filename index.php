@@ -6,6 +6,15 @@ include("controller/redirection.php");
 
 
 
+/*$chaine = "salut je m'appelle tristan";
+$string = format_url($chaine);
+echo $string;
+*/
+
+?>
+
+
+
 
 
 

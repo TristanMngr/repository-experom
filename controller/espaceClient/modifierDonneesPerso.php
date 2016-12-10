@@ -14,7 +14,7 @@ include("modele/users.php");
 
 $tableauUtilisateurs = array();
 
-if ($_GET["cible"] == "controllerModifierDonneesPerso") {
+if ($_GET["target"] == "modifier-donnees-perso-control") {
 
     if (isset($_POST['modifierMail']) && !empty($_POST['modifierMail'])) {
         if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['modifierMail'])) {
