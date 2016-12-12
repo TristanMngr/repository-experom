@@ -180,6 +180,7 @@ footer {
     bottom: 0px;
     background-color: #3F4E5F;
     color: #DBDDDB;
+    z-index:10;
 }
 #footer li {
     margin-top:30px;

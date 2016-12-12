@@ -16,8 +16,21 @@
  *      'mdp'=>'cocos',
  *      'role'=>'primaire'));
  *
+ * Pour David:
+ * $tableau = array(
+ *'typeDeRequete'=>'delete',
+ *'table'=>'salles',
+ *'champ'=>'nom',
+ *'param'=>array('champ'=>'qefze'));
+ *
+ * Ensuite execute la fonction :  requeteDansTable($db,$tableau);
+ *
  * La fonction ne renvoie rien dans le cas de update ou insert.
+ *
+ *
  */
+
+
 
 
 
@@ -45,6 +58,9 @@ function requeteDansTable($db,$tableau){
         else if ($tableau['table'] == 'usersSalles') {
             $query = 'INSERT INTO ' . $tableau['table'] . '(IDuser, IDsalle) VALUES(:IDuser,:IDsalle)';
         }
+    }
+    else if ($tableau['typeDeRequete'] == 'delete') {
+        $query = 'DELETE FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champ'] . '=:champ';
     }
     $param = $tableau['param'];
     $requete = $db->prepare($query);
@@ -83,10 +99,5 @@ function joinTables($db,$tableau) {
     return $tableau;
 
 }
-
-
-
-
-
 
 ?>

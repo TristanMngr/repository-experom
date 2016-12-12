@@ -174,11 +174,6 @@ if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-
     }
 
 
-    echo "<pre>";
-    print_r($donneesComptes);
-    echo "</pre>";
-
-
     if ($donneesComptes == array()) {
         $isPresentUtilisateur = False;
     }
