@@ -8,7 +8,7 @@ $titre = "inscription";
     <article id="inscription">
         <h1><?php if ($utilisateurSecondaire == False){echo "Inscription" ;} else {echo "Création d'un utilisateur secondaire";} ?></h1>
         <form method="post" action=<?php if ($utilisateurSecondaire == False) {echo "/espace-client/inscription-control";} else if ($utilisateurSecondaire == True) {echo "/espace-client/modifier-donnees-perso/ajouter-un-utilisateur-control";}?>>
-            <div><label for="nom">Nom</label><input type="text" name="nom" id="nom"></div>
+            <?php if ($utilisateurSecondaire == False){ ?><div><label for="nom">Nom</label><input type="text" name="nom" id="nom"></div><?php } ?>
             <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail"></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse"></div><?php } ?>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero"></div><?php }?>

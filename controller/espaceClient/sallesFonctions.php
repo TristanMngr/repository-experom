@@ -1,61 +1,37 @@
+
+
 <?php
-include("vue/header.php");
-include("vue/footer.php");
-ob_start();
-$titre = "vue des capteurs";
-?>
 
 
+function getIndexSalles($tableauDonneesSalles) {
+    ob_start();
+    ?>
 
-<section id= "index">
-    <h1> Index </h1>
-    <div>
-        <ul>
-            <li><a href="#VueGenerale"> Vue Général </a></li>
-            <?php
-            for ($salle= 0; $salle<count($tableauDonneesSalles); $salle++) {?>
-                <li><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
-            <?php  }
-            ?>
-            <li><a href="/espace-client/ma-maison/creation">ajouter salle</a></li>
-
-        </ul>
-    </div>
-
-</section>
-
-
-<section id="corps">
-    <?php if(isset($_GET['target2']) & $_GET['target2']== 'creation') {?>
-    <div id="creation">
-        <h1>Création d'une salle</h1>
-        <form action="/espace-client/ma-maison/ajouter" method="post">
+    <section id= "index">
+        <h1> Index </h1>
+        <div>
             <ul>
-                <li><em>ajouter température</em>
-                    <label for="temperatureOui">Oui</label><input type="radio" name="temperature" value="oui" id="temperatureOui" checked>
-                    <label for="temperatureNon">Non</label><input type="radio" name="temperature" value="non" id="temperatureNon">
-                </li>
-                <li><em>ajouter humidité</em>
-                    <label for="humiditeOui">Oui</label><input type="radio" name="humidite" value="oui" id="humiditeOui" checked>
-                    <label for="humiditeNon">Non</label><input type="radio" name="humidite" value="non" id="humiditeNon">
-                </li>
-                <li><label for="nomSalle">Quelle nom pour votre salle :</label><input type="text" name="nomSalle" id="nomSalle"></li>
+                <li><a href="#VueGenerale"> Vue Général </a></li>
+                <?php
+                for ($salle= 0; $salle<count($tableauDonneesSalles); $salle++) {?>
+                    <li><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
+                <?php  }
+                /*if ($_SESSION["role"] != "Utilisateur secondaire") {*/?>
+                <li><a href="/espace-client/ma-maison/creation">ajouter salle</a></li>
+                <?php /*}*/?>
             </ul>
-            <input type="submit" value="créer" id="creation">
-        </form>
-    </div>
-    <?php } ?>
-    <div id="VueGenerale">
-        <h1> Vue Générale </h1>
-        <ul>
-            <li> Consommation </li>
-            <li>  Position </li>
-            <li>  Nombre de capteurs  </li>
-            <li> Etat  </li> <!--Notification si erreur -->
-        </ul>
+        </div>
 
-    </div>
-<?php
+    </section>
+    <?php
+    $indexSalle = ob_get_clean();
+    return $indexSalle;
+
+}
+
+function getSalles($tableauDonneesSalles)
+{
+    ob_start();
     for ($salle= 0; $salle<count($tableauDonneesSalles); $salle++) {
         ?>
         <div id="Salle1">
@@ -116,7 +92,7 @@ $titre = "vue des capteurs";
                 ?>
 
                 <li>
-                    <h2> Lumiere </h2>
+                    <h2> Humidité </h2>
                     <div class="conteneurModif">
                         <ul>
                             <!-- <li> <a href="ConsommationCT"> Consommation Capteur Température </a> </li>  -->
@@ -170,10 +146,12 @@ $titre = "vue des capteurs";
         </div>
         <?php
     }
-$section = ob_get_clean();
-include("gabarit.php");
+    $salles = ob_get_clean();
+    return $salles;
+}
 
 
 
 
+?>
 

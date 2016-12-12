@@ -202,3 +202,43 @@ print_r($stringChampsValue);
 
 
 */
+
+/*affichage de toute les salles d'un utilisateur*/
+
+/*recupération nom de l'utilisateur principal*/
+/*$tableau = array(
+    'typeDeRequete' => 'select',
+    'table' => 'users',
+    'champ' => 'nom',
+
+    'param' => array(
+        'champ' => $_SESSION['nom'],
+        ));
+
+$principalID = requeteDansTable($db, $tableau);
+
+
+/*recupération de toute les salles dont le nom est $_SESSION['nom']*/
+
+/*$tableau = array(
+    'typeDeRequete' => 'select',
+    'table' => 'usersSalles',
+    'champ' => 'IDuser',
+    'param' => array(
+        'champ' => $principalID[0]['ID']
+    ));*/
+
+/* récupération de toute les id de salle correspondant à celle de l'id de l'utilisateur principal de la famille*/
+
+/*$recuperationSalles = requeteDansTable($db, $tableau);
+$tableauDonneesSalles = array();
+for ($k=0 ;$k< count($recuperationSalles); $k++) {
+    $tableau = array(
+        'typeDeRequete' => 'select',
+        'table'=> 'salles',
+        'champ'=>'ID',
+        'param'=> array(
+            'champ'=>$recuperationSalles[$k]['IDsalle']));
+    $donnees = requeteDansTable($db,$tableau);
+    array_push($tableauDonneesSalles,$donnees);
+*/

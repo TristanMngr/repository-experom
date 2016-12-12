@@ -12,45 +12,81 @@
  *  'table'=> 'users',                      dans quelles tables
  *  'param'=> array('nom'=>'choco',         l'array qui renseigne tout les paramètres
  *      'mail'=>'choco@gmail.com',
- *      'adresse'=> '14 rue saint lazare',
+ *      'adresse'=> '14 rue',
  *      'mdp'=>'cocos',
  *      'role'=>'primaire'));
  *
  * La fonction ne renvoie rien dans le cas de update ou insert.
  */
 
-function requeteDansTable($db,$tableau){
-        /*foreach ($tableau['param'] as $keys=>$values) {
-            $values = html_entity_decode($values);
-            array_push()
-        }*/
 
+
+function requeteDansTable($db,$tableau){
 
     if ($tableau['typeDeRequete'] == "select") {
-        $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champ'].'=:champ';
+        if (isset($tableau['and'])) { /*lorsque l'on ajoute and dans l'array ('and'=>'and') alors on peut utilisé une deuxieme param pour where*/
+            $query = 'SELECT * FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champ'] . '=:champ AND '.$tableau['champ2'].'=:champ2';
+        }
+        else {
+            $query = 'SELECT * FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champ'] . '=:champ';
+        }
     }
     else if ($tableau['typeDeRequete'] == "update") {
 
         $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
     }
     else if ($tableau['typeDeRequete'] == "insert"){
-
-        $query = 'INSERT INTO '.$tableau['table'].'(nom, mail, adresse, mdp, dateInscription, role, numero) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role, :numero)';
+        if ($tableau['table'] == 'users') {
+            $query = 'INSERT INTO ' . $tableau['table'] . '(nom, mail, adresse, mdp, dateInscription, role, numero) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role, :numero)';
+        }
+        else if ($tableau['table'] == 'salles' ) {
+            $query = 'INSERT INTO ' . $tableau['table'] . '(nom, temperature, humidite, IDuser) VALUES(:nom,:temperature,:humidite,:IDuser)';
+        }
+        else if ($tableau['table'] == 'usersSalles') {
+            $query = 'INSERT INTO ' . $tableau['table'] . '(IDuser, IDsalle) VALUES(:IDuser,:IDsalle)';
+        }
     }
-
     $param = $tableau['param'];
     $requete = $db->prepare($query);
     $requete->execute($param);
-
+    $tableauDonnees = array();
     if ($tableau['typeDeRequete'] == "select") {
-        $donnees = $requete->fetch();
-        return $donnees;
+        while ($donnees = $requete -> fetch()) {
+            array_push($tableauDonnees,$donnees);
+        }
+        return $tableauDonnees;
     }
 
-    $requete->closeCursor();
 
+    $requete->closeCursor();
+}
+
+
+
+function joinTables($db,$tableau) {
+
+    if ($tableau['typeDeRequete'] == 'join' & $tableau['table'] == 'userssalles') {
+        $query = 'SELECT s.*
+                FROM users u
+                INNER JOIN userssalles us ON us.IDuser = u.ID
+                INNER JOIN salles s ON s.ID = us.IDsalle
+                WHERE u.nom =:champ';
+    }
+    $param = $tableau['param'] ;
+    $requete = $db->prepare($query);
+    $requete->execute($param);
+
+    $tableau = array();
+    while ($donnees = $requete->fetch()) {
+        array_push($tableau,$donnees);
+    }
+    return $tableau;
 
 }
+
+
+
+
 
 
 ?>

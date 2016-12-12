@@ -7,12 +7,12 @@ ob_start();
         <ul>
             <li class="nonderoulant"><a href="/accueil">accueil</a></li>
             <li class="deroulant"><a href="/espace-client">espace client</a>
-                <?php if (isset($_SESSION["userID"])) { ?>
+                <?php if (isset($_SESSION["ID"])) { ?>
                     <div id="fleche"></div>
                 <?php } ?>
 
                 <ul id="deroulant">
-                    <?php if (isset($_SESSION["userID"])) { ?> <!--si session on n'affiche pas le menu déroulant-->
+                    <?php if (isset($_SESSION["ID"])) { ?> <!--si session on n'affiche pas le menu déroulant-->
                         <li><a href="/espace-client/ma-maison">ma maison</a></li>
                         <li><a href="/espace-client/creer-un-mode">créer un mode</a></li>
                         <?php if ($_SESSION["role"] == "Utilisateur principal"){?>
@@ -25,7 +25,7 @@ ob_start();
             <li class="nonderoulant"><a href="/contact">contact</a></li>
         </ul>
     </nav>
-    <?php if (isset($_SESSION["userID"])) {?> <!--si la session afficher le bouton déco-->
+    <?php if (isset($_SESSION["ID"])) {?> <!--si la session afficher le bouton déco-->
         <form method = "post" class="inline" action = "/deconnexion-controller" >
             <input type = "submit" value = "deconnexion" ><br/><br/>
             <?php if (isset($_GET["cible"]) && ($_GET["cible"] == "/espace-client/inscription-controller" || $_GET["cible"] == "/espace-client/connexion-controller"))

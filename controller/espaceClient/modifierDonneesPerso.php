@@ -10,8 +10,62 @@ include("modele/users.php");
  * On boucle sur la fonction updateDansTableUsers (modele/users.php)
  */
 
+$inscription = null;
+$isUtilisateur = null;
+
+// Inscription utilisateur secondaire
+
+if (isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_GET['target2'] == "ajouter-un-utilisateur-control") {
+    if ( !empty($_POST["mail"]) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"])) {
+        if ($_POST["mdp"] == $_POST["rmdp"]) {
+            if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['mail'])) {
+
+                $tableau = array(
+                    'typeDeRequete'=> 'select',
+                    'table'=>'users',
+                    'champ'=>'mail',
+                    'param'=>array('champ'=>$_POST["mail"]));
 
 
+
+                if (requeteDansTable($db, $tableau) == array()) {
+                    $tableau = array('typeDeRequete' => 'insert',
+                        'table' => 'users',
+                        'param' => array(
+                            'nom' => $_SESSION['nom'],
+                            'mail' => $_POST['mail'],
+                            'adresse' => $_SESSION['adresse'],
+                            'mdp' => $_POST['mdp'],
+                            'role' => 'secondaire',
+                            'numero' => $_SESSION['numero']));
+
+                    requeteDansTable($db, $tableau);
+                    $inscription = True;
+                    $messageErreur = "L'Utilisateur secondaire a bien été crée";
+                }
+                else {
+                    $messageErreur = "Ce mail est déja prit";
+                    include("vue/espaceClient/inscription.php");
+                }
+
+            }
+            else {
+                $messageErreur = "Attention ton adresse mail n'es pas valide";
+                include("vue/espaceClient/inscription.php");
+            }
+        } else {
+            $messageErreur = "Les mots de passe ne sont pas identiques";
+            include("vue/espaceClient/inscription.php");
+
+        }
+    } else {
+        $messageErreur = "Le/les champs est/sont vide(s)";
+        include("vue/espaceClient/inscription.php");
+    }
+}
+
+
+/*verification modification des données */
 $tableauUtilisateurs = array();
 
 if ($_GET["target"] == "modifier-donnees-perso-control") {
@@ -92,15 +146,57 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 'typeDeRequete' => 'update',
                 'table'=>'users',
                 'setValeur'=>$set,
-                'champ'=>'userID',
+                'champ'=>'ID',
                 'param'=>array('setValeur'=>$setChange,
-                    'champ'=>$_SESSION['userID']));
+                    'champ'=>$_SESSION['ID']));
 
             requeteDansTable($db, $tableau);
         }
     }
 }
-include('vue/espaceClient/modifierDonneesPerso.php');
+
+/*Récupération des mail portant le meme non pour afficher ensuite*/
+
+if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-donnees-perso-control' or $_GET['target'] == 'modifier-donnees-perso') {
+
+    /*on recherche toutes les données portant le nom de $_SESSION['nom']*/
+    $tableau = array(
+        'typeDeRequete'=>'select',
+        'table'=>'users',
+        'champ'=>'nom',
+        'param'=>array('champ'=>$_SESSION['nom']));
+
+    $donneesComptes = requeteDansTable($db,$tableau);
+    for ($tableau = 0; $tableau <count($donneesComptes); $tableau ++) {
+        if ($donneesComptes[$tableau]['ID'] == $_SESSION['ID']) {
+            unset($donneesComptes[$tableau]);
+        }
+    }
+
+
+    echo "<pre>";
+    print_r($donneesComptes);
+    echo "</pre>";
+
+
+    if ($donneesComptes == array()) {
+        $isPresentUtilisateur = False;
+    }
+    else {
+        $isPresentUtilisateur = True;
+    }
+
+
+
+
+}
+if ($_GET['target2'] != "ajouter-un-utilisateur-control")  {
+    include('vue/espaceClient/modifierDonneesPerso.php');
+}
+else if ($inscription== True & $_GET['target2'] == "ajouter-un-utilisateur-control") {
+    include('vue/espaceClient/modifierDonneesPerso.php');
+}
+
 ?>
 
 
@@ -108,3 +204,5 @@ include('vue/espaceClient/modifierDonneesPerso.php');
 
 
 
+
+}
