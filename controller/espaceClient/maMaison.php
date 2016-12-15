@@ -12,7 +12,7 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
             'typeDeRequete' => 'select',
             'table' => 'salles',
             'param' => array(
-                'ID' => $_SESSION['ID'],
+                'IDuser' => $_SESSION['ID'],
                 'nom' => $_POST['nomSalle']
             ));
         if (requeteDansTable($db, $tableau) == array()) {
@@ -35,7 +35,7 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
                 'typeDeRequete' => 'select',
                 'table' => 'salles',
                 'param' => array(
-                    'ID' => $_SESSION['ID'],
+                    'IDuser' => $_SESSION['ID'],
                     'nom' => $_POST['nomSalle']
                 ));
             $donneesTableSalles = requeteDansTable($db, $tableau);
@@ -58,7 +58,6 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
                     'IDsalle' => $donneesTableSalles[0]['ID']
                 ));
             requeteDansTable($db,$tableau);
-            echo requeteDansTable($db,$tableau);
 
         } else {
             $messageErreur = "Vous devez changer le nom de la salle";
@@ -80,10 +79,6 @@ if ($_GET['target2'] == 'control' or $_GET['target2']== 'ajouter' or empty($_GET
 }
 
 include('vue/espaceClient/maMaison.php');
-
-
-
-
 
 
 

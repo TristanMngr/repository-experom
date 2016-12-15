@@ -33,9 +33,7 @@ function implodeChampsValues($tableau)
         $tableau['champs'] = $tableauChamps;
         $tableau['values'] = $tableauValues;
         unset($tableau['param']['dateInscription']);
-       /* echo '<pre>';
-        print_r($tableau);
-        echo '</pre>';*/
+
 
         return $tableau;
     }
@@ -49,9 +47,7 @@ function implodeChampsValues($tableau)
         $tableauChampsValues = implode(' AND ',$tableauChampsValues);
         $tableau['champsValues']  = $tableauChampsValues;
 
-        echo '<pre>';
-        print_r($tableau);
-        echo '</pre>';
+
 
         return $tableau;
 
