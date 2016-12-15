@@ -50,7 +50,7 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
             $donneesTableUsers = requeteDansTable($db, $tableau);
 
 
-            $tableau = $tableau = array(
+            $tableau = array(
                 'typeDeRequete' => 'insert',
                 'table' => 'usersSalles',
                 'param' => array(
@@ -58,6 +58,7 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
                     'IDsalle' => $donneesTableSalles[0]['ID']
                 ));
             requeteDansTable($db,$tableau);
+            echo requeteDansTable($db,$tableau);
 
         } else {
             $messageErreur = "Vous devez changer le nom de la salle";

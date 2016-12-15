@@ -33,10 +33,9 @@ function implodeChampsValues($tableau)
         $tableau['champs'] = $tableauChamps;
         $tableau['values'] = $tableauValues;
         unset($tableau['param']['dateInscription']);
-
-        echo '<pre>';
+       /* echo '<pre>';
         print_r($tableau);
-        echo '</pre>';
+        echo '</pre>';*/
 
         return $tableau;
     }
@@ -79,11 +78,6 @@ function implodeChampsValues($tableau)
         $tableauChampsValuesWhere = implode(' AND ',$tableauChampsValuesWhere);
         $tableau['setChamp'] = $tableauChampsValuesSet;
         $tableau['where'] = $tableauChampsValuesWhere;
-
-        echo 'tableau transformé';
-        echo '<pre>';
-        print_r($tableau);
-        echo '</pre>';
 
         return $tableau;
     }
@@ -129,7 +123,7 @@ function requeteDansTable($db,$tableau){
     else if ($tableau['typeDeRequete'] == "update") {
 
         /*$tableau = implodeChampsValues($tableau);*/
-        $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur].'setValeur WHERE '.$tableau['where'];
+        $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
     }
     else if ($tableau['typeDeRequete'] == "insert"){
         $tableau = implodeChampsValues($tableau);

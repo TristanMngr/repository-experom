@@ -23,7 +23,7 @@ if (isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_
                 $tableau = array(
                     'typeDeRequete'=> 'select',
                     'table'=>'users',
-                    'mail'=>array('champ'=>$_POST["mail"]));
+                    'param'=>array('mail'=>$_POST["mail"]));
 
 
 
@@ -145,8 +145,11 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 'typeDeRequete' => 'update',
                 'table'=>'users',
                 'setValeur'=>$set,
-                'param'=>array('setValeur'=>$setChange,
-                    'ID'=>$_SESSION['ID'])); //attention
+                'champ'=>'ID',
+                'param'=>array(
+
+                    'setValeur'=>$setChange,
+                    'champ'=>$_SESSION['ID'])); //attention
 
             requeteDansTable($db, $tableau);
         }
@@ -162,6 +165,7 @@ if ($_GET['target2'] == 'suppression') {
         'param'=>array(
             'mail'=>$_POST['mailSuppression']));
 
+    $messageErreur = "L'utilisateur secondaire a bien été supprimer";
     requeteDansTable($db,$tableau);
 }
 
