@@ -488,8 +488,9 @@ section#modifierDonnerPersonnel em.informations{
 }
 
 
-div#modifier .message {
+div#maFamille .message {
     color: #CC3366;
+    padding-left: 30px;
 }
 
 section#modifierDonnerPersonnel div#modifier > div {
@@ -505,6 +506,14 @@ section#modifierDonnerPersonnel a {
 }
 section#modifierDonnerPersonnel div#modifier > div:hover {
     background: white;
+}
+
+
+div#maFamille .supprimerCompte {
+    display:inline-block;
+}
+div#maFamille div.supprimerCompte {
+    width:70%;
 }
 
 

@@ -35,7 +35,7 @@ $titre = "donnée perso";
                     <div><label for="modifierNumero">Modifier numero</label><input type="text"
                                                                                      name="modifierNumero"
                                                                                      id="modifierNumero"></div>
-                    <div class="message"><?php echo $messageErreur ?></div>
+
                     <input type="submit" value="Valider" class="envoyer">
 
 
@@ -50,9 +50,16 @@ $titre = "donnée perso";
                 <h2>Tout mes utilisateurs</h2>
                     <ul>
                         <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) {?>
-                        <li><?php echo $donneesComptes[$comptes]['mail'];?></li>
+                        <li>
+                            <div class="supprimerCompte"><?php echo $donneesComptes[$comptes]['mail'];?></div>
+                            <form class="supprimerCompte" action="/espace-client/modifier-donnees-perso/suppression" method="post">
+                                <input type="hidden" name="mailSuppression" value="<?php echo $donneesComptes[$comptes]['mail'] ?>">
+                                <input type="submit" value="supprimer">
+                            </form>
+                        </li>
                         <?php } ?>
                     </ul>
+                <div class="message"><?php echo $messageErreur ?></div>
             </div>
         </div>
     <?php }?>

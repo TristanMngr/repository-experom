@@ -11,12 +11,9 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
         $tableau = array(
             'typeDeRequete' => 'select',
             'table' => 'salles',
-            'and' => 'and',
-            'champ' => 'IDuser',
-            'champ2' => 'nom',
             'param' => array(
-                'champ' => $_SESSION['ID'],
-                'champ2' => $_POST['nomSalle']
+                'ID' => $_SESSION['ID'],
+                'nom' => $_POST['nomSalle']
             ));
         if (requeteDansTable($db, $tableau) == array()) {
 
@@ -37,12 +34,9 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
             $tableau = array(
                 'typeDeRequete' => 'select',
                 'table' => 'salles',
-                'and' => 'and',
-                'champ' => 'IDuser',
-                'champ2'=> 'nom',
                 'param' => array(
-                    'champ' => $_SESSION['ID'],
-                    'champ2' => $_POST['nomSalle']
+                    'ID' => $_SESSION['ID'],
+                    'nom' => $_POST['nomSalle']
                 ));
             $donneesTableSalles = requeteDansTable($db, $tableau);
 
@@ -50,9 +44,8 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
             $tableau = array(
                 'typeDeRequete' => 'select',
                 'table' => 'users',
-                'champ' => 'ID',
                 'param' => array(
-                    'champ' => $_SESSION['ID']
+                    'ID' => $_SESSION['ID']
                 ));
             $donneesTableUsers = requeteDansTable($db, $tableau);
 

@@ -21,22 +21,19 @@ if ($utilisateurSecondaire == False) {
                     $tableau = array(
                         'typeDeRequete'=> 'select',
                         'table'=>'users',
-                        'champ'=>'nom',
-                        'param'=>array('champ'=>$_POST["nom"]));
+                        'param'=>array('nom'=>$_POST["nom"]));
 
                     if (requeteDansTable($db, $tableau) == array()) { // on verifie que l'array est vide, permet de verifier que "nom" n'existe pas déja dans la table
                         $tableau = array(
                             'typeDeRequete'=> 'select',
                             'table'=>'users',
-                            'champ'=>'mail',
-                            'param'=>array('champ'=>$_POST["mail"]));
+                            'param'=>array('mail'=>$_POST["mail"]));
 
                         if (requeteDansTable($db,$tableau) == array()) {
                             $tableau = array(
                                 'typeDeRequete'=> 'select',
                                 'table'=>'users',
-                                'champ'=>'numero',
-                                'param'=>array('champ'=>$_POST["numero"]));
+                                'param'=>array('numero'=>$_POST["numero"]));
 
                             if (requeteDansTable($db,$tableau) == array()) {
 
@@ -49,6 +46,7 @@ if ($utilisateurSecondaire == False) {
                                         'adresse' => $_POST['adresse'],
                                         'mdp' => $_POST['mdp'],
                                         'role' => 'principal',
+                                        'dateInscription'=>'',
                                         'numero'=>$_POST['numero']
                                     ));
 

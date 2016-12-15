@@ -14,8 +14,7 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
         $tableau = array(
             'typeDeRequete'=> 'select',
             'table' => 'users',
-            'champ'=>'mail',
-            'param'=> array('champ'=>$_POST['mail']));
+            'param'=> array('mail'=>$_POST['mail']));
 
         $donneesUtilisateur = requeteDansTable($db,$tableau);
 

@@ -81,6 +81,10 @@ else if ($_GET['cible'] == 'espace-client') {
             $utilisateurSecondaire = True;
             include("controller/espaceClient/modifierDonneesPerso.php");
         }
+        else if ($_GET['target2'] == 'suppression') {
+            include("controller/espaceClient/modifierDonneesPerso.php");
+        }
+
     }
     else if ($_GET['target'] == "modifier-donnees-perso-control") {
         include("controller/espaceClient/modifierDonneesPerso.php");

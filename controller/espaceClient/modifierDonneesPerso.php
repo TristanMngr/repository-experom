@@ -23,13 +23,13 @@ if (isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_
                 $tableau = array(
                     'typeDeRequete'=> 'select',
                     'table'=>'users',
-                    'champ'=>'mail',
-                    'param'=>array('champ'=>$_POST["mail"]));
+                    'mail'=>array('champ'=>$_POST["mail"]));
 
 
 
                 if (requeteDansTable($db, $tableau) == array()) {
-                    $tableau = array('typeDeRequete' => 'insert',
+                    $tableau = array(
+                        'typeDeRequete' => 'insert',
                         'table' => 'users',
                         'param' => array(
                             'nom' => $_SESSION['nom'],
@@ -76,8 +76,8 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
 
                 'typeDeRequete'=> 'select',
                 'table'=>'users',
-                'champ'=>'mail',
-                'param'=>array('champ'=>$_POST['modifierMail']));
+                'param'=>array(
+                        'mail'=>$_POST['modifierMail']));
 
             if (requeteDansTable($db, $tableau) == array()) {
 
@@ -101,8 +101,8 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
 
             'typeDeRequete'=> 'select',
             'table'=>'users',
-            'champ'=>'adresse',
-            'param'=>array('champ'=>$_POST['modifierAdresse']));
+            'param'=>array(
+                    'adresse'=>$_POST['modifierAdresse']));
 
         if (requeteDansTable($db, $tableau) == array()) {
             $tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];
@@ -119,8 +119,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
             $tableau = array(
                 'typeDeRequete' => 'select',
                 'table' => 'users',
-                'champ' => 'numero',
-                'param' => array('champ' => $_POST['modifierNumero']));
+                'param' => array('numero' => $_POST['modifierNumero']));
 
             if (requeteDansTable($db, $tableau) == array()) {
                 $tableauUtilisateurs['numero'] = $_POST['modifierNumero'];
@@ -146,25 +145,36 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 'typeDeRequete' => 'update',
                 'table'=>'users',
                 'setValeur'=>$set,
-                'champ'=>'ID',
                 'param'=>array('setValeur'=>$setChange,
-                    'champ'=>$_SESSION['ID']));
+                    'ID'=>$_SESSION['ID'])); //attention
 
             requeteDansTable($db, $tableau);
         }
     }
 }
 
+//suppression d'un compte secondaire
+
+if ($_GET['target2'] == 'suppression') {
+    $tableau = array(
+        'typeDeRequete' => 'delete',
+        'table'=>'users',
+        'param'=>array(
+            'mail'=>$_POST['mailSuppression']));
+
+    requeteDansTable($db,$tableau);
+}
+
 /*Récupération des mail portant le meme non pour afficher ensuite*/
 
-if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-donnees-perso-control' or $_GET['target'] == 'modifier-donnees-perso') {
+if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-donnees-perso-control' or $_GET['target'] == 'modifier-donnees-perso' or $_GET['target2'] == 'suppression') {
 
     /*on recherche toutes les données portant le nom de $_SESSION['nom']*/
     $tableau = array(
         'typeDeRequete'=>'select',
         'table'=>'users',
-        'champ'=>'nom',
-        'param'=>array('champ'=>$_SESSION['nom']));
+        'param'=>array(
+                'nom'=>$_SESSION['nom']));
 
     $donneesComptes = requeteDansTable($db,$tableau);
     for ($tableau = 0; $tableau <count($donneesComptes); $tableau ++) {
@@ -185,6 +195,10 @@ if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-
 
 
 }
+
+
+
+
 if ($_GET['target2'] != "ajouter-un-utilisateur-control")  {
     include('vue/espaceClient/modifierDonneesPerso.php');
 }

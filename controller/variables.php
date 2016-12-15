@@ -5,7 +5,11 @@
  */
 function variablesSession($db,$champ,$param) {
 
-    $tableau = array('typeDeRequete'=>'select','table'=>'users','champ'=>$champ,'param'=>array('champ'=>$param));
+    $tableau = array(
+        'typeDeRequete'=>'select',
+        'table'=>'users',
+        'param'=>array(
+            $champ=>$param));
     $donneesUtilisateur = requeteDansTable($db,$tableau);
     $_SESSION["ID"] = $donneesUtilisateur[0]["ID"];
     $_SESSION["mail"] = $donneesUtilisateur[0]["mail"];

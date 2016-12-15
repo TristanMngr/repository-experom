@@ -1,9 +1,99 @@
 <?php
 
 
+
+
+
 /**
+ * concatène les valeurs et les champs du tableau['param'].
+ * @param $tableau
+ * @return array avec l'array initial et les champs concaténé en plus
+ * Transforme les tableaux en formes compréhensible pour la fonction requêteDansTable()
+ */
+
+function implodeChampsValues($tableau)
+{
+    if ($tableau['typeDeRequete'] == 'insert') {
+        $tableauChamps = array();
+        $tableauValues = array();
+        foreach ($tableau["param"] as $key => $values) {
+            if ($key == 'dateInscription') {
+                $tableauValues[] = 'NOW()';
+            } else {
+                $tableauValues[] = ':' . $key;
+            }
+        }
+        $tableauValues = implode(', ', $tableauValues);
+
+        foreach ($tableau["param"] as $key => $values) {
+            $tableauChamps[] = $key;
+        }
+        $tableauChamps = implode(', ', $tableauChamps);
+
+        $tableau['champs'] = $tableauChamps;
+        $tableau['values'] = $tableauValues;
+        unset($tableau['param']['dateInscription']);
+
+        echo '<pre>';
+        print_r($tableau);
+        echo '</pre>';
+
+        return $tableau;
+    }
+
+    else if ($tableau['typeDeRequete'] == 'select' or $tableau['typeDeRequete'] == 'delete') {
+        $tableauChampsValues = array();
+        foreach ($tableau['param'] as $key => $value) {
+            $tableauChampsValues[] = $key . '=:' . $key;
+
+        }
+        $tableauChampsValues = implode(' AND ',$tableauChampsValues);
+        $tableau['champsValues']  = $tableauChampsValues;
+
+        echo '<pre>';
+        print_r($tableau);
+        echo '</pre>';
+
+        return $tableau;
+
+    }
+    else if ($tableau['typeDeRequete'] == 'update') {
+        $tableauChampsValuesSet = array();
+        $tableauChampsValuesWhere = array();
+        $tableauVerif = array();
+        $setValeur = '';
+
+        foreach ($tableau as $key => $value) {
+            if ($key == 'setChamp') {
+                $tableauChampsValuesSet[] = $value.'=:setChamp';
+                $setValeur = $key;
+            }
+
+        }
+        foreach ($tableau['param'] as $key => $value) {
+            if ($key != 'setChamp') {
+                $tableauChampsValuesWhere[] = $key . '=:' . $key;
+            }
+        }
+        $tableauChampsValuesSet = implode($tableauChampsValuesSet);
+        $tableauChampsValuesWhere = implode(' AND ',$tableauChampsValuesWhere);
+        $tableau['setChamp'] = $tableauChampsValuesSet;
+        $tableau['where'] = $tableauChampsValuesWhere;
+
+        echo 'tableau transformé';
+        echo '<pre>';
+        print_r($tableau);
+        echo '</pre>';
+
+        return $tableau;
+    }
+}
+
+/**
+ * requeteDansTable V3
  * @param PDO $db: acces à la base de donné
- * @param mix $tableau array(type => ?, setValeur=> ?, champ=> ?, table => ?, param=>array(param1=> ?,param2=> ?,...))
+ * @param mix $tableau array(typeDeRequete => quelle type de requete, table => dans quelle table, param=>array(param1=> ?,param2=> ?,...))
+ * Dans le cas de update renseigner la valeur à update dans le tableau  : setValeur => valeur puis dans l'array parm: valeur => valeurDeRemplacement
  * @return mixed
  *
  * exemple :
@@ -20,7 +110,6 @@
  * $tableau = array(
  *'typeDeRequete'=>'delete',
  *'table'=>'salles',
- *'champ'=>'nom',
  *'param'=>array('champ'=>'qefze'));
  *
  * Ensuite execute la fonction :  requeteDansTable($db,$tableau);
@@ -31,36 +120,24 @@
  */
 
 
-
-
-
 function requeteDansTable($db,$tableau){
 
     if ($tableau['typeDeRequete'] == "select") {
-        if (isset($tableau['and'])) { /*lorsque l'on ajoute and dans l'array ('and'=>'and') alors on peut utilisé une deuxieme param pour where*/
-            $query = 'SELECT * FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champ'] . '=:champ AND '.$tableau['champ2'].'=:champ2';
-        }
-        else {
-            $query = 'SELECT * FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champ'] . '=:champ';
-        }
+        $tableau = implodeChampsValues($tableau);
+        $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champsValues'];
     }
     else if ($tableau['typeDeRequete'] == "update") {
 
-        $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur'].'=:setValeur WHERE '.$tableau['champ'].'=:champ';
+        /*$tableau = implodeChampsValues($tableau);*/
+        $query = 'UPDATE '.$tableau['table'].' SET '.$tableau['setValeur].'setValeur WHERE '.$tableau['where'];
     }
     else if ($tableau['typeDeRequete'] == "insert"){
-        if ($tableau['table'] == 'users') {
-            $query = 'INSERT INTO ' . $tableau['table'] . '(nom, mail, adresse, mdp, dateInscription, role, numero) VALUES(:nom,:mail,:adresse,:mdp,NOW(), :role, :numero)';
-        }
-        else if ($tableau['table'] == 'salles' ) {
-            $query = 'INSERT INTO ' . $tableau['table'] . '(nom, temperature, humidite, IDuser) VALUES(:nom,:temperature,:humidite,:IDuser)';
-        }
-        else if ($tableau['table'] == 'usersSalles') {
-            $query = 'INSERT INTO ' . $tableau['table'] . '(IDuser, IDsalle) VALUES(:IDuser,:IDsalle)';
-        }
+        $tableau = implodeChampsValues($tableau);
+        $query = 'INSERT INTO ' . $tableau['table'] . '('.$tableau['champs'].') VALUES('.$tableau['values'].')';
     }
     else if ($tableau['typeDeRequete'] == 'delete') {
-        $query = 'DELETE FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champ'] . '=:champ';
+        $tableau = implodeChampsValues($tableau);
+        $query = 'DELETE FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champsValues'];
     }
     $param = $tableau['param'];
     $requete = $db->prepare($query);
@@ -68,7 +145,7 @@ function requeteDansTable($db,$tableau){
     $tableauDonnees = array();
     if ($tableau['typeDeRequete'] == "select") {
         while ($donnees = $requete -> fetch()) {
-            array_push($tableauDonnees,$donnees);
+            $tableauDonnees[] = $donnees;
         }
         return $tableauDonnees;
     }
@@ -76,6 +153,7 @@ function requeteDansTable($db,$tableau){
 
     $requete->closeCursor();
 }
+
 
 
 
