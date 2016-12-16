@@ -18,8 +18,9 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
 
         $donneesUtilisateur = requeteDansTable($db,$tableau);
 
+        $motDePasseCrypter = 'cocos_'.md5($_POST['mdp']);
         /*$donneesUtilisateur = getDansTableUsers($db, "mail", $_POST["mail"]);//fonction du modele users.php*/
-        if ($donneesUtilisateur[0]["mdp"] == $_POST["mdp"]) { //verif de mot de passe(table et envoyé)
+        if ($donneesUtilisateur[0]["mdp"] == $motDePasseCrypter) { //verif de mot de passe(table et envoyé)
 
             variablesSession($db,'mail',$_POST['mail']);  //fonction qui déclare les variables de sessions (modele/users)
             $_SESSION['message'] = "Tu es bien connecté";

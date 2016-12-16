@@ -1,8 +1,26 @@
 <?php
 
 
+/**
+ * traite les informations de sécurités
+ */
 
+function securite($tableau)
+{
+    $tableauEntitiesAndCrypt = array();
+    foreach ($tableau['param'] as $key => $value) {
+        if ($key == 'mdp') {
+            $tableauEntitiesAndCrypt[$key] = 'cocos_'.md5($value);
+        } else {
+            $tableauEntitiesAndCrypt[$key] = htmlentities($value);
+        }
+    }
 
+    unset($tableau['param']);
+
+    $tableau['param'] = $tableauEntitiesAndCrypt;
+    return $tableau;
+}
 
 /**
  * concatène les valeurs et les champs du tableau['param'].
@@ -13,6 +31,7 @@
 
 function implodeChampsValues($tableau)
 {
+
     if ($tableau['typeDeRequete'] == 'insert') {
         $tableauChamps = array();
         $tableauValues = array();
@@ -79,6 +98,8 @@ function implodeChampsValues($tableau)
     }
 }
 
+
+
 /**
  * requeteDansTable V3
  * @param PDO $db: acces à la base de donné
@@ -111,7 +132,7 @@ function implodeChampsValues($tableau)
 
 
 function requeteDansTable($db,$tableau){
-
+    $tableau = securite($tableau);
     if ($tableau['typeDeRequete'] == "select") {
         $tableau = implodeChampsValues($tableau);
         $query = 'SELECT * FROM '.$tableau['table'].' WHERE '.$tableau['champsValues'];
