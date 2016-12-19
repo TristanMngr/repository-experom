@@ -38,7 +38,7 @@ else if ($_GET['cible'] == 'contact') {
 
 
 else if ($_GET["cible"] == "deconnexion-controller") {
-    include("deconnexion.php");
+    include("controller/deconnexion.php");
 }
 
 /*espace-client*/

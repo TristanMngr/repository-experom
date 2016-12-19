@@ -44,7 +44,7 @@ else if ($_GET['cible'] == 'contact') {
 
 
 else if ($_GET["cible"] == "deconnexion-controller") {
-    include("controller/espaceClient/deconnexion.php");
+    include("controller/deconnexion.php");
 }
 
 /*espace-client*/
@@ -116,28 +116,5 @@ else if ($_GET['cible'] == 'espace-client') {
 }
 
 
-
-
-
-/*$tableau = array(
-    'typeDeRequete'=>'insert',
-    'table'=> 'users',
-    'param'=> array('nom'=>'choco',
-       'mail'=>'<em>choco@gmail.com</em>',
-       'adresse'=> '14 rue',
-       'mdp'=>'cocos',
-       'role'=>'primaire'));
-
-
-
-
-
-
-$tableau = securite($tableau);
-
-
-echo '<pre>';
-print_r($tableau);
-echo '</pre>';*/
 
 ?>

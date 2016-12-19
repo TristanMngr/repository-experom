@@ -9,8 +9,6 @@
     </title>
 </head>
 <body>
-
-
 <?php echo($header);?>
 <?php echo($section);?>
 <?php echo($footer);?>
