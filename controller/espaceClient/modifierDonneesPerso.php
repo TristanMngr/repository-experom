@@ -84,15 +84,15 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
                 $_SESSION["mail"] = $_POST['modifierMail'];
             } else {
-                $messageErreur = "Ce mail est déja utilisé";
+                $message = "Ce mail est déja utilisé";
             }
         }
         else {
-            $messageErreur = "Attention ce mail n'est pas valide";
+            $message = "Attention ce mail n'est pas valide";
         }
     }
     if (isset($_POST['modifierMdp']) && !empty($_POST['modifierMdp'])) {
-        $tableauUtilisateurs['mdp'] = $_POST['modifierMdp'];
+        $tableauUtilisateurs['mdp'] = "cocos_".md5($_POST['modifierMdp']);
         $_SESSION["mdp"] = $_POST['modifierMdp'];
 
     }
@@ -108,10 +108,10 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
             $tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];
             $_SESSION['adresse'] = $_POST['modifierAdresse'];
         } else {
-            if ($messageErreur != "") {
-                $messageErreur .= ", ";
+            if ($message != "") {
+                $message .= ", ";
             }
-            $messageErreur .= " Le numéro est déja utilisé";
+            $message .= " Le numéro est déja utilisé";
         }
     }
     if (isset($_POST['modifierNumero']) && !empty($_POST['modifierNumero'])) {
@@ -126,18 +126,18 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 $_SESSION['numero'] = $_POST['modifierNumero'];
 
             } else {
-                if ($messageErreur != "") {
-                    $messageErreur .= ", ";
+                if ($message != "") {
+                    $message .= ", ";
                 }
-                $messageErreur .= " L'adresse est déja utilisé";
+                $message .= " L'adresse est déja utilisé";
             }
         }
         else {
-            $messageErreur = "Attention ce numéro n'es pas valide";
+            $message = "Attention ce numéro n'es pas valide";
         }
     }
-    if ($messageErreur == "") {
-        $messageErreur = "Vos données ont été modifiés";
+    if ($message == "") {
+        $message = "Vos données ont été modifiés";
 
         foreach ($tableauUtilisateurs as $set => $setChange) {
 

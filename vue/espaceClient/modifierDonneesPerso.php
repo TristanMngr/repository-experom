@@ -3,6 +3,7 @@ include("vue/header.php");
 include("vue/footer.php");
 ob_start();
 $titre = "donnée perso";
+
 ?>
 <section id="modifierDonnerPersonnel">
     <div id="conteneurDonnerPerso">
@@ -40,7 +41,9 @@ $titre = "donnée perso";
 
 
                 </form>
-                <div><a href="/espace-client/modifier-donnees-perso/ajouter-un-utilisateur">Ajouter un utilisateur secondaire</a></div>
+                <div class="message"><?php echo $message ?></div>
+                <div class="link"><a href="/espace-client/modifier-donnees-perso/ajouter-un-utilisateur">Ajouter un utilisateur secondaire</a></div>
+
             </div>
         </div>
         <?php if($isPresentUtilisateur == True) { ?>

@@ -442,7 +442,7 @@ div#profil,div#modifier {
     border: solid black 1px;
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
-    height : 280px;
+    height : 300px;
     width: 500px;
     text-align:left;
     margin:20px auto 20px auto;
@@ -487,13 +487,13 @@ section#modifierDonnerPersonnel em.informations{
     font-style: normal;
 }
 
-
-div#maFamille .message {
+section#modifierDonnerPersonnel div.message {
     color: #CC3366;
     padding-left: 30px;
 }
 
-section#modifierDonnerPersonnel div#modifier > div {
+
+section#modifierDonnerPersonnel div#modifier > div.link {
     margin-top: 10px;
     border: solid black 1px;
     text-align: center;
@@ -504,7 +504,7 @@ section#modifierDonnerPersonnel a {
 
     color : #3F4E5F;
 }
-section#modifierDonnerPersonnel div#modifier > div:hover {
+section#modifierDonnerPersonnel div#modifier > div.link:hover {
     background: white;
 }
 
