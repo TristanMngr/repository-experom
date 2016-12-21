@@ -435,23 +435,34 @@ div#utilisateurs ul {
 
 section#modifierDonnerPersonnel >h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
-div#profil,div#modifier {
+div#modifier {
 
     display: block;
     border: solid black 1px;
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
-    height : 300px;
+    height : 400px;
     width: 500px;
     text-align:left;
     margin:20px auto 20px auto;
     line-height: 30px;
     padding: 20px;
 }
-div#modifier {
-    margin-bottom: 50px;
+
+
+div#modifier .informations {
+    display: inline-block;
+    font-style: normal;
 }
+div#modifier em.informations {
+    width : 200px;
+}
+div#modifier div.informations {
+    margin-left : 20px;
+}
+
 section #modifier > form > div {
     display:block;
     margin-left:50px;
@@ -459,9 +470,9 @@ section #modifier > form > div {
 div#modifier input {
     display:inline-block;
 }
-div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero {
+div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom {
     margin-left: 20px;
-    width:200px;
+    width:150px;
 }
 #profil ul {
     list-style: none;
@@ -475,17 +486,7 @@ section div#modifier input.envoyer {
     width :150px;
     margin:10px 10px 10px 50px;
 }
-section#modifierDonnerPersonnel div.informations {
-    display: inline-block;
-    width:300px;
-    font-style: italic;
-    font-weight:bold;
-}
-section#modifierDonnerPersonnel em.informations{
-    display:inline-block;
-    width:80px;
-    font-style: normal;
-}
+
 
 section#modifierDonnerPersonnel div.message {
     color: #CC3366;
@@ -515,6 +516,7 @@ div#maFamille .supprimerCompte {
 div#maFamille div.supprimerCompte {
     width:70%;
 }
+
 
 
 /*Mode*/

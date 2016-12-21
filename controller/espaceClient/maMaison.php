@@ -70,7 +70,7 @@ if (isset($_GET['target2']) & $_GET['target2'] == 'ajouter') {
 
 if ($_GET['target2'] == 'control' or $_GET['target2']== 'ajouter' or empty($_GET['target2']) or $_GET['target2'] == 'creation') {
 
-    $tableau = array('typeDeRequete'=>'join','table'=>'userssalles','param'=>array('champ'=>$_SESSION['nom']));
+    $tableau = array('typeDeRequete'=>'join','table'=>'userssalles','param'=>array('champ'=>$_SESSION['maison']));
     $tableauDonneesSalles = joinTables($db,$tableau);
 
 

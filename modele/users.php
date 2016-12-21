@@ -168,6 +168,7 @@ function requeteDansTable($db,$tableau){
 
 
 
+
 function joinTables($db,$tableau) {
 
     if ($tableau['typeDeRequete'] == 'join' & $tableau['table'] == 'userssalles') {
@@ -175,7 +176,7 @@ function joinTables($db,$tableau) {
                 FROM users u
                 INNER JOIN userssalles us ON us.IDuser = u.ID
                 INNER JOIN salles s ON s.ID = us.IDsalle
-                WHERE u.nom =:champ';
+                WHERE u.maison =:champ';
     }
     $param = $tableau['param'] ;
     $requete = $db->prepare($query);

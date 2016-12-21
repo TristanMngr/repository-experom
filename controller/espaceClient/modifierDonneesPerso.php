@@ -15,36 +15,78 @@ $isUtilisateur = null;
 
 // Inscription utilisateur secondaire
 
-if (isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_GET['target2'] == "ajouter-un-utilisateur-control") {
-    if ( !empty($_POST["mail"]) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"])) {
+if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["mail"]) && $_GET['target2'] == "ajouter-un-utilisateur-control") {
+    if (!empty($_POST["pseudo"]) && !empty($_POST["mail"]) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"])) {
         if ($_POST["mdp"] == $_POST["rmdp"]) {
             if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['mail'])) {
 
                 $tableau = array(
                     'typeDeRequete'=> 'select',
                     'table'=>'users',
-                    'param'=>array('mail'=>$_POST["mail"]));
-
-
+                    'param'=>array('pseudo'=>$_POST["pseudo"]));
 
                 if (requeteDansTable($db, $tableau) == array()) {
-                    $tableau = array(
-                        'typeDeRequete' => 'insert',
-                        'table' => 'users',
-                        'param' => array(
-                            'nom' => $_SESSION['nom'],
-                            'mail' => $_POST['mail'],
-                            'adresse' => $_SESSION['adresse'],
-                            'mdp' => $_POST['mdp'],
-                            'role' => 'secondaire',
-                            'numero' => $_SESSION['numero']));
 
-                    requeteDansTable($db, $tableau);
-                    $inscription = True;
-                    $messageErreur = "L'Utilisateur secondaire a bien été crée";
-                }
-                else {
-                    $messageErreur = "Ce mail est déja prit";
+                    if ($_POST['mail'] == $_SESSION['mail']) {
+                        // si le mail n'es pas egal au mail principal
+                        $tableau = array(
+                            'typeDeRequete' => 'insert',
+                            'table' => 'users',
+                            'param' => array(
+                                'pseudo' => $_POST['pseudo'],
+                                'nom' => $_SESSION['nom'],
+                                'mail' => $_POST['mail'],
+                                'adresse' => $_SESSION['adresse'],
+                                'mdp' => $_POST['mdp'],
+                                'role' => 'secondaire',
+                                'numero' => $_SESSION['numero'],
+                                'maison' => $_SESSION['ID']
+                            ));
+
+
+                        requeteDansTable($db, $tableau);
+
+                        $inscription = True;
+                        $messageErreur = "L'Utilisateur secondaire a bien été crée";
+                    }
+                    else {
+                        //si le mail es egal au mail principal
+                        $tableau = array(
+                            'typeDeRequete' => 'select',
+                            'table' => 'users',
+                            'param' => array('mail' => $_POST["mail"]));
+
+
+                        if (requeteDansTable($db, $tableau) == array()) {
+                            $tableau = array(
+                                'typeDeRequete' => 'insert',
+                                'table' => 'users',
+                                'param' => array(
+                                    'pseudo' => $_POST['pseudo'],
+                                    'nom' => $_SESSION['nom'],
+                                    'mail' => $_POST['mail'],
+                                    'adresse' => $_SESSION['adresse'],
+                                    'mdp' => $_POST['mdp'],
+                                    'role' => 'secondaire',
+                                    'numero' => $_SESSION['numero'],
+                                    'maison' => $_SESSION['ID']
+                                ));
+
+
+                            requeteDansTable($db, $tableau);
+
+
+                            $inscription = True;
+                            $messageErreur = "L'Utilisateur secondaire a bien été crée";
+                        } else {
+                            $messageErreur = "Ce mail est déja prit";
+                            include("vue/espaceClient/inscription.php");
+                        }
+                    }
+
+
+                } else {
+                    $messageErreur = "Ce pseudo est déja utilisé";
                     include("vue/espaceClient/inscription.php");
                 }
 
@@ -70,88 +112,103 @@ $tableauUtilisateurs = array();
 
 if ($_GET["target"] == "modifier-donnees-perso-control") {
 
-    if (isset($_POST['modifierMail']) && !empty($_POST['modifierMail'])) {
-        if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['modifierMail'])) {
-            $tableau = array(
+    if ($_POST['modifierMail'] != $_SESSION['mail']) {
+        if (isset($_POST['modifierMail']) && !empty($_POST['modifierMail'])) {
+            if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#", $_POST['modifierMail'])) {
+                $tableau = array(
 
-                'typeDeRequete'=> 'select',
-                'table'=>'users',
-                'param'=>array(
-                        'mail'=>$_POST['modifierMail']));
+                    'typeDeRequete' => 'select',
+                    'table' => 'users',
+                    'param' => array(
+                        'mail' => $_POST['modifierMail']));
 
-            if (requeteDansTable($db, $tableau) == array()) {
+                if (requeteDansTable($db, $tableau) == array()) {
 
-                $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
-                $_SESSION["mail"] = $_POST['modifierMail'];
+                    $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
+                    $_SESSION["mail"] = $_POST['modifierMail'];
+                } else {
+                    $message = "Ce mail est déja utilisé";
+                }
             } else {
-                $message = "Ce mail est déja utilisé";
+                $message = "Attention ce mail n'est pas valide";
             }
         }
-        else {
-            $message = "Attention ce mail n'est pas valide";
-        }
     }
+
     if (isset($_POST['modifierMdp']) && !empty($_POST['modifierMdp'])) {
-        $tableauUtilisateurs['mdp'] = "cocos_".md5($_POST['modifierMdp']);
+        $tableauUtilisateurs['mdp'] = "cocos_" . md5($_POST['modifierMdp']);
         $_SESSION["mdp"] = $_POST['modifierMdp'];
 
     }
-    if (isset($_POST['modifierAdresse']) && !empty($_POST['modifierAdresse'])) {
-        $tableau = array(
 
-            'typeDeRequete'=> 'select',
-            'table'=>'users',
-            'param'=>array(
-                    'adresse'=>$_POST['modifierAdresse']));
+    if ($_POST['modifierNom'] != $_SESSION['nom']) {
+        if (isset($_POST['modifierNom']) && !empty($_POST['modifierNom'])) {
+            $tableauUtilisateurs['nom'] = ($_POST['modifierNom']);
+            $_SESSION["nom"] = $_POST['modifierNom'];
 
-        if (requeteDansTable($db, $tableau) == array()) {
-            $tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];
-            $_SESSION['adresse'] = $_POST['modifierAdresse'];
-        } else {
-            if ($message != "") {
-                $message .= ", ";
-            }
-            $message .= " Le numéro est déja utilisé";
         }
     }
-    if (isset($_POST['modifierNumero']) && !empty($_POST['modifierNumero'])) {
-        if (preg_match("#^0[1-68]([ .-]?[0-9]{2}){4}$#",$_POST['modifierNumero'])) {
+    if ($_POST['modifierAdresse'] != $_SESSION['adresse']) {
+        if (isset($_POST['modifierAdresse']) && !empty($_POST['modifierAdresse'])) {
             $tableau = array(
+
                 'typeDeRequete' => 'select',
                 'table' => 'users',
-                'param' => array('numero' => $_POST['modifierNumero']));
+                'param' => array(
+                    'adresse' => $_POST['modifierAdresse']));
 
             if (requeteDansTable($db, $tableau) == array()) {
-                $tableauUtilisateurs['numero'] = $_POST['modifierNumero'];
-                $_SESSION['numero'] = $_POST['modifierNumero'];
-
+                $tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];
+                $_SESSION['adresse'] = $_POST['modifierAdresse'];
             } else {
                 if ($message != "") {
                     $message .= ", ";
                 }
-                $message .= " L'adresse est déja utilisé";
+                $message .= " Le numéro est déja utilisé";
             }
         }
-        else {
-            $message = "Attention ce numéro n'es pas valide";
+    }
+    if ($_POST['modifierNumero'] != $_SESSION['numero']) {
+        if (isset($_POST['modifierNumero']) && !empty($_POST['modifierNumero'])) {
+            if (preg_match("#^0[1-68]([ .-]?[0-9]{2}){4}$#", $_POST['modifierNumero'])) {
+                $tableau = array(
+                    'typeDeRequete' => 'select',
+                    'table' => 'users',
+                    'param' => array('numero' => $_POST['modifierNumero']));
+
+                if (requeteDansTable($db, $tableau) == array()) {
+                    $tableauUtilisateurs['numero'] = $_POST['modifierNumero'];
+                    $_SESSION['numero'] = $_POST['modifierNumero'];
+
+                } else {
+                    if ($message != "") {
+                        $message .= ", ";
+                    }
+                    $message .= " L'adresse est déja utilisé";
+                }
+            } else {
+                $message = "Attention ce numéro n'es pas valide";
+            }
         }
     }
-    if ($message == "") {
-        $message = "Vos données ont été modifiés";
+    if ($tableauUtilisateurs != array()) {
+        if ($message == "") {
+            $message = "Vos données ont été modifiés";
 
-        foreach ($tableauUtilisateurs as $set => $setChange) {
+            foreach ($tableauUtilisateurs as $set => $setChange) {
 
-            $tableau = array(
-                'typeDeRequete' => 'update',
-                'table'=>'users',
-                'setValeur'=>$set,
-                'champ'=>'ID',
-                'param'=>array(
+                $tableau = array(
+                    'typeDeRequete' => 'update',
+                    'table' => 'users',
+                    'setValeur' => $set,
+                    'champ' => 'ID',
+                    'param' => array(
 
-                    'setValeur'=>$setChange,
-                    'champ'=>$_SESSION['ID'])); //attention
+                        'setValeur' => $setChange,
+                        'champ' => $_SESSION['ID'])); //attention
 
-            requeteDansTable($db, $tableau);
+                requeteDansTable($db, $tableau);
+            }
         }
     }
 }
@@ -163,7 +220,7 @@ if ($_GET['target2'] == 'suppression') {
         'typeDeRequete' => 'delete',
         'table'=>'users',
         'param'=>array(
-            'mail'=>$_POST['mailSuppression']));
+            'pseudo'=>$_POST['pseudoSuppression']));
 
     $messageErreur = "L'utilisateur secondaire a bien été supprimer";
     requeteDansTable($db,$tableau);
@@ -173,12 +230,12 @@ if ($_GET['target2'] == 'suppression') {
 
 if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-donnees-perso-control' or $_GET['target'] == 'modifier-donnees-perso' or $_GET['target2'] == 'suppression') {
 
-    /*on recherche toutes les données portant le nom de $_SESSION['nom']*/
+    /*on recherche toutes les données portant le nom de $_SESSION['maison']*/
     $tableau = array(
         'typeDeRequete'=>'select',
         'table'=>'users',
         'param'=>array(
-                'nom'=>$_SESSION['nom']));
+                'maison'=>$_SESSION['maison']));
 
     $donneesComptes = requeteDansTable($db,$tableau);
     for ($tableau = 0; $tableau <count($donneesComptes); $tableau ++) {

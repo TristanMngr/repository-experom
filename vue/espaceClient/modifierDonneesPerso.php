@@ -9,33 +9,28 @@ $titre = "donnée perso";
     <div id="conteneurDonnerPerso">
         <div id="monCompte">
             <h1>Mon compte</h1>
-
-            <div id="profil">
-                <h2>Profil du membre</h2>
-                <ul>
-                    <li><em class="informations">Rôle: </em><div class="informations"><?php echo $_SESSION['role'] ?></div></li>
-                    <li><em class="informations">E-mail: </em><div class="informations"><?php echo $_SESSION['mail'] ?></div></li>
-                    <li><em class="informations">Nom: </em><div class="informations"><?php echo $_SESSION['nom'] ?> </div></li>
-                    <li><em class="informations">Adresse: </em><div class="informations"><?php echo $_SESSION['adresse'] ?></div></li>
-                    <li><em class="informations">Inscrit le: </em><div class="informations"><?php echo $_SESSION['dateInscription'] ?></div></li>
-                    <li><em class="informations">Numéro: </em><div class="informations"><?php echo '0'.$_SESSION['numero'] ?></div></li>
-                </ul>
-            </div>
             <div id="modifier">
                 <h2>Modifier mes informations</h2>
                 <form method="post" action="/espace-client/modifier-donnees-perso-control">
-                    <div><label for="modifierMail">Modifier mon E-mail</label><input type="text"
+                    <div><em class="informations">Rôle: </em><div class="informations"><?php echo $_SESSION['role'] ?></div></div>
+                    <div><em class="informations">Inscrit le: </em><div class="informations"><?php echo $_SESSION['dateInscription'] ?></div></div>
+                    <div><label for="modifierMail">E-mail</label><input type="text"
                                                                                      name="modifierMail"
-                                                                                     id="modifierMail"></div>
-                    <div><label for="modifierMdp">Modifier mon mot de passe</label><input type="text"
+                                                                                     id="modifierMail"
+                        value="<?php echo $_SESSION['mail'] ?>"></div>
+                    <div><label for="modifierNom">Nom</label><input type="text" name="modifierNom" id="modifierNom" value="<?php echo $_SESSION['nom'] ?>"></div>
+
+                    <div><label for="modifierAdresse">Adresse</label><input type="text"
+                                                                                     name="modifierAdresse"
+                                                                                     id="modifierAdresse"
+                        value="<?php echo $_SESSION['adresse'] ?>"></div>
+                    <div><label for="modifierNumero">Numero</label><input type="text"
+                                                                                     name="modifierNumero"
+                                                                                     id="modifierNumero"
+                        value="<?php echo $_SESSION['numero'] ?>"></div>
+                    <div><label for="modifierMdp">Mot de passe</label><input type="password"
                                                                                           name="modifierMdp"
                                                                                           id="modifierMdp"></div>
-                    <div><label for="modifierAdresse">Modifier adresse</label><input type="text"
-                                                                                     name="modifierAdresse"
-                                                                                     id="modifierAdresse"></div>
-                    <div><label for="modifierNumero">Modifier numero</label><input type="text"
-                                                                                     name="modifierNumero"
-                                                                                     id="modifierNumero"></div>
 
                     <input type="submit" value="Valider" class="envoyer">
 
@@ -54,9 +49,9 @@ $titre = "donnée perso";
                     <ul>
                         <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) {?>
                         <li>
-                            <div class="supprimerCompte"><?php echo $donneesComptes[$comptes]['mail'];?></div>
+                            <div class="supprimerCompte"><?php echo $donneesComptes[$comptes]['pseudo'];?></div>
                             <form class="supprimerCompte" action="/espace-client/modifier-donnees-perso/suppression" method="post">
-                                <input type="hidden" name="mailSuppression" value="<?php echo $donneesComptes[$comptes]['mail'] ?>">
+                                <input type="hidden" name="pseudoSuppression" value="<?php echo $donneesComptes[$comptes]['pseudo'] ?>">
                                 <input type="submit" value="supprimer">
                             </form>
                         </li>

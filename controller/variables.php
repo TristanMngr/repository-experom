@@ -10,7 +10,12 @@ function variablesSession($db,$champ,$param) {
         'table'=>'users',
         'param'=>array(
             $champ=>$param));
+
     $donneesUtilisateur = requeteDansTable($db,$tableau);
+    if (!isset($_SESSION['maison'])) {
+        $_SESSION['maison'] = $donneesUtilisateur[0]['maison'];
+    }
+    $_SESSION["pseudo"] = $donneesUtilisateur[0]["pseudo"];
     $_SESSION["ID"] = $donneesUtilisateur[0]["ID"];
     $_SESSION["mail"] = $donneesUtilisateur[0]["mail"];
     $_SESSION["nom"] = $donneesUtilisateur[0]["nom"];

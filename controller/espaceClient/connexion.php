@@ -8,13 +8,13 @@
 
 include("modele/users.php");
 
-if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
-    if (!empty($_POST["mail"]) && !empty($_POST["mdp"])) { //sont vide?
+if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
+    if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) { //sont vide?
 
         $tableau = array(
             'typeDeRequete'=> 'select',
             'table' => 'users',
-            'param'=> array('mail'=>$_POST['mail']));
+            'param'=> array('pseudo'=>$_POST['pseudo']));
 
         $donneesUtilisateur = requeteDansTable($db,$tableau);
 
@@ -22,15 +22,17 @@ if (isset($_POST["mail"]) and isset($_POST["mdp"])) { //existance des variable
         /*$donneesUtilisateur = getDansTableUsers($db, "mail", $_POST["mail"]);//fonction du modele users.php*/
         if ($donneesUtilisateur[0]["mdp"] == 'cocos_'.$motDePasseCrypter) { //verif de mot de passe(table et envoyé)
 
-            variablesSession($db,'mail',$_POST['mail']);  //fonction qui déclare les variables de sessions (modele/users)
+            variablesSession($db, 'pseudo', $_POST['pseudo']);  //fonction qui déclare les variables de sessions (modele/users)
             $_SESSION['message'] = "Tu es bien connecté";
             if ($_SESSION["role"] == "Utilisateur principal") {
 
                 include("vue/espaceClient/mesConfigurations.php");
-            } else if ($_SESSION["role"] == "Utilisateur secondaire") {
+            }
+            else if ($_SESSION["role"] == "Utilisateur secondaire") {
 
                 include("vue/accueil/accueil.php");
             }
+
         } else {
             $messageErreur = "Le mail ou le mot de passe est incorrect";
             include("vue/espaceClient/connexion.php");
