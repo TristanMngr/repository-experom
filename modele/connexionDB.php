@@ -5,7 +5,7 @@
  */
 
 $adresseHote = "localhost";
-$baseDeDonne = "experom";
+$baseDeDonne = "experomV2";
 $login = "root";
 $motDePasse = "root";
 try {

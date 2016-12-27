@@ -160,11 +160,18 @@ function requeteDansTable($db,$tableau){
         }
         return $tableauDonnees;
     }
-
-
     $requete->closeCursor();
 }
 
+
+// récupère la derniere id du de la dernière requête insert.
+
+function getLastID($db){
+    $lastinsertID = $db->lastinsertid();
+    $lastinsertID = (int) $lastinsertID;
+
+    return $lastinsertID;
+}
 
 
 
@@ -189,5 +196,7 @@ function joinTables($db,$tableau) {
     return $tableau;
 
 }
+
+
 
 ?>

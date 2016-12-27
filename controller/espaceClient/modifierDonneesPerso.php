@@ -10,7 +10,7 @@ include("modele/users.php");
  * On boucle sur la fonction updateDansTableUsers (modele/users.php)
  */
 
-$inscription = null;
+$isInscrit = null;
 $isUtilisateur = null;
 
 // Inscription utilisateur secondaire
@@ -36,21 +36,21 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
                                 'pseudo' => $_POST['pseudo'],
                                 'nom' => $_SESSION['nom'],
                                 'mail' => $_POST['mail'],
-                                'adresse' => $_SESSION['adresse'],
                                 'mdp' => $_POST['mdp'],
+                                'dateInscription'=>'',
                                 'role' => 'secondaire',
                                 'numero' => $_SESSION['numero'],
-                                'maison' => $_SESSION['ID']
+                                'IDmaison' => $_SESSION['IDmaison']
                             ));
-
 
                         requeteDansTable($db, $tableau);
 
-                        $inscription = True;
+
+                        $isInscrit = True;
                         $messageErreur = "L'Utilisateur secondaire a bien été crée";
                     }
                     else {
-                        //si le mail es egal au mail principal
+                        //si le mail est egal au mail principal
                         $tableau = array(
                             'typeDeRequete' => 'select',
                             'table' => 'users',
@@ -65,18 +65,18 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
                                     'pseudo' => $_POST['pseudo'],
                                     'nom' => $_SESSION['nom'],
                                     'mail' => $_POST['mail'],
-                                    'adresse' => $_SESSION['adresse'],
                                     'mdp' => $_POST['mdp'],
                                     'role' => 'secondaire',
+                                    'dateInscription'=>'',
                                     'numero' => $_SESSION['numero'],
-                                    'maison' => $_SESSION['ID']
+                                    'IDmaison' => $_SESSION['IDmaison']
                                 ));
 
 
                             requeteDansTable($db, $tableau);
 
 
-                            $inscription = True;
+                            $isInscrit = True;
                             $messageErreur = "L'Utilisateur secondaire a bien été crée";
                         } else {
                             $messageErreur = "Ce mail est déja prit";
@@ -153,7 +153,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
             $tableau = array(
 
                 'typeDeRequete' => 'select',
-                'table' => 'users',
+                'table' => 'maison',
                 'param' => array(
                     'adresse' => $_POST['modifierAdresse']));
 
@@ -230,30 +230,29 @@ if ($_GET['target2'] == 'suppression') {
 
 if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-donnees-perso-control' or $_GET['target'] == 'modifier-donnees-perso' or $_GET['target2'] == 'suppression') {
 
-    /*on recherche toutes les données portant le nom de $_SESSION['maison']*/
     $tableau = array(
         'typeDeRequete'=>'select',
         'table'=>'users',
         'param'=>array(
-                'maison'=>$_SESSION['maison']));
+                'IDmaison'=>$_SESSION['IDmaison']));
+
+
 
     $donneesComptes = requeteDansTable($db,$tableau);
     for ($tableau = 0; $tableau <count($donneesComptes); $tableau ++) {
+        // on supprime la tableau pour celui qui c'est connecté.
         if ($donneesComptes[$tableau]['ID'] == $_SESSION['ID']) {
             unset($donneesComptes[$tableau]);
         }
     }
 
-
+    // si le tableau est vide alors il n y'a rien a afficher/sinon isPresentUtilisateur vaut true.
     if ($donneesComptes == array()) {
         $isPresentUtilisateur = False;
     }
     else {
         $isPresentUtilisateur = True;
     }
-
-
-
 
 }
 
@@ -263,7 +262,7 @@ if ($_GET['target'] == 'modifier-donnees-perso' or $_GET['target'] == 'modifier-
 if ($_GET['target2'] != "ajouter-un-utilisateur-control")  {
     include('vue/espaceClient/modifierDonneesPerso.php');
 }
-else if ($inscription== True & $_GET['target2'] == "ajouter-un-utilisateur-control") {
+else if ($isInscrit == True & $_GET['target2'] == "ajouter-un-utilisateur-control") {
     include('vue/espaceClient/modifierDonneesPerso.php');
 }
 

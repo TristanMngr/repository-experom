@@ -20,21 +20,36 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
 
         $motDePasseCrypter = md5($_POST['mdp']);
         /*$donneesUtilisateur = getDansTableUsers($db, "mail", $_POST["mail"]);//fonction du modele users.php*/
-        if ($donneesUtilisateur[0]["mdp"] == 'cocos_'.$motDePasseCrypter) { //verif de mot de passe(table et envoyé)
+        if (isset($donneesUtilisateur[0]['mdp'])) {
+            if ($donneesUtilisateur[0]["mdp"] == 'cocos_' . $motDePasseCrypter) { //verif de mot de passe(table et envoyé)
 
-            variablesSession($db, 'pseudo', $_POST['pseudo']);  //fonction qui déclare les variables de sessions (modele/users)
-            $_SESSION['message'] = "Tu es bien connecté";
-            if ($_SESSION["role"] == "Utilisateur principal") {
+                variablesSession($db, 'pseudo', $_POST['pseudo']);  //fonction qui déclare les variables de sessions (modele/users)
+                $_SESSION['message'] = "Tu es bien connecté";
+                if ($_SESSION["role"] == "principal") {
+                    if (isset($_SESSION['IDmaison'])) {
 
-                include("vue/espaceClient/mesConfigurations.php");
+                        include("vue/espaceClient/mesConfigurations.php");
+                    }
+                    else {
+                        include('vue/espaceClient/configMaison.php');
+                    }
+                } else if ($_SESSION["role"] == "secondaire") {
+                    if (isset($_SESSION['IDmaison'])) {
+
+                        include("vue/accueil/accueil.php");
+                    }
+                    else {
+                        include('vue/espaceClient/configMaison.php');
+                    }
+                }
+
+
+            } else {
+                $messageErreur = "Le mail ou le mot de passe est incorrect";
+                include("vue/espaceClient/connexion.php");
             }
-            else if ($_SESSION["role"] == "Utilisateur secondaire") {
-
-                include("vue/accueil/accueil.php");
-            }
-
-        } else {
-            $messageErreur = "Le mail ou le mot de passe est incorrect";
+        }else {
+            $messageErreur = "Ce compte n'existe pas";
             include("vue/espaceClient/connexion.php");
         }
     } else {

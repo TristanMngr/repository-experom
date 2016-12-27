@@ -50,10 +50,12 @@ else if ($_GET["cible"] == "deconnexion-controller") {
 /*espace-client*/
 
 else if ($_GET['cible'] == 'espace-client') {
-
     /*ma maison*/
+    if (!isset($_SESSION['IDmaison']) & $_GET['target'] == "premiere-connexion") {
+        include('controller/espaceClient/configMaison.php');
+    }
 
-    if ($_GET['target'] == 'ma-maison') {
+    else if ($_GET['target'] == 'ma-maison') {
         if (empty($_GET['target2'])) {
             include('controller/espaceClient/maMaison.php');
         }

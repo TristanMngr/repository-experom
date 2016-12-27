@@ -9,6 +9,7 @@ $titre = "vue des capteurs";
 
 <section id= "index">
     <h1> Index </h1>
+    <h2><?php echo $messageErreur ?></h2>
     <div>
         <ul>
             <li><a href="#VueGenerale"> Vue Général </a></li>
@@ -29,15 +30,16 @@ $titre = "vue des capteurs";
     <?php if(isset($_GET['target2']) & $_GET['target2']== 'creation') {?>
     <div id="creation">
         <h1>Création d'une salle</h1>
+
         <form action="/espace-client/ma-maison/ajouter" method="post">
             <ul>
                 <li><em>ajouter température</em>
-                    <label for="temperatureOui">Oui</label><input type="radio" name="temperature" value="oui" id="temperatureOui" checked>
-                    <label for="temperatureNon">Non</label><input type="radio" name="temperature" value="non" id="temperatureNon">
+                    <label for="temperatureOui">Oui</label><input type="radio" name="temperature" value="true" id="temperatureOui" checked>
+                    <label for="temperatureNon">Non</label><input type="radio" name="temperature" value="false" id="temperatureNon">
                 </li>
                 <li><em>ajouter humidité</em>
-                    <label for="humiditeOui">Oui</label><input type="radio" name="humidite" value="oui" id="humiditeOui" checked>
-                    <label for="humiditeNon">Non</label><input type="radio" name="humidite" value="non" id="humiditeNon">
+                    <label for="humiditeOui">Oui</label><input type="radio" name="humidite" value="true" id="humiditeOui" checked>
+                    <label for="humiditeNon">Non</label><input type="radio" name="humidite" value="false" id="humiditeNon">
                 </li>
                 <li><label for="nomSalle">Quelle nom pour votre salle :</label><input type="text" name="nomSalle" id="nomSalle"></li>
             </ul>
@@ -61,17 +63,14 @@ $titre = "vue des capteurs";
         <div id="Salle1">
             <h1 id="<?php echo 'salle'.$salle ?>"><?php echo $tableauDonneesSalles[$salle]['nom'] ?></h1>
             <ul>
-                <?php if($tableauDonneesSalles[$salle]['temperature']=='oui') { ?>
+                <?php if($tableauDonneesSalles[$salle]['isTemperature']=="true") { ?>
                 <li>
                     <h2> Température </h2>
                     <div class="conteneurModif">
                         <ul>
-                            <!-- <li> <a href="ConsommationCT"> Consommation Capteur Température </a> </li>  -->
-                            <!-- <li> <a href="PositionsCT"> Positions Capteur Température </a> </li> -->
-                            <li> Nombres Capteur Température</li>
-                            <br/>
-                            <li> Etats Capteur Température</li>
-                            <br/> <!--Actif/Inactif-->
+
+                            <li>Nombres Capteur Température</li>
+                            <li>Etats Capteur Température</li>
                             <li>
                                 <div class="formu">Modifier état :</div>
                                 <form method="post" action="traitement.php" class="formu">
@@ -112,19 +111,16 @@ $titre = "vue des capteurs";
                     </div>
                 </li>
                 <?php }
-                if ($tableauDonneesSalles[$salle]['humidite']=='oui') {
+                if ($tableauDonneesSalles[$salle]['isHumidite']=="true") {
                 ?>
 
                 <li>
-                    <h2> Lumiere </h2>
+                    <h2> Humidité </h2>
                     <div class="conteneurModif">
                         <ul>
-                            <!-- <li> <a href="ConsommationCT"> Consommation Capteur Température </a> </li>  -->
-                            <!-- <li> <a href="PositionsCT"> Positions Capteur Température </a> </li> -->
+
                             <li> Nombres Capteur Humidité</li>
-                            <br/>
                             <li> Etats Capteur Humidité</li>
-                            <br/> <!--Actif/Inactif-->
                             <li>
                                 <div class="formu">Modifier état :</div>
                                 <form method="post" action="traitement.php" class="formu">

@@ -13,7 +13,6 @@ $titre = "inscription";
             <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : ""; ?>"></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="nom">Nom</label><input type="text" name="nom" id="nom" value="<?= isset($_POST['nom']) ? $_POST['nom'] : ""; ?>"></div><?php } ?>
             <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail" value="<? if ($utilisateurSecondaire == False && isset($_POST['mail'])) { echo $_POST['mail']; } else { echo "";} if ($utilisateurSecondaire) {echo $_SESSION['mail'];} ?>"></div>
-            <?php if ($utilisateurSecondaire == False){ ?><div><label for="adresse">Adresse</label><input type="text" name="adresse" id="adresse" value="<?= isset($_POST['adresse']) ? $_POST['adresse'] : ""; ?>"></div><?php } ?>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero" value="<?= isset($_POST['numero']) ? $_POST['numero'] : ""; ?>"></div><?php }?>
             <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
             <div><label for="rmdp">Votre mot de passe, encore</label><input type="password" name="rmdp"

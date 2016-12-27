@@ -2,5 +2,5 @@ Options +FollowSymlinks
 RewriteEngine on
 
 
-RewriteRule ^([a-z-]+)/?([a-z-]+)?/?([a-z-]+)?/?$ index.php?cible=$1&target=$2&target2=$3
+RewriteRule ^([a-z-]+)/?([a-z-]+)?/?([a-z-]+)?/?$ index.php?cible=$1&target=$2&target2=$3 [L]
 
