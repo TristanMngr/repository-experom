@@ -1,6 +1,6 @@
 <?php
 include("modele/general.php");
-include("modele/fonctions.php");
+include("controller/debug.php");
 include('modele/modes.php');
 
 $displayConfig = false;

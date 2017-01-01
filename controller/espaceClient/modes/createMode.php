@@ -70,9 +70,6 @@ function postDataArray() {
 }
 
 
-
-echo '<br/>';
-
 if ($_GET['target2'] == 'creer-un-mode') {
 
     if (isset($_POST['nom']) & !empty($_POST['nom'])) {

@@ -41,21 +41,6 @@ $titre = "créer un modes";
 
                         </div>
                     </li>
-                    <!--<li class="template">
-
-                        <div id="lum">
-                            <h2>Lumière</h2>
-                            <input type="text" name="lumMode" id="lumMode"><label for="lumMode">% </label>
-                            <span>de </span><input type="text" name="timeBeginLum" id="timBeginLum">
-                            <span>à </span><input type="text" name="timEndLum" id="timEndLum">
-                            <select name="choixCapteur" id="choixCapteurLum" class="templateMode">
-                                <option value="temperature" name="temperature" >Temperature</option>
-                                <option value="humidite" name="humidite" >Humidité</option>
-                                <option value="lumiere" name="lumiere" selected>Lumiere</option>
-                            </select>
-                            <button class="valider">Valider</button>
-                        </div>
-                    </li>-->
                 </ul>
                 <div id="submitMode">
                     <input type="input" name="nom" id="nom" value="<?php if($modeName!=null){ echo $modeName;} ?>"><label for="nom">Entre le nom de ton mode</label>

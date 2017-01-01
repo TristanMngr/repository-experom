@@ -24,7 +24,7 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
                 'IDmaison' => $_SESSION['IDmaison']));
 
         requeteDansTable($db, $tableau);
-        $messageErreur = "Votre salle à bien été créer";
+        $messageErreur = $_POST['nomSalle']." à bien été créer";
 
     } else {
         $messageErreur = "Cette salle à déja été créer";
@@ -34,10 +34,20 @@ else {
     $messageErreur = "Vous devez entré un nom de salle";
 }
 
+// on réactualise les données
+$tableau = array(
+    'typeDeRequete'=>'select',
+    'table'=>'salles',
+    'param'=>array(
+        'IDmaison'=>$_SESSION['IDmaison']
+    ));
+
+$tableauDonneesSalles = requeteDansTable($db,$tableau);
 
 
 
-include('vue/espaceClient/maMaison.php');
+
+include('vue/espaceClient/maMaisonV2.php');
 
 
 

@@ -166,8 +166,8 @@ $titre = "vue des capteurs";
         </div>
         <?php
     }
-$section = ob_get_clean();
-include("gabarit.php");
+    $section = ob_get_clean();
+    include("gabarit.php");
 
 
 
