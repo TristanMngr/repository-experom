@@ -2,7 +2,7 @@
 session_start();
 include("modele/connexionDB.php");
 include("controller/variables.php");
-/*include("modele/users.php");*/
+/*include("modele/general.php");*/
 
 
 /**
@@ -54,25 +54,16 @@ else if ($_GET['cible'] == 'espace-client') {
     if (!isset($_SESSION['IDmaison']) & $_GET['target'] == "premiere-connexion") {
         include('controller/espaceClient/configMaison.php');
     }
-
     else if ($_GET['target'] == 'ma-maison') {
-        if (empty($_GET['target2'])) {
-            include('controller/espaceClient/maMaison.php');
-        }
-        if ($_GET['target2'] == 'ajouter' or $_GET['target2']== 'control' or $_GET['target2'] == 'creation'){
-            include('controller/espaceClient/maMaison.php');
-        }
+        include('controller/espaceClient/maison/index.php');
 
     }
 
+    /*creer un modes*/
+    else if ($_GET['target'] == 'modes') {
+        include('controller/espaceClient/modes/index.php');
+    }
 
-    /*creer un mode*/
-    else if ($_GET['target'] == 'creer-un-mode') {
-        include("vue/espaceClient/creerUnMode.php");
-    }
-    else if ($_GET['target'] == 'mes-configurations') {
-        include("vue/espaceClient/mesConfigurations.php");
-    }
 
 
     /*donner perso*/

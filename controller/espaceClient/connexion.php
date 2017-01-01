@@ -6,7 +6,7 @@
  * verification du formulaire de connexion
  */
 
-include("modele/users.php");
+include("modele/general.php");
 
 if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
     if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) { //sont vide?
@@ -19,7 +19,7 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
         $donneesUtilisateur = requeteDansTable($db,$tableau);
 
         $motDePasseCrypter = md5($_POST['mdp']);
-        /*$donneesUtilisateur = getDansTableUsers($db, "mail", $_POST["mail"]);//fonction du modele users.php*/
+        /*$donneesUtilisateur = getDansTableUsers($db, "mail", $_POST["mail"]);//fonction du modele general.php*/
         if (isset($donneesUtilisateur[0]['mdp'])) {
             if ($donneesUtilisateur[0]["mdp"] == 'cocos_' . $motDePasseCrypter) { //verif de mot de passe(table et envoyé)
 
@@ -28,7 +28,7 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
                 if ($_SESSION["role"] == "principal") {
                     if (isset($_SESSION['IDmaison'])) {
 
-                        include("vue/espaceClient/mesConfigurations.php");
+                        include("vue/accueil/accueil.php");
                     }
                     else {
                         include('vue/espaceClient/configMaison.php');

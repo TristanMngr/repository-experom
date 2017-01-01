@@ -1,5 +1,5 @@
 <?php
-include("modele/users.php");
+include("modele/general.php");
 
 if ($_GET['target']=='premiere-connexion') {
     // insertion des données envoyé par configMaison.php (vue)

@@ -1,5 +1,5 @@
 <?php
-include("modele/users.php");
+include("modele/general.php");
 /**
  * modifier ses données perso
  *
@@ -7,7 +7,7 @@ include("modele/users.php");
  * On verifie que les variables envoyés par l'utilisateurs existe et qu'elles ne sont pas vides
  * Dans ce cas on ajoute a la clef, la variables envoyé par l'utilisateur
  * Et on change les variables de sessions
- * On boucle sur la fonction updateDansTableUsers (modele/users.php)
+ * On boucle sur la fonction updateDansTableUsers (modele/general.php)
  */
 
 $isInscrit = null;

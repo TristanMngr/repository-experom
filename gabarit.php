@@ -12,6 +12,7 @@
 <?php echo($header);?>
 <?php echo($section);?>
 <?php echo($footer);?>
-<script type="text/javascript" src="/vue/javaScript/main.js"></script>
+<!--<script type="text/javascript" src="/vue/javaScript/main.js"></script>-->
+<script type="text/javascript" src="/vue/javaScript/creerUnMode.js"></script>
 </body>
 </html>

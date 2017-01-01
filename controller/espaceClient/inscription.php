@@ -7,7 +7,7 @@ $titre = "Inscription";
  * formulaire d'inscription
  */
 
-include("modele/users.php");
+include("modele/general.php");
 
 
 
