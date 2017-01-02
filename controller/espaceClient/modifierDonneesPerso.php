@@ -109,6 +109,7 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
 /*verification modification des données */
 $tableauUtilisateurs = array();
+$tableauMaison = array();
 
 if ($_GET["target"] == "modifier-donnees-perso-control") {
 
@@ -151,6 +152,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
     if ($_POST['modifierAdresse'] != $_SESSION['adresse']) {
         if (isset($_POST['modifierAdresse']) && !empty($_POST['modifierAdresse'])) {
             $tableau = array(
+                    //TODO faire un nouveau tableau pour la table maison
 
                 'typeDeRequete' => 'select',
                 'table' => 'maison',
@@ -158,13 +160,15 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     'adresse' => $_POST['modifierAdresse']));
 
             if (requeteDansTable($db, $tableau) == array()) {
-                $tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];
+                $tableauMaison["adresse"] = $_POST['modifierAdresse'];
+                /*$tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];*/
                 $_SESSION['adresse'] = $_POST['modifierAdresse'];
             } else {
                 if ($message != "") {
                     $message .= ", ";
                 }
-                $message .= " Le numéro est déja utilisé";
+                /*$message .= " Le numéro est déja utilisé";*/
+                $message .= " Cette adresse est déja utilisé";
             }
         }
     }
@@ -184,32 +188,52 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     if ($message != "") {
                         $message .= ", ";
                     }
-                    $message .= " L'adresse est déja utilisé";
+                    $message .= " Ce numéro est déja utilisé";
                 }
             } else {
                 $message = "Attention ce numéro n'es pas valide";
             }
         }
     }
+    // Pour la table utilisateur
     if ($tableauUtilisateurs != array()) {
-        if ($message == "") {
-            $message = "Vos données ont été modifiés";
 
-            foreach ($tableauUtilisateurs as $set => $setChange) {
 
-                $tableau = array(
-                    'typeDeRequete' => 'update',
-                    'table' => 'users',
-                    'setValeur' => $set,
-                    'champ' => 'ID',
-                    'param' => array(
+        foreach ($tableauUtilisateurs as $set => $setChange) {
 
-                        'setValeur' => $setChange,
-                        'champ' => $_SESSION['ID'])); //attention
+            $tableau = array(
+                'typeDeRequete' => 'update',
+                'table' => 'users',
+                'setValeur' => $set,
+                'champ' => 'ID',
+                'param' => array(
 
-                requeteDansTable($db, $tableau);
-            }
+                    'setValeur' => $setChange,
+                    'champ' => $_SESSION['ID'])); //attention
+
+            requeteDansTable($db, $tableau);
         }
+
+    }
+    // pour la table maison
+    if ($tableauMaison != array()) {
+        foreach ($tableauMaison as $set => $setChange) {
+            $tableau = array(
+                'typeDeRequete' => 'update',
+                'table' => 'maison',
+                'setValeur' => $set,
+                'champ' => 'ID',
+                'param' => array(
+
+                    'setValeur' => $setChange,
+                    'champ' => $_SESSION['IDmaison'])); //attention
+
+            requeteDansTable($db, $tableau);
+        }
+
+    }
+    if ($message == "") {
+        $message = "Vos données ont été modifiés";
     }
 }
 

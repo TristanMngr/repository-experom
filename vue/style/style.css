@@ -352,6 +352,10 @@ div#contenuAllMaison {
     box-shadow: 1px 1px 3px black;
     position: relative;
 }
+
+#creationSalle select {
+    width:150px;
+}
 #creationSalle span {
     display: inline-block;
     width:400px;
@@ -379,19 +383,45 @@ div#contenuMaison .salle >h1 {
     text-align: center;
 }
 
-.fa-plus {
-    color:limegreen;
+.flaticon-add-plus-button {
+    color:forestgreen;
+    font-size: 25px;
 }
-.fa-times {
+
+.flaticon-cancel-music {
     position: absolute;
     top:10px;
-    left:15px;
+    left:10px;
+    font-size:10px;
+    cursor: pointer;
 }
-.fa-times:hover {
+.flaticon-multiply:hover {
     cursor: pointer;
 }
 
 
+.flaticon-power {
+    font-size:30px;
+}
+.flaticon-power:hover {
+    cursor: pointer;
+}
+.salle h2.temp, .salle h2.hum  {
+    position : relative;
+}
+h2.temp > label.switch, h2.hum > label.switch  {
+    position : absolute;
+    right: 40px;
+}
+.switch .flaticon-power {
+    color: red;
+}
+.switch input {
+    display: none;
+}
+input:checked + .flaticon-power {
+    color: forestgreen;
+}
 /*page d'inscription*/
 
 section#conteneur {
@@ -771,7 +801,6 @@ div#creation #creation {
     width:100px;
     height:30px;
 }
-
 
 
 

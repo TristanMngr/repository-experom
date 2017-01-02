@@ -84,7 +84,7 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
             }
 
             // a viré:
-            
+
             $arrayConsigne = array();
             $arrayRequestData = arrayRequestData($arrayTrame);
             for ($tram = 0; $tram < count($arrayRequestData); $tram ++) {
