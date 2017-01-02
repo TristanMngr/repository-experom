@@ -1,7 +1,10 @@
 <?php
 include("modele/general.php");
 include("modele/modes.php");
+include("modele/salles.php");
 include('controller/debug.php');
+include("controller/capteurSelect.php");
+
 
 $messageErreur = null;
 
@@ -37,6 +40,31 @@ $arrayNameMode = array_unique($arrayNameMode);
 foreach ($arrayNameMode as $key => $mode) {
     $arrayMode[] = $mode;
 }
+
+
+
+// fonction qui retourne la valeur du type demandé.
+function getdataCapteur($db,$idSalle) {
+    $value = array();
+    $tableau = array('param'=>array('ID_salle'=>$idSalle));
+    $dataSalle = getDataSalle($db,$tableau);
+    foreach ($dataSalle as $key => $data)
+
+    if ($data['type'] == 'temperature') {
+        if ($data['temperature']!= null) {
+            $value['temp'] = $data["temperature"];
+        }
+    }
+    if ($data['type'] == 'humidite') {
+        if ($data['humidite']!= null) {
+            $value['hum'] = $data["humidite"];
+        }
+    }
+    return $value;
+}
+
+
+
 
 
 if ($_GET['target2'] == 'ajouter') {
