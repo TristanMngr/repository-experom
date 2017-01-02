@@ -23,6 +23,8 @@ $consigneHum = null;
 $beginHum = null;
 $endHum = null;
 
+
+
 // récupération de tout les noms de modes pour ensuite les affichers
 $tableau = array('param'=> array('champ'=>$_SESSION["IDmaison"]));
 
@@ -36,6 +38,8 @@ for ( $k = 0; $k < count($tableauDonneesMode); $k ++ ) {
 $arrayNameMode[] = $tableauDonneesMode[$k]['nom'];
 }
 $arrayNameMode = array_unique($arrayNameMode);
+
+
 
 
 if ($_GET['target2'] == "creer-un-mode") {
