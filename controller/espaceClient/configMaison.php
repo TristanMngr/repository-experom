@@ -40,7 +40,6 @@ if ($_GET['target']=='premiere-connexion') {
     $donneesMaison = requeteDansTable($db,$tableau);
     $_SESSION['IDmaison'] = $donneesMaison[0]['ID'];
 
-    echo $_SESSION["IDmaison"];
 
 
     include('vue/accueil/accueil.php');
