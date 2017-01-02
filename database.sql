@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:8889
--- Généré le :  Dim 01 Janvier 2017 à 22:06
+-- Généré le :  Lun 02 Janvier 2017 à 23:20
 -- Version du serveur :  5.6.28
 -- Version de PHP :  5.6.25
 
@@ -17,12 +17,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `capteur`
+-- Structure de la table `archives`
 --
 
-CREATE TABLE `capteur` (
+CREATE TABLE `archives` (
   `ID` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL
+  `numero` int(11) NOT NULL,
+  `temperature` int(11) NOT NULL,
+  `humidite` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `ID_capteur` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `capteurs`
+--
+
+CREATE TABLE `capteurs` (
+  `ID` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `ID_salle` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -74,21 +90,9 @@ CREATE TABLE `modes_config` (
 CREATE TABLE `salles` (
   `ID` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `isLumiere` varchar(255) NOT NULL,
-  `isTemperature` varchar(255) NOT NULL,
+  `isTemperature` tinyint(1) NOT NULL,
   `IDmaison` int(11) NOT NULL,
-  `isHumidite` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `trames`
---
-
-CREATE TABLE `trames` (
-  `ID` int(11) NOT NULL,
-  `trame` int(255) NOT NULL
+  `isHumidite` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -114,9 +118,15 @@ CREATE TABLE `users` (
 --
 
 --
--- Index pour la table `capteur`
+-- Index pour la table `archives`
 --
-ALTER TABLE `capteur`
+ALTER TABLE `archives`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `capteurs`
+--
+ALTER TABLE `capteurs`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -144,12 +154,6 @@ ALTER TABLE `salles`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `trames`
---
-ALTER TABLE `trames`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -160,9 +164,14 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `capteur`
+-- AUTO_INCREMENT pour la table `archives`
 --
-ALTER TABLE `capteur`
+ALTER TABLE `archives`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `capteurs`
+--
+ALTER TABLE `capteurs`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `maison`
@@ -183,11 +192,6 @@ ALTER TABLE `modes_config`
 -- AUTO_INCREMENT pour la table `salles`
 --
 ALTER TABLE `salles`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `trames`
---
-ALTER TABLE `trames`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users`
