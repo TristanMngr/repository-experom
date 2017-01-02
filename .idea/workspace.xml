@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5dc6a2a6-aa51-4eb0-90c0-6b663df542e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" afterPath="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" afterPath="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.sql" afterPath="$PROJECT_DIR$/database.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gabarit.php" afterPath="$PROJECT_DIR$/gabarit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/style/style.css" afterPath="$PROJECT_DIR$/vue/style/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,19 +50,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maMaisonV2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="62" column="94" lean-forward="false" selection-start-line="62" selection-start-column="94" selection-end-line="62" selection-end-column="94" />
-              <folding>
-                <marker date="1483394713000" expanded="true" signature="3426:3461" ph="..." />
-                <marker date="1483394713000" expanded="true" signature="4015:4050" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -85,16 +68,6 @@
               <folding>
                 <marker date="1483304972000" expanded="true" signature="1162:1163" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createMode.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/createMode.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-364">
-              <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -122,11 +95,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
+            <state relative-caret-position="2985">
               <caret line="199" column="46" lean-forward="false" selection-start-line="199" selection-start-column="46" selection-end-line="199" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="450">
+                <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configMaison.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/configMaison.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="14" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="18" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -171,7 +167,6 @@
         <option value="$PROJECT_DIR$/users.sql" />
         <option value="$PROJECT_DIR$/modele/connexionDB.php" />
         <option value="$PROJECT_DIR$/vue/espaceClient/inscription.php" />
-        <option value="$PROJECT_DIR$/vue/espaceClient/configMaison.php" />
         <option value="$PROJECT_DIR$/controller/variables.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/inscription.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/maMaison.php" />
@@ -211,6 +206,8 @@
         <option value="$PROJECT_DIR$/controller/capteurSelect.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" />
         <option value="$PROJECT_DIR$/database.sql" />
+        <option value="$PROJECT_DIR$/vue/espaceClient/configMaison.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -548,12 +545,12 @@
       <updated>1482330950744</updated>
       <workItem from="1482330952372" duration="29000" />
       <workItem from="1482776501381" duration="3491000" />
-      <workItem from="1482842815320" duration="148131000" />
+      <workItem from="1482842815320" duration="150741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151651000" />
+    <option name="totallyTimeSpent" value="154261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -590,22 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/redirection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/espaceClient/configMaison.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="98" lean-forward="false" selection-start-line="11" selection-start-column="98" selection-end-line="11" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/espaceClient/connexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1021,9 +1002,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
+        <state relative-caret-position="2985">
           <caret line="199" column="46" lean-forward="false" selection-start-line="199" selection-start-column="46" selection-end-line="199" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/espaceClient/configMaison.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="450">
+            <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

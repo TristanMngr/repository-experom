@@ -2,7 +2,7 @@ repository-experom
 ==
 
 
-### copier le repository:
+### copier le repository
 
 
 1. Ce placer dans le dossier ou l'on veut mettre le repository
@@ -12,7 +12,7 @@ repository-experom
 
 
 
-### commit:
+### commit
 
 
 1. ```git add .``` (pour générer le suivie de tout le repo) ```git nomDuFichier``` (pour généré le suivie d'un fichier en particulier, ici :*nomDuFichier*).
