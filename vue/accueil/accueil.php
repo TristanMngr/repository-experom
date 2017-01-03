@@ -5,7 +5,7 @@ $titre = "accueil";
 
 ob_start();
 ?>
-<section>
+<section id="accueil">
     <article id="news">
         <h1>news</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

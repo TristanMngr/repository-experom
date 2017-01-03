@@ -10,7 +10,7 @@ ob_start();
         <h1>Connexion</h1>
         <form method="post" action="/espace-client/connexion-control">
 
-            <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo"></div>
+            <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" autofocus></div>
 
             <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
 

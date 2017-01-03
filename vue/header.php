@@ -2,21 +2,21 @@
 ob_start();
 ?>
 <header>
-    <h1 class="inline" id="logo">experom</h1>
+    <a href="/accueil"  class="inline logo" ><h1 class="logo">experom</h1></a>
     <nav class="inline">
-        <ul>
+        <ul id="menuAccueil">
             <li class="nonderoulant"><a href="/accueil">accueil</a></li>
             <li class="deroulant"><a href="/espace-client">espace client</a>
                 <?php if (isset($_SESSION["ID"])) { ?>
                     <div id="fleche"></div>
                 <?php } ?>
 
-                <ul id="deroulant">
+                <ul class="deroulant">
                     <?php if (isset($_SESSION["ID"])) { ?> <!--si session on n'affiche pas le menu déroulant-->
-                        <li><a href="/espace-client/ma-maison">ma maison</a></li>
-                        <li><a href="/espace-client/modes">créer un mode</a></li>
+                        <li><a href="/espace-client/ma-maison">Maison</a></li>
+                        <li><a href="/espace-client/modes">Modes</a></li>
                         <?php if ($_SESSION["role"] == "principal"){?>
-                            <li><a href="/espace-client/modifier-donnees-perso">modifier son compte</a></li>
+                            <li id="menuLast"><a href="/espace-client/modifier-donnees-perso">Comptes</a></li>
                         <?php }?>
                     <?php } ?>
                 </ul>

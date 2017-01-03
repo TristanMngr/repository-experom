@@ -1,15 +1,16 @@
 /*General*/
 html   {
     height:100%;
+    padding:0;
+    margin:0;
 }
 body {
     font-family:Arial,sans-serif;
-    padding:0px;
-    margin:0px;
+    padding:0 0 100px 0;
+    margin:0;
     min-height :90%;
     background: #EAEDF4 ;
     position:relative;
-    padding-bottom:100px;
 
 }
 a {
@@ -26,8 +27,8 @@ header {
     background: #3F4E5F;
     color : #DBDDDB;
     text-transform: uppercase;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    padding: 0px;
+    margin:0px;
 }
 header > .inline {
     text-align: center;
@@ -35,86 +36,119 @@ header > .inline {
 }
 
 /*logo*/
-#logo {
-    width:20%;
+header a.logo {
+    width:24%;
     color:#3BB1DB;
+    height:100%;
+}
+header h1.logo {
     border-bottom: 3px solid #3BB1DB;
-    margin-left:10px;
+    width:300px;
+    padding:0;
+    margin:0;
+    vertical-align: middle;
 }
 
 /*menu*/
-nav {
-    width:50%;
-    margin-left:50px;
+nav.inline {
+    width:49%;
+    height:100%;
+    padding:0px;
+    margin: 0px 0px 0px 0px;
+    vertical-align: middle;
 
 }
 
-nav.inline  ul {
+nav.inline  ul#menuAccueil {
     list-style: none;
+    margin:30px 0px 0px 30px;
     padding:0px;
 }
+
+nav.inline ul li {
+    padding:0px;
+    margin:0px;
+}
 /*fleche menu*/
+li.deroulant {
+    position: relative;
+}
+
 #fleche{
     width:0;
     border:1px solid black;
     border:5px solid transparent;
     border-top:5px solid white;
     display:inline-block;
-    position:relative;
-    top:20px;
-    right:65px;
+    position:absolute;
+    top:42px;
+    left:83px;
 }
 #fleche:hover {
     border-top: solid #3BB1DB 5px;
 }
 
-#deroulant > li:hover {
 
-    border: solid #3BB1DB 2px;
-}
-
-nav > ul li.nonderoulant a:hover {
+nav > ul li.nonderoulant a:hover, nav .deroulant li:hover{
     border-bottom: solid #3BB1DB 1px;
     color:#3BB1DB;
     cursor:pointer;
 }
-
-.inline > ul > li {
-    display: inline-block;
-    margin : 0px 20px 0px 20px;
-    vertical-align: top;
-    line-height: 40px;
-
+nav .deroulant a:hover {
+    color:#3BB1DB;
+    border-bottom: solid #3BB1DB 1px;
 }
-#deroulant {
+
+
+
+.inline ul li {
+    display: inline-block;
+    padding:0px;
+    width:170px;
+    line-height: 40px;
+    height:40px;
+    vertical-align: middle;
+}
+nav.inline li a {
+    display: inline-block;
+    padding:0px;
+    margin:0px;
+    width:100%;
+    height:100%;
+}
+/*#deroulant {
     position:relative;
     top:0;
     left:0;
-}
+}*/
 
 
 
 /*cacher menu*/
-ul#deroulant li {
+
+ul.deroulant  {
+    margin:0px;
+    padding:0px;
+}
+
+ul.deroulant li {
     display:none;
 }
-li.deroulant a {
-    font-style :normal;
 
+ul.deroulant li#menuLast {
+    border-radius: 0px 0px 5px 5px;
 }
-li.deroulant a:hover {
-    font-style :normal;
-    border-bottom: solid #3BB1DB 1px;
-    color:#3BB1DB;
-    cursor: pointer;
+ul.deroulant li#menuLast:hover {
+    border-bottom: solid #3BB1DB 2px;
 }
 
-li:hover > ul#deroulant li {
+
+li:hover > ul.deroulant li {
     background: #3F4E5F;
     display: block;
     cursor:pointer;
 }
-li:hover > ul#deroulant li {
+li:hover > ul.deroulant li {
     opacity:0;
     animation-name:deroulant;
     animation-duration:400ms;
@@ -127,17 +161,24 @@ li:hover > ul#deroulant li {
     100% {opacity:1;}
 }
 
-/*search*/
-
-form.inline {
-    position:absolute;
-    top: 20px;
-    right:20px;
-    width:20%;
+/* deconnexion */
+header form.inline {
+    position:relative;
+    width:24%;
+    height:100px;
+    vertical-align: middle;
 }
 
-/*section*/
-section {
+header form.inline input {
+    position: absolute;
+    top:40px;
+    right:10px;
+    
+
+}
+
+/*accueil*/
+section#accueil {
     display:block;
     color: #3F4E5F;
     min-height: 65vh;
@@ -145,30 +186,35 @@ section {
     margin-top:50px;
 }
 
-section > article {
+section#accueil > article {
     display: inline-block;
     width:45%;
     vertical-align: top;
     text-align: justify;
 }
 
-section #news {
+section#accueil #news {
     border-top: solid #62C0C3 3px;
     margin-right: 25px
 }
-section #news h1 {
+section#accueil #news h1 {
     padding-top: 0px;
     margin-top: 0px;
     color: #62C0C3;
 }
-section #apropos {
+section#accueil #apropos {
     border-top: solid #E53E1A 3px;
     margin-left:25px;
 }
-section #apropos h1 {
+section#accueil #apropos h1 {
     padding-top: 0px;
     margin-top: 0px;
     color: #E53E1A;
+}
+
+/*section*/
+section {
+    text-align: center;
 }
 
 /*footer*/
@@ -190,123 +236,9 @@ footer {
 
 }
 
-/*==========================*/
-/*========= ma maison ======*/
-#mamaison a {
-    color:#6A737A;
-}
+/* config maMaison /*
 
-section#mamaison {
-    margin-top:20px;
-
-}
-section#mamaison > h1 {
-
-    text-transform: uppercase;
-    margin-top:0px;
-    color: #3F4D5E;
-    margin-bottom: 10px
-}
-.navSalle {
-    line-height: 50px;
-    border-top: solid  #3F4D5E 4px;
-    border-bottom: solid  #3F4D5E 4px;
-}
-div.navSalle {
-    text-align: center;
-}
-div.navSalle div {
-    display:inline-block;
-    width: 19%;
-    overflow-x: scroll
-
-}
-
-.navSalle div:hover {
-    line-height: 30px;
-    border-bottom: solid #3F4D5E 3px;
-    border-top: solid #3F4D5E 3px;
-    cursor:pointer;
-}
-
-/*bloc salles*/
-
-#salles > div {
-    display:block;
-    vertical-align: top;
-    margin-top:10px;
-    width:500px;
-    height:750px;
-    margin:auto;
-    margin-top: 20px;
-    padding-left:20px;
-    padding-right: 20px;
-
-    border:1px solid #3F4D5E;
-    box-shadow:1px 1px 3px #3F4D5E;
-    background:#E9ECF4;
-}
-
-/*interieur div controller générale*/
-
-
-#salles > div >h2 {
-    color :#3F4D5E;
-    margin-bottom: 20px
-
-}
-#salles > div > h3 {
-    text-align: left;
-    color:#3F4D5E;
-    border-bottom: 3px solid #3F4D5E;
-}
-h3#consommation {
-    display: block;
-    margin-top: 50px;
-}
-
-
-#salleConteneur form div.conteneurModif {
-
-    border:solid black 1px;
-    padding-left:20px;
-    margin:5px;
-    border:1px solid #3F4D5E;
-    box-shadow:1px 1px 3px #3F4D5E;
-    border-radius: 5px;
-
-}
-
-#salleConteneur form  p {
-    line-height: 20px;
-    text-align:left;
-}
-#salleConteneur form  ul {
-    text-align:left;
-}
-#salleConteneur form  ul > li > label, #salleConteneur form ul > li > p {
-    display:inline-block;
-    width:180px;
-}
-#salleConteneur form  ul > li .saisieUtilisateur {
-    display:inline-block;
-    width:30px;
-    margin-left:7px;
-}
-form ul p.radio {
-    display: inline-block;
-}
-
-.conteneurModif p {
-    line-height: 20px
-}
-.inputBloc {
-    display:inline-block;
-    line-height: 20px;
-}
-
-
-/*Config de la salle espace_client*/
+ */
 section#maMaison {
     color:rgb(63,78,95);  /*a changer*/
     margin:0px;
@@ -322,18 +254,43 @@ section#maMaison .message {
     border:solid black 1px;
     border-radius :5px;
     box-shadow: 1px 1px 3px black;
+    height:65px;
 
+}
+#indexMaison > ul {
+    padding:0px;
+    margin:0px;
+    height:100%;
 }
 
 #indexMaison li {
     display: inline-block;
+    height:100%;
+    padding:0px;
+    margin:0px;
 }
 #indexMaison li a{
     color: #3F4E5F;
     display: inline-block;
-    width: 100px;
+    width: 120px;
+    height:100%;
     font-size: 1.2em;
+    padding:0px;
+    margin:0px;
+    line-height: 65px;
+    vertical-align: middle;
 }
+#indexMaison li.indexHover a:hover{
+    background: lightgrey;
+    color: white;
+}
+#indexMaison li.indexHover i{
+    height:100%;
+    padding: 0px;
+    margin:0px;
+}
+
+
 
 div#contenuAllMaison {
     width:800px;

@@ -11,10 +11,10 @@ $titre = "vue des capteurs";
         <ul>
             <?php
             for ($salle = 0; $salle<count($tableauDonneesSalles); $salle++) {?>
-                <li><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
+                <li class="indexHover"><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
             <?php  }
             ?>
-            <li><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
+            <li class="indexHover"><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
         </ul>
     </div>
     <div class="message"><?php echo $messageErreur; ?></div>

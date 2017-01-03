@@ -39,6 +39,7 @@ if ($_GET['target']=='premiere-connexion') {
         ));
     $donneesMaison = requeteDansTable($db,$tableau);
     $_SESSION['IDmaison'] = $donneesMaison[0]['ID'];
+    $_SESSION['adresse'] = $donneesMaison[0]['adresse'];
 
 
 
