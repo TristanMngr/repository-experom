@@ -15,7 +15,7 @@ if (isset($_POST["removeSalle"])) {
 
     requeteDansTable($db,$tableau);
 
-    $messageErreur = "Vous avez bien supprimer : ".$removeSalle;
+    $messageError = "Vous avez bien supprimer : ".$removeSalle;
 }
 
 

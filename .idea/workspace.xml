@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dc6a2a6-aa51-4eb0-90c0-6b663df542e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/configMaison.php" afterPath="$PROJECT_DIR$/controller/espaceClient/configMaison.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/accueil/accueil.php" afterPath="$PROJECT_DIR$/vue/accueil/accueil.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/deconnexion.php" afterPath="$PROJECT_DIR$/controller/deconnexion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/connexion.php" afterPath="$PROJECT_DIR$/controller/espaceClient/connexion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/inscription.php" afterPath="$PROJECT_DIR$/controller/espaceClient/inscription.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" afterPath="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/maison/index.php" afterPath="$PROJECT_DIR$/controller/espaceClient/maison/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/maison/removeSalle.php" afterPath="$PROJECT_DIR$/controller/espaceClient/maison/removeSalle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/modes/createMode.php" afterPath="$PROJECT_DIR$/controller/espaceClient/modes/createMode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php" afterPath="$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" afterPath="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/connexion.php" afterPath="$PROJECT_DIR$/vue/espaceClient/connexion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/creerUnMode.php" afterPath="$PROJECT_DIR$/vue/espaceClient/creerUnMode.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/inscription.php" afterPath="$PROJECT_DIR$/vue/espaceClient/inscription.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php" afterPath="$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php" afterPath="$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/header.php" afterPath="$PROJECT_DIR$/vue/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/style/style.css" afterPath="$PROJECT_DIR$/vue/style/style.css" />
     </list>
@@ -24,11 +32,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vue/style/style.css">
+      <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/espaceClient/connexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+            <state relative-caret-position="663">
+              <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inscription.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/espaceClient/inscription.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="712">
+              <caret line="89" column="21" lean-forward="false" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -37,8 +55,78 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="26" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="60">
+              <caret line="4" column="82" lean-forward="false" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deconnexion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/deconnexion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue/style/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="411" column="29" lean-forward="false" selection-start-line="411" selection-start-column="29" selection-end-line="411" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifierDonneesPerso.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="130" column="29" lean-forward="false" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifierDonneesPerso.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="43" column="73" lean-forward="false" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inscription.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/inscription.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/connexion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/espaceClient/users.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,11 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>inscription</find>
-      <find>conteneurMode</find>
-      <find>placementconfi</find>
-      <find>getMode</find>
-      <find>mamaison</find>
       <find>fa-plus</find>
       <find>disp</find>
       <find>displ</find>
@@ -67,14 +150,34 @@
       <find>mode</find>
       <find>maison</find>
       <find>fleche</find>
-      <find>logo</find>
       <find>form</find>
       <find>nav.in</find>
       <find>a.</find>
+      <find>menuA</find>
+      <find>$messag</find>
+      <find>mamaison</find>
+      <find>$messageErreur</find>
+      <find>$message</find>
+      <find>deconn</find>
+      <find>logo</find>
+      <find>inscriptio</find>
+      <find>connexio</find>
+      <find>inscriipiot</find>
+      <find>articl</find>
+      <find>inscript</find>
+      <find>section</find>
+      <find>section</find>
+      <find>black</find>
+      <find>h1</find>
+      <find>input</find>
+      <find>inscrip</find>
+      <find>$messa</find>
+      <find>conteneur</find>
     </findStrings>
     <replaceStrings>
       <replace>isInscrit</replace>
       <replace>flaticon-add-plus-button</replace>
+      <replace>$messageError</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -88,48 +191,50 @@
         <option value="$PROJECT_DIR$/users.sql" />
         <option value="$PROJECT_DIR$/modele/connexionDB.php" />
         <option value="$PROJECT_DIR$/controller/variables.php" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/inscription.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/maMaison.php" />
         <option value="$PROJECT_DIR$/vue/espaceClient/ancienneConfig.php" />
         <option value="$PROJECT_DIR$/vue/espaceClient/mesConfigurations.php" />
         <option value="$PROJECT_DIR$/vue/espaceClient/modes.php" />
         <option value="$PROJECT_DIR$/vue/javaScript/main.js" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/connexion.php" />
         <option value="$PROJECT_DIR$/modele/mode.php" />
         <option value="$PROJECT_DIR$/vue/javaScript/creerUnMode.js" />
         <option value="$PROJECT_DIR$/controller/espaceClient/creerUnMode.php" />
         <option value="$PROJECT_DIR$/modele/users.php" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/modes/editMode.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/maison/maMaison.php" />
         <option value="$PROJECT_DIR$/vue/espaceClient/maMaison.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/maison/removeSalle.php" />
-        <option value="$PROJECT_DIR$/vue/espaceClient/creerUnMode.php" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/modes/createMode.php" />
         <option value="$PROJECT_DIR$/modele/fonctions.php" />
         <option value="$PROJECT_DIR$/controller/debug.php" />
         <option value="$PROJECT_DIR$/modele/modes.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/maison/activateMode.php" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" />
         <option value="$PROJECT_DIR$/gabarit.php" />
         <option value="$PROJECT_DIR$/vue/style/font/flaticon.css" />
         <option value="$PROJECT_DIR$/modele/general.php" />
         <option value="$PROJECT_DIR$/modele/salles.php" />
         <option value="$PROJECT_DIR$/controller/espaceClient/modes/index.php" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/maison/index.php" />
         <option value="$PROJECT_DIR$/controller/capteurSelect.php" />
-        <option value="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" />
         <option value="$PROJECT_DIR$/database.sql" />
         <option value="$PROJECT_DIR$/vue/espaceClient/configMaison.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/controller/espaceClient/configMaison.php" />
-        <option value="$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php" />
-        <option value="$PROJECT_DIR$/vue/espaceClient/inscription.php" />
-        <option value="$PROJECT_DIR$/vue/espaceClient/connexion.php" />
         <option value="$PROJECT_DIR$/vue/accueil/accueil.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/maison/index.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/maison/removeSalle.php" />
+        <option value="$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/modes/createMode.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php" />
+        <option value="$PROJECT_DIR$/vue/espaceClient/creerUnMode.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/connexion.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/inscription.php" />
+        <option value="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" />
+        <option value="$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php" />
+        <option value="$PROJECT_DIR$/controller/deconnexion.php" />
         <option value="$PROJECT_DIR$/vue/header.php" />
+        <option value="$PROJECT_DIR$/vue/espaceClient/connexion.php" />
+        <option value="$PROJECT_DIR$/vue/espaceClient/inscription.php" />
         <option value="$PROJECT_DIR$/vue/style/style.css" />
       </list>
     </option>
@@ -241,6 +346,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javaScript" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository-experom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository-experom" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="espaceClient" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -468,12 +591,12 @@
       <updated>1482330950744</updated>
       <workItem from="1482330952372" duration="29000" />
       <workItem from="1482776501381" duration="3491000" />
-      <workItem from="1482842815320" duration="164529000" />
+      <workItem from="1482842815320" duration="170797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168049000" />
+    <option name="totallyTimeSpent" value="174317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -510,14 +633,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modele/mode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modele/poubelle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-285">
@@ -567,28 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
-          <folding>
-            <element signature="e#6#37#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/espaceClient/creerUnMode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -605,30 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/removeSalle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/activateMode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/connexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -708,46 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/editMode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="88" column="19" lean-forward="false" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modele/salles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -788,14 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/createMode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/capteurSelect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -816,26 +841,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/variables.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="18" column="91" lean-forward="false" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -848,41 +857,6 @@
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding>
-            <marker date="1483451063000" expanded="true" signature="3464:3499" ph="..." />
-            <marker date="1483451063000" expanded="true" signature="4053:4088" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/espaceClient/connexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="105" lean-forward="false" selection-start-line="12" selection-start-column="105" selection-end-line="12" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vue/espaceClient/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="169" lean-forward="false" selection-start-line="12" selection-start-column="169" selection-end-line="12" selection-end-column="169" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,18 +908,167 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/createSalle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="133" column="25" lean-forward="false" selection-start-line="133" selection-start-column="25" selection-end-line="133" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/activateMode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/maison/removeSalle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#37#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <marker date="1483478965000" expanded="true" signature="3643:3678" ph="..." />
+            <marker date="1483478965000" expanded="true" signature="4232:4267" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/editMode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/createMode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="96" column="43" lean-forward="false" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/espaceClient/creerUnMode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="75" column="45" lean-forward="false" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="89" column="21" lean-forward="false" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/connexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="130" column="29" lean-forward="false" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="43" column="73" lean-forward="false" selection-start-line="43" selection-start-column="73" selection-end-line="43" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/deconnexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vue/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="26" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="60">
+          <caret line="4" column="82" lean-forward="false" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/espaceClient/connexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/espaceClient/inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/style/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="63" column="26" lean-forward="false" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        <state relative-caret-position="149">
+          <caret line="411" column="29" lean-forward="false" selection-start-line="411" selection-start-column="29" selection-end-line="411" selection-end-column="29" />
           <folding />
         </state>
       </provider>

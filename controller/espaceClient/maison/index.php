@@ -6,7 +6,7 @@ include('controller/debug.php');
 include("controller/capteurSelect.php");
 
 
-$messageErreur = null;
+$messageError = null;
 
 
 // récupération de toutes les données des salles

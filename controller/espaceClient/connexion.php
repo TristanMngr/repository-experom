@@ -45,15 +45,15 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
 
 
             } else {
-                $messageErreur = "Le mail ou le mot de passe est incorrect";
+                $messageError = "Le mail ou le mot de passe est incorrect";
                 include("vue/espaceClient/connexion.php");
             }
         }else {
-            $messageErreur = "Ce compte n'existe pas";
+            $messageError = "Ce compte n'existe pas";
             include("vue/espaceClient/connexion.php");
         }
     } else {
-        $messageErreur = "Le ou les Champs sont vides";
+        $messageError = "Le ou les Champs sont vides";
         include("vue/espaceClient/connexion.php");
     }
 }

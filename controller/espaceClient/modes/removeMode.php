@@ -20,11 +20,11 @@ if (isset($_POST['removeMode'])) {
         //suppression dans la table modes
         $tableau = array('typeDeRequete' => 'delete', 'table' => 'modes', 'param' => array('ID' => $IDmode));
         $arrayDataMode = requeteDansTable($db, $tableau);
-        $messageErreur = "Le mode à bien été supprimer";
+        $messageSucces = "Le mode à bien été supprimer";
     }
 
     else {
-        $messageErreur = "Désolé le mode n'existe pas/plus";
+        $messageError = "Désolé le mode n'existe pas/plus";
     }
 }
 

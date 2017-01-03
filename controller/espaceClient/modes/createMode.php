@@ -94,22 +94,22 @@ if ($_GET['target2'] == 'creer-un-mode') {
 
                             $tableau = array('typeDeRequete' => 'insert', 'table' => 'modes_config', 'param' => array('type' => $arrayByType['type'], 'consigne' => $arrayByType['consigne'], 'heure_debut' => $arrayByType['timeBegin'], 'heure_fin' => $arrayByType['timeEnd'], 'ID_mode' => $lastID));
                             requeteDansTable($db, $tableau);
-                            $messageErreur = "Votre mode à été créer avec succès !";
+                            $messageSuccess = "Votre mode à été créer avec succès !";
                         } else {
-                            $messageErreur = "vous devez entrer des nombres";
+                            $messageError = "vous devez entrer des nombres";
                         }
                     } else {
-                        $messageErreur = "tout les champs ne sont pas remplie ";
+                        $messageError = "tout les champs ne sont pas remplie ";
                     }
                 } else {
-                    $messageErreur = "les variable n'existe pas";
+                    $messageError = "les variable n'existe pas";
                 }
             }
         } else {
-            $messageErreur = "Attention ce nom de modes existe deja";
+            $messageError = "Attention ce nom de modes existe deja";
         }
     } else {
-        $messageErreur = "tu n'as pas renseigner le nom du modes";
+        $messageError = "tu n'as pas renseigner le nom du modes";
     }
 }
 // on réactualise

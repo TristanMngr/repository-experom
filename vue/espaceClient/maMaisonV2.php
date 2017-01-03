@@ -17,7 +17,12 @@ $titre = "vue des capteurs";
             <li class="indexHover"><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
         </ul>
     </div>
-    <div class="message"><?php echo $messageErreur; ?></div>
+    <?php if (isset($messageError)) { ?>
+    <div class="messageError"><?php echo $messageError  ; ?></div>
+    <?php } if (isset($messageSuccess)){?>
+        <div class="messageSuccess"><?php echo $messageSuccess; ?></div>
+    <?php } ?>
+
     <div id="contenuAllMaison">
         <?php if(isset($_GET['target2']) & $_GET['target2']== 'creation') {?>
         <div id="creationSalle">

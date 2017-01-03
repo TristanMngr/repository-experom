@@ -2,7 +2,7 @@
 ob_start();
 ?>
 <header>
-    <a href="/accueil"  class="inline logo" ><h1 class="logo">experom</h1></a>
+    <a href="/accueil"  class="inline logo" ><h1 class="logo"><span>experom</span></h1></a>
     <nav class="inline">
         <ul id="menuAccueil">
             <li class="nonderoulant"><a href="/accueil">accueil</a></li>
@@ -24,11 +24,14 @@ ob_start();
             <li class="nonderoulant"><a href="/contact">contact</a></li>
         </ul>
     </nav>
+    <?php if (isset($messageGeneral)) { ?>
+    <div align="center" id="deconnexion"><?php echo $messageGeneral;?></div> <?php } ?>
     <?php if (isset($_SESSION["ID"])) {?> <!--si la session afficher le bouton déco-->
         <form method = "post" class="inline" action = "/deconnexion-controller" >
             <input type = "submit" value = "deconnexion" ><br/><br/>
             <?php if (isset($_GET["cible"]) && ($_GET["cible"] == "/espace-client/inscription-controller" || $_GET["cible"] == "/espace-client/connexion-controller"))
             {echo $_SESSION["message"];}?>
+
             <!--si session et si cible existe et si cible=inscription afficher le message-->
         </form >
     <?php } ?>

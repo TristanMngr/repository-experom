@@ -60,34 +60,34 @@ if ($utilisateurSecondaire == False) {
                                 include("vue/espaceClient/configMaison.php");
                             }
                             else {
-                                $messageErreur = "Ce numéro est déjà utilisé";
+                                $messageError = "Ce numéro est déjà utilisé";
                                 include("vue/espaceClient/inscription.php");
                             }
                         }
                         else {
-                            $messageErreur = "Ce mail est déja utilisé";
+                            $messageError = "Ce mail est déja utilisé";
                             include("vue/espaceClient/inscription.php");
                         }
                     } else {
-                        $messageErreur = "Ce pseudo est déja utilisé";
+                        $messageError = "Ce pseudo est déja utilisé";
                         include("vue/espaceClient/inscription.php");
                     }
                 }
                 else {
-                    $messageErreur = "Attention ton numéro ou ton mail n'es pas valide";
+                    $messageError = "Attention ton numéro ou ton mail n'es pas valide";
                     include("vue/espaceClient/inscription.php");
                 }
             } else {
-                $messageErreur = "Les mots de passe ne sont pas identiques";
+                $messageError = "Les mots de passe ne sont pas identiques";
                 include("vue/espaceClient/inscription.php");
             }
         } else {
-            $messageErreur = "Le/les champs est/sont vide(s)";
+            $messageError = "Le/les champs est/sont vide(s)";
             include("vue/espaceClient/inscription.php");
 
         }
     } else {
-        $messageErreur = "Les variables n'existe pas";
+        $messageError = "Les variables n'existe pas";
         include("vue/espaceClient/inscription.php");
 
     }

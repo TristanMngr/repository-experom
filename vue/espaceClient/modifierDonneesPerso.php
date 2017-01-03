@@ -36,7 +36,11 @@ $titre = "donnée perso";
 
 
                 </form>
-                <div class="message"><?php echo $message ?></div>
+                <?php if (isset($messageE)) { ?>
+                    <div class="messageError"><?php echo $messageE; ?></div>
+                <?php } if (isset($messageS)) {?>
+                    <div class="messageSuccess"><?php echo $messageS; ?></div>
+                <?php } ?>
                 <div class="link"><a href="/espace-client/modifier-donnees-perso/ajouter-un-utilisateur">Ajouter un utilisateur secondaire</a></div>
 
             </div>
@@ -57,7 +61,11 @@ $titre = "donnée perso";
                         </li>
                         <?php } ?>
                     </ul>
-                <div class="message"><?php echo $messageErreur ?></div>
+                <?php if (isset($messageError)) { ?>
+                <div class="messageError"><?php echo $messageError; ?></div>
+                <?php } if (isset($messageSuccess)) {?>
+                <div class="messageSuccess"><?php echo $messageSuccess; ?></div>
+                <?php } ?>
             </div>
         </div>
     <?php }?>

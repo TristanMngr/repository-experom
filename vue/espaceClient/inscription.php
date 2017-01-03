@@ -18,13 +18,16 @@ $titre = "inscription";
             <div><label for="rmdp">Votre mot de passe, encore</label><input type="password" name="rmdp"
                                                                             id="rmdp"></div>
 
-            <div id="envoyer"><input type="submit" name="submit" value="Envoyer"></div>
+            <div id="envoyer"><input type="submit" class="submit" name="submit" value="Envoyer"></div>
         </form>
 
         <?php if ($utilisateurSecondaire == False){ ?><a href="/espace-client/redirection-connexion">Déja inscrit ? Connecte-toi !</a> <?php } else { ?> <a class="redirectionConfig" href="/espace-client/modifier-donnees-perso">page des configurations </a> <?php } ?>
-        <div class="message">
-            <?php {echo $messageErreur;} ?>
-        </div>
+
+        <?php if (isset($messageError)) { ?>
+            <div class="messageError"><?php echo $messageError; ?></div>
+        <?php } if (isset($messageSuccess)) { ?>
+            <div class="messageSuccess"><?php echo $messageSuccess; ?></div>
+        <?php } ?>
     </article>
 </section>
 

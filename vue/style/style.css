@@ -42,11 +42,16 @@ header a.logo {
     height:100%;
 }
 header h1.logo {
-    border-bottom: 3px solid #3BB1DB;
+
     width:300px;
     padding:0;
     margin:0;
-    vertical-align: middle;
+    text-align: center;
+}
+.logo > span {
+    display: inline-block;
+    width:250px;
+    border-bottom: 3px solid #3BB1DB;
 }
 
 /*menu*/
@@ -176,6 +181,12 @@ header form.inline input {
     
 
 }
+#deconnexion {
+    color: rgb(214,214,214);
+    padding-bottom: 10px;
+    display: inline-block;
+    width:24%;
+}
 
 /*accueil*/
 section#accueil {
@@ -184,6 +195,15 @@ section#accueil {
     min-height: 65vh;
     text-align: center;
     margin-top:50px;
+}
+
+.messageError {
+    color: rgb(206,36,37);
+    font-size:1.2em;
+}
+.messageSuccess {
+    color: green;
+    font-size:1.2em;
 }
 
 section#accueil > article {
@@ -215,6 +235,7 @@ section#accueil #apropos h1 {
 /*section*/
 section {
     text-align: center;
+    color: rgb(85,85,111);
 }
 
 /*footer*/
@@ -255,6 +276,7 @@ section#maMaison .message {
     border-radius :5px;
     box-shadow: 1px 1px 3px black;
     height:65px;
+    margin-bottom: 15px;  /* à virer */
 
 }
 #indexMaison > ul {
@@ -385,20 +407,31 @@ section#conteneur {
     height: 450px;
     color: #0F100F;
 }
+
+section#conteneur .submit {
+    margin:30px auto 10px 200px;
+    width:200px;
+    height:40px;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #3F4D5E;
+    border: solid #3F4D5E 1px;
+    background: rgb(234,237,244);
+    cursor: pointer;
+}
 section#conteneur article#inscription {
-    margin-top: 50px;
     width: 450px;
-    padding:40px 0px 40px 40px;
+    padding:40px 0px 40px 20px;
     border: solid #3F4D5E 1px;
     border-radius:5px;
+    color : rgb(63,78,95);
     box-shadow: 1px 1px 10px #3F4D5E;
-    margin:auto;
     vertical-align: center;
+    margin : 100px auto 0px auto;
 }
 
-
-section#conteneur> h1 {
-    text-align:center;
+section#conteneur h1 {
+    font-size:1.4em;
 
 }
 section#conteneur form  {
@@ -409,23 +442,35 @@ section#conteneur form  {
 section#conteneur form div label {
     display:inline-block;
     width:250px;
+    text-align: left;
 }
 div#envoyer {
     display:block;
+    text-align: left;
 }
+div.leftInscription {
+    text-align: left;
+}
+
+
 article#inscription a {
     display:block;
-    width:250px;
-    color:#0F100F;
+    width:420px;
+    color:rgb(63,78,95);
     line-height: 35px;
     border:solid #3F4D5E 1px;
+    background: rgb(234,237,244);
     border-radius:5px;
     margin-top:15px;
-    padding-left:55px;
+    text-align: center;
     box-shadow: 1px 1px 3px #3F4D5E;
 }
-section#conteneur .message {
-    margin-top: 15px;
+article#inscription a:hover {
+    color: black;
+    background: ghostwhite;
+}
+section#conteneur .messageError {
+    margin-top: 20px;
     color: #CC3366;
 }
 /*modifier mes donnees personnel*/

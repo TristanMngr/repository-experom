@@ -70,7 +70,11 @@ $titre = "créer un modes";
                     <li>
                         <form action="/espace-client/modes/creer"><input type="submit" id="creerMode" value="creer un mode"></form>
                     </li>
-                    <li class="message"><?php echo $messageErreur ?></li>
+                    <?php if(isset($messageError)){  ?>
+                    <li class="messageError"><?php echo $messageError; ?></li>
+                      <?php  } if (isset($messageSuccess)) {?>
+                    <li class="messageSuccess"><?php echo $messageSuccess; ?></li>
+                      <?php }?>
                 </ul>
 
             </div>

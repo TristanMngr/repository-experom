@@ -14,16 +14,20 @@ ob_start();
 
             <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
 
-            <div><label for="resterConnecter">Maintenir la session ouverte</label><input type="checkbox"
+            <div class="leftInscription"><label for="resterConnecter">Maintenir la session ouverte</label><input type="checkbox"
                                                                                          name="resterConnecter"
                                                                                          id="resterConnecter">
             </div>
 
-            <div id="connexion"><input type="submit" name="connexion" value="connexion"></div>
+            <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" value="connexion"></div>
 
         </form>
         <a href="/espace-client/redirection-inscription">Créer ton compte Experom</a>
-        <div class="message"><?php echo $messageErreur; ?></div>
+        <?php if (isset($messageError)) { ?>
+            <div class="messageError"><?php echo $messageError; ?></div>
+        <?php } if (isset($messageSuccess)) { ?>
+            <div class="messageError"><?php echo $messageSuccess; ?></div>
+        <?php } ?>
 
     </article>
 </section>

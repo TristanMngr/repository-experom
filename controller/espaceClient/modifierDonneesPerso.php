@@ -47,7 +47,7 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
 
                         $isInscrit = True;
-                        $messageErreur = "L'Utilisateur secondaire a bien été crée";
+                        $messageSuccess = "L'Utilisateur secondaire a bien été crée";
                     }
                     else {
                         //si le mail est egal au mail principal
@@ -77,31 +77,31 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
 
                             $isInscrit = True;
-                            $messageErreur = "L'Utilisateur secondaire a bien été crée";
+                            $messageSuccess = "L'Utilisateur secondaire a bien été crée";
                         } else {
-                            $messageErreur = "Ce mail est déja prit";
+                            $messageError = "Ce mail est déja prit";
                             include("vue/espaceClient/inscription.php");
                         }
                     }
 
 
                 } else {
-                    $messageErreur = "Ce pseudo est déja utilisé";
+                    $messageError = "Ce pseudo est déja utilisé";
                     include("vue/espaceClient/inscription.php");
                 }
 
             }
             else {
-                $messageErreur = "Attention ton adresse mail n'es pas valide";
+                $messageError = "Attention ton adresse mail n'es pas valide";
                 include("vue/espaceClient/inscription.php");
             }
         } else {
-            $messageErreur = "Les mots de passe ne sont pas identiques";
+            $messageError = "Les mots de passe ne sont pas identiques";
             include("vue/espaceClient/inscription.php");
 
         }
     } else {
-        $messageErreur = "Le/les champs est/sont vide(s)";
+        $messageError = "Le/les champs est/sont vide(s)";
         include("vue/espaceClient/inscription.php");
     }
 }
@@ -128,10 +128,10 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
                     $_SESSION["mail"] = $_POST['modifierMail'];
                 } else {
-                    $message = "Ce mail est déja utilisé";
+                    $messageE = "Ce mail est déja utilisé";
                 }
             } else {
-                $message = "Attention ce mail n'est pas valide";
+                $messageE = "Attention ce mail n'est pas valide";
             }
         }
     }
@@ -164,11 +164,11 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 /*$tableauUtilisateurs['adresse'] = $_POST['modifierAdresse'];*/
                 $_SESSION['adresse'] = $_POST['modifierAdresse'];
             } else {
-                if ($message != "") {
-                    $message .= ", ";
+                if ($messageE != "") {
+                    $messageE .= ", ";
                 }
                 /*$message .= " Le numéro est déja utilisé";*/
-                $message .= " Cette adresse est déja utilisé";
+                $messageE .= " Cette adresse est déja utilisé";
             }
         }
     }
@@ -185,13 +185,13 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     $_SESSION['numero'] = $_POST['modifierNumero'];
 
                 } else {
-                    if ($message != "") {
-                        $message .= ", ";
+                    if ($messageE != "") {
+                        $messageE .= ", ";
                     }
-                    $message .= " Ce numéro est déja utilisé";
+                    $messageE .= " Ce numéro est déja utilisé";
                 }
             } else {
-                $message = "Attention ce numéro n'es pas valide";
+                $messageE = "Attention ce numéro n'es pas valide";
             }
         }
     }
@@ -233,7 +233,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
 
     }
     if ($message == "") {
-        $message = "Vos données ont été modifiés";
+        $messageS = "Vos données ont été modifiés";
     }
 }
 
@@ -246,7 +246,7 @@ if ($_GET['target2'] == 'suppression') {
         'param'=>array(
             'pseudo'=>$_POST['pseudoSuppression']));
 
-    $messageErreur = "L'utilisateur secondaire a bien été supprimer";
+    $messageSuccess = "L'utilisateur secondaire a bien été supprimer";
     requeteDansTable($db,$tableau);
 }
 
