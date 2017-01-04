@@ -6,15 +6,15 @@ $titre = "vue des capteurs";
 ?>
 
 <section id="maMaison">
-    <h1>ma maison</h1>
+    <h1>Maison</h1>
     <div id="indexMaison">
         <ul>
             <?php
             for ($salle = 0; $salle<count($tableauDonneesSalles); $salle++) {?>
-                <li class="indexHover"><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
+                <li class="index"><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
             <?php  }
             ?>
-            <li class="indexHover"><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
+            <li class="indexCross"><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
         </ul>
     </div>
     <?php if (isset($messageError)) { ?>
@@ -50,7 +50,7 @@ $titre = "vue des capteurs";
                     <li>
                         <span><label for="nomSalle">Choisie un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></li>
                 </ul>
-                <input type="submit" value="créer" id="creation">
+                <div><input type="submit" value="créer salle" id="creation"></div>
             </form>
         </div>
     <?php } ?>
@@ -68,7 +68,7 @@ $titre = "vue des capteurs";
                     <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']); ?>
                     <?php if($tableauDonneesSalles[$salle]['isTemperature']==true) { ?>
                     <li>
-                        <h2 class="temp">Température : <?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?>
+                        <h2 class="temp"><span>Température</span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?></span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchTemp">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -80,7 +80,7 @@ $titre = "vue des capteurs";
                     if ($tableauDonneesSalles[$salle]['isHumidite']==true) {
                     ?>
                     <li>
-                        <h2 class="hum">Humidité : <?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?>
+                        <h2 class="hum"><span>Humidité</span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?></span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchHum">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -91,14 +91,14 @@ $titre = "vue des capteurs";
                     <?php } ?>
                     <li>
                         <span>
-                            <h2>Choisir un mode :</h2>
-                            <form action="/espace-client/ma-maison/activer-mode" method="post">
+                            <h2 class="modeSalle"><span>Mode</span></h2>
+                            <form class="modeSalle" action="/espace-client/ma-maison/activer-mode" method="post">
                             <select name="getMode">
                                 <?php for($mode =0; $mode < count($arrayMode); $mode++){ ?>
                                 <option value="<?php echo $arrayMode[$mode];?>"><?php echo $arrayMode[$mode];?></option>
                                 <?php } ?>
                             </select>
-                                <input type="submit" value="activer">
+                                <input class="modeSalle" type="submit" value="activer">
                             </form>
                         </span>
                     </li>

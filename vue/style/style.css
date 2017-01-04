@@ -9,7 +9,7 @@ body {
     padding:0 0 100px 0;
     margin:0;
     min-height :90%;
-    background: #EAEDF4 ;
+    background: #FFFFFF ;
     position:relative;
 
 }
@@ -21,10 +21,29 @@ a:visited {
     color:#DBDDDB;
     text-decoration:none;
 }
+
+/*footer*/
+footer {
+    margin-top:100px;
+    height :100px;
+    width:100%;
+    position:absolute;
+    bottom: 0px;
+    background: #42444E;
+    color: #DBDDDB;
+    z-index:10;
+}
+#footer li {
+    margin-top:30px;
+    display:inline-block;
+    text-align: center;
+    width:24%;
+
+}
 /*Header*/
 header {
     height:100px;
-    background: #3F4E5F;
+    background: #42444E;
     color : #DBDDDB;
     text-transform: uppercase;
     padding: 0px;
@@ -38,7 +57,7 @@ header > .inline {
 /*logo*/
 header a.logo {
     width:24%;
-    color:#3BB1DB;
+    color:#DBDDDB;
     height:100%;
 }
 header h1.logo {
@@ -51,7 +70,7 @@ header h1.logo {
 .logo > span {
     display: inline-block;
     width:250px;
-    border-bottom: 3px solid #3BB1DB;
+    border-bottom: 3px solid #DBDDDB;
 }
 
 /*menu*/
@@ -95,13 +114,13 @@ li.deroulant {
 
 
 nav > ul li.nonderoulant a:hover, nav .deroulant li:hover{
-    border-bottom: solid #3BB1DB 1px;
-    color:#3BB1DB;
+    border-bottom: solid rgb(45, 179, 74) 1px;
+    color:rgb(45, 179, 74);
     cursor:pointer;
 }
 nav .deroulant a:hover {
-    color:#3BB1DB;
-    border-bottom: solid #3BB1DB 1px;
+    color:rgb(45, 179, 74);
+    border-bottom: solid rgb(45, 179, 74) 1px;
 }
 
 
@@ -129,6 +148,7 @@ nav.inline li a {
 
 
 
+
 /*cacher menu*/
 
 ul.deroulant  {
@@ -144,12 +164,12 @@ ul.deroulant li#menuLast {
     border-radius: 0px 0px 5px 5px;
 }
 ul.deroulant li#menuLast:hover {
-    border-bottom: solid #3BB1DB 2px;
+    border-bottom: solid rgb(45, 179, 74) 2px;
 }
 
 
 li:hover > ul.deroulant li {
-    background: #3F4E5F;
+    background: #42444E;
     display: block;
     cursor:pointer;
 }
@@ -238,24 +258,7 @@ section {
     color: rgb(85,85,111);
 }
 
-/*footer*/
-footer {
-    margin-top:100px;
-    height :100px;
-    width:100%;
-    position:absolute;
-    bottom: 0px;
-    background-color: #3F4E5F;
-    color: #DBDDDB;
-    z-index:10;
-}
-#footer li {
-    margin-top:30px;
-    display:inline-block;
-    text-align: center;
-    width:24%;
 
-}
 
 /* config maMaison /*
 
@@ -280,43 +283,64 @@ section#maMaison .message {
 
 }
 #indexMaison > ul {
-    padding:0px;
-    margin:0px;
-    height:100%;
+    padding:0;
+    margin:0;
+    height:65px;
 }
 
 #indexMaison li {
     display: inline-block;
-    height:100%;
-    padding:0px;
-    margin:0px;
-}
-#indexMaison li a{
-    color: #3F4E5F;
-    display: inline-block;
-    width: 120px;
-    height:100%;
-    font-size: 1.2em;
-    padding:0px;
-    margin:0px;
+    height:65px;
     line-height: 65px;
     vertical-align: middle;
 }
-#indexMaison li.indexHover a:hover{
-    background: lightgrey;
-    color: white;
+#indexMaison li.index, #indexMaison li.indexCross {
+    margin:0;
+    padding:0;
 }
-#indexMaison li.indexHover i{
-    height:100%;
-    padding: 0px;
-    margin:0px;
+#indexMaison li.index a{
+    color: #3F4E5F;
+    display: inline-block;
+    width: 120px;
+    height:40px;
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 1.2em;
+    padding:0;
+    margin:0;
 }
+#indexMaison li.index a:hover{
+    border-bottom: solid #3F4E5F 3px;
+}
+#indexMaison li.indexCross a {
+    display: inline-block;
+    width: 50px;
+    height:50px;
+    line-height: 50px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+}
+
+#indexMaison li.indexCross a:hover {
+    border :solid #228B22 3px;
+    border-radius: 50px;
+
+}
+
+li.indexCross {
+    width:90px;
+    margin-left: 20px;
+}
+
+
+
 
 
 
 div#contenuAllMaison {
     width:800px;
-    margin : 20px auto 50px auto;
+    margin : 0px auto 50px auto;
     border-radius :5px;
     box-shadow: 1px 1px 3px black;
 
@@ -330,7 +354,14 @@ div#contenuAllMaison {
     border-radius :5px;
     box-shadow: 1px 1px 3px black;
     position: relative;
+    width: 800px;
 }
+
+#creationSalle form ul li {
+    list-style: none;
+    font-size: 1.2em;
+}
+
 
 #creationSalle select {
     width:150px;
@@ -346,8 +377,24 @@ div#contenuAllMaison {
 #creationSalle > a{
     color:rgb(63,78,95);
 }
-#creationSalle #creation {
-    margin-left: 30px;
+
+#creationSalle form div {
+    text-align: center;
+    margin-top: 30px;
+}
+#creationSalle form #creation {
+    height:35px;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid #3F4D5E 1px;
+    background: rgb(234,237,244);
+    cursor: pointer;
+    width:400px;
+}
+#creationSalle form #creation:hover {
+    color: black;
+    background: ghostwhite;
 }
 
 div#contenuMaison .salle {
@@ -361,6 +408,31 @@ div#contenuMaison .salle {
 div#contenuMaison .salle >h1 {
     text-align: center;
 }
+
+.salle ul {
+    list-style: none;
+}
+.salle li {
+    font-weight:normal;
+}
+.salle h2 {
+    font-weight: normal;
+    font-size:1.3em;
+}
+.salle h2 span {
+    display: inline-block;
+    width:200px;
+}
+.salle h2 span.data {
+    color:rgb(34,139,34)
+}
+.salle .modeSalle {
+    display:inline-block;
+}
+.salle select[name=getMode] {
+    width:100px;
+}
+
 
 .flaticon-add-plus-button {
     color:forestgreen;
@@ -401,6 +473,11 @@ h2.temp > label.switch, h2.hum > label.switch  {
 input:checked + .flaticon-power {
     color: forestgreen;
 }
+
+#maMaison .messageError, #maMaison .messageSuccess{
+    line-height: 50px;
+}
+
 /*page d'inscription*/
 
 section#conteneur {
@@ -409,15 +486,19 @@ section#conteneur {
 }
 
 section#conteneur .submit {
-    margin:30px auto 10px 200px;
+    margin:30px auto 10px auto;
     width:200px;
-    height:40px;
+    height:35px;
     font-size: 1em;
     border-radius: 5px;
-    box-shadow: 1px 1px 10px #3F4D5E;
+    box-shadow: 1px 1px 3px #3F4D5E;
     border: solid #3F4D5E 1px;
     background: rgb(234,237,244);
     cursor: pointer;
+}
+section#conteneur .submit:hover {
+    color: black;
+    background: ghostwhite;
 }
 section#conteneur article#inscription {
     width: 450px;
@@ -478,6 +559,12 @@ section#conteneur .messageError {
 section#modifierDonnerPersonnel {
     margin-top: 0px;
 }
+#conteneurDonnerPerso .messageError, #conteneurDonnerPerso .messageSuccess {
+    font-size: 1em;
+}
+
+
+
 
 section#modifierDonnerPersonnel div#conteneurDonnerPerso {
     width:90%;
@@ -519,7 +606,7 @@ div#modifier {
     border: solid black 1px;
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
-    height : 400px;
+    min-height : 400px;
     width: 500px;
     text-align:left;
     margin:20px auto 20px auto;
@@ -546,7 +633,7 @@ section #modifier > form > div {
 div#modifier input {
     display:inline-block;
 }
-div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom {
+div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp {
     margin-left: 20px;
     width:150px;
 }
@@ -654,6 +741,26 @@ div#creerMode {
     min-height:300px;
 
 }
+input#creerMode {
+    display: inline-block;
+    margin:30px auto 10px auto;
+    width:320px;
+    height:35px;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid #3F4D5E 1px;
+    background: rgb(234,237,244);
+    cursor: pointer;
+
+}
+input#creerMode:hover {
+    color: black;
+    background: ghostwhite;
+}
+
+
+
 
 .disabledClass {
     pointer-events: none;
@@ -683,7 +790,7 @@ li.template {
     padding:0px;
 }
 
-section#modes .message {
+section#modes .messageError, section#modes .messageSuccess {
     margin-top: 15px;
     color: #CC3366;
 }
@@ -805,10 +912,16 @@ div#creation #creation {
 }
 
 
+/*button input */
+/*TODO input button*/
 
-
-
-
-
-
-
+input.inputRemove {
+    display: inline-block;
+    height: 20px;
+    border-radius:5px;
+}
+input.inputEdit {
+    display: inline-block;
+    height: 20px;
+    border-radius:5px;
+}

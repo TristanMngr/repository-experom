@@ -15,7 +15,7 @@ $titre = "inscription";
             <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail" value="<? if ($utilisateurSecondaire == False && isset($_POST['mail'])) { echo $_POST['mail']; } else { echo "";} if ($utilisateurSecondaire) {echo $_SESSION['mail'];} ?>"></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero" value="<?= isset($_POST['numero']) ? $_POST['numero'] : ""; ?>"></div><?php }?>
             <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
-            <div><label for="rmdp">Votre mot de passe, encore</label><input type="password" name="rmdp"
+            <div><label for="rmdp">Vérification du mot de passe</label><input type="password" name="rmdp"
                                                                             id="rmdp"></div>
 
             <div id="envoyer"><input type="submit" class="submit" name="submit" value="Envoyer"></div>

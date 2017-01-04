@@ -137,8 +137,18 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
     }
 
     if (isset($_POST['modifierMdp']) && !empty($_POST['modifierMdp'])) {
-        $tableauUtilisateurs['mdp'] = "cocos_" . md5($_POST['modifierMdp']);
-        $_SESSION["mdp"] = $_POST['modifierMdp'];
+        if (isset($_POST['verifMdp']) & !empty($_POST['verifMdp'])) {
+            if ($_POST['verifMdp'] == $_POST['modifierMdp']) {
+                $tableauUtilisateurs['mdp'] = "cocos_" . md5($_POST['modifierMdp']);
+                $_SESSION["mdp"] = $_POST['modifierMdp'];
+            }
+            else {
+                $messageE = "Vos mots de passe ne sont pas identique";
+            }
+        }
+        else {
+            $messageE = "Remplir le champ de vérification";
+        }
 
     }
 
@@ -232,7 +242,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
         }
 
     }
-    if ($message == "") {
+    if (!isset($messageE)) {
         $messageS = "Vos données ont été modifiés";
     }
 }

@@ -32,6 +32,12 @@ $titre = "donnée perso";
                                                                                           name="modifierMdp"
                                                                                           id="modifierMdp"></div>
 
+                    <!--TODO verifiacation du mot de passe-->
+                    <div><label for="verifMdp">Vérification mot de passe</label><input type="password"
+                                                                             name="verifMdp"
+                                                                             id="verifMdp"></div>
+
+
                     <input type="submit" value="Valider" class="envoyer">
 
 
@@ -56,7 +62,7 @@ $titre = "donnée perso";
                             <div class="supprimerCompte"><?php echo $donneesComptes[$comptes]['pseudo'];?></div>
                             <form class="supprimerCompte" action="/espace-client/modifier-donnees-perso/suppression" method="post">
                                 <input type="hidden" name="pseudoSuppression" value="<?php echo $donneesComptes[$comptes]['pseudo'] ?>">
-                                <input type="submit" value="supprimer">
+                                <input type="submit" value="supprimer" class="inputRemove">
                             </form>
                         </li>
                         <?php } ?>
