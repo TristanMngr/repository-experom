@@ -128,18 +128,18 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
 
 
 
-            $messageSuccess = $_POST['nomSalle']." à bien été créer";
+            $messageSuccess = $_POST['nomSalle']." a bien été créee";
 
         } else {
             $messageError = "Cette salle à déja été créer";
         }
     }
     else {
-        $messageError = "Vous devez entré un nom de salle";
+        $messageError = "Vous devez entrer un nom de salle";
     }
 }
 else {
-    $messageError = "Vous devez avoir au moins une capteur dans un pièce.";
+    $messageError = "Vous devez avoir au moins un capteur dans une pièce.";
 }
 
 
