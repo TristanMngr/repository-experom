@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5dc6a2a6-aa51-4eb0-90c0-6b663df542e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php" afterPath="$PROJECT_DIR$/controller/espaceClient/modes/removeMode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" afterPath="$PROJECT_DIR$/controller/espaceClient/modifierDonneesPerso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/creerUnMode.php" afterPath="$PROJECT_DIR$/vue/espaceClient/creerUnMode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/inscription.php" afterPath="$PROJECT_DIR$/vue/espaceClient/inscription.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php" afterPath="$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php" afterPath="$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vue/style/style.css" afterPath="$PROJECT_DIR$/vue/style/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,25 +17,86 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vue/style/style.css">
+      <file leaf-file-name="maMaisonV2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="121" column="26" lean-forward="false" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+            <state relative-caret-position="-585">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maMaisonV2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php">
+      <file leaf-file-name="creerUnMode.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/creerUnMode.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="224">
+              <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue/style/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="477" column="22" lean-forward="false" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/connexion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maMaison.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaison.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-570">
+              <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
               <folding>
-                <marker date="1483558165000" expanded="true" signature="3652:3687" ph="..." />
-                <marker date="1483558165000" expanded="true" signature="4277:4312" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="1847:2091" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2167:7198" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2203:7178" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2410:4737" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2433:4713" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2525:4691" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2554:4663" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2880:3534" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="2992:3199" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="3312:3418" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="3637:4388" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="3740:4316" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="3798:4201" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="4813:7141" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="4853:7117" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="4942:7095" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="4971:7067" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="5293:5947" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="5405:5612" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="5725:5831" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="6050:6798" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="6150:6726" ph="..." />
+                <marker date="1483605551000" expanded="true" signature="6208:6611" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifierDonneesPerso.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="64" column="89" lean-forward="true" selection-start-line="64" selection-start-column="89" selection-end-line="64" selection-end-column="89" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,7 +116,6 @@
       <find>inscriipiot</find>
       <find>articl</find>
       <find>inscript</find>
-      <find>section</find>
       <find>section</find>
       <find>black</find>
       <find>h1</find>
@@ -511,7 +564,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188202000" />
+    <option name="totallyTimeSpent" value="188207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -552,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -560,18 +612,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/espaceClient/displayMod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/espaceClient/displayMod.php" />
     <entry file="file://$PROJECT_DIR$/vue/espaceClient/creerUnModejava.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="695">
@@ -588,14 +632,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modele/fonctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/fonctions.php" />
     <entry file="file://$PROJECT_DIR$/controller/debug.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -608,23 +645,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="60" column="64" lean-forward="false" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/users.sql" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,14 +664,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/style/flaticon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/style/flaticon.css" />
     <entry file="file://$PROJECT_DIR$/gabarit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -662,9 +683,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaison.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="73" />
-          <folding />
+        <state relative-caret-position="-570">
+          <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+          <folding>
+            <marker date="1483605551000" expanded="true" signature="1847:2091" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2167:7198" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2203:7178" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2410:4737" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2433:4713" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2525:4691" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2554:4663" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2880:3534" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="2992:3199" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="3312:3418" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="3637:4388" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="3740:4316" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="3798:4201" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="4813:7141" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="4853:7117" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="4942:7095" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="4971:7067" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="5293:5947" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="5405:5612" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="5725:5831" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="6050:6798" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="6150:6726" ph="..." />
+            <marker date="1483605551000" expanded="true" signature="6208:6611" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -694,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2985">
           <caret line="199" column="46" lean-forward="false" selection-start-line="199" selection-start-column="46" selection-end-line="199" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,7 +786,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="450">
             <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -760,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,7 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5910">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-199">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="712">
           <caret line="89" column="21" lean-forward="false" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -886,7 +917,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/espaceClient/modifierDonneesPerso.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="570">
           <caret line="64" column="89" lean-forward="true" selection-start-line="64" selection-start-column="89" selection-end-line="64" selection-end-column="89" />
           <folding />
         </state>
@@ -904,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="22" column="23" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/espaceClient/creerUnMode.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="62" column="82" lean-forward="false" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+        <state relative-caret-position="224">
+          <caret line="70" column="64" lean-forward="false" selection-start-line="70" selection-start-column="59" selection-end-line="70" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -948,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="244" column="26" lean-forward="false" selection-start-line="244" selection-start-column="26" selection-end-line="244" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,19 +991,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/espaceClient/maMaisonV2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-          <folding>
-            <marker date="1483558165000" expanded="true" signature="3652:3687" ph="..." />
-            <marker date="1483558165000" expanded="true" signature="4277:4312" ph="..." />
-          </folding>
+        <state relative-caret-position="-585">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vue/style/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="121" column="26" lean-forward="false" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+        <state relative-caret-position="96">
+          <caret line="477" column="22" lean-forward="false" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
           <folding />
         </state>
       </provider>
