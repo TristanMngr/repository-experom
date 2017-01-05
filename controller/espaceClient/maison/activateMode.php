@@ -33,6 +33,11 @@ $tableau = array('param'=>array('nom'=>$_POST['getMode'], 'IDmaison'=>$_SESSION[
 $arrayCapteurSelect = getDataModeByName($db,$tableau);
 
 
+// insertion du mode de l'id du mode dans la base de donnée salle
+$tableau = array('typeDeRequete'=>'update','table'=>'salles','setValeur'=>'ID_mode','champ'=>'ID','param'=>array('setValeur'=>$arrayCapteurSelect[0]['ID'], 'champ'=>$_POST['getIdSalle']));
+requeteDansTable($db,$tableau);
+
+
 
 //
 foreach ($arrayCapteurSelect as $array => $champ) {
@@ -77,5 +82,13 @@ foreach ($arrayIdCapt as $type => $id) {
         requeteDansTable($db,$tableau);
     }
 }
+
+
+// tableau regroupant les données du modes. puis récupération du nom
+
+$tableau = array('typeDeRequete'=>'select', 'table'=> 'modes', 'param'=>array('ID'=>$arrayCapteurSelect[0]['ID']));
+$arrayDataModeBySalle = requeteDansTable($db,$tableau);
+$nomMode = $arrayDataModeBySalle[0]['nom'];
+
 
 include('vue/espaceClient/maMaisonV2.php');

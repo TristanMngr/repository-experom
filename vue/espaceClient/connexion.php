@@ -19,7 +19,7 @@ ob_start();
                                                                                          id="resterConnecter">
             </div>
 
-            <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" value="connexion"></div>
+            <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" value="Connexion"></div>
 
         </form>
         <a href="/espace-client/redirection-inscription">Créer ton compte Experom</a>

@@ -22,7 +22,7 @@ return $tableau;
 
 
 function getDataModeByName($db,$tableau) {
-    $query = "SELECT modes_config.consigne, modes_config.heure_debut, modes_config.heure_fin, modes_config.type, modes.IDmaison, modes.nom
+    $query = "SELECT modes_config.consigne, modes_config.heure_debut, modes_config.heure_fin, modes_config.type, modes.IDmaison, modes.nom, modes.ID
 FROM modes
 JOIN modes_config ON modes_config.ID_mode = modes.ID
 WHERE modes.nom =:nom

@@ -28,8 +28,11 @@ if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
                 // puet être ajouter redirection page accueil
             }
             else {
-                include('vue/accueil/accueil.php');
+                include('controller/espaceClient/maison/index.php');
             }
+        }
+        else if ($_SESSION['role'] == "secondaire") {
+            include('controller/espaceClient/maison/index.php');
         }
     }
 }

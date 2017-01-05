@@ -19,12 +19,14 @@ $titre = "créer un modes";
                     <li class="template first">
                         <div id="temp">
                             <h2>Température</h2>
-                            <input type="text" name="tempMode" id="tempMode" class="inputModeConf" autofocus value="<?php if($typeModeTemp) {echo $consigneTemp;} ?>"><label for="tempMode">°C </label>
-                            <span>de </span><input type="number" name="timeBeginTemp" id="timeBeginTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $beginTemp;} ?>">
-                            <span>à </span><input type="number" name="timeEndTemp" id="timEndTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $endTemp;} ?>">
+                            <div class="placementConf">
+                                <input type="text" name="tempMode" id="tempMode" class="inputModeConf" autofocus value="<?php if($typeModeTemp) {echo $consigneTemp;} ?>"><label for="tempMode">°C </label>
+                                <span>de </span><input type="number" name="timeBeginTemp" id="timeBeginTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $beginTemp;} ?>">
+                                <span>à </span><input type="number" name="timeEndTemp" id="timEndTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $endTemp;} ?>">
 
-                            <!--<button class="valider">Valider</button>-->
-                            <input type="checkbox" name="checkTemp">
+                                <!--<button class="valider">Valider</button>-->
+                                <input type="checkbox" name="checkTemp">
+                            </div>
                         </div>
                     </li>
 
@@ -32,13 +34,14 @@ $titre = "créer un modes";
                     <li class="template">
                         <div id="hum">
                             <h2>Humidité</h2>
-                            <input type="text" name="humMode" id="humMode" class="inputModeConf" value="<?php if($typeModeHum) {echo $consigneHum;} ?> "><label for="humMode">% </label>
-                            <span>de </span><input type="number" name="timeBeginHum" id="timBeginHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $beginHum;} ?>">
-                            <span>à </span><input type="number" name="timeEndHum" id="timEndHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $endHum;} ?>">
+                            <div class="placementConf">
+                                <input type="text" name="humMode" id="humMode" class="inputModeConf" value="<?php if($typeModeHum) {echo $consigneHum;} ?> "><label for="humMode">% </label>
+                                <span>de </span><input type="number" name="timeBeginHum" id="timBeginHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $beginHum;} ?>">
+                                <span>à </span><input type="number" name="timeEndHum" id="timEndHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $endHum;} ?>">
 
-                            <!--<button class="valider">Valider</button>-->
-                            <input type="checkbox" name="checkHum" <?php if($isCheckedHum) {echo "checked='checked";} ?>>
-
+                                <!--<button class="valider">Valider</button>-->
+                                <input type="checkbox" name="checkHum" <?php if($isCheckedHum) {echo "checked='checked";} ?>>
+                            </div>
                         </div>
                     </li>
                 </ul>

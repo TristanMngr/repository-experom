@@ -41,6 +41,29 @@ foreach ($arrayNameMode as $key => $mode) {
     $arrayMode[] = $mode;
 }
 
+// récupération des modes par salles, puis récup du nom, pour mettre à jour la page
+
+function getModeSalle($db,$idSalle)
+{
+    $tableau = array(
+        'typeDeRequete'=>'select',
+        'table'=>'salles',
+        'param'=>array(
+            'IDmaison'=>$_SESSION['IDmaison'],
+            'ID'=>$idSalle
+        ));
+
+    $tableauDonneesSalles = requeteDansTable($db,$tableau);
+
+    /*$tableau = array('param' => array('nom' => $tableauDonneesSalles[0]['nom'], 'IDmaison' => $_SESSION['IDmaison']));*/
+    /*$arrayCapteurSelect = getDataModeByName($db, $tableau);*/
+    $tableau = array('typeDeRequete' => 'select', 'table' => 'modes', 'param' => array('ID' => $tableauDonneesSalles[0]['ID_mode']));
+    $arrayDataModeBySalle = requeteDansTable($db, $tableau);
+    if (isset($arrayDataModeBySalle[0]['nom'])) {
+        $nomMode = $arrayDataModeBySalle[0]['nom'];
+        return $nomMode;
+    }
+}
 
 
 // fonction qui retourne la valeur du type demandé.
@@ -75,6 +98,9 @@ else if ($_GET['target2'] == 'supprimer') {
 }
 else if ($_GET['target2'] == "activer-mode") {
     include('controller/espaceClient/maison/activateMode.php');
+}
+else if ($_GET['target2'] == "consommation") {
+    include('vue/espaceClient/commation.php');
 }
 else {
     include('vue/espaceClient/maMaisonV2.php');

@@ -68,7 +68,6 @@ function requeteDansTable($db,$tableau){
 }
 
 
-/*$tableau = array('typeDeRequete'=>'update', 'table'=>'archives', 'setValeur'=>'temperatureouHum','champ'=>'mode', 'param'=>array('setValeur'=>, 'champ'=>));*/
 // récupère la derniere id de la dernière requête insert.
 
 function getLastID($db){

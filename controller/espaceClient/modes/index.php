@@ -3,6 +3,12 @@ include("modele/general.php");
 include("controller/debug.php");
 include('modele/modes.php');
 
+$modeActif = null;
+
+if (isset($_POST['getMode'])) {
+    $modeActif = $_POST['getMode'];
+}
+
 $displayConfig = false;
 $editMode = false;
 

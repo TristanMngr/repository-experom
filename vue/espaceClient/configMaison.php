@@ -6,13 +6,13 @@ $titre = "première connexion";
 ob_start();
 ?>
     <section id="configMaison">
-        <div>
-            <p>Bienvenue <?php echo $_SESSION["pseudo"] ?>, c'est ta première connexion, tu dois configurer ta maison :</p>
+        <div id="conteneur">
+            <p>Bienvenue <span><?php echo $_SESSION["pseudo"] ?></span>, c'est ta première connexion, tu dois configurer ta maison</p>
             <form action="/espace-client/premiere-connexion" method="post">
-                <label for="nom">Le nom de ta maison </label><input type="text" name="nom" id="nom">
-                <label for="superficie">La superficie de ta maison</label><input type="text" name="superficie" id="superficie">
-                <label for="adresse">Ton adresse </label><input type="text" name="adresse" id="adresse">
-                <input type="submit" value="Valider">
+                <div><label class="labelMaison" for="nom">Le nom de ta maison </label><input type="text" name="nom" id="nom" autofocus></div>
+                <div><label class="labelMaison" for="superficie">La superficie de ta maison</label><input type="text" name="superficie" id="superficie"></div>
+                <div><label class="labelMaison" for="adresse">Ton adresse </label><input type="text" name="adresse" id="adresse"></div>
+                <div class="divSubmit"><input class="submitMaison" type="submit" value="Valider"></div>
             </form>
         </div>
 

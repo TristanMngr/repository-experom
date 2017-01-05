@@ -6,7 +6,7 @@ $titre = "vue des capteurs";
 ?>
 
 <section id="maMaison">
-    <h1>Maison</h1>
+    <h1>Maison<!--<a href="/espaceClient/ma-maison/consommation"><img src=<?php /*if($_GET['target']=='ma-maison'){echo "/style/images/diagram.png"; } else {echo "vue/style/images/diagram.png"; } */?>></a>--></h1>
     <div id="indexMaison">
         <ul>
             <?php
@@ -15,6 +15,7 @@ $titre = "vue des capteurs";
             <?php  }
             ?>
             <li class="indexCross"><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
+
         </ul>
     </div>
     <?php if (isset($messageError)) { ?>
@@ -68,7 +69,7 @@ $titre = "vue des capteurs";
                     <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']); ?>
                     <?php if($tableauDonneesSalles[$salle]['isTemperature']==true) { ?>
                     <li>
-                        <h2 class="temp"><span>Température</span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?></span>
+                        <h2 class="temp"><span>Température</span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchTemp">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -80,7 +81,7 @@ $titre = "vue des capteurs";
                     if ($tableauDonneesSalles[$salle]['isHumidite']==true) {
                     ?>
                     <li>
-                        <h2 class="hum"><span>Humidité</span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?></span>
+                        <h2 class="hum"><span>Humidité</span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchHum">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -89,9 +90,21 @@ $titre = "vue des capteurs";
 
                     </li>
                     <?php } ?>
+                    <?php $idSalle = $tableauDonneesSalles[$salle]['ID'];
+                    $nameMode = getModeSalle($db,$idSalle);
+
+                    if (isset($nameMode)) { ?>
+                    <li>
+                        <span><h2 class="modeActif">Mode actif</h2></span><span class="modeActif green"><?php echo $nameMode ;?></span>
+                    </li>
+                    <?php } else {?>
+                    <li>
+                        <span><h2 class="modeActif">Mode actif</h2></span><span class="modeActif red">Aucun</span>
+                    </li>
+                <?php } ?>
                     <li>
                         <span>
-                            <h2 class="modeSalle"><span>Mode</span></h2>
+                            <h2 class="modeSalle"><span>Choisir un mode</span></h2>
                             <form class="modeSalle" action="/espace-client/ma-maison/activer-mode#<?php echo $tableauDonneesSalles[$salle]['nom']; ?>" method="post">
                             <select name="getMode">
                                 <?php for($mode =0; $mode < count($arrayMode); $mode++){ ?>
@@ -104,6 +117,8 @@ $titre = "vue des capteurs";
 
                             </form>
                         </span>
+
+
                     </li>
                 </ul>
             </div>
