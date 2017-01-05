@@ -1,47 +1,49 @@
 <?php
 include("modele/general.php");
 
-if ($_GET['target']=='premiere-connexion') {
-    // insertion des données envoyé par configMaison.php (vue)
+// insertion des données envoyé par configMaison.php (vue)
+
+if ($_GET['target'] == 'connexion-control') {
+
 
     $tableau = array(
         'typeDeRequete' => 'insert',
-        'table'=>'maison',
-        'param'=>array(
-            'nom'=>$_POST['nom'],
-            'superficie'=>$_POST['superficie'],
-            "adresse"=>$_POST['adresse']
+        'table' => 'maison',
+        'param' => array(
+            'nom' => $_POST['nom'],
+            'superficie' => $_POST['superficie'],
+            "adresse" => $_POST['adresse']
         ));
     requeteDansTable($db, $tableau);
 
-    // on récupère la dernière ID de l'insertion
+// on récupère la dernière ID de l'insertion
 
     $lastID = getLastID($db);
 
-    // update de l'id de la maison dans users
+// update de l'id de la maison dans users
     $tableau = array(
-        'typeDeRequete'=> 'update',
-        'table'=>'users',
+        'typeDeRequete' => 'update',
+        'table' => 'users',
         'setValeur' => 'IDmaison',
-        'champ'=> 'ID',
-        'param'=> array('setValeur'=>$lastID,'champ'=>$_SESSION["ID"])
+        'champ' => 'ID',
+        'param' => array('setValeur' => $lastID, 'champ' => $_SESSION["ID"])
     );
-    requeteDansTable($db,$tableau);
+    requeteDansTable($db, $tableau);
 
 
-    // selection de toute les données de maison.
+// selection de toute les données de maison.
 
     $tableau = array(
-        'typeDeRequete'=> 'select',
-        'table'=>'maison',
-        'param'=> array(
-            'ID'=>$lastID
+        'typeDeRequete' => 'select',
+        'table' => 'maison',
+        'param' => array(
+            'ID' => $lastID
         ));
-    $donneesMaison = requeteDansTable($db,$tableau);
+    $donneesMaison = requeteDansTable($db, $tableau);
     $_SESSION['IDmaison'] = $donneesMaison[0]['ID'];
     $_SESSION['adresse'] = $donneesMaison[0]['adresse'];
 
 
-
-    include('vue/accueil/accueil.php');
 }
+
+include('vue/accueil/accueil.php');

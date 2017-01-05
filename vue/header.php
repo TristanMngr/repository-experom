@@ -7,12 +7,12 @@ ob_start();
         <ul id="menuAccueil">
             <li class="nonderoulant"><a href="/accueil">accueil</a></li>
             <li class="deroulant"><a href="/espace-client">espace client</a>
-                <?php if (isset($_SESSION["ID"])) { ?>
+                <?php if (isset($_SESSION["ID"]) & isset($_SESSION['IDmaison'])) { ?>
                     <div id="fleche"></div>
                 <?php } ?>
 
                 <ul class="deroulant">
-                    <?php if (isset($_SESSION["ID"])) { ?> <!--si session on n'affiche pas le menu déroulant-->
+                    <?php if (isset($_SESSION["ID"]) & isset($_SESSION['IDmaison'])) { ?> <!--si session on n'affiche pas le menu déroulant-->
                         <li><a href="/espace-client/ma-maison">Maison</a></li>
                         <li><a href="/espace-client/modes">Modes</a></li>
                         <?php if ($_SESSION["role"] == "principal"){?>

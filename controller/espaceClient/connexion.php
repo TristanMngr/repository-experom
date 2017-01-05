@@ -27,7 +27,6 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
                 $_SESSION['message'] = "Tu es bien connecté";
                 if ($_SESSION["role"] == "principal") {
                     if (isset($_SESSION['IDmaison'])) {
-
                         include("vue/accueil/accueil.php");
                     }
                     else {

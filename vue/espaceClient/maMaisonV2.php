@@ -11,7 +11,7 @@ $titre = "vue des capteurs";
         <ul>
             <?php
             for ($salle = 0; $salle<count($tableauDonneesSalles); $salle++) {?>
-                <li class="index"><a href="#<?php echo 'salle'.$salle?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
+                <li class="index"><a href="#<?php echo $tableauDonneesSalles[$salle]['nom'];?>"> <?php echo $tableauDonneesSalles[$salle]['nom'] ?></a></li>
             <?php  }
             ?>
             <li class="indexCross"><a href="/espace-client/ma-maison/creation"><i class="flaticon-add-plus-button"></i></a></li>
@@ -63,7 +63,7 @@ $titre = "vue des capteurs";
                     <i class="flaticon-cancel-music" aria-hidden="true" onclick="document.getElementById('<?php echo $tableauDonneesSalles[$salle]['nom'] ?>').submit();"></i>
                     <input type="hidden" name="removeSalle" value="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>">
                 </form>
-                <h1 id="<?php echo 'salle'.$salle ?>"><?php echo $tableauDonneesSalles[$salle]['nom'];?></h1>
+                <h1 id="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>"><?php echo $tableauDonneesSalles[$salle]['nom'];?></h1>
                 <ul>
                     <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']); ?>
                     <?php if($tableauDonneesSalles[$salle]['isTemperature']==true) { ?>
@@ -92,13 +92,16 @@ $titre = "vue des capteurs";
                     <li>
                         <span>
                             <h2 class="modeSalle"><span>Mode</span></h2>
-                            <form class="modeSalle" action="/espace-client/ma-maison/activer-mode" method="post">
+                            <form class="modeSalle" action="/espace-client/ma-maison/activer-mode#<?php echo $tableauDonneesSalles[$salle]['nom']; ?>" method="post">
                             <select name="getMode">
                                 <?php for($mode =0; $mode < count($arrayMode); $mode++){ ?>
                                 <option value="<?php echo $arrayMode[$mode];?>"><?php echo $arrayMode[$mode];?></option>
+
                                 <?php } ?>
                             </select>
+                                <input type="hidden" name="getIdSalle" value="<?php echo $tableauDonneesSalles[$salle]['ID']; ?>">
                                 <input class="modeSalle" type="submit" value="activer">
+
                             </form>
                         </span>
                     </li>

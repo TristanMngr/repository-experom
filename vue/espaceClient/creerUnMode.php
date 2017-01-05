@@ -16,12 +16,12 @@ $titre = "créer un modes";
                 <h1>Creer un mode</h1>
                 <ul id="configMode">
 
-                    <li class="template">
+                    <li class="template first">
                         <div id="temp">
                             <h2>Température</h2>
-                            <input type="text" name="tempMode" id="tempMode" value="<?php if($typeModeTemp) {echo $consigneTemp;} ?>"><label for="tempMode">°C </label>
-                            <span>de </span><input type="text" name="timeBeginTemp" id="timeBeginTemp" value="<?php if($typeModeTemp) {echo $beginTemp;} ?>">
-                            <span>à </span><input type="text" name="timeEndTemp" id="timEndTemp" value="<?php if($typeModeTemp) {echo $endTemp;} ?>">
+                            <input type="text" name="tempMode" id="tempMode" class="inputModeConf" autofocus value="<?php if($typeModeTemp) {echo $consigneTemp;} ?>"><label for="tempMode">°C </label>
+                            <span>de </span><input type="text" name="timeBeginTemp" id="timeBeginTemp" class="inputModeConf" value="<?php if($typeModeTemp) {echo $beginTemp;} ?>">
+                            <span>à </span><input type="text" name="timeEndTemp" id="timEndTemp" class="inputModeConf" value="<?php if($typeModeTemp) {echo $endTemp;} ?>">
 
                             <!--<button class="valider">Valider</button>-->
                             <input type="checkbox" name="checkTemp">
@@ -32,9 +32,9 @@ $titre = "créer un modes";
                     <li class="template">
                         <div id="hum">
                             <h2>Humidité</h2>
-                            <input type="text" name="humMode" id="humMode" value="<?php if($typeModeHum) {echo $consigneHum;} ?> "><label for="humMode">% </label>
-                            <span>de </span><input type="text" name="timeBeginHum" id="timBeginHum" value="<?php if($typeModeHum) {echo $beginHum;} ?>">
-                            <span>à </span><input type="text" name="timeEndHum" id="timEndHum" value="<?php if($typeModeHum) {echo $endHum;} ?>">
+                            <input type="text" name="humMode" id="humMode" class="inputModeConf" value="<?php if($typeModeHum) {echo $consigneHum;} ?> "><label for="humMode">% </label>
+                            <span>de </span><input type="text" name="timeBeginHum" id="timBeginHum" class="inputModeConf" value="<?php if($typeModeHum) {echo $beginHum;} ?>">
+                            <span>à </span><input type="text" name="timeEndHum" id="timEndHum" class="inputModeConf" value="<?php if($typeModeHum) {echo $endHum;} ?>">
 
                             <!--<button class="valider">Valider</button>-->
                             <input type="checkbox" name="checkHum" <?php if($isCheckedHum) {echo "checked='checked";} ?>>
@@ -43,8 +43,8 @@ $titre = "créer un modes";
                     </li>
                 </ul>
                 <div id="submitMode">
-                    <input type="input" name="nom" id="nom" value="<?php if($modeName!=null){ echo $modeName;} ?>"><label for="nom">Entre le nom de ton mode</label>
-                        <input type="submit">
+                    <input type="input" name="nom" id="inputNomMode" value="<?php if($modeName!=null){ echo $modeName;} ?>"><label for="nom">Entre le nom de ton mode</label>
+                        <input type="submit" id="submitNomMode">
                 </div>
             </div>
             </form>

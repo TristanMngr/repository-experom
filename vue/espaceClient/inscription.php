@@ -21,7 +21,7 @@ $titre = "inscription";
             <div id="envoyer"><input type="submit" class="submit" name="submit" value="Envoyer"></div>
         </form>
 
-        <?php if ($utilisateurSecondaire == False){ ?><a href="/espace-client/redirection-connexion">Déja inscrit ? Connecte-toi !</a> <?php } else { ?> <a class="redirectionConfig" href="/espace-client/modifier-donnees-perso">page des configurations </a> <?php } ?>
+        <?php if ($utilisateurSecondaire == False){ ?><a href="/espace-client/redirection-connexion" id="redirectionCo">Déja inscrit ? Connecte-toi !</a> <?php } else { ?> <a class="redirectionConfig" href="/espace-client/modifier-donnees-perso">page des configurations </a> <?php } ?>
 
         <?php if (isset($messageError)) { ?>
             <div class="messageError"><?php echo $messageError; ?></div>

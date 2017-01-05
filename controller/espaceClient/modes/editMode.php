@@ -6,7 +6,6 @@ if (isset($_POST["editMode"])) {
     $tableau = array('param'=> array('nom'=>$_POST['editMode'], 'IDmaison'=>$_SESSION['IDmaison']));
     $dataMode = getDataModeByName($db,$tableau);
 
-    displayArray('message',$dataMode);
 
     $modeName = $dataMode[0]['nom'];
 

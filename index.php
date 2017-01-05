@@ -14,22 +14,27 @@ $message = null;
 $utilisateurSecondaire = False;
 
 
-
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("vue/accueil/accueil.php");
 }
-else if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
+if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
     if (!isset($_SESSION["ID"])) {
         include("vue/espaceClient/connexion.php");
-    } else {
-        if ($_SESSION["role"] == "Utilisateur principal") {
-            include("vue/espaceClient/mesConfigurations.php");
-
-        } else {
-            include("vue/accueil/accueil.php");
+    }
+    else {
+        if ($_SESSION["role"] == "principal") {
+            if (!isset($_SESSION['IDmaison'])) {
+                include('vue/espaceClient/configMaison.php');
+                // puet être ajouter redirection page accueil
+            }
+            else {
+                include('vue/accueil/accueil.php');
+            }
         }
     }
 }
+
+
 
 
 /*principaux*/
@@ -51,10 +56,8 @@ else if ($_GET["cible"] == "deconnexion-controller") {
 
 else if ($_GET['cible'] == 'espace-client') {
     /*ma maison*/
-    if (!isset($_SESSION['IDmaison']) & $_GET['target'] == "premiere-connexion") {
-        include('controller/espaceClient/configMaison.php');
-    }
-    else if ($_GET['target'] == 'ma-maison') {
+
+     if ($_GET['target'] == 'ma-maison') {
         include('controller/espaceClient/maison/index.php');
 
     }
