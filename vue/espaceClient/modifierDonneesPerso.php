@@ -24,7 +24,7 @@ $titre = "donnée perso";
                                                                                      name="modifierAdresse"
                                                                                      id="modifierAdresse"
                         value="<?php echo $_SESSION['adresse'] ?>"></div>
-                    <div><label for="modifierNumero">Numero</label><input type="text"
+                    <div><label for="modifierNumero">Numero de téléphone</label><input type="text"
                                                                                      name="modifierNumero"
                                                                                      id="modifierNumero"
                         value="<?php echo $_SESSION['numero'] ?>"></div>

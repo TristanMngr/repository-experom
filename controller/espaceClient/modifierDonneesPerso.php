@@ -47,7 +47,7 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
 
                         $isInscrit = True;
-                        $messageSuccess = "L'Utilisateur secondaire a bien été crée";
+                        $messageSuccess = "L'utilisateur secondaire a bien été créé";
                     }
                     else {
                         //si le mail est egal au mail principal
@@ -77,7 +77,7 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
 
                             $isInscrit = True;
-                            $messageSuccess = "L'Utilisateur secondaire a bien été crée";
+                            $messageSuccess = "L'utilisateur secondaire a bien été crée";
                         } else {
                             $messageError = "Ce mail est déja prit";
                             include("vue/espaceClient/inscription.php");
@@ -243,7 +243,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
 
     }
     if (!isset($messageE)) {
-        $messageS = "Vos données ont été modifiés";
+        $messageS = "Vos données ont été modifiées";
     }
 }
 

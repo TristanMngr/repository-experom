@@ -791,13 +791,28 @@ ul#configMode li.first {
 }
 
 #submitMode {
-    margin:20px 10px 20px 40px;
-    text-align: left;
+    margin:30px 70px 30px 50px;
+    text-align: right;
 }
 #submitMode #inputNomMode {
-
+    font-size : 1.2em;
+    width:150px;
+    padding-left:20px;
+}
+#submitMode #submitNomMode {
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
+    border: solid transparent 1px;
+    background: #FFFFFF;
+    height:30px;
+    width:100px;
+    vertical-align: top;
 }
 
+#submitMode #submitNomMode:hover {
+    color: #DBDDDB;
+    background: slategrey;
+}
 
 .listMode {
     display:inline-block;
@@ -899,7 +914,6 @@ section#corps h1
     font-weight: bold;
     font-size: xx-large;
     color: #FF0000;
-    font-weight: bold;
 
 }
 

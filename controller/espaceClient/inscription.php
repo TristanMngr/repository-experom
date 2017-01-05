@@ -74,7 +74,7 @@ if ($utilisateurSecondaire == False) {
                     }
                 }
                 else {
-                    $messageError = "Attention ton numéro ou ton mail n'es pas valide";
+                    $messageError = "Attention ton numéro ou ton mail n'est pas valide";
                     include("vue/espaceClient/inscription.php");
                 }
             } else {

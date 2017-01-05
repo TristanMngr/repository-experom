@@ -48,7 +48,7 @@ $titre = "vue des capteurs";
                         </select>
                     </li>
                     <li>
-                        <span><label for="nomSalle">Choisie un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></li>
+                        <span><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></li>
                 </ul>
                 <div><input type="submit" value="créer salle" id="creation"></div>
             </form>

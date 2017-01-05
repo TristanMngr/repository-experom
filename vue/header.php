@@ -28,7 +28,7 @@ ob_start();
     <div align="center" id="deconnexion"><?php echo $messageGeneral;?></div> <?php } ?>
     <?php if (isset($_SESSION["ID"])) {?> <!--si la session afficher le bouton déco-->
         <form method = "post" class="inline" action = "/deconnexion-controller" >
-            <input type = "submit" value = "deconnexion" ><br/><br/>
+            <input type = "submit" value = "déconnexion" ><br/><br/>
             <?php if (isset($_GET["cible"]) && ($_GET["cible"] == "/espace-client/inscription-controller" || $_GET["cible"] == "/espace-client/connexion-controller"))
             {echo $_SESSION["message"];}?>
 
