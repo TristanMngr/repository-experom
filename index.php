@@ -60,9 +60,11 @@ else if ($_GET["cible"] == "deconnexion-controller") {
 else if ($_GET['cible'] == 'espace-client') {
     /*ma maison*/
 
+    if ($_GET['target'] == 'premiere-connexion') {
+        include('controller/espaceClient/configMaison.php');
+    }
      if ($_GET['target'] == 'ma-maison') {
         include('controller/espaceClient/maison/index.php');
-
     }
 
     /*creer un modes*/

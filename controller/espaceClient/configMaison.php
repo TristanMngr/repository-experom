@@ -3,7 +3,7 @@ include("modele/general.php");
 
 // insertion des données envoyé par configMaison.php (vue)
 
-if ($_GET['target'] == 'connexion-control') {
+if ($_GET['target'] == 'premiere-connexion') {
 
 
     $tableau = array(
