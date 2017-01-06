@@ -3,11 +3,12 @@
  * suppression de modes
  */
 
-
-if (isset($_POST['removeMode'])) {
+//suppression du mode avec un get de la salle envoyer par javascript
+if (isset($_GET['target3'])) {
 
     //selection dans la table
-    $tableau = array('typeDeRequete'=> 'select', 'table'=>'modes', 'param'=>array('nom'=>$_POST['removeMode']));
+    $nameMode = str_replace("+"," ", $_GET['target3']);
+    $tableau = array('typeDeRequete'=> 'select', 'table'=>'modes', 'param'=>array('nom'=>$nameMode));
     $arrayDataMode = requeteDansTable($db,$tableau);
 
     if (isset($arrayDataMode[0]['ID'])) {

@@ -17,7 +17,7 @@ $utilisateurSecondaire = False;
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("vue/accueil/accueil.php");
 }
-if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
+else if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
     if (!isset($_SESSION["ID"])) {
         include("vue/espaceClient/connexion.php");
     }

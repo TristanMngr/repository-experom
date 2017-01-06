@@ -65,10 +65,11 @@ $titre = "créer un modes";
                             <input type="hidden" name="editMode" value="<?php echo $mode ?>">
                             <input type="submit" value="modifier" class="inputEdit">
                         </form>
-                        <form class="formInline" action="/espace-client/modes/supprimer" method="post">
-                            <input type="hidden" name="removeMode" value="<?php echo $mode ?>">
-                            <input type="submit" value="supprimer" class="inputRemove"></li>
-                        </form><?php } ?>
+                        <!--<form class="formInline" action="/espace-client/modes/supprimer" method="post">-->
+
+                            <!--<input type="hidden" name="removeMode" value="<?php /*echo $mode */?>">-->
+                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove"></li>
+                        <!--</form>--><?php } ?>
 
                     <li>
                         <form action="/espace-client/modes/creer"><input type="submit" id="creerMode" value="creer un mode"></form>

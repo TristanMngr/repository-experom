@@ -250,14 +250,17 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
 //suppression d'un compte secondaire
 
 if ($_GET['target2'] == 'suppression') {
-    $tableau = array(
-        'typeDeRequete' => 'delete',
-        'table'=>'users',
-        'param'=>array(
-            'pseudo'=>$_POST['pseudoSuppression']));
+    if (isset($_GET['target3'])) {
+        $tableau = array(
+            'typeDeRequete' => 'delete',
+            'table' => 'users',
+            'param' => array(
+                'pseudo' => $_GET['target3']
+            ));
 
-    $messageSuccess = "L'utilisateur secondaire a bien été supprimer";
-    requeteDansTable($db,$tableau);
+        $messageSuccess = "L'utilisateur secondaire a bien été supprimé";
+        requeteDansTable($db, $tableau);
+    }
 }
 
 /*Récupération des mail portant le meme non pour afficher ensuite*/

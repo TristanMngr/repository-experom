@@ -60,10 +60,10 @@ $titre = "donnée perso";
                         <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) {?>
                         <li>
                             <div class="supprimerCompte"><?php echo $donneesComptes[$comptes]['pseudo'];?></div>
-                            <form class="supprimerCompte" action="/espace-client/modifier-donnees-perso/suppression" method="post">
-                                <input type="hidden" name="pseudoSuppression" value="<?php echo $donneesComptes[$comptes]['pseudo'] ?>">
-                                <input type="submit" value="supprimer" class="inputRemove">
-                            </form>
+                            <!--<form class="supprimerCompte" action="/espace-client/modifier-donnees-perso/suppression" method="post">-->
+                                <!--<input type="hidden" name="pseudoSuppression" value="<?php /*echo $donneesComptes[$comptes]['pseudo'] */?>">-->
+                                <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $donneesComptes[$comptes]['pseudo']; ?>','utilisateur')" class="inputRemove">
+                            <!--</form>-->
                         </li>
                         <?php } ?>
                     </ul>

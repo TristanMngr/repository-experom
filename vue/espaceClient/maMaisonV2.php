@@ -60,9 +60,7 @@ $titre = "vue des capteurs";
         for ($salle= 0; $salle<count($tableauDonneesSalles); $salle++) {
             ?>
             <div class="salle">
-                <form action="/espace-client/ma-maison/supprimer" method="post" id="<?php echo $tableauDonneesSalles[$salle]['nom'] ?>">
-                    <i class="flaticon-cancel-music" aria-hidden="true" onclick="document.getElementById('<?php echo $tableauDonneesSalles[$salle]['nom'] ?>').submit();"></i>
-                    <input type="hidden" name="removeSalle" value="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>">
+                    <i class="flaticon-cancel-music" aria-hidden="true" onclick="deleteConf('<?php echo $tableauDonneesSalles[$salle]['nom']; ?>','maison');"></i>
                 </form>
                 <h1 id="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>"><?php echo $tableauDonneesSalles[$salle]['nom'];?></h1>
                 <ul>
