@@ -767,6 +767,7 @@ section#modes {
 
 div#conteneurModes {
     margin-top:0px;
+    height:530px;
 }
 div#conteneurModes h2 {
     text-align:left;
