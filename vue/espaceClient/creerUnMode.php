@@ -10,7 +10,7 @@ $titre = "créer un modes";
 
         <?php if ($displayConfig == true) { ?>
         <div id="placementConfigMode">
-            <form action=<?php if($editMode) {echo '/espace-client/modes/modifier';} else {echo "/espace-client/modes/creer-un-mode";} ?> method="post">
+            <form action='<?php if($editMode == true) {echo '/espace-client/modes/modifier-controller';} else {echo "/espace-client/modes/creer-un-mode";} ?>' method="post">
             <div id="creerMode">
 
                 <h1>Creer un mode</h1>
@@ -25,7 +25,7 @@ $titre = "créer un modes";
                                 <span>à </span><input type="number" name="timeEndTemp" id="timEndTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $endTemp;} ?>">
 
                                 <!--<button class="valider">Valider</button>-->
-                                <input type="checkbox" name="checkTemp">
+                                <input type="checkbox" name="checkTemp" <?php if($isCheckedTemp) {echo 'checked';} ?>>
                             </div>
                         </div>
                     </li>
@@ -40,14 +40,14 @@ $titre = "créer un modes";
                                 <span>à </span><input type="number" name="timeEndHum" id="timEndHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $endHum;} ?>">
 
                                 <!--<button class="valider">Valider</button>-->
-                                <input type="checkbox" name="checkHum" <?php if($isCheckedHum) {echo "checked='checked";} ?>>
+                                <input type="checkbox" name="checkHum" <?php if($isCheckedHum) {echo 'checked';} ?>>
                             </div>
                         </div>
                     </li>
                 </ul>
                 <div id="submitMode">
                     <input type="input" name="nom" id="inputNomMode" placeholder="nom du mode" value="<?php if($modeName!=null){ echo $modeName;} ?>">
-                        <input type="submit" id="submitNomMode">
+                        <input type="submit" id="submitNomMode" value="<?php if($editMode==true){echo "modifier";} else {echo "Créer";} ?>">
                 </div>
             </div>
             </form>
@@ -57,27 +57,26 @@ $titre = "créer un modes";
             <div id="choixMode">
                 <h1>Choisir un mode</h1>
                 <ul>
-                    <li>mode1</li>
-                    <li>mode2</li>
                     <?php foreach($arrayNameMode as $key => $mode) {?>
-                    <li><span class="listMode"><? echo $mode;?></span>
+                    <li class="modeLeft"><span class="listMode"><? echo $mode;?></span>
                         <form class="formInline" action="/espace-client/modes/modifier" method="post">
                             <input type="hidden" name="editMode" value="<?php echo $mode ?>">
-                            <input type="submit" value="modifier" class="inputEdit">
+                            <span class="modeRight"><input type="submit" value="modifier" class="inputEdit">
                         </form>
-                        <!--<form class="formInline" action="/espace-client/modes/supprimer" method="post">-->
 
-                            <!--<input type="hidden" name="removeMode" value="<?php /*echo $mode */?>">-->
-                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove"></li>
-                        <!--</form>--><?php } ?>
+                        <?php if ($mode == "mode nuit" or $mode == "mode jour") {
+                            ?><input type="submit" value="supprimer"  class="inputRemove"  disabled></li>
+                            <?php } else { ?>
+                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove"></span></li>
+                    <?php }} ?>
 
-                    <li>
-                        <form action="/espace-client/modes/creer"><input type="submit" id="creerMode" value="creer un mode"></form>
+                    <li class="submit">
+                        <form action="/espace-client/modes/creer"><input type="submit" id="submitCreerMode" value="Creer un mode"></form>
                     </li>
                     <?php if(isset($messageError)){  ?>
-                    <li class="messageError"><?php echo $messageError; ?></li>
+                    <li class="messageError modeLeft"><?php echo $messageError; ?></li>
                       <?php  } if (isset($messageSuccess)) {?>
-                    <li class="messageSuccess"><?php echo $messageSuccess; ?></li>
+                    <li class="messageSuccess modeLeft"><?php echo $messageSuccess; ?></li>
                       <?php }?>
                 </ul>
 

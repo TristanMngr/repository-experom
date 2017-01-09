@@ -2,8 +2,9 @@
 include("modele/general.php");
 include("controller/debug.php");
 include('modele/modes.php');
+include('controller/espaceClient/modes/functions.php');
 
-$modeActif = null;
+/*$modeActif = null;*/
 
 if (isset($_POST['getMode'])) {
     $modeActif = $_POST['getMode'];
@@ -36,7 +37,6 @@ $tableau = array('param'=> array('champ'=>$_SESSION["IDmaison"]));
 
 $tableauDonneesMode = getDataMode($db,$tableau);
 
-
 // création d'un tableau avec les noms des modes et suppression des doublons
 $arrayNameMode = array();
 
@@ -54,11 +54,16 @@ if ($_GET['target2'] == "creer-un-mode") {
 else if ($_GET['target2'] == "supprimer") {
     include("controller/espaceClient/modes/removeMode.php");
 }
-else if ($_GET['target2'] == "modifier") {
+else if ($_GET['target2'] == "modifier" or $_GET['target2'] == "modifier-controller") {
+    /*les deux variables permettent d'afficher les config*/
     $editMode = true;
     $displayConfig = true;
     include("controller/espaceClient/modes/editMode.php");
 }
+
+// à virer
+
+
 else if ($_GET['target2'] == 'creer') {
     $displayConfig = true;
     include("vue/espaceClient/creerUnMode.php");

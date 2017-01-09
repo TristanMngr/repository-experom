@@ -5,7 +5,8 @@ function getDataMode($db,$tableau) {
 $query = "SELECT modes.nom, modes.ID,modes_config.consigne, modes_config.heure_debut, modes_config.heure_fin, modes_config.type
 FROM modes
 JOIN modes_config ON modes_config.ID_mode = modes.ID
-WHERE modes.IDmaison =:champ";
+WHERE modes.IDmaison =:champ
+OR modes.IDmaison =-1";
 
 
 $param = $tableau['param'] ;
@@ -25,8 +26,8 @@ function getDataModeByName($db,$tableau) {
     $query = "SELECT modes_config.consigne, modes_config.heure_debut, modes_config.heure_fin, modes_config.type, modes.IDmaison, modes.nom, modes.ID
 FROM modes
 JOIN modes_config ON modes_config.ID_mode = modes.ID
-WHERE modes.nom =:nom
-AND modes.IDmaison =:IDmaison";
+WHERE modes.nom =:nom 
+AND (modes.IDmaison =:IDmaison OR modes.IDmaison =-1)";
 
 
     $param = $tableau['param'] ;
@@ -41,6 +42,22 @@ AND modes.IDmaison =:IDmaison";
     return $tableau;
 
 }
+
+function updateTableMode($db,$tableau)
+{
+    if ($tableau['typeDeRequete'] == "update"){
+
+        /*$tableau = implodeChampsValues($tableau);*/
+    $query = 'UPDATE ' . $tableau['table'] . ' SET ' . $tableau['setValeur'] . '=:setValeur WHERE ' . $tableau['champ'] . '=:champ AND ' . $tableau['champ2'] . '=:champ2';
+    $param = $tableau['param'];
+    $requete = $db->prepare($query);
+    $requete->execute($param);
+}
+}
+
+
+
+
 
 
 

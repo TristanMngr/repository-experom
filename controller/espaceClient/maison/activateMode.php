@@ -91,4 +91,4 @@ $arrayDataModeBySalle = requeteDansTable($db,$tableau);
 $nomMode = $arrayDataModeBySalle[0]['nom'];
 
 
-include('vue/espaceClient/maMaisonV2.php');
+include('vue/espaceClient/maMaison.php');

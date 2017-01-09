@@ -29,4 +29,4 @@ $tableau = array(
 
 $tableauDonneesSalles = requeteDansTable($db,$tableau);
 
-include('vue/espaceClient/maMaisonV2.php');
+include('vue/espaceClient/maMaison.php');

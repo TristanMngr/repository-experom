@@ -103,5 +103,5 @@ else if ($_GET['target2'] == "consommation") {
     include('vue/espaceClient/commation.php');
 }
 else {
-    include('vue/espaceClient/maMaisonV2.php');
+    include('vue/espaceClient/maMaison.php');
 }
