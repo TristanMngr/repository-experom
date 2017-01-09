@@ -5,9 +5,6 @@
     <link rel="stylesheet" type="text/css" href="/vue/style/style.css" />
     <link rel="stylesheet" type="text/css" href="/vue/style/font/flaticon.css">
 
-    <!--<script src="https://use.fontawesome.com/f8117c061c.js"></script>-->
-
-
     <title>
         <?php echo $titre ?>
     </title>
@@ -16,9 +13,7 @@
 <?php echo($header);?>
 <?php echo($section);?>
 <?php echo($footer);?>
-<!--<script type="text/javascript" src="/vue/javaScript/main.js"></script>-->
-<script type="text/javascript" src="/vue/javaScript/delete.js"></script>
-<script type="text/javascript" src="/vue/javaScript/inscription.js"></script>
 
+<script type="text/javascript" src="/vue/javaScript/delete.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@ include("controller/variables.php");
 
 $messageErreur = null;
 $message = null;
+$messageE = null;
 $utilisateurSecondaire = False;
 
 

@@ -57,26 +57,22 @@ $titre = "donnée perso";
             <div id="utilisateurs">
                 <h2>Tout mes utilisateurs</h2>
                     <ul>
-                        <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) {?>
+                        <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) { ?>
                         <li>
                             <div class="supprimerCompte"><?php echo $donneesComptes[$comptes]['pseudo'];?></div>
-                            <!--<form class="supprimerCompte" action="/espace-client/modifier-donnees-perso/suppression" method="post">-->
-                                <!--<input type="hidden" name="pseudoSuppression" value="<?php /*echo $donneesComptes[$comptes]['pseudo'] */?>">-->
                                 <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $donneesComptes[$comptes]['pseudo']; ?>','utilisateur')" class="inputRemove">
-                            <!--</form>-->
                         </li>
                         <?php } ?>
                     </ul>
                 <?php if (isset($messageError)) { ?>
                 <div class="messageError"><?php echo $messageError; ?></div>
-                <?php } if (isset($messageSuccess)) {?>
+                <?php } if (isset($messageSuccess)) { ?>
                 <div class="messageSuccess"><?php echo $messageSuccess; ?></div>
                 <?php } ?>
             </div>
         </div>
-    <?php }?>
+    <?php } ?>
     </div>
-
 </section>
 <?php
 $section = ob_get_clean();

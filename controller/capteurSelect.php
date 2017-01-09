@@ -6,7 +6,7 @@
 
 
 
-$arrayTrame = ['100011301002A01251B','100011402001A01251B','100011405002401251B','100011306001801251B','100011307001C01251B'];
+$arrayTrame = ['100011301002A01251B','100011401004001251B','100011402001A01251B','100011403002401251B','100011306001801251B','100011307001C01251B'];
 
 
 
@@ -73,6 +73,7 @@ function getNameTrame($arrayTraduction) {
     $newArray = array();
     for ($trame = 0; $trame < count($arrayTraduction); $trame ++) {
         $idTypeCapteur = $arrayTraduction[$trame]['typeOfCapteur']."-".$arrayTraduction[$trame]['idCapteur'];
+
         if ($arrayTraduction[$trame]['typeOfCapteur'] == 'temperature') {
             $newArray['temperature'][] = $idTypeCapteur;
         }
@@ -89,77 +90,3 @@ $arraySelectCapt = getNameTrame($arrayRequestCapteur);
 
 
 
-
-
-/*
-<?php
-
-$tableauSystème = array(
-    'TRA'= '0x31',
-    'OBJ'= '0x30' or '0x31',
-    'REQ'= '0x31',
-    'TYP1'= '0x31', // Capteur de distance modèle 1
-    'TYP2'= '0x32', // Capteur de distance modèle 2
-    'TYP3'= '0x33', // Capteur de température
-    'TYP4'= '0x34', // Capteur d'humidité
-    'TYP5'= '0x35', // Capteur de lumière modèle 1
-    'TYP6'= '0x36', // Capteur de couleur
-    'TYP7'= '0x37', // Capteur de préscence
-    'TYP8'= '0x38', // Capteur de lumière modèle 2
-    'TYP9'= '0x39', // Capteur de mouvement
-    'TYP10'= '0x41', // Capteur présence son modèle 1
-    'TYP11'= '0x42', // Envoi de la date JJ:MM
-    'TYP12'= '0x43', // Envoi de l'année AAAA
-    'TYP13'= '0x61', // Requête actionneur 1
-    'TYP14'= '0x48', // Requête Heure 1 (HH:MM)
-    'TYP15'= '0x68', // Requête Heure 2 (MM:SS)
-    'TYP16'= '0x70', // Requête date (JJ:MM)
-    'TYP17'= '0x71', // Requête année (AAAA)
-    'NUM'= '' // Numéro du capteur
-	'VAL'= '' // Valeur du capteur
-	'TIM'= '' // Valeur lue
-	'CHK'= '' // Somme des caractères précédents
-);
-
-$tableauPasserelle = array(
-    'TRA'= '0x31',
-    'OBJ'= '0x30' or '0x31',
-    'REQ'= '0x31',
-    'TYP1'= '0x31', // Capteur de distance modèle 1
-    'TYP2'= '0x32', // Capteur de distance modèle 2
-    'TYP3'= '0x33', // Capteur de température
-    'TYP4'= '0x34', // Capteur d'humidité
-    'TYP5'= '0x35', // Capteur de lumière modèle 1
-    'TYP6'= '0x36', // Capteur de couleur
-    'TYP7'= '0x37', // Capteur de préscence
-    'TYP8'= '0x38', // Capteur de lumière modèle 2
-    'TYP9'= '0x39', // Capteur de mouvement
-    'TYP10'= '0x41', // Capteur présence son modèle 1
-    'TYP11'= '0x42', // Envoi de la date JJ:MM
-    'TYP12'= '0x43', // Envoi de l'année AAAA
-    'TYP13'= '0x61', // Requête actionneur 1
-    'TYP14'= '0x48', // Requête Heure 1 (HH:MM)
-    'TYP15'= '0x68', // Requête Heure 2 (MM:SS)
-    'TYP16'= '0x70', // Requête date (JJ:MM)
-    'TYP17'= '0x71', // Requête année (AAAA)
-    'NUM'= '' // Numéro du capteur
-	'ANS'= '' // Réponse de la passerelle
-	'CHK'= '' // Somme des caractères précédents
-);
-
-
-
-function typedecommunication($tableau)
-{
-    $tableauSystème = array();
-    $tableauPasserelle = array();
-
-    	if ($tableau['Système-->Passerelle'] == ) {
-            return $tableauPasserelle;
-        }
-
-    	else{
-            return $tableauSystème;
-        }
-?>
-*/

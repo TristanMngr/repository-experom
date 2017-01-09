@@ -1,6 +1,7 @@
 <?php
 include("vue/header.php");
 include("vue/footer.php");
+include("controller/espaceClient/maison/functions.php");
 ob_start();
 $titre = "vue des capteurs";
 ?>
@@ -31,12 +32,14 @@ $titre = "vue des capteurs";
             <h1>Création d'une salle</h1>
 
             <form action="/espace-client/ma-maison/ajouter" method="post">
+
                 <ul>
                     <li><span>Température</span>
                         <select name="chooseCapteurTemp">
                             <option value="false">désactiver</option>
                             <?php for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){?>
-                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php echo $arraySelectCapt['temperature'][$capteur]; ?></option>
+
+                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['temperature'][$capteur]); ?></option>
                             <?php }?>
                         </select>
                     </li>
@@ -44,7 +47,7 @@ $titre = "vue des capteurs";
                         <select name="chooseCapteurHum">
                                 <option value="false">désactiver</option>
                             <?php for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){?>
-                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php echo $arraySelectCapt['humidite'][$capteur]; ?></option>
+                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['humidite'][$capteur]); ?></option>
                             <?php }?>
                         </select>
                     </li>

@@ -1,6 +1,7 @@
 <?php
 ob_start();
 ?>
+
 <footer>
     <ul id="footer">
         <li>CGU</li>

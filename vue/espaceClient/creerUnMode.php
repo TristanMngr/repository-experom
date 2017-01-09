@@ -59,15 +59,15 @@ $titre = "créer un modes";
                 <ul>
                     <?php foreach($arrayNameMode as $key => $mode) {?>
                     <li class="modeLeft"><span class="listMode"><? echo $mode;?></span>
-                        <form class="formInline" action="/espace-client/modes/modifier" method="post">
+                        <div class="right"><form class="modeRight" action="/espace-client/modes/modifier" method="post">
                             <input type="hidden" name="editMode" value="<?php echo $mode ?>">
-                            <span class="modeRight"><input type="submit" value="modifier" class="inputEdit">
+                            <!--<span class="modeRight">--><input type="submit" value="modifier" class="inputEdit">
                         </form>
 
                         <?php if ($mode == "mode nuit" or $mode == "mode jour") {
-                            ?><input type="submit" value="supprimer"  class="inputRemove"  disabled></li>
+                            ?><input type="submit" value="supprimer"  class="modeRight inputRemove disabled"  disabled></li>
                             <?php } else { ?>
-                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove"></span></li>
+                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove"></div></li>
                     <?php }} ?>
 
                     <li class="submit">

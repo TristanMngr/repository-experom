@@ -229,7 +229,7 @@ section#accueil {
 
 section#accueil > article {
     display: inline-block;
-    width:80%;
+    width:90%;
     vertical-align: top;
     text-align: justify;
 
@@ -840,18 +840,25 @@ div#creerMode {
     padding-left:40px;
     width:100%;
 }
+#choixMode ul li div.right {
+    width:40%;
+    display: inline-block;
+    text-align: right;
+
+}
 #choixMode ul li.submit {
     text-align: center;
 }
-#choixMode ul li span.modeRight {
+#choixMode ul li .modeRight {
     display: inline-block;
     text-align: right;
-    width:95%;
 }
 #choixMode .inputEdit, #choixMode .inputRemove {
     display: inline-block;
-    width: 35%;
     height:30px;
+}
+#choixMode input.disabled {
+    cursor: default;
 }
 
 

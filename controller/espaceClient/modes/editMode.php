@@ -10,7 +10,6 @@ if ($_GET['target2'] == 'modifier' or $_GET['target2'] == 'modifier-controller')
 
     $modeName = $dataMode[0]['nom'];
 
-    displayArray("modeNmae", $dataMode);
 
     for ($array = 0; $array < count($dataMode); $array++) {
         if ($dataMode[$array]['type'] == "temperature") {

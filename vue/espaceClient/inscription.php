@@ -33,6 +33,7 @@ $titre = "inscription";
 
 <?php
 $section = ob_get_clean();
+?><script type="text/javascript" src="/vue/javaScript/inscription.js"></script><?php
 include("gabarit.php");
 ?>
 
