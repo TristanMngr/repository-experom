@@ -258,7 +258,7 @@ if ($_GET['target2'] == 'suppression') {
                 'pseudo' => $_GET['target3']
             ));
 
-        $messageSuccess = "L'utilisateur secondaire a bien été supprimé";
+        $messageSuccess = "L'utilisateur secondaire ".$_GET['target3']." a bien été supprimé";
         requeteDansTable($db, $tableau);
     }
 }

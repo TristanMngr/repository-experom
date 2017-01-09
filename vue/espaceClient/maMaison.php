@@ -7,7 +7,7 @@ $titre = "vue des capteurs";
 ?>
 
 <section id="maMaison">
-    <h1>Maison<!--<a href="/espaceClient/ma-maison/consommation"><img src=<?php /*if($_GET['target']=='ma-maison'){echo "/style/images/diagram.png"; } else {echo "vue/style/images/diagram.png"; } */?>></a>--></h1>
+    <h1>Maison : <span id="nomMaison"><?php echo $_SESSION['nomMaison']; ?></span><!--<a href="/espaceClient/ma-maison/consommation"><img src=<?php /*if($_GET['target']=='ma-maison'){echo "/style/images/diagram.png"; } else {echo "vue/style/images/diagram.png"; } */?>></a>--></h1>
     <div id="indexMaison">
         <ul>
             <?php

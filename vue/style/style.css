@@ -295,6 +295,10 @@ section#maMaison {
     margin:0px;
 }
 
+section#maMaison #nomMaison {
+    color: #228B22;
+}
+
 section#maMaison .message {
     color: #CC3366;
     margin-top:30px;
@@ -1080,11 +1084,17 @@ input.inputEdit {
 */
 
 /*configMaison */
+
+
+section#configMaison {
+
+}
 section#configMaison div#conteneur {
-    margin:100px auto 50px auto ;
+    margin-top: 35vh;
+    transform: translateY(-50%);
     font-size: 1.2em;
     display: inline-block;
-    width: 620px;
+    width: 800px;
     height:300px;
     border: solid transparent 1px;
     box-shadow: 1px 1px 3px #3F4D5E;
@@ -1106,7 +1116,7 @@ section#configMaison .submitMaison {
     box-shadow: 1px 1px 3px #3F4D5E;
     border-radius: 5px;
     display: inline-block;
-    width:50%;
+    width:40%;
     height:30px;
 }
 section#configMaison .submitMaison:hover {
@@ -1122,14 +1132,14 @@ section#configMaison div form div {
     padding: 0;
 }
 section#configMaison div form div.divSubmit {
-    margin-top: 20px;
-    width:95%;
+    margin-top: 40px;
+    width:80%;
     text-align: right;
 }
 
 section#configMaison div .labelMaison {
     display: inline-block;
-    width:250px;
+    width:300px;
 }
 #configMaison span {
     color:green;

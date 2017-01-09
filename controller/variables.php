@@ -35,6 +35,7 @@ function variablesSession($db,$champ,$param) {
 
         $_SESSION['IDmaison'] = $donneesUtilisateur[0]['IDmaison'];
         $_SESSION['adresse'] = $donneesMaison[0]['adresse'];
+        $_SESSION['nomMaison'] = $donneesMaison[0]['nom'];
     }
 
 
