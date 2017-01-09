@@ -15,7 +15,7 @@ if (isset($_GET['target3'])) {
 
     requeteDansTable($db,$tableau);
 
-    $messageError = "Vous avez bien supprimer : ".$removeSalle;
+    $messageError = "Vous avez bien supprimé : ".$removeSalle;
 }
 
 // On réactualise les données.

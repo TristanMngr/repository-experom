@@ -128,7 +128,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     $tableauUtilisateurs['mail'] = $_POST['modifierMail'];
                     $_SESSION["mail"] = $_POST['modifierMail'];
                 } else {
-                    $messageE = "Ce mail est déja utilisé";
+                    $messageE = "Ce mail est déjà utilisé";
                 }
             } else {
                 $messageE = "Attention ce mail n'est pas valide";

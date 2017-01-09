@@ -52,7 +52,7 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
             include("vue/espaceClient/connexion.php");
         }
     } else {
-        $messageError = "Le ou les Champs sont vides";
+        $messageError = "Le ou les champs sont vides";
         include("vue/espaceClient/connexion.php");
     }
 }

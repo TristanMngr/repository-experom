@@ -128,10 +128,10 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
 
 
 
-            $messageSuccess = $_POST['nomSalle']." a bien été créee";
+            $messageSuccess = $_POST['nomSalle']." a bien été créée";
 
         } else {
-            $messageError = "Cette salle à déja été créer";
+            $messageError = "Cette salle a déjà été créée";
         }
     }
     else {
