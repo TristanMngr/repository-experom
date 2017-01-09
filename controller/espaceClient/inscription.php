@@ -65,11 +65,11 @@ if ($utilisateurSecondaire == False) {
                             }
                         }
                         else {
-                            $messageError = "Ce mail est déja utilisé";
+                            $messageError = "Ce mail est déjà utilisé";
                             include("vue/espaceClient/inscription.php");
                         }
                     } else {
-                        $messageError = "Ce pseudo est déja utilisé";
+                        $messageError = "Ce pseudo est déjà utilisé";
                         include("vue/espaceClient/inscription.php");
                     }
                 }
@@ -87,7 +87,7 @@ if ($utilisateurSecondaire == False) {
 
         }
     } else {
-        $messageError = "Les variables n'existe pas";
+        $messageError = "Les variables n'existent pas";
         include("vue/espaceClient/inscription.php");
 
     }

@@ -77,22 +77,22 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
 
                             $isInscrit = True;
-                            $messageSuccess = "L'utilisateur secondaire a bien été crée";
+                            $messageSuccess = "L'utilisateur secondaire a bien été créé";
                         } else {
-                            $messageError = "Ce mail est déja prit";
+                            $messageError = "Ce mail est déja pris";
                             include("vue/espaceClient/inscription.php");
                         }
                     }
 
 
                 } else {
-                    $messageError = "Ce pseudo est déja utilisé";
+                    $messageError = "Ce pseudo est déjà utilisé";
                     include("vue/espaceClient/inscription.php");
                 }
 
             }
             else {
-                $messageError = "Attention ton adresse mail n'es pas valide";
+                $messageError = "Attention ton adresse mail n'est pas valide";
                 include("vue/espaceClient/inscription.php");
             }
         } else {
@@ -143,7 +143,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                 $_SESSION["mdp"] = $_POST['modifierMdp'];
             }
             else {
-                $messageE = "Vos mots de passe ne sont pas identique";
+                $messageE = "Vos mots de passe ne sont pas identiques";
             }
         }
         else {
