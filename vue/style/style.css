@@ -1,18 +1,27 @@
 /*General*/
 html   {
     height:100%;
-    padding:0;
     margin:0;
 }
 body {
     font-family:Verdana,Arial,sans-serif;
-    padding:0 0 100px 0;
+    padding:0;
     margin:0;
-    min-height :90%;
     background: #FFFFFF ;
-    position:relative;
+    height:100%;
+}
+div#page {
+    display: table;
+    height:100%;
+    width:100%;
+
 
 }
+section, header, footer  {
+    display: table-row;
+}
+
+
 a {
     text-decoration: none;
     color:#DBDDDB;
@@ -24,18 +33,25 @@ a:visited {
 
 /*footer*/
 footer {
-    margin-top:100px;
     height :100px;
     width:100%;
-    position:absolute;
-    bottom: 0px;
+    line-height: 100px;
     background: #42444E;
     color: #DBDDDB;
-    z-index:10;
+}
+ul#footer {
+    line-height: 50px;
+    height:50px;
+    width:100%;
+    vertical-align: middle;
+    display: inline-block;
+    padding:0;
+    margin:0;
 }
 #footer li {
-    margin-top:30px;
     display:inline-block;
+    padding:0;
+    margin:0;
     text-align: center;
     width:24%;
 
@@ -46,8 +62,8 @@ header {
     background: #42444E;
     color : #DBDDDB;
     text-transform: uppercase;
-    padding: 0px;
-    margin:0px;
+    padding: 0;
+    margin:0;
 }
 header > .inline {
     text-align: center;
@@ -73,25 +89,32 @@ header h1.logo {
     border-bottom: 3px solid #DBDDDB;
 }
 
+/*section*/
+section {
+    text-align: center;
+    color: rgb(85,85,111);
+}
+
 /*menu*/
 nav.inline {
     width:49%;
-    height:100%;
-    padding:0px;
-    margin: 0px 0px 0px 0px;
+    height:70px;
+    line-height:70px ;
+    padding:0;
+    margin: 0 0 0 0;
     vertical-align: middle;
 
 }
 
 nav.inline  ul#menuAccueil {
     list-style: none;
-    margin:30px 0px 0px 30px;
-    padding:0px;
+    margin:0 auto 0 auto;
+    padding:0;
 }
 
 nav.inline ul li {
-    padding:0px;
-    margin:0px;
+    padding:0;
+    margin:0;
 }
 /*fleche menu*/
 li.deroulant {
@@ -134,16 +157,12 @@ nav .deroulant a:hover {
 }
 nav.inline li a {
     display: inline-block;
-    padding:0px;
-    margin:0px;
+    padding:0;
+    margin:0;
     width:100%;
     height:100%;
 }
-/*#deroulant {
-    position:relative;
-    top:0;
-    left:0;
-}*/
+
 
 
 
@@ -151,9 +170,8 @@ nav.inline li a {
 /*cacher menu*/
 
 ul.deroulant  {
-    margin:0px;
-    padding:0px;
-    z-index: 3;
+    margin:0;
+    padding:0;
 }
 
 ul.deroulant li {
@@ -211,11 +229,14 @@ header form.inline input {
 
 /*accueil*/
 section#accueil {
-    display:block;
     color: #3F4E5F;
-    min-height: 65vh;
+    height:100%;
     text-align: center;
-    margin-top:50px;
+    display: table-cell;
+    vertical-align: middle;
+
+
+
 }
 
 .messageError {
@@ -230,8 +251,10 @@ section#accueil {
 section#accueil > article {
     display: inline-block;
     width:90%;
-    vertical-align: top;
     text-align: justify;
+
+
+
 
 }
 
@@ -239,33 +262,24 @@ section#accueil p {
     padding:20px;
 }
 
-section#accueil #news {
-    border-top: solid #62C0C3 3px;
-    margin-right: 25px
-}
+
 section#accueil h1 {
     color: #3F4E5F;
 }
 section#accueil #apropos {
-    border-top: solid #E53E1A 3px;
-    margin-left:25px;
     padding:20px;
     border:solid transparent 1px;
     box-shadow: 1px 1px 3px black;
-    margin-bottom: 50px;
 }
 section#accueil h2 {
-    padding:0px;
+    padding:0;
     height:30px;
-    margin:0px;
+    margin:0;
 }
 section#accueil p {
-
-    margin:0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0 20px 0;
     text-align: justify;
-    padding:0px;
+    padding:0;
 }
 section#accueil p.last {
 }
@@ -279,11 +293,7 @@ section#accueil #apropos h1 {
     margin-bottom: 30px;
 }
 
-/*section*/
-section {
-    text-align: center;
-    color: rgb(85,85,111);
-}
+
 
 
 
@@ -957,8 +967,9 @@ section#modes .messageSuccess {
 /*Page de contacts*/
 
 section#contact {
-
     line-height: 40px;
+   /* display: table-cell;
+    vertical-align: middle;*/
 }
 section#contact .contact {
     width :500px;
