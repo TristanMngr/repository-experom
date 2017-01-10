@@ -7,7 +7,7 @@ $titre = "vue des capteurs";
 ?>
 
 <section id="maMaison">
-    <h1>Maison : <span id="nomMaison"><?php echo $_SESSION['nomMaison']; ?></span><!--<a href="/espaceClient/ma-maison/consommation"><img src=<?php /*if($_GET['target']=='ma-maison'){echo "/style/images/diagram.png"; } else {echo "vue/style/images/diagram.png"; } */?>></a>--></h1>
+    <h1>Maison <span id="nomMaison"><?php if (isset($_SESSION['nomMaison'])) {echo  $_SESSION['nomMaison'];} ?></span><!--<a href="/espaceClient/ma-maison/consommation"><img src=<?php /*if($_GET['target']=='ma-maison'){echo "/style/images/diagram.png"; } else {echo "vue/style/images/diagram.png"; } */?>></a>--></h1>
     <div id="indexMaison">
         <ul>
             <?php
@@ -39,7 +39,7 @@ $titre = "vue des capteurs";
                             <option value="false">désactiver</option>
                             <?php for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){?>
 
-                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['temperature'][$capteur]); ?></option>
+                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php /*echo displayCapteur($arraySelectCapt['temperature'][$capteur]);*/echo $arraySelectCapt['temperature'][$capteur]; ?></option>
                             <?php }?>
                         </select>
                     </li>
@@ -47,7 +47,7 @@ $titre = "vue des capteurs";
                         <select name="chooseCapteurHum">
                                 <option value="false">désactiver</option>
                             <?php for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){?>
-                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['humidite'][$capteur]); ?></option>
+                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php /*echo displayCapteur($arraySelectCapt['humidite'][$capteur]);*/echo $arraySelectCapt['humidite'][$capteur];?></option>
                             <?php }?>
                         </select>
                     </li>

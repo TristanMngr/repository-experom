@@ -579,6 +579,10 @@ section#conteneur article#inscription {
     vertical-align: center;
     margin : 70px auto 0px auto;
 }
+
+section#conteneur article#inscription #helpMdp {
+    text-align: left;
+}
 section#conteneur article#inscription form {
     margin-left: 20px;
 }

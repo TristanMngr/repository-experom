@@ -15,6 +15,8 @@ $messageE = null;
 $utilisateurSecondaire = False;
 
 
+// TODO trame/titre maison/password gauche
+
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("vue/accueil/accueil.php");
 }

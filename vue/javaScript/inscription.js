@@ -4,25 +4,26 @@ function password(e) {
 
 
 document.getElementById('mdp').addEventListener('input',function(e){
+    var aideElement = document.getElementById('helpMdp');
     var mdp = e.target.value;
 
     if (mdp.length > 1) {
-        var lengthMdp = "faible";
+        var lengthMdp = "Faible";
         var color = "red";
         if (mdp.length > 8) {
-            lengthMdp = "très bien";
+            lengthMdp = "Très bien";
             color = "green";
         }
         else if (mdp.length <= 7 & mdp.length >= 4) {
-            lengthMdp = "bien";
+            lengthMdp = "Bien";
             color = "orange";
         }
         else if (mdp.length < 4) {
-            lengthMdp = "faible";
+            lengthMdp = "Faible";
             color = "red";
         }
     }
-    var aideElement = document.getElementById('helpMdp');
+
     aideElement.textContent = lengthMdp;
     aideElement.style.color = color;
     e.target.style.color = color;
