@@ -54,7 +54,7 @@ $titre = "vue des capteurs";
                     <li>
                         <span><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></li>
                 </ul>
-                <div><input type="submit" value="créer salle" id="creation"></div>
+                <div><input type="submit" value="ajouter salle" id="creation"></div>
             </form>
         </div>
     <?php } ?>
@@ -68,9 +68,12 @@ $titre = "vue des capteurs";
                 <h1 id="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>"><?php echo $tableauDonneesSalles[$salle]['nom'];?></h1>
                 <ul>
                     <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']); ?>
+                    <?php $idMode = getModeSalle($db,$tableauDonneesSalles[$salle]['ID'])?>
                     <?php if($tableauDonneesSalles[$salle]['isTemperature']==true) { ?>
+                        <li><h2 class="temp titre-capteur"><span></span><span class="data">Actuellement</span><span><?= isset($idMode) ? "Consigne":""?></span></li>
                     <li>
-                        <h2 class="temp"><span>Température</span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span>
+                        <!--Refaire cette ligne -->
+                        <h2 class="temp titre-capteur"><span><img src="/vue/style/images/thermometer.png" alt="temperature" class="logo-capteur"></span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span><span><?= isset($idMode) ? $dataCapteur['temp']: ""; ?> </span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchTemp">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -82,7 +85,7 @@ $titre = "vue des capteurs";
                     if ($tableauDonneesSalles[$salle]['isHumidite']==true) {
                     ?>
                     <li>
-                        <h2 class="hum"><span>Humidité</span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span>
+                        <h2 class="hum titre-capteur"><span><img src="/vue/style/images/humidity.png" alt="humidite" class="logo-capteur"><!--Humidité--></span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span><span><?= isset($idMode)? $dataCapteur['hum']: ""; ?> </span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchHum">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -90,20 +93,22 @@ $titre = "vue des capteurs";
                         </h2>
 
                     </li>
+                        <hr class="margin-info">
                     <?php } ?>
                     <?php $idSalle = $tableauDonneesSalles[$salle]['ID'];
                     $nameMode = getModeSalle($db,$idSalle);
 
                     if (isset($nameMode)) { ?>
-                    <li>
+
+                    <li class="configMode">
                         <span><h2 class="modeActif">Mode actif</h2></span><span class="modeActif green"><?php echo $nameMode ;?></span>
                     </li>
                     <?php } else {?>
-                    <li>
+                    <li class="configMode">
                         <span><h2 class="modeActif">Mode actif</h2></span><span class="modeActif red">Aucun</span>
                     </li>
                 <?php } ?>
-                    <li>
+                    <li class="configMode">
                         <span>
                             <h2 class="modeSalle"><span>Choisir un mode</span></h2>
                             <form class="modeSalle" action="/espace-client/ma-maison/activer-mode#<?php echo $tableauDonneesSalles[$salle]['nom']; ?>" method="post">
