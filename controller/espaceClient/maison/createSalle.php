@@ -32,6 +32,8 @@ if ($_POST['chooseCapteurHum']!= 'false') {
     $isCapteurHum = true;
 }
 if ($isCapteurTemp == true | $isCapteurHum == true){
+
+    // on verifie que le nom n'existe pas déja
     if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
         $tableau = array(
             'typeDeRequete' => 'select',
@@ -42,7 +44,7 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
             ));
         if (requeteDansTable($db, $tableau) == array()) {
 
-            // insert dans la table des données, dont IDmaison.
+            // si n'existe pas, on insert dans la table des salles les valeurs de isTemperature/isHumidite, dont IDmaison.
             $tableau = array(
                 'typeDeRequete' => 'insert',
                 'table' => 'salles',
@@ -53,6 +55,8 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
                     'IDmaison' => $_SESSION['IDmaison']));
             requeteDansTable($db, $tableau);
 
+
+            // on récupère l'id de la salle
             $idSalle = getLastID($db);
 
 
@@ -64,6 +68,7 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
             $idCapteurHum = null;
             // on boucle sur les capteurs de la liste déroulante, le rang 0 correspond au type.
             foreach($arrayTypeId as $item => $value) {
+
 
                     $tableau = array(
                         'typeDeRequete' => 'insert',
@@ -83,18 +88,43 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
 
             }
 
+
+
             // a viré:
 
+
+            // pour chaque cas ajouter une condition sur le type de capteur.
+
+            $arrayTramTemp = array();
+            $arrayTramHum = array();
             $arrayConsigne = array();
             $arrayRequestData = arrayRequestData($arrayTrame);
-            for ($tram = 0; $tram < count($arrayRequestData); $tram ++) {
-                foreach($arrayTypeId as $item => $value) {
-                    if ($arrayRequestData[$tram]['idCapteur'] == $arrayTypeId[$item][1]) {
+            foreach ($arrayRequestData as $array => $value) {
+                if ($arrayRequestData[$array]['idCapteur'] == $arrayTypeId[$item][1]) { // verifie que les deux id correspondent
+                    // pour le capteur de température
+                    if ($arrayRequestData[$array]['typeOfCapteur'] == 'temperature') {
+                        foreach($arrayTypeId as $item => $value) {
+                            if ($arrayTypeId[$item][0] == 'temperature') {
 
-                        $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$tram]['valueOfCapteur'];
-                        $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1];
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$array]['valueOfCapteur']; // ajout de la valeur du capteur
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1]; // ajout de l'id du capteur (tram)
+                            }
+                        }
+
                     }
+                    if ($arrayRequestCapteur[$array]['typeOfCapteur'] == 'humidite') {
+                        // pour le capteur d'humidite
+                        foreach($arrayTypeId as $item => $value) {
+
+                            if ($arrayTypeId[$item][0] == 'humidite') {
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$array]['valueOfCapteur']; // ajout de la valeur du capteur
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1]; // ajout de l'id du capteur (tram)
+                            }
+                        }
+                    }
+
                 }
+
             }
 
 

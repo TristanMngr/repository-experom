@@ -48,6 +48,7 @@ $titre = "créer un modes";
                 <div id="submitMode">
                     <input type="input" name="nom" id="inputNomMode" placeholder="nom du mode" value="<?php if($modeName!=null){ echo $modeName;} ?>">
                         <input type="submit" id="submitNomMode" value="<?php if($editMode==true){echo "modifier";} else {echo "Créer";} ?>">
+                        <input type="hidden" name="editMode" value="<?= isset($modeName)? $modeName: ""; ?>"/>
                 </div>
             </div>
             </form>

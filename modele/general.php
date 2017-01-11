@@ -54,9 +54,10 @@ function requeteDansTable($db,$tableau){
         $tableau = implodeChampsValues($tableau);
         $query = 'DELETE FROM ' . $tableau['table'] . ' WHERE ' . $tableau['champsValues'];
     }
-        $param = $tableau['param'];
-        $requete = $db->prepare($query);
-        $requete->execute($param);
+
+    $param = $tableau['param'];
+    $requete = $db->prepare($query);
+    $requete->execute($param);
     $tableauDonnees = array();
     if ($tableau['typeDeRequete'] == "select") {
         while ($donnees = $requete -> fetch()) {
