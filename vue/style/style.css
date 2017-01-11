@@ -300,6 +300,8 @@ section#accueil #apropos h1 {
 /* config maMaison /*
 
  */
+
+
 section#maMaison {
     color:rgb(63,78,95);  /*a changer*/
     margin:0px;
@@ -462,6 +464,19 @@ div#contenuAllMaison {
     color: black;
     background: ghostwhite;
 }
+#creationSalle li {
+    height:30px;
+    line-height: 30px;
+}
+#creationSalle li select {
+    height:20px;
+}
+#creationSalle #nomSalle {
+    margin:5px;
+    height:20px;
+    font-size: 1em;
+    width:140px;
+}
 
 div#contenuMaison .salle {
     border:solid transparent 1px;
@@ -471,19 +486,83 @@ div#contenuMaison .salle {
     text-align: left;
     position: relative;
 }
+.salle h2.titre-capteur {
+    height:60px;
+    line-height: 60px;
+    padding-left:20px;
+
+}
+
+.salle h2.titre-capteur span {
+    text-align: center;
+    height:60px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+.salle .logo-capteur {
+    width:60px;
+    height:60px;
+}
+img[alt=temperature] {
+    padding-right: 15px;
+}
+
+
 div#contenuMaison .salle >h1 {
     text-align: center;
 }
 
 .salle ul {
     list-style: none;
+    margin:0;
+    padding:0;
 }
 .salle li {
     font-weight:normal;
 }
+.salle li.configMode {
+    margin-left:40px;
+    vertical-align: middle;
+}
+
+
+
+
+
+.salle li.configMode select {
+    height:20px;
+    line-height: 20px;
+    width: 150px;
+    vertical-align: middle;
+    font-size:1em;
+    padding-left:10px;
+}
+.salle li.configMode input {
+    height:30px;
+    width: 150px;
+    font-size: 1em;
+    vertical-align: middle;
+    margin:0;
+    padding:0;
+}
+.salle li.configMode input:hover {
+    background: #228B52;
+    padding:0;
+    margin:0;
+    border-radius: 5px;
+    color: white;
+}
+
+.salle hr.margin-info {
+    margin-top:50px;
+    width:90%;
+}
+
 .salle h2 {
     font-weight: normal;
     font-size:1.3em;
+
+
 }
 .salle h2 span {
     display: inline-block;
@@ -503,6 +582,7 @@ div#contenuMaison .salle >h1 {
     display: inline-block;
     width:200px;
     font-size:1.3em;
+    padding-left:5px;
 }
 .salle .red {
     color: #FF0000;
@@ -792,10 +872,7 @@ div#conteneurModes {
     margin-top:0px;
     height:530px;
 }
-div#conteneurModes h2 {
-    text-align:left;
-    padding-left:50px;
-}
+
 
 div#conteneurModes li {
     text-align: left;
@@ -813,9 +890,8 @@ div#conteneurModes li {
     width:50px;
 
 }
-#configMode .placementConf {
-    margin-left:60px;
-}
+
+
 
 
 
@@ -825,6 +901,7 @@ div#placementConfigMode {
     display:inline-block;
     width:55%;
     min-height:600px;
+
 }
 div#placementChoixMode {
     margin-top: 20px;
@@ -851,7 +928,30 @@ div#choixMode {
 }
 div#creerMode {
     min-height:400px;
+}
 
+
+#configMode h2 {
+    display: inline-block;
+    padding:0;
+    margin:0;
+    height: 130px;;
+    line-height:130px ;
+    width:80px;
+
+}
+#configMode .logo-capteur {
+    width:60px;
+    height:60px;
+    vertical-align: middle;
+}
+
+#configMode img[alt=temperature] {
+    padding-right: 15px;
+}
+div.placementConf {
+    text-align: left;
+    padding-left:50px;
 }
 
 
@@ -885,6 +985,8 @@ div#creerMode {
 }
 
 
+
+
 input#submitCreerMode {
     display: inline-block;
     margin:50px auto 10px auto;
@@ -916,7 +1018,7 @@ li.template {
     border-radius : 5px;
     height: 130px;
     width: 90%;
-    padding-left:20px;
+
 }
 ul#configMode li.first {
     margin-bottom: 20px;

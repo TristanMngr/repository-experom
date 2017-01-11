@@ -3,7 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/vue/style/style.css" />
-    <link rel="stylesheet" type="text/css" href="/vue/style/font/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="/vue/style/font_general/flaticon.css">
+
 
     <title>
         <?php echo $titre ?>
