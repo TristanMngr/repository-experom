@@ -135,14 +135,11 @@ if ($_GET['target2'] == 'modifier-controller') {
                     }
                 }
             }
+            //TODO message erreur faux: afficher la validation si checked == true and validé
+
             if (!$errorHum & !$errorTemp) {
-                $messageSuccess = $_POST['nom']. " à été édité avec succès";
+                $messageSuccess = $_POST['nom']. " a été édité avec succès";
             }
-
-
-
-
-
 
         }
         else {

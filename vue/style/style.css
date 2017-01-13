@@ -820,7 +820,7 @@ section #modifier > form > div {
 div#modifier input {
     display:inline-block;
 }
-div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp {
+div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp, div#modifier #ancienMdp {
     margin-left: 20px;
     width:150px;
 }

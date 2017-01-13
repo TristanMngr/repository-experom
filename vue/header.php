@@ -21,7 +21,8 @@ ob_start();
                     <?php } ?>
                 </ul>
             </li>
-            <li class="nonderoulant"><a href="/contact">contact</a></li>
+            <!--<li class ="nonderoulant"><a href="/faq">Faq</a></li>-->
+            <li class="nonderoulant"><a href="/contact">Contact</a></li>
         </ul>
     </nav>
     <?php if (isset($messageGeneral)) { ?>

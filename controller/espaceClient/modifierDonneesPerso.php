@@ -136,14 +136,23 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
         }
     }
 
-    if (isset($_POST['modifierMdp']) && !empty($_POST['modifierMdp'])) {
-        if (isset($_POST['verifMdp']) & !empty($_POST['verifMdp'])) {
-            if ($_POST['verifMdp'] == $_POST['modifierMdp']) {
-                $tableauUtilisateurs['mdp'] = "cocos_" . md5($_POST['modifierMdp']);
-                $_SESSION["mdp"] = $_POST['modifierMdp'];
+    if (isset($_POST['modifierMdp']) & !empty($_POST['modifierMdp']) ) {
+        if (isset($_POST['verifMdp']) & !empty($_POST['verifMdp']) ) {
+            if (isset($_POST['ancienMdp']) & !empty($_POST['ancienMdp'])) {
+                if ($_POST['verifMdp'] == $_POST['modifierMdp']) {
+                    if ("cocos_" . md5($_POST['ancienMdp']) == $_SESSION['mdp']) {
+
+                        $tableauUtilisateurs['mdp'] = "cocos_" . md5($_POST['modifierMdp']);
+                        $_SESSION["mdp"] = $_POST['modifierMdp'];
+                    } else {
+                        $messageE = "Attention vous devez entrez l'ancien mdp";
+                    }
+                } else {
+                    $messageE = "Vos mots de passe ne sont pas identiques";
+                }
             }
             else {
-                $messageE = "Vos mots de passe ne sont pas identiques";
+                $messageE = "vous devez entrer l'ancien mot de passe";
             }
         }
         else {

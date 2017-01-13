@@ -51,6 +51,8 @@ else if ($_GET['cible']== 'accueil') {
 else if ($_GET['cible'] == 'contact') {
     include("vue/contact/contact.php");
 }
+
+
 /*deconnexion*/
 
 
