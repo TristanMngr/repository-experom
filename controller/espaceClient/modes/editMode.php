@@ -4,6 +4,9 @@
 
 $modeName = null;
 $modeID = null;
+$editionMode = true;
+$errorTemp  = true;
+$errorHum = true;
 
 
 if ($_GET['target2'] == 'modifier-controller') {
@@ -46,6 +49,7 @@ if ($_GET['target2'] == 'modifier-controller') {
                 foreach ($arrayDataTemp as $key => $value) {
                     if (isIssetVariable($arrayDataTemp)) {
                         if (isNoEmptyVariable($arrayDataTemp)) {
+                            /*if (isNumber($arrayDataTemp)) {*/
                             $tableau = array(
                                 'typeDeRequete' => 'update',
                                 'table' => 'modes_config',
@@ -58,12 +62,16 @@ if ($_GET['target2'] == 'modifier-controller') {
                                     'champ2' => $modeTempID
                                 ));
                             updateTableMode($db, $tableau);
-
-                        } else {
+                            $errorTemp = false;
+                        }
+                            /* else {
+                               $messageError = "Vous devez entrer des nombres.";
+                           }*/
+                         else {
                             $messageError = "Tout les champs ne sont pas remplis ";
                         }
                     } else {
-                        $messageError = "Les variable n'existent pas";
+                        $messageError = "Les variables n'existent pas";
                     }
                 }
             }
@@ -72,6 +80,7 @@ if ($_GET['target2'] == 'modifier-controller') {
                 foreach ($arrayDataHum as $key => $value) {
                     if (isIssetVariable($arrayDataHum)) {
                         if (isNoEmptyVariable($arrayDataHum)) {
+                            /*if (isNumber($arrayDataHum)) {*/
 
                             $tableau = array('typeDeRequete' => 'update',
                                 'table' => 'modes_config',
@@ -84,11 +93,16 @@ if ($_GET['target2'] == 'modifier-controller') {
                                     'champ2' => $modeHumID
                                 ));
                             updateTableMode($db, $tableau);
-                        } else {
+                            $errorHum = false;
+                            }
+                           /* else {
+                                $messageError = "Vous devez entrer des nombres.";
+                            }*/
+                         else {
                             $messageError = "Tout les champs ne sont pas remplis ";
                         }
                     } else {
-                        $messageError = "Les variable n'existent pas";
+                        $messageError = "Les variables n'existent pas";
                     }
                 }
             }
@@ -121,6 +135,10 @@ if ($_GET['target2'] == 'modifier-controller') {
                     }
                 }
             }
+            if (!$errorHum & !$errorTemp) {
+                $messageSuccess = $_POST['nom']. " à été édité avec succès";
+            }
+
 
 
 

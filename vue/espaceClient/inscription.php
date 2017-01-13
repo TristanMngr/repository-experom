@@ -17,6 +17,8 @@ $titre = "inscription";
             <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div><div id="helpMdp"></div>
             <div><label for="rmdp">Vérification du mot de passe</label><input type="password" name="rmdp"
                                                                             id="rmdp"></div>
+            <?php if ($utilisateurSecondaire == False){ ?><div><label for="clef">clef d'identification</label><input type="clef" name="clef"
+                                                                              id="clef"></div><?php }?>
 
             <div id="envoyer"><input type="submit" class="submit" name="submit" value="Envoyer"></div>
         </form>

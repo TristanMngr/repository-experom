@@ -67,13 +67,18 @@ $titre = "vue des capteurs";
                 </form>
                 <h1 id="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>"><?php echo $tableauDonneesSalles[$salle]['nom'];?></h1>
                 <ul>
-                    <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']); ?>
-                    <?php $idMode = getModeSalle($db,$tableauDonneesSalles[$salle]['ID'])?>
+                    <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']);
+                          $nomDuMode = getModeSalle($db,$tableauDonneesSalles[$salle]['ID']);
+                          /*$idMode = null;*/
+
+                          /*if (getIdMode($db,$nomDuMode)!=false) {*/
+                            $idMode = getIdMode($db,$nomDuMode);
+                            $arrayTypeValueMode = getTypeValueMode($db,$idMode);  ?>
                     <?php if($tableauDonneesSalles[$salle]['isTemperature']==true) { ?>
-                        <li><h2 class="temp titre-capteur"><span></span><span class="data">Actuellement</span><span><?= isset($idMode) ? "Consigne":""?></span></li>
+                        <li><h2 class="temp titre-capteur"><span></span><span class="data">Actuellement</span><span><?php if ($arrayTypeValueMode != false) echo  "Mode"; else ""?></span></li>
                     <li>
                         <!--Refaire cette ligne -->
-                        <h2 class="temp titre-capteur"><span><img src="/vue/style/images/thermometer.png" alt="temperature" class="logo-capteur"></span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span><span><?= isset($idMode) ? $dataCapteur['temp']: ""; ?> </span>
+                        <h2 class="temp titre-capteur"><span><img src="/vue/style/images/thermometer.png" alt="temperature" class="logo-capteur"></span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span><span><?= isset($arrayTypeValueMode['temperature']) ? $arrayTypeValueMode['temperature']: ""; ?> </span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchTemp">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -85,7 +90,7 @@ $titre = "vue des capteurs";
                     if ($tableauDonneesSalles[$salle]['isHumidite']==true) {
                     ?>
                     <li>
-                        <h2 class="hum titre-capteur"><span><img src="/vue/style/images/humidity.png" alt="humidite" class="logo-capteur"><!--Humidité--></span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span><span><?= isset($idMode)? $dataCapteur['hum']: ""; ?> </span>
+                        <h2 class="hum titre-capteur"><span><img src="/vue/style/images/humidity.png" alt="humidite" class="logo-capteur"><!--Humidité--></span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span><span><?= isset($arrayTypeValueMode['humidite'])? $arrayTypeValueMode['humidite']: ""; ?> </span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchHum">
                                 <i class="flaticon-power" aria-hidden="true"></i>

@@ -20,10 +20,13 @@ function isNoEmptyVariable($tableauPost) {
     $tableau = array();
     foreach ($tableauPost as $key => $value) {
         if (!empty($tableauPost[$key])) {
-            $tableau[$key] = $value;
+            $tableau[] = $value;
         }
 
     }
+   /* displayArray('arrayInitial',$tableauPost);
+    displayArray('arrayFinal',$tableau);*/
+
     if (count($tableauPost) != count($tableau)) {
         return false;
     }
@@ -39,10 +42,9 @@ function isNumber($tableauPost) {
     $tableau = array();
     foreach ($tableauPost as $key => $value) {
         if (is_numeric($value)) { //is_numeric
-            $tableau[$key] = $value;
+            $tableau[] = $value;
         }
     }
-    displayArray("isNumber",$tableau);
     if (count($tableauPost) != count($tableau)) {
         return false;
     }

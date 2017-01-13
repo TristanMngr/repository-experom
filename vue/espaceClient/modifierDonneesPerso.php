@@ -38,7 +38,9 @@ $titre = "donnée perso";
                                                                              id="verifMdp"></div>
 
 
-                    <input type="submit" value="Valider" class="envoyer">
+                    <div id="envoyer-modifier">
+                        <input type="submit" value="Valider" class="envoyer">
+                    </div>
 
 
                 </form>

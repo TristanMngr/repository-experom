@@ -64,6 +64,29 @@ function getModeSalle($db,$idSalle)
         return $nomMode;
     }
 }
+function getIdMode($db,$nomMode) {
+    $idMode = false;
+    $tableau = array('typeDeRequete'=>'select', 'table'=>'modes', 'param'=>array('nom'=>$nomMode));
+    $arrayMode = requeteDansTable($db,$tableau);
+    if (isset($arrayMode[0]['ID'])) {
+        $idMode = $arrayMode[0]['ID'];
+    }
+
+    return $idMode;
+}
+
+// retourne un tableau type=>valeur du mode
+function getTypeValueMode($db,$idMode) {
+    $arrayTypeValue = array();
+    $tableau = array('typeDeRequete'=>'select', 'table'=>'modes_config','param'=>array('ID_mode'=>$idMode));
+    $arrayDataMode = requeteDansTable($db,$tableau);
+
+    foreach($arrayDataMode as $key=>$value) {
+        $arrayTypeValue[$value['type']] = $value['consigne'];
+    }
+    return $arrayTypeValue;
+
+}
 
 
 // fonction qui retourne la valeur du type demandé.

@@ -201,7 +201,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     $messageE .= " Ce numéro est déja utilisé";
                 }
             } else {
-                $messageE = "Attention ce numéro n'es pas valide";
+                $messageE = "Attention ce numéro n'est pas valide";
             }
         }
     }

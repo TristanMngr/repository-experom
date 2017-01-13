@@ -31,17 +31,19 @@ a:visited {
     text-decoration:none;
 }
 
+
+
 /*footer*/
 footer {
-    height :100px;
+    height :50px;
     width:100%;
-    line-height: 100px;
+    line-height: 50px;
     background: #42444E;
     color: #DBDDDB;
 }
 ul#footer {
-    line-height: 100px;
-    height:100px;
+    line-height: 50px;
+    height:50px;
     width:100%;
     vertical-align: middle;
     display: inline-block;
@@ -74,7 +76,13 @@ header > .inline {
 header a.logo {
     width:24%;
     color:#DBDDDB;
-    height:100%;
+    line-height: 100px;
+    height: 100px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+    /*height:100px;
+    line-height: 100px;*/
 }
 header h1.logo {
 
@@ -83,9 +91,12 @@ header h1.logo {
     margin:0;
     text-align: center;
 }
-.logo > span {
+.logo span {
     display: inline-block;
     width:250px;
+    line-height: 40px;
+    margin:0;
+    padding:0;
     border-bottom: 3px solid #DBDDDB;
 }
 
@@ -98,16 +109,19 @@ section {
 /*menu*/
 nav.inline {
     width:49%;
-    height:70px;
+    height:100px;
     line-height:70px ;
     padding:0;
     margin: 0 0 0 0;
-    vertical-align: middle;
+
 
 }
 
 nav.inline  ul#menuAccueil {
     list-style: none;
+    vertical-align: middle;
+    height:100px;
+    line-height: 100px;
     margin:0 auto 0 auto;
     padding:0;
 }
@@ -550,6 +564,7 @@ div#contenuMaison .salle >h1 {
     padding:0;
     margin:0;
     border-radius: 5px;
+    border: 1px;
     color: white;
 }
 
@@ -638,10 +653,6 @@ input:checked + .flaticon-power {
 
 /*page d'inscription*/
 
-section#conteneur {
-    height: 450px;
-    color: #0F100F;
-}
 
 section#conteneur .submit {
     margin:30px auto 10px auto;
@@ -816,17 +827,56 @@ div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdr
 #profil ul {
     list-style: none;
 }
+
 div#modifier label {
     display:inline-block;
     width:200px;
 }
+
+div#modifier div#envoyer-modifier {
+    display: inline-block;
+    width:500px;
+    height:30px;
+
+    line-height:50px;
+    vertical-align: middle;
+    margin:20px 0 20px 0;
+    text-align: right;
+    position: relative;
+}
 section div#modifier input.envoyer {
     display:block;
     width :150px;
-    vertical-align: middle;
-    line-height: 30px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+
+    border-radius: 5px;
     height:30px;
-    margin:10px 10px 10px 50px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+    position: absolute;
+    right:80px;
+}
+section div#modifier input.envoyer:hover {
+    display:block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+
+    border-radius: 5px;
+    height:30px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+    position: absolute;
+    right:80px;
+    background:cornflowerblue ;
+    color: white;
 }
 
 
@@ -852,13 +902,33 @@ section#modifierDonnerPersonnel div#modifier > div.link:hover {
     background: white;
 }
 
-
-div#maFamille .supprimerCompte {
-    display:inline-block;
+div#maFamille li {
+    display: inline-block;
+    width:100%;
 }
+div#maFamille .inputRemove {
+    display:inline-block;
+    width:80px;
+    height:30px;
+
+
+}
+div#maFamille .inputRemove:hover {
+    background: red;
+    display: inline-block;
+    width:80px;
+    color: white;
+    border-radius: 5px;
+    border:1px;
+}
+
+
+
 div#maFamille div.supprimerCompte {
+    display: inline-block;
     width:70%;
 }
+
 
 
 
@@ -964,9 +1034,10 @@ div.placementConf {
     width:100%;
 }
 #choixMode ul li div.right {
-    width:40%;
+    width:45%;
     display: inline-block;
     text-align: right;
+    padding-right: 10px;
 
 }
 #choixMode ul li.submit {
@@ -979,9 +1050,26 @@ div.placementConf {
 #choixMode .inputEdit, #choixMode .inputRemove {
     display: inline-block;
     height:30px;
+    width:80px;
 }
 #choixMode input.disabled {
     cursor: default;
+}
+#choixMode .inputEdit:hover {
+    background: cornflowerblue;
+    display: inline-block;
+    width:80px;
+    color: white;
+    border-radius: 5px;
+    border:1px;
+}
+#choixMode .not-disabled:hover {
+    background: red;
+    display: inline-block;
+    width:80px;
+    color: white;
+    border-radius: 5px;
+    border:1px;
 }
 
 
@@ -1027,7 +1115,9 @@ ul#configMode li.first {
 #submitMode {
     margin:30px 70px 30px 50px;
     text-align: right;
+    padding:0;
 }
+
 #submitMode #inputNomMode {
     font-size : 1.2em;
     width:150px;
@@ -1061,10 +1151,13 @@ ul#configMode li.first {
 section#modes .messageError {
     margin-top: 15px;
     color: #CC3366;
+    text-align: center;
 }
 section#modes .messageSuccess {
     margin-top: 15px;
     color: green;
+    text-align: center;
+
 }
 
 
