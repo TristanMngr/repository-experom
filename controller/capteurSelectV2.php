@@ -1,10 +1,4 @@
 <?php
-/**
- * charge tout les capteurs appartenant au groupe .
- */
-/*include('controller/debug.php');*/
-
-
 
 
 $arrayTrame = ['100011301002A01251B','100011401004001251B','100011302002A01251B','100011402003101251B','100011303001801251B','100011403001C01251B',
@@ -50,7 +44,7 @@ function typeCapteur($value) {
 
 function arrayRequestData($arrayTrame)
 {
-    // code groupe de l'eleve.
+// code groupe de l'eleve.
     $codeGroupe = "0001";
 
     $arrayTraduction = array();
@@ -67,7 +61,7 @@ function arrayRequestData($arrayTrame)
             $sumCharac = substr($arrayTrame[$trame], 17, 2);
 
 
-            // création d'un nouveau tableau avec les valeurs traduite.
+// création d'un nouveau tableau avec les valeurs traduite.
 
             if (hexdec($typeOfTrame) == 1) {
                 if (hexdec($typeOfRequest) == 1) {
@@ -109,8 +103,6 @@ function getNameTrame($arrayTraduction) {
 }
 
 $arraySelectCapt = getNameTrame($arrayRequestCapteur);
-
-
 
 
 

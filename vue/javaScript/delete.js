@@ -10,7 +10,6 @@ function deleteConf(name,action) {
         newName = name.replace(/ /g,"+");
 
 
-        console.log(newName);
         if (action == "maison") {
             document.location.href = "/espace-client/ma-maison/supprimer/"+newName;
         }

@@ -20,7 +20,7 @@ if ($_GET['target2'] == 'modifier-controller') {
     $modeTempID = null;
     $modeHumID = null;
 
-    // récupération de l'id du capteur par type.
+    // récupération de l'id du capteurs par type.
     foreach ($dataMode as $capteur => $value) {
         if ($value['type'] == 'temperature') {
             $modeTempID = $value['id'];

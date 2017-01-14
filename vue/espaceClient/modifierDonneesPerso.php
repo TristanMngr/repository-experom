@@ -28,7 +28,7 @@ $titre = "donnée perso";
                                                                                      name="modifierNumero"
                                                                                      id="modifierNumero"
                         value="<?php echo $_SESSION['numero'] ?>"></div>
-                    <hr>
+                    <hr class="separator">
                     <div><label for="ancienMdp">Ancien mot de passe</label><input type="password"
                                                                              name="ancienMdp"
                                                                              id="ancienMdp"></div>

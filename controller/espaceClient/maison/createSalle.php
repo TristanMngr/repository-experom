@@ -93,7 +93,7 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
             // a viré:
 
 
-            // pour chaque cas ajouter une condition sur le type de capteur.
+            // pour chaque cas ajouter une condition sur le type de capteurs.
 
             $arrayTramTemp = array();
             $arrayTramHum = array();
@@ -101,24 +101,24 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
             $arrayRequestData = arrayRequestData($arrayTrame);
             foreach ($arrayRequestData as $array => $value) {
                 if ($arrayRequestData[$array]['idCapteur'] == $arrayTypeId[$item][1]) { // verifie que les deux id correspondent
-                    // pour le capteur de température
+                    // pour le capteurs de température
                     if ($arrayRequestData[$array]['typeOfCapteur'] == 'temperature') {
                         foreach($arrayTypeId as $item => $value) {
                             if ($arrayTypeId[$item][0] == 'temperature') {
 
-                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$array]['valueOfCapteur']; // ajout de la valeur du capteur
-                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1]; // ajout de l'id du capteur (tram)
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$array]['valueOfCapteur']; // ajout de la valeur du capteurs
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1]; // ajout de l'id du capteurs (tram)
                             }
                         }
 
                     }
                     if ($arrayRequestCapteur[$array]['typeOfCapteur'] == 'humidite') {
-                        // pour le capteur d'humidite
+                        // pour le capteurs d'humidite
                         foreach($arrayTypeId as $item => $value) {
 
                             if ($arrayTypeId[$item][0] == 'humidite') {
-                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$array]['valueOfCapteur']; // ajout de la valeur du capteur
-                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1]; // ajout de l'id du capteur (tram)
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayRequestData[$array]['valueOfCapteur']; // ajout de la valeur du capteurs
+                                $arrayConsigne[$arrayTypeId[$item][0]][] = $arrayTypeId[$item][1]; // ajout de l'id du capteurs (tram)
                             }
                         }
                     }
@@ -169,7 +169,7 @@ if ($isCapteurTemp == true | $isCapteurHum == true){
     }
 }
 else {
-    $messageError = "Vous devez avoir au moins un capteur dans une pièce.";
+    $messageError = "Vous devez avoir au moins un capteurs dans une pièce.";
 }
 
 

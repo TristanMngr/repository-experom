@@ -1,11 +1,6 @@
-function password(e) {
-    console.log(e.target.value)
-}
-
-
-document.getElementById('mdp').addEventListener('input',function(e){
+function password(element) {
     var aideElement = document.getElementById('helpMdp');
-    var mdp = e.target.value;
+    var mdp = element.value;
 
     if (mdp.length > 1) {
         var lengthMdp = "Faible";
@@ -26,5 +21,8 @@ document.getElementById('mdp').addEventListener('input',function(e){
 
     aideElement.textContent = lengthMdp;
     aideElement.style.color = color;
-    e.target.style.color = color;
-});
+    element.style.color = color;
+
+}
+
+

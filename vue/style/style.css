@@ -282,7 +282,7 @@ section#accueil h1 {
 }
 section#accueil #apropos {
     padding:20px;
-    border:solid transparent 1px;
+    :sborderolid transparent 1px;
     box-shadow: 1px 1px 3px black;
 }
 section#accueil h2 {
@@ -823,6 +823,15 @@ div#modifier input {
 div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp, div#modifier #ancienMdp {
     margin-left: 20px;
     width:150px;
+}
+
+div#modifier #verifMdp {
+    vertical-align: top;
+    margin-top : 5px;
+}
+
+div#monCompte .separator {
+    margin: 20px;
 }
 #profil ul {
     list-style: none;
@@ -1371,3 +1380,45 @@ table#consommation td,th
 {
     border: 1px solid black;
 }
+
+/*capteurs*/
+
+
+section#capteur div#addCapteur, section#capteur div#listCapteur {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+}
+
+div#addCapteur > div,div#listCapteur > div {
+    display: block;
+    border:solid transparent 1px;
+    border-radius :5px;
+    box-shadow: 1px 1px 3px black;
+    width:500px;
+    margin:auto;
+    min-height: 300px;
+
+}
+div#addCapteur h2 {
+    margin-bottom: 50px;
+}
+
+div#addCapteur label {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+}
+div#addCapteur .submit {
+    display: block;
+    margin:50px auto 0 auto;
+}
+
+
+
+
+
+
+
+
+

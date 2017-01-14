@@ -16,6 +16,7 @@ ob_start();
                         <li><a href="/espace-client/ma-maison">Maison</a></li>
                         <li><a href="/espace-client/modes">Modes</a></li>
                         <?php if ($_SESSION["role"] == "principal"){?>
+                            <li><a href="/espace-client/capteurs">Capteurs</a></li>
                             <li id="menuLast"><a href="/espace-client/modifier-donnees-perso">Comptes</a></li>
                         <?php }?>
                     <?php } ?>

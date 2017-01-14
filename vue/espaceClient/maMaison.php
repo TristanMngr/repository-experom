@@ -39,7 +39,7 @@ $titre = "vue des capteurs";
                             <option value="false">désactiver</option>
                             <?php for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){?>
 
-                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['temperature'][$capteur]);/*echo $arraySelectCapt['temperature'][$capteur]; */?></option>
+                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['temperature'][$capteur]);/*echo $arraySelectCapt['temperature'][$capteurs]; */?></option>
                             <?php }?>
                         </select>
                     </li>
@@ -47,7 +47,7 @@ $titre = "vue des capteurs";
                         <select name="chooseCapteurHum">
                                 <option value="false">désactiver</option>
                             <?php for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){?>
-                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['humidite'][$capteur]);/*echo $arraySelectCapt['humidite'][$capteur];*/?></option>
+                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['humidite'][$capteur]);/*echo $arraySelectCapt['humidite'][$capteurs];*/?></option>
                             <?php }?>
                         </select>
                     </li>

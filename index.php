@@ -78,6 +78,14 @@ else if ($_GET['cible'] == 'espace-client') {
     }
 
 
+    /** ajouter un capteurs */
+
+
+    else if ($_GET['target'] == 'capteurs') {
+        include('controller/espaceClient/capteurs/index.php');
+    }
+
+
 
     /*donner perso*/
 
