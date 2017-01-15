@@ -70,6 +70,10 @@ function requeteDansTable($db,$tableau){
 
 
 
+
+
+
+
 // récupère la derniere id de la dernière requête insert.
 
 function getLastID($db){

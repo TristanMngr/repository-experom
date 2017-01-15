@@ -31,28 +31,43 @@ $titre = "vue des capteurs";
             <a href="/espace-client/ma-maison"><i class="flaticon-cancel-music" aria-hidden="true"></i></a>
             <h1>Création d'une salle</h1>
 
-            <form action="/espace-client/ma-maison/ajouter" method="post">
+            <form action="/espace-client/ma-maison/ajouter" method="post" onclick="sendArrayCapteur()"> <!--envoie la tableau des serialKey-->
 
-                <ul>
-                    <li><span>Température</span>
+                <ul id="parentElement">
+                    <?php /** ancienne version  */?>
+                    <!--<li><span>Température</span>
                         <select name="chooseCapteurTemp">
                             <option value="false">désactiver</option>
-                            <?php for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){?>
+                            <?php /*for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){*/?>
 
-                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['temperature'][$capteur]);/*echo $arraySelectCapt['temperature'][$capteurs]; */?></option>
-                            <?php }?>
+                             <option value="<?php /*echo $arraySelectCapt['temperature'][$capteur];*/?>">/*echo displayCapteur($arraySelectCapt['temperature'][$capteur]);/*echo $arraySelectCapt['temperature'][$capteurs]; */*/?></option>
+                            <?php /*}*/?>
                         </select>
                     </li>
                     <li><span>Humidité</span>
                         <select name="chooseCapteurHum">
                                 <option value="false">désactiver</option>
-                            <?php for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){?>
-                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php echo displayCapteur($arraySelectCapt['humidite'][$capteur]);/*echo $arraySelectCapt['humidite'][$capteurs];*/?></option>
-                            <?php }?>
+                            <?php /*for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){*/?>
+                                <option value="<?php /*echo $arraySelectCapt['humidite'][$capteur];*/?>">/*echo displayCapteur($arraySelectCapt['humidite'][$capteur]);/*echo $arraySelectCapt['humidite'][$capteurs];*/*/?></option>
+                            <?php /*}*/?>
                         </select>
+                    </li>-->
+
+                    <?php /** Version Ajax */ ?>
+                    <li id="selectType">
+                        <span>choisir un capteur</span>
+                        <select name="typeOfCapteur" id="select" onchange="selectCapteur(this.value)">
+                            <option value="rien">Aucun</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="humidite">Humidite</option>
+                        </select>
+
                     </li>
-                    <li>
-                        <span><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></li>
+
+                    <div id="displayCapteur"></div>
+
+                    <input type="hidden" id="serialKey" name="serialKey"> <!--javascript insert le tableau en value-->
+                    <div id="inputSalleName"><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></div>
                 </ul>
                 <div><input type="submit" value="ajouter salle" id="creation"></div>
             </form>

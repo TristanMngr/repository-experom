@@ -1,26 +1,46 @@
 <?php
 
 
-$arrayTrame = ['100011301002A01251B','100011401004001251B','100011302002A01251B','100011402003101251B','100011303001801251B','100011403001C01251B',
+$arrayTrame = ['100011302002A01251B','100011302002B01251B','100011301002A01251B','100011401004001251B','100011302002A01251B','100011402003101251B','100011303001801251B','100011403001C01251B',
     '100011304001501251B','100011404003001251B','100011305001D01251B','100011405002B01251B','100011306002C01251B','100011406002F01251B','100011307001E01251B',
     '100011307002A01251B'];
 
 /*renvoie la trame suivant la serial key*/
 
 
-function getTrame($arrayTrame,$serialKey) {
+function getTrameSerialKey($arrayTrame,$serialKey) {
+    $arrayVide = array();
     for ($trame = 0; $trame < count($arrayTrame); $trame++) {
         $typeOfCapteur = substr($arrayTrame[$trame], 6, 1);
         $idCapteur = substr($arrayTrame[$trame], 7, 2);
         $number = $typeOfCapteur.$idCapteur;
-        if ($number == $serialKey) {
-            return $arrayTrame[$trame];
-        }
-        else {
-            return false;
+        if ($number == (string)$serialKey) {
+            $arrayVide[] = $arrayTrame[$trame];
         }
     }
+    if (isset($arrayVide[0])) {
+        return $arrayVide[0];
+    }
+    else {
+        return false;
+    }
 }
+function getAllTrameWithSerialKey($arrayTrame,$serialKey) {
+    $arrayWithAllTrame = array();
+    for ($trame = 0; $trame < count($arrayTrame); $trame++) {
+        $typeOfCapteur = substr($arrayTrame[$trame], 6, 1);
+        $idCapteur = substr($arrayTrame[$trame], 7, 2);
+        $number = $typeOfCapteur.$idCapteur;
+        if ($number == (string)$serialKey) {
+            $arrayWithAllTrame[] = $arrayTrame[$trame];
+        }
+
+    }
+    return $arrayWithAllTrame;
+}
+
+
+
 
 
 
@@ -41,6 +61,14 @@ function typeCapteur($value) {
     }
     return $capteur;
 }
+
+function getKeyTypeTrame($trame) {
+    $key = substr($trame, 6, 1).substr($trame, 7, 2);
+    $arrayKeyType['key'] = (int)$key;
+    $arrayKeyType['type'] = typeCapteur(substr($trame, 6, 1));
+    return $arrayKeyType;
+}
+
 
 function arrayRequestData($arrayTrame)
 {

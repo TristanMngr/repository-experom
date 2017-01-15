@@ -188,6 +188,9 @@ $tableauDonneesSalles = requeteDansTable($db,$tableau);
 
 
 
+
+
+
 include('vue/espaceClient/maMaison.php');
 
 

@@ -439,19 +439,46 @@ div#contenuAllMaison {
     to {left:0px}
 }
 
+div#listCapteur ul {
+    list-style: none;
+    text-align: left;
+}
+div#creationSalle ul#displayCapteur  {
+    padding:0;
+
+}
+div#creationSalle ul#displayCapteur h3 {
+    padding:0;
+    margin:0;
+}
+
+div#creationSalle ul#displayCapteur li.capteur {
+    border:solid transparent 1px;
+    box-shadow: 1px 1px 3px black;
+    border-radius :5px;
+    display: inline-block;
+    width:45%;
+    margin:5px 5px 5px 5px;
+    padding:10px;
+    font-size: 0.8em;
+}
+div#creationSalle ul#displayCapteur li.capteur span {
+    display: inline-block;
+    width:40%;
+}
+
+
+
+
+
+
 #creationSalle form ul li {
     list-style: none;
     font-size: 1.2em;
 }
 
 
-#creationSalle select {
-    width:150px;
-}
-#creationSalle span {
-    display: inline-block;
-    width:400px;
-}
+
 
 #creationSalle > h1 {
     text-align: center;
@@ -461,11 +488,12 @@ div#contenuAllMaison {
 }
 
 #creationSalle form div {
-    text-align: center;
     margin-top: 30px;
 }
 #creationSalle form #creation {
+    display: block;
     height:35px;
+    margin:auto;
     font-size: 1em;
     border-radius: 5px;
     box-shadow: 1px 1px 3px #3F4D5E;
@@ -478,19 +506,62 @@ div#contenuAllMaison {
     color: black;
     background: ghostwhite;
 }
-#creationSalle li {
-    height:30px;
-    line-height: 30px;
-}
-#creationSalle li select {
-    height:20px;
-}
+
 #creationSalle #nomSalle {
     margin:5px;
     height:20px;
     font-size: 1em;
     width:140px;
 }
+
+#creationSalle #selectType {
+    margin:20px 0 20px 0;
+}
+
+
+#creationSalle ul#listCapteur li.list {
+    display: inline-block;
+    width: 120px;
+    height:30px;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    margin:0 10px 30px 10px;
+    text-align: center;
+}
+#creationSalle div.allList {
+    margin:0;
+}
+#creationSalle .allList {
+    display: block;
+}
+#creationSalle .allList ul {
+    list-style: none;
+    padding:0;
+}
+#creationSalle .allList ul > li {
+    display: inline-block;
+    width: 120px;
+    height:30px;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    margin:10px 10px 10px 10px;
+    text-align: center;
+}
+#creationSalle .allList span {
+    display: inline-block;
+    width:130px;
+}
+
+
+
+
+
+
+
 
 div#contenuMaison .salle {
     border:solid transparent 1px;
@@ -1390,6 +1461,10 @@ section#capteur div#addCapteur, section#capteur div#listCapteur {
     width: 40%;
 }
 
+section#capteur div#addCapteur .messageError,section#capteur div#addCapteur .messageSuccess {
+    margin-top: 20px;
+}
+
 div#addCapteur > div,div#listCapteur > div {
     display: block;
     border:solid transparent 1px;
@@ -1400,7 +1475,7 @@ div#addCapteur > div,div#listCapteur > div {
     min-height: 300px;
 
 }
-div#addCapteur h2 {
+section#capteur  h2 {
     margin-bottom: 50px;
 }
 
@@ -1411,8 +1486,66 @@ div#addCapteur label {
 }
 div#addCapteur .submit {
     display: block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
     margin:50px auto 0 auto;
+    border-radius: 5px;
+    height:30px;
+    /*vertical-align: middle;*/
+    padding:0;
 }
+div#addCapteur .submit:hover {
+    display: block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    height:30px;
+    /*vertical-align: middle;*/
+    background:cornflowerblue ;
+    color: white;
+}
+
+
+div#listCapteur ul {
+    list-style: none;
+    text-align: left;
+}
+
+div#listCapteur > div  {
+    margin-bottom: 50px;
+}
+
+div#listCapteur ul#displayCapteur  {
+    padding:0;
+    margin-bottom: 20px;
+}
+div#listCapteur ul#displayCapteur h3 {
+    padding:0;
+    margin:0;
+}
+
+div#listCapteur ul#displayCapteur li.capteur {
+    border:solid transparent 1px;
+    box-shadow: 1px 1px 3px black;
+    border-radius :5px;
+    display: block;
+    width:90%;
+    margin:5px auto 5px auto;
+    padding:10px;
+}
+div#listCapteur ul#displayCapteur li.capteur span {
+    display: inline-block;
+    width:40%;
+}
+
+
+
 
 
 

@@ -4,6 +4,7 @@ include("modele/modes.php");
 include("modele/salles.php");
 include('controller/debug.php');
 include("controller/capteurSelect.php");
+include('modele/capteurs.php');
 
 
 $messageError = null;
@@ -89,7 +90,7 @@ function getTypeValueMode($db,$idMode) {
 }
 
 
-// fonction qui retourne la valeur du type demandé.
+// fonction qui retourne la valeur du type demandé. donné du capteurs
 function getdataCapteur($db,$idSalle) {
     $value = array();
     $tableau = array('param'=>array('ID_salle'=>$idSalle));
@@ -112,9 +113,11 @@ function getdataCapteur($db,$idSalle) {
 
 
 
-
-if ($_GET['target2'] == 'ajouter') {
-    include('controller/espaceClient/maison/createSalle.php');
+if (!empty($_GET['target3']) & $_GET['target2'] == 'creation') {
+    include('controller/espaceClient/maison/ajax/getCapteurs.php');
+}
+else if ($_GET['target2'] == 'ajouter') {
+    include('controller/espaceClient/maison/createSalleV2.php');
 }
 else if ($_GET['target2'] == 'supprimer') {
     include('controller/espaceClient/maison/removeSalle.php');
