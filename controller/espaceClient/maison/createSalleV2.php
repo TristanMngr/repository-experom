@@ -8,7 +8,6 @@ $isHum = false;
 $stringSerialKey = $_POST['serialKey'];
 
 $arraySerialKey = explode(',',$stringSerialKey);
-displayArray('key', $arraySerialKey);
 
 
 if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {

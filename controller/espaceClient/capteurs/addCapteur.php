@@ -4,8 +4,8 @@ if ($_GET['target2'] == 'ajouter-capteur') {
     if (isset($_POST['room']) & !empty($_POST['room'])) {
         if (isset($_POST['key']) & !empty($_POST['key'])) {
 
-            $tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('serial_key'=>$_POST['key']));
-            /*on verifie que la clef n'a pas déja été rentré*/
+            $tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('serial_key'=>$_POST['key'],'ID_maison'=>$_SESSION['IDmaison']));
+            /*on verifie que la clef n'a pas déja été rentré pour une même maison*/
             if (requeteDansTable($db,$tableau) == array()) {
 
 
