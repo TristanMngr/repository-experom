@@ -1,13 +1,63 @@
-function addCapteur(id,nom) {
+/**
+ * ajoute les capteur selectionner dans une div
+ * @param id
+ * @param nom
+ */
+
+function addCapteur(id,nom,type) {
+
+
     document.getElementById(id).style.border = '2px solid green'
-    ulElement = document.getElementById('listCapteur');
+
+    divContList = document.getElementById('conteneurList');
+
+    ulElementTemp = document.getElementById('allListCapteurTemp');
+    ulElementHum = document.getElementById('allListCapteurHum');
+
+
+
+
+
     liElement = document.createElement('li');
 
     liElement.id = id;
     liElement.setAttribute('class','list');
     liElement.textContent = nom+" "+id;
 
-    ulElement.appendChild(liElement);
+
+
+
+    if (type == 'temperature') {
+        ulElementTemp.appendChild(liElement);
+    }
+
+    else {
+        ulElementTemp.style.display = "none"
+    }
+    if (type == 'humidite') {
+        ulElementHum.appendChild(liElement);
+    }
+    else {
+        ulElementTemp.style.display = "none"
+    }
+
+
+    if (ulElementTemp.childElementCount > 1 | ulElementHum.childElementCount > 1 ) {
+        divContList.style.display = "block"
+    }
+
+    if (ulElementTemp.childElementCount > 1) {
+        ulElementTemp.style.display = "block"
+    }
+    if (ulElementHum.childElementCount > 1 ) {
+        ulElementHum.style.display = "block"
+    }
+
+    /*for (var k = 0; k < ulElement.get)*/
+
+
+
+
 
 }
 

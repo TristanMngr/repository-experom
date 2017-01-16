@@ -24,6 +24,13 @@ function selectCapteur(cible)
     {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
         {
+            /*permet de remettre a zero les border*/
+            divElement = document.getElementsByClassName('chooseType');
+            for (var div = 0 ; div < divElement.length; div ++) {
+                divElement[div].style.border = "solid transparent 1px";
+            }
+
+            document.getElementById(cible).style.border = "solid green 3px";
             document.getElementById("displayCapteur").innerHTML = xmlhttp.responseText;
         }
     }

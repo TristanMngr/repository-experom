@@ -443,6 +443,26 @@ div#listCapteur ul {
     list-style: none;
     text-align: left;
 }
+div#creationSalle div.chooseType {
+    display: inline-block;
+    width:200px;
+    height:80px;
+    line-height: 80px;
+    border: solid transparent 1px;
+    border-radius : 5px;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+}
+
+div#creationSalle #chooseCapteurType {
+    padding-left: 40px;
+}
+
+div#creationSalle .logo-capteur {
+    vertical-align: middle;
+    width:60px;
+    height:60px;
+}
 div#creationSalle ul#displayCapteur  {
     padding:0;
 
@@ -468,6 +488,11 @@ div#creationSalle ul#displayCapteur li.capteur span {
 }
 
 
+div#chooseCapteurType #inputSalleName {
+    margin-top:30px;
+}
+
+
 
 
 
@@ -482,14 +507,13 @@ div#creationSalle ul#displayCapteur li.capteur span {
 
 #creationSalle > h1 {
     text-align: center;
+
 }
 #creationSalle > a{
     color:rgb(63,78,95);
 }
 
-#creationSalle form div {
-    margin-top: 30px;
-}
+
 #creationSalle form #creation {
     display: block;
     height:35px;
@@ -518,6 +542,9 @@ div#creationSalle ul#displayCapteur li.capteur span {
     margin:20px 0 20px 0;
 }
 
+#creationSalle ul#parentElement {
+    padding:0;
+}
 
 #creationSalle ul#listCapteur li.list {
     display: inline-block;
@@ -530,30 +557,38 @@ div#creationSalle ul#displayCapteur li.capteur span {
     margin:0 10px 30px 10px;
     text-align: center;
 }
-#creationSalle div.allList {
-    margin:0;
+
+div#creationSalle div#conteneurList {
+    width:95%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+
 }
-#creationSalle .allList {
+
+#creationSalle ul#allListCapteurTemp,#creationSalle ul#allListCapteurHum {
     display: block;
-}
-#creationSalle .allList ul {
+    margin:auto;
+    /*min-height: 40px;
+    line-height: 40px;*/
+    width:90%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
     list-style: none;
-    padding:0;
+    padding-bottom:20px;
 }
-#creationSalle .allList ul > li {
+#creationSalle ul#allListCapteurTemp li, #creationSalle ul#allListCapteurHum li {
     display: inline-block;
-    width: 120px;
+    min-width: 100px;
     height:30px;
     line-height: 30px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px #3F4D5E;
     border: solid transparent 1px;
-    margin:10px 10px 10px 10px;
-    text-align: center;
-}
-#creationSalle .allList span {
-    display: inline-block;
-    width:130px;
+    margin:5px 5px 5px 5px;
 }
 
 

@@ -54,7 +54,12 @@ $titre = "vue des capteurs";
                     </li>-->
 
                     <?php /** Version Ajax */ ?>
-                    <li id="selectType">
+                    <h2>Quelle type de capteur</h2>
+                    <div id="chooseCapteurType">
+                        <div id="temperature" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/thermometer.png" class="logo-capteur"></div>
+                        <div id="humidite" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/humidity.png" class="logo-capteur"</div>
+                    </div>
+                    <!--<li id="selectType">
                         <span>choisir un capteur</span>
                         <select name="typeOfCapteur" id="select" onchange="selectCapteur(this.value)">
                             <option value="rien">Aucun</option>
@@ -62,9 +67,20 @@ $titre = "vue des capteurs";
                             <option value="humidite">Humidite</option>
                         </select>
 
-                    </li>
+                    </li>-->
 
                     <div id="displayCapteur"></div>
+
+                    <div id="conteneurList" style="display:none">
+                        <h2>capteur selectionné</h2>
+                        <div ><ul id="allListCapteurTemp" style="display:none">
+                                <h3>température</h3>
+                            </ul>
+                            <ul id="allListCapteurHum" style="display:none">
+                                <h3>humidité</h3>
+                            </ul>
+                        </div>
+                    </div>
 
                     <input type="hidden" id="serialKey" name="serialKey"> <!--javascript insert le tableau en value-->
                     <div id="inputSalleName"><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></div>
