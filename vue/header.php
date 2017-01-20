@@ -2,7 +2,7 @@
 ob_start();
 ?>
 <header>
-    <a href="/accueil"  class="inline logo" ><h1 class="logo"><span>experom</span></h1></a>
+    <a href="/accueil"  class="inline logo" ><img src="/vue/style/images/logo-header.png" alt="logo_domisep" class="logo"></a></a>
     <nav class="inline">
         <ul id="menuAccueil">
             <li class="nonderoulant"><a href="/accueil">accueil</a></li>
