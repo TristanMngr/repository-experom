@@ -54,7 +54,7 @@ $titre = "vue des capteurs";
                     </li>-->
 
                     <?php /** Version Ajax */ ?>
-                    <h2>Quelle type de capteur</h2>
+                    <h2>Selection capteur</h2>
                     <div id="chooseCapteurType">
                         <div id="temperature" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/thermometer.png" class="logo-capteur"></div>
                         <div id="humidite" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/humidity.png" class="logo-capteur"</div>
@@ -72,12 +72,16 @@ $titre = "vue des capteurs";
                     <div id="displayCapteur"></div>
 
                     <div id="conteneurList" style="display:none">
-                        <h2>capteur selectionné</h2>
+                        <h2>Capteur selectionné</h2>
                         <div ><ul id="allListCapteurTemp" style="display:none">
+                                <div>
                                 <h3>température</h3>
+                                </div>
                             </ul>
                             <ul id="allListCapteurHum" style="display:none">
+                                <div>
                                 <h3>humidité</h3>
+                                </div>
                             </ul>
                         </div>
                     </div>

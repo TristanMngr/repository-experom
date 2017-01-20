@@ -17,6 +17,11 @@ $utilisateurSecondaire = False;
 
 // TODO trame/titre maison/password gauche
 
+/*if (isset($_GET['target']) & $_GET['target']=='popup') {
+    include('vue/popUp/popup.html');
+}*/
+
+
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
     include("vue/accueil/accueil.php");
 }
@@ -40,7 +45,12 @@ else if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
     }
 }
 
-
+else if ($_GET['cible'] == 'admin') {
+    include('vue/back-office/accueil.php');
+}
+else if ($_GET['cible'] == 'mention-legal') {
+    include('vue/mention-legal.php');
+}
 
 
 /*principaux*/

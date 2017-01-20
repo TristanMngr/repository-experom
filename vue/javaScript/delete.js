@@ -5,7 +5,7 @@
 
 /*fonction qui permet de supprimer salle/modes/utilisateur/*/
 function deleteConf(name,action) {
-    if (confirm('Vous êtes sur le point de supprimer '+name+ '?')) {
+    if (confirm('Vous êtes sur le point de supprimer '+name+ '.')) {
         newName = "";
         newName = name.replace(/ /g,"+");
 
@@ -22,3 +22,10 @@ function deleteConf(name,action) {
         }
     }
 }
+
+
+
+/*function windowPop() {
+    window.open('../popUp/popup.html','superFenêtre','top=10,left=10,resible=no');
+    return  false;
+}*/

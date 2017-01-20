@@ -20,6 +20,9 @@
 <script type="text/javascript" src="/vue/javaScript/inscription.js"></script>
 <script type="text/javascript" src="/vue/javaScript/delete.js"></script>
 <script type="text/javascript" src="/vue/javaScript/maison.js"></script>
+<script type="text/javascript" src="/vue/javaScript/capteur.js"></script>
+<script type="text/javascript" src="/vue/jquery/scroll-smooth.js"></script>
 
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 </body>
 </html>

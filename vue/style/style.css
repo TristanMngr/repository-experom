@@ -2,6 +2,7 @@
 html   {
     height:100%;
     margin:0;
+
 }
 body {
     font-family:Verdana,Arial,sans-serif;
@@ -35,29 +36,51 @@ a:visited {
 
 /*footer*/
 footer {
-    height :50px;
+    height :70px;
     width:100%;
-    line-height: 50px;
+    /*line-height: 50px;*/
     background: #42444E;
     color: #DBDDDB;
+    vertical-align: middle;
 }
+
+
 ul#footer {
     line-height: 50px;
-    height:50px;
+    height:70px;
     width:100%;
     vertical-align: middle;
     display: inline-block;
     padding:0;
     margin:0;
 }
+
+#footer > ul {
+    height:50px;
+    line-height:50px;
+}
 #footer li {
     display:inline-block;
     padding:0;
     margin:0;
     text-align: center;
-    width:24%;
-
+    width:19%;
+    line-height:70px;
+    height:70px;
+    vertical-align: middle;
 }
+
+#footer li img {
+    width:200px;
+    vertical-align: middle;
+    height:50px;
+}
+#footer a {
+    margin:0;
+    padding:0;
+    line-height:50px;
+    height:50px;
+ }
 /*Header*/
 header {
     height:100px;
@@ -67,6 +90,7 @@ header {
     padding: 0;
     margin:0;
 }
+
 header > .inline {
     text-align: center;
     display:inline-block;
@@ -81,8 +105,15 @@ header a.logo {
     vertical-align: middle;
     padding:0;
     margin:0;
+    text-align: left;
+
     /*height:100px;
     line-height: 100px;*/
+}
+
+header a.logo img {
+    height:100px;
+    padding-left:50px;
 }
 header h1.logo {
 
@@ -351,11 +382,8 @@ section#maMaison > h1 img {
     box-shadow: 1px 1px 3px black;
     height:65px;
     margin-bottom: 15px;  /* à virer */
-    /*position: fixed;
-    width:100%;
-    z-index: 100;
-    background: #c0c0c0;
-    top:0*/
+    position: fixed;
+
 
 }
 #indexMaison > ul {
@@ -452,10 +480,12 @@ div#creationSalle div.chooseType {
     border-radius : 5px;
     box-shadow: 1px 1px 3px black;
     text-align: center;
+    cursor: pointer;
 }
 
 div#creationSalle #chooseCapteurType {
     padding-left: 40px;
+
 }
 
 div#creationSalle .logo-capteur {
@@ -481,6 +511,11 @@ div#creationSalle ul#displayCapteur li.capteur {
     margin:5px 5px 5px 5px;
     padding:10px;
     font-size: 0.8em;
+    cursor: pointer;
+}
+div#creationSalle ul#displayCapteur li.capteur:hover {
+    border:solid green 3px;
+    box-shadow: none;
 }
 div#creationSalle ul#displayCapteur li.capteur span {
     display: inline-block;
@@ -585,6 +620,7 @@ div#creationSalle div#conteneurList {
     min-width: 100px;
     height:30px;
     line-height: 30px;
+    padding:5px;
     border-radius: 5px;
     box-shadow: 1px 1px 3px #3F4D5E;
     border: solid transparent 1px;
@@ -717,8 +753,14 @@ div#contenuMaison .salle >h1 {
     color:forestgreen;
     font-size: 25px;
 }
-
-.flaticon-cancel-music {
+div#creationSalle .flaticon-cancel-music {
+    position: absolute;
+    top:10px;
+    left:10px;
+    font-size:10px;
+    cursor: pointer;
+}
+div.salle .flaticon-cancel-music {
     position: absolute;
     top:10px;
     left:10px;
@@ -781,6 +823,19 @@ section#conteneur #redirectionCo {
     box-shadow: 1px 1px 3px #3F4D5E;
 }
 
+
+section#conteneur:before {
+    display: table;
+    /*height:100%;*/
+    /*width: 100%;*/
+}
+section#conteneur{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
 section#conteneur article#inscription {
     width: 500px;
     padding:20px 0px 40px 0px;
@@ -788,8 +843,9 @@ section#conteneur article#inscription {
     color : rgb(63,78,95);
     border: solid transparent 1px;
     box-shadow: 1px 1px 10px #3F4D5E;
-    vertical-align: center;
-    margin : 70px auto 0px auto;
+    display: inline-block;
+
+
 }
 
 section#conteneur article#inscription #helpMdp {
@@ -1050,12 +1106,17 @@ div#maFamille div.supprimerCompte {
 /*Mode*/
 section#modes {
     margin-top:20px;
-    margin-bottom :0px;
+    margin-bottom :0;
+
 }
 
 div#conteneurModes {
-    margin-top:0px;
-    height:530px;
+    margin-top:0;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
@@ -1073,28 +1134,23 @@ div#conteneurModes li {
 
 #configMode .inputModeConf {
     width:50px;
-
 }
-
-
-
-
 
 div#placementConfigMode {
     margin-top: 20px;
-    vertical-align:top;
+    vertical-align:middle;
     display:inline-block;
     width:55%;
-    min-height:600px;
+    min-height:300px;
+
 
 }
 div#placementChoixMode {
     margin-top: 20px;
-    vertical-align:top;
+    vertical-align:middle;
     display:inline-block;
     width:40%;
-
-    min-height:600px;
+    min-height:300px;
 }
 
 div#choixMode, div#creerMode  {
@@ -1280,11 +1336,14 @@ section#modes .messageSuccess {
 
 
 /*Page de contacts*/
+section#contact:before {
+    display: table;
+}
+
 
 section#contact {
-    line-height: 40px;
-   /* display: table-cell;
-    vertical-align: middle;*/
+    display: table-cell;
+    vertical-align: middle;
 }
 section#contact .contact {
     width :500px;
@@ -1292,6 +1351,8 @@ section#contact .contact {
     border : solid transparent 1px;
     border-radius : 5px;
     box-shadow: 1px 1px 3px black;
+    padding:0;
+    margin:0;
 }
 section#contact li {
     display:block;
@@ -1487,7 +1548,34 @@ table#consommation td,th
     border: 1px solid black;
 }
 
+
+/*mention légale*/
+
+section#mention-legale {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+section#mention-legale > div {
+    display: inline-block;
+    padding:20px;
+    border:solid transparent 1px;
+    border-radius :5px;
+    box-shadow: 1px 1px 3px black;
+    text-align: left;
+    width:600px;
+}
+section#mention-legale > div h2 {
+    font-size:1.2em;
+}
+
+
+
+
 /*capteurs*/
+
 
 
 section#capteur div#addCapteur, section#capteur div#listCapteur {
@@ -1559,25 +1647,67 @@ div#listCapteur > div  {
 div#listCapteur ul#displayCapteur  {
     padding:0;
     margin-bottom: 20px;
+
 }
+
+
+
+div#listCapteur ul#displayCapteur .setSalle {
+    color: green;
+    font-weight:bold;
+}
+div#listCapteur ul#displayCapteur .notSetSalle {
+    color: red;
+}
+
+
+
 div#listCapteur ul#displayCapteur h3 {
     padding:0;
     margin:0;
+    display: inline-block;
+    width:90%;
+    height:30px;
 }
+
+
 
 div#listCapteur ul#displayCapteur li.capteur {
     border:solid transparent 1px;
     box-shadow: 1px 1px 3px black;
     border-radius :5px;
     display: block;
-    width:90%;
+    width:94%;
     margin:5px auto 5px auto;
     padding:10px;
+}
+div#listCapteur ul#displayCapteur li.capteur:hover {
+    border:3px solid grey;
+    cursor: pointer;
 }
 div#listCapteur ul#displayCapteur li.capteur span {
     display: inline-block;
     width:40%;
 }
+div#listCapteur ul#displayCapteur li.capteur a.crossCapteur {
+    display: inline-block;
+    width:9%;
+    height:20px;
+
+    text-align: center;
+    position: relative;
+}
+div#listCapteur .capteur .flaticon-cancel-music {
+    display :inline-block;
+    color: black;
+    height:100%;
+    width:100%;
+
+}
+
+
+
+
 
 
 

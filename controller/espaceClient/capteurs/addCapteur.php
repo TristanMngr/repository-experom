@@ -38,10 +38,10 @@ if ($_GET['target2'] == 'ajouter-capteur') {
                         }
 
                     }
-                    $messageSuccess = "votre clef est valide " . getTrameSerialKey($arrayTrame, $_POST['key']);
+                    $messageSuccess = "Votre clef est valide";
 
                 } else {
-                    $messageError = "votre clef n'est pas valide";
+                    $messageError = "Votre clef n'est pas valide";
                 }
             }
             else {
@@ -49,11 +49,11 @@ if ($_GET['target2'] == 'ajouter-capteur') {
             }
         }
         else {
-            $messageError = "vous devez entrer une serial key";
+            $messageError = "Vous devez entrer une serial key";
         }
     }
     else {
-        $messageError = "vous devez entré un nom de salle";
+        $messageError = "Vous devez entré un nom de salle";
     }
 }
 

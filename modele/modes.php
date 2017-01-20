@@ -9,7 +9,7 @@ WHERE modes.IDmaison =:champ
 OR modes.IDmaison =-1";
 
 
-$param = $tableau['param'] ;
+$param = $tableau['param'];
 $requete = $db->prepare($query);
 $requete->execute($param);
 

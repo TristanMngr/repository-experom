@@ -10,8 +10,19 @@ $tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('
 $arrayCapteurs = requeteDansTable($db,$tableau);
 
 
+function getNameSalle($db,$capteur) {
+    $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('ID' =>$capteur));
+    $salleName = requeteDansTable($db,$tableau);
+    return $salleName[0]['nom'];
+
+}
+
+
 if ($_GET['target2'] == "ajouter-capteur") {
     include('controller/espaceClient/capteurs/addCapteur.php');
+}
+else if ($_GET['target2'] == "remove") {
+    include('controller/espaceClient/capteurs/removeCapteur.php');
 }
 else {
     include('vue/espaceClient/capteurs.php');

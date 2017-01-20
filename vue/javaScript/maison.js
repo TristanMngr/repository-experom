@@ -6,65 +6,115 @@
 
 function addCapteur(id,nom,type) {
 
-
-    document.getElementById(id).style.border = '2px solid green'
-
-    divContList = document.getElementById('conteneurList');
-
-    ulElementTemp = document.getElementById('allListCapteurTemp');
-    ulElementHum = document.getElementById('allListCapteurHum');
+    // on entre tout les id de la liste dans un array, et on verifie la présence lors du clique
 
 
-
-
-
-    liElement = document.createElement('li');
-
-    liElement.id = id;
-    liElement.setAttribute('class','list');
-    liElement.textContent = nom+" "+id;
-
-
-
-
-    if (type == 'temperature') {
-        ulElementTemp.appendChild(liElement);
+    arrayLiId = new Array();
+    for (var li = 0; li < listLiElement.length; li ++) {
+        arrayLiId[li] = listLiElement[li].id;
+        console.log(arrayLiId[li])
     }
+    console.log(id);
 
+    if (arrayLiId.indexOf('capteur'+id) == -1) {
+        if (arrayLiId.indexOf('capteur'+id) == -1) {
+            document.getElementById(id).style.background = 'green';
+            document.getElementById(id).style.color = 'white';
+
+        }
+
+
+
+        divContList = document.getElementById('conteneurList');
+
+        ulElementTemp = document.getElementById('allListCapteurTemp');
+        ulElementHum = document.getElementById('allListCapteurHum');
+
+
+        liElement = document.createElement('li');
+
+        liElement.id = 'capteur'+id;
+        liElement.setAttribute('class', 'list');
+        liElement.textContent = nom + " " + id;
+
+
+        if (type == 'temperature') {
+            ulElementTemp.appendChild(liElement);
+        }
+
+        else {
+            ulElementTemp.style.display = "none"
+        }
+        if (type == 'humidite') {
+            ulElementHum.appendChild(liElement);
+        }
+        else {
+            ulElementTemp.style.display = "none"
+        }
+
+
+        /*affiche les div si capteur présent dans la liste*/
+        if (ulElementTemp.childElementCount > 1 | ulElementHum.childElementCount > 1) {
+            divContList.style.display = "block"
+        }
+
+        if (ulElementTemp.childElementCount > 1) {
+            ulElementTemp.style.display = "block"
+        }
+        if (ulElementHum.childElementCount > 1) {
+            ulElementHum.style.display = "block"
+        }
+    }
     else {
-        ulElementTemp.style.display = "none"
+
+        /*Dans le cas ou on reselectionne le même capteur alors on supprime le le li de la liste de capteur*/
+
+        divContList = document.getElementById('conteneurList');
+        ulElementTemp = document.getElementById('allListCapteurTemp');
+        ulElementHum = document.getElementById('allListCapteurHum');
+
+
+
+        arrayLiId = new Array();
+        for (var li = 0; li < listLiElement.length; li ++) {
+            arrayLiId[li] = listLiElement[li].id;
+        }
+
+        document.getElementById(id).style.background = '#FFFFFF';
+        document.getElementById(id).style.color = '#3F4E5F';
+
+        if (type == 'temperature') {
+            ulElementTemp.removeChild(document.getElementById('capteur'+id))
+        }
+        else if (type == 'humidite') {
+            ulElementHum.removeChild(document.getElementById('capteur'+id))
+        }
+
+
+        /*cache les div si capteur non présent dans la liste*/
+        /*if (ulElementTemp.childElementCount <= 1 & ulElementHum.childElementCount <= 1) {
+            divContList.style.display = "none"
+        }*/
+
+        if (ulElementTemp.childElementCount <= 1) {
+            ulElementTemp.style.display = "none"
+        }
+        if (ulElementHum.childElementCount <= 1) {
+            ulElementHum.style.display = "none"
+        }
+
+        /*parentElement = document.querySelector('#conteneurList #'+id).parentNode;
+
+        parentElement.removeChild(document.getElementById(id));*/
+
     }
-    if (type == 'humidite') {
-        ulElementHum.appendChild(liElement);
-    }
-    else {
-        ulElementTemp.style.display = "none"
-    }
-
-
-    if (ulElementTemp.childElementCount > 1 | ulElementHum.childElementCount > 1 ) {
-        divContList.style.display = "block"
-    }
-
-    if (ulElementTemp.childElementCount > 1) {
-        ulElementTemp.style.display = "block"
-    }
-    if (ulElementHum.childElementCount > 1 ) {
-        ulElementHum.style.display = "block"
-    }
-
-    /*for (var k = 0; k < ulElement.get)*/
-
-
-
-
 
 }
 
 
 
 
-function createNewList(type) {
+/*function createNewList(type) {
     getContentLiElement = document.getElementById('selectType');
     selectElement = document.getElementById('select');
     capteurElement = document.getElementById('displayCapteur');
@@ -91,8 +141,8 @@ function createNewList(type) {
     document.getElementById('parentElement').insertBefore(divListCapteur,getContentLiElement);
 
 
-    /*on insert l'element juste avant la div comportant l'input*/
-}
+    /!*on insert l'element juste avant la div comportant l'input*!/
+}*/
 
 // récuppère toute les id (numero serie)  des capteurs, l'array est ensuite envoyé via ajax
 function sendArrayCapteur() {
@@ -102,7 +152,8 @@ function sendArrayCapteur() {
 
 
     for (i = 0 ; i < divElement.length ; i ++) {
-        arraySerialKey[i] = divElement[i].id;
+        //découpe la string pour avoir une id correspondant à la serial key
+        arraySerialKey[i] = divElement[i].id.substr(7);
     }
     arrayString = arraySerialKey.toString();
     hiddenElement.value = arrayString;

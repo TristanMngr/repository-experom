@@ -1,9 +1,9 @@
 <?php
 
-$tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_maison'=>$_SESSION['IDmaison']));
+$tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_maison'=>$_SESSION['IDmaison'],'ID_salle'=>0));
 $arrayCapteurs = requeteDansTable($db,$tableau);
 
-/** verifié que les capteurs n'ont pas déja été entré dans une salle  */
+
 
 
 
