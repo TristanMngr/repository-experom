@@ -51,6 +51,8 @@ else if ($_GET['cible']== 'accueil') {
 else if ($_GET['cible'] == 'contact') {
     include("vue/contact/contact.php");
 }
+
+
 /*deconnexion*/
 
 
@@ -73,6 +75,14 @@ else if ($_GET['cible'] == 'espace-client') {
     /*creer un modes*/
     else if ($_GET['target'] == 'modes') {
         include('controller/espaceClient/modes/index.php');
+    }
+
+
+    /** ajouter un capteurs */
+
+
+    else if ($_GET['target'] == 'capteurs') {
+        include('controller/espaceClient/capteurs/index.php');
     }
 
 

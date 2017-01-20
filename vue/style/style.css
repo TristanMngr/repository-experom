@@ -1,18 +1,27 @@
 /*General*/
 html   {
     height:100%;
-    padding:0;
     margin:0;
 }
 body {
     font-family:Verdana,Arial,sans-serif;
-    padding:0 0 100px 0;
+    padding:0;
     margin:0;
-    min-height :90%;
     background: #FFFFFF ;
-    position:relative;
+    height:100%;
+}
+div#page {
+    display: table;
+    height:100%;
+    width:100%;
+
 
 }
+section, header, footer  {
+    display: table-row;
+}
+
+
 a {
     text-decoration: none;
     color:#DBDDDB;
@@ -22,20 +31,29 @@ a:visited {
     text-decoration:none;
 }
 
+
+
 /*footer*/
 footer {
-    margin-top:100px;
-    height :100px;
+    height :50px;
     width:100%;
-    position:absolute;
-    bottom: 0px;
+    line-height: 50px;
     background: #42444E;
     color: #DBDDDB;
-    z-index:10;
+}
+ul#footer {
+    line-height: 50px;
+    height:50px;
+    width:100%;
+    vertical-align: middle;
+    display: inline-block;
+    padding:0;
+    margin:0;
 }
 #footer li {
-    margin-top:30px;
     display:inline-block;
+    padding:0;
+    margin:0;
     text-align: center;
     width:24%;
 
@@ -46,8 +64,8 @@ header {
     background: #42444E;
     color : #DBDDDB;
     text-transform: uppercase;
-    padding: 0px;
-    margin:0px;
+    padding: 0;
+    margin:0;
 }
 header > .inline {
     text-align: center;
@@ -58,7 +76,13 @@ header > .inline {
 header a.logo {
     width:24%;
     color:#DBDDDB;
-    height:100%;
+    line-height: 100px;
+    height: 100px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+    /*height:100px;
+    line-height: 100px;*/
 }
 header h1.logo {
 
@@ -67,31 +91,44 @@ header h1.logo {
     margin:0;
     text-align: center;
 }
-.logo > span {
+.logo span {
     display: inline-block;
     width:250px;
+    line-height: 40px;
+    margin:0;
+    padding:0;
     border-bottom: 3px solid #DBDDDB;
+}
+
+/*section*/
+section {
+    text-align: center;
+    color: rgb(85,85,111);
 }
 
 /*menu*/
 nav.inline {
     width:49%;
-    height:100%;
-    padding:0px;
-    margin: 0px 0px 0px 0px;
-    vertical-align: middle;
+    height:100px;
+    line-height:70px ;
+    padding:0;
+    margin: 0 0 0 0;
+
 
 }
 
 nav.inline  ul#menuAccueil {
     list-style: none;
-    margin:30px 0px 0px 30px;
-    padding:0px;
+    vertical-align: middle;
+    height:100px;
+    line-height: 100px;
+    margin:0 auto 0 auto;
+    padding:0;
 }
 
 nav.inline ul li {
-    padding:0px;
-    margin:0px;
+    padding:0;
+    margin:0;
 }
 /*fleche menu*/
 li.deroulant {
@@ -134,16 +171,12 @@ nav .deroulant a:hover {
 }
 nav.inline li a {
     display: inline-block;
-    padding:0px;
-    margin:0px;
+    padding:0;
+    margin:0;
     width:100%;
     height:100%;
 }
-/*#deroulant {
-    position:relative;
-    top:0;
-    left:0;
-}*/
+
 
 
 
@@ -151,9 +184,8 @@ nav.inline li a {
 /*cacher menu*/
 
 ul.deroulant  {
-    margin:0px;
-    padding:0px;
-    z-index: 3;
+    margin:0;
+    padding:0;
 }
 
 ul.deroulant li {
@@ -211,11 +243,14 @@ header form.inline input {
 
 /*accueil*/
 section#accueil {
-    display:block;
     color: #3F4E5F;
-    min-height: 65vh;
+    height:100%;
     text-align: center;
-    margin-top:50px;
+    display: table-cell;
+    vertical-align: middle;
+
+
+
 }
 
 .messageError {
@@ -230,8 +265,10 @@ section#accueil {
 section#accueil > article {
     display: inline-block;
     width:90%;
-    vertical-align: top;
     text-align: justify;
+
+
+
 
 }
 
@@ -239,33 +276,24 @@ section#accueil p {
     padding:20px;
 }
 
-section#accueil #news {
-    border-top: solid #62C0C3 3px;
-    margin-right: 25px
-}
+
 section#accueil h1 {
     color: #3F4E5F;
 }
 section#accueil #apropos {
-    border-top: solid #E53E1A 3px;
-    margin-left:25px;
     padding:20px;
-    border:solid transparent 1px;
+    :sborderolid transparent 1px;
     box-shadow: 1px 1px 3px black;
-    margin-bottom: 50px;
 }
 section#accueil h2 {
-    padding:0px;
+    padding:0;
     height:30px;
-    margin:0px;
+    margin:0;
 }
 section#accueil p {
-
-    margin:0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0 20px 0;
     text-align: justify;
-    padding:0px;
+    padding:0;
 }
 section#accueil p.last {
 }
@@ -279,17 +307,15 @@ section#accueil #apropos h1 {
     margin-bottom: 30px;
 }
 
-/*section*/
-section {
-    text-align: center;
-    color: rgb(85,85,111);
-}
+
 
 
 
 /* config maMaison /*
 
  */
+
+
 section#maMaison {
     color:rgb(63,78,95);  /*a changer*/
     margin:0px;
@@ -325,6 +351,11 @@ section#maMaison > h1 img {
     box-shadow: 1px 1px 3px black;
     height:65px;
     margin-bottom: 15px;  /* à virer */
+    /*position: fixed;
+    width:100%;
+    z-index: 100;
+    background: #c0c0c0;
+    top:0*/
 
 }
 #indexMaison > ul {
@@ -408,33 +439,85 @@ div#contenuAllMaison {
     to {left:0px}
 }
 
+div#listCapteur ul {
+    list-style: none;
+    text-align: left;
+}
+div#creationSalle div.chooseType {
+    display: inline-block;
+    width:200px;
+    height:80px;
+    line-height: 80px;
+    border: solid transparent 1px;
+    border-radius : 5px;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+}
+
+div#creationSalle #chooseCapteurType {
+    padding-left: 40px;
+}
+
+div#creationSalle .logo-capteur {
+    vertical-align: middle;
+    width:60px;
+    height:60px;
+}
+div#creationSalle ul#displayCapteur  {
+    padding:0;
+
+}
+div#creationSalle ul#displayCapteur h3 {
+    padding:0;
+    margin:0;
+}
+
+div#creationSalle ul#displayCapteur li.capteur {
+    border:solid transparent 1px;
+    box-shadow: 1px 1px 3px black;
+    border-radius :5px;
+    display: inline-block;
+    width:45%;
+    margin:5px 5px 5px 5px;
+    padding:10px;
+    font-size: 0.8em;
+}
+div#creationSalle ul#displayCapteur li.capteur span {
+    display: inline-block;
+    width:40%;
+}
+
+
+div#chooseCapteurType #inputSalleName {
+    margin-top:30px;
+}
+
+
+
+
+
+
 #creationSalle form ul li {
     list-style: none;
     font-size: 1.2em;
 }
 
 
-#creationSalle select {
-    width:150px;
-}
-#creationSalle span {
-    display: inline-block;
-    width:400px;
-}
+
 
 #creationSalle > h1 {
     text-align: center;
+
 }
 #creationSalle > a{
     color:rgb(63,78,95);
 }
 
-#creationSalle form div {
-    text-align: center;
-    margin-top: 30px;
-}
+
 #creationSalle form #creation {
+    display: block;
     height:35px;
+    margin:auto;
     font-size: 1em;
     border-radius: 5px;
     box-shadow: 1px 1px 3px #3F4D5E;
@@ -448,6 +531,73 @@ div#contenuAllMaison {
     background: ghostwhite;
 }
 
+#creationSalle #nomSalle {
+    margin:5px;
+    height:20px;
+    font-size: 1em;
+    width:140px;
+}
+
+#creationSalle #selectType {
+    margin:20px 0 20px 0;
+}
+
+#creationSalle ul#parentElement {
+    padding:0;
+}
+
+#creationSalle ul#listCapteur li.list {
+    display: inline-block;
+    width: 120px;
+    height:30px;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    margin:0 10px 30px 10px;
+    text-align: center;
+}
+
+div#creationSalle div#conteneurList {
+    width:95%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+
+}
+
+#creationSalle ul#allListCapteurTemp,#creationSalle ul#allListCapteurHum {
+    display: block;
+    margin:auto;
+    /*min-height: 40px;
+    line-height: 40px;*/
+    width:90%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    list-style: none;
+    padding-bottom:20px;
+}
+#creationSalle ul#allListCapteurTemp li, #creationSalle ul#allListCapteurHum li {
+    display: inline-block;
+    min-width: 100px;
+    height:30px;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    margin:5px 5px 5px 5px;
+}
+
+
+
+
+
+
+
+
 div#contenuMaison .salle {
     border:solid transparent 1px;
     margin: 20px auto 20px auto;
@@ -456,19 +606,84 @@ div#contenuMaison .salle {
     text-align: left;
     position: relative;
 }
+.salle h2.titre-capteur {
+    height:60px;
+    line-height: 60px;
+    padding-left:20px;
+
+}
+
+.salle h2.titre-capteur span {
+    text-align: center;
+    height:60px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+.salle .logo-capteur {
+    width:60px;
+    height:60px;
+}
+img[alt=temperature] {
+    padding-right: 15px;
+}
+
+
 div#contenuMaison .salle >h1 {
     text-align: center;
 }
 
 .salle ul {
     list-style: none;
+    margin:0;
+    padding:0;
 }
 .salle li {
     font-weight:normal;
 }
+.salle li.configMode {
+    margin-left:40px;
+    vertical-align: middle;
+}
+
+
+
+
+
+.salle li.configMode select {
+    height:20px;
+    line-height: 20px;
+    width: 150px;
+    vertical-align: middle;
+    font-size:1em;
+    padding-left:10px;
+}
+.salle li.configMode input {
+    height:30px;
+    width: 150px;
+    font-size: 1em;
+    vertical-align: middle;
+    margin:0;
+    padding:0;
+}
+.salle li.configMode input:hover {
+    background: #228B52;
+    padding:0;
+    margin:0;
+    border-radius: 5px;
+    border: 1px;
+    color: white;
+}
+
+.salle hr.margin-info {
+    margin-top:50px;
+    width:90%;
+}
+
 .salle h2 {
     font-weight: normal;
     font-size:1.3em;
+
+
 }
 .salle h2 span {
     display: inline-block;
@@ -488,6 +703,7 @@ div#contenuMaison .salle >h1 {
     display: inline-block;
     width:200px;
     font-size:1.3em;
+    padding-left:5px;
 }
 .salle .red {
     color: #FF0000;
@@ -543,10 +759,6 @@ input:checked + .flaticon-power {
 
 /*page d'inscription*/
 
-section#conteneur {
-    height: 450px;
-    color: #0F100F;
-}
 
 section#conteneur .submit {
     margin:30px auto 10px auto;
@@ -714,24 +926,72 @@ section #modifier > form > div {
 div#modifier input {
     display:inline-block;
 }
-div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp {
+div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp, div#modifier #ancienMdp {
     margin-left: 20px;
     width:150px;
+}
+
+div#modifier #verifMdp {
+    vertical-align: top;
+    margin-top : 5px;
+}
+
+div#monCompte .separator {
+    margin: 20px;
 }
 #profil ul {
     list-style: none;
 }
+
 div#modifier label {
     display:inline-block;
     width:200px;
 }
+
+div#modifier div#envoyer-modifier {
+    display: inline-block;
+    width:500px;
+    height:30px;
+
+    line-height:50px;
+    vertical-align: middle;
+    margin:20px 0 20px 0;
+    text-align: right;
+    position: relative;
+}
 section div#modifier input.envoyer {
     display:block;
     width :150px;
-    vertical-align: middle;
-    line-height: 30px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+
+    border-radius: 5px;
     height:30px;
-    margin:10px 10px 10px 50px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+    position: absolute;
+    right:80px;
+}
+section div#modifier input.envoyer:hover {
+    display:block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+
+    border-radius: 5px;
+    height:30px;
+    vertical-align: middle;
+    padding:0;
+    margin:0;
+    position: absolute;
+    right:80px;
+    background:cornflowerblue ;
+    color: white;
 }
 
 
@@ -757,13 +1017,33 @@ section#modifierDonnerPersonnel div#modifier > div.link:hover {
     background: white;
 }
 
-
-div#maFamille .supprimerCompte {
-    display:inline-block;
+div#maFamille li {
+    display: inline-block;
+    width:100%;
 }
+div#maFamille .inputRemove {
+    display:inline-block;
+    width:80px;
+    height:30px;
+
+
+}
+div#maFamille .inputRemove:hover {
+    background: red;
+    display: inline-block;
+    width:80px;
+    color: white;
+    border-radius: 5px;
+    border:1px;
+}
+
+
+
 div#maFamille div.supprimerCompte {
+    display: inline-block;
     width:70%;
 }
+
 
 
 
@@ -777,10 +1057,7 @@ div#conteneurModes {
     margin-top:0px;
     height:530px;
 }
-div#conteneurModes h2 {
-    text-align:left;
-    padding-left:50px;
-}
+
 
 div#conteneurModes li {
     text-align: left;
@@ -798,9 +1075,8 @@ div#conteneurModes li {
     width:50px;
 
 }
-#configMode .placementConf {
-    margin-left:60px;
-}
+
+
 
 
 
@@ -810,6 +1086,7 @@ div#placementConfigMode {
     display:inline-block;
     width:55%;
     min-height:600px;
+
 }
 div#placementChoixMode {
     margin-top: 20px;
@@ -836,7 +1113,30 @@ div#choixMode {
 }
 div#creerMode {
     min-height:400px;
+}
 
+
+#configMode h2 {
+    display: inline-block;
+    padding:0;
+    margin:0;
+    height: 130px;;
+    line-height:130px ;
+    width:80px;
+
+}
+#configMode .logo-capteur {
+    width:60px;
+    height:60px;
+    vertical-align: middle;
+}
+
+#configMode img[alt=temperature] {
+    padding-right: 15px;
+}
+div.placementConf {
+    text-align: left;
+    padding-left:50px;
 }
 
 
@@ -849,9 +1149,10 @@ div#creerMode {
     width:100%;
 }
 #choixMode ul li div.right {
-    width:40%;
+    width:45%;
     display: inline-block;
     text-align: right;
+    padding-right: 10px;
 
 }
 #choixMode ul li.submit {
@@ -864,10 +1165,29 @@ div#creerMode {
 #choixMode .inputEdit, #choixMode .inputRemove {
     display: inline-block;
     height:30px;
+    width:80px;
 }
 #choixMode input.disabled {
     cursor: default;
 }
+#choixMode .inputEdit:hover {
+    background: cornflowerblue;
+    display: inline-block;
+    width:80px;
+    color: white;
+    border-radius: 5px;
+    border:1px;
+}
+#choixMode .not-disabled:hover {
+    background: red;
+    display: inline-block;
+    width:80px;
+    color: white;
+    border-radius: 5px;
+    border:1px;
+}
+
+
 
 
 input#submitCreerMode {
@@ -901,7 +1221,7 @@ li.template {
     border-radius : 5px;
     height: 130px;
     width: 90%;
-    padding-left:20px;
+
 }
 ul#configMode li.first {
     margin-bottom: 20px;
@@ -910,7 +1230,9 @@ ul#configMode li.first {
 #submitMode {
     margin:30px 70px 30px 50px;
     text-align: right;
+    padding:0;
 }
+
 #submitMode #inputNomMode {
     font-size : 1.2em;
     width:150px;
@@ -944,10 +1266,13 @@ ul#configMode li.first {
 section#modes .messageError {
     margin-top: 15px;
     color: #CC3366;
+    text-align: center;
 }
 section#modes .messageSuccess {
     margin-top: 15px;
     color: green;
+    text-align: center;
+
 }
 
 
@@ -957,8 +1282,9 @@ section#modes .messageSuccess {
 /*Page de contacts*/
 
 section#contact {
-
     line-height: 40px;
+   /* display: table-cell;
+    vertical-align: middle;*/
 }
 section#contact .contact {
     width :500px;
@@ -1160,3 +1486,107 @@ table#consommation td,th
 {
     border: 1px solid black;
 }
+
+/*capteurs*/
+
+
+section#capteur div#addCapteur, section#capteur div#listCapteur {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+}
+
+section#capteur div#addCapteur .messageError,section#capteur div#addCapteur .messageSuccess {
+    margin-top: 20px;
+}
+
+div#addCapteur > div,div#listCapteur > div {
+    display: block;
+    border:solid transparent 1px;
+    border-radius :5px;
+    box-shadow: 1px 1px 3px black;
+    width:500px;
+    margin:auto;
+    min-height: 300px;
+
+}
+section#capteur  h2 {
+    margin-bottom: 50px;
+}
+
+div#addCapteur label {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+}
+div#addCapteur .submit {
+    display: block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    margin:50px auto 0 auto;
+    border-radius: 5px;
+    height:30px;
+    /*vertical-align: middle;*/
+    padding:0;
+}
+div#addCapteur .submit:hover {
+    display: block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    height:30px;
+    /*vertical-align: middle;*/
+    background:cornflowerblue ;
+    color: white;
+}
+
+
+div#listCapteur ul {
+    list-style: none;
+    text-align: left;
+}
+
+div#listCapteur > div  {
+    margin-bottom: 50px;
+}
+
+div#listCapteur ul#displayCapteur  {
+    padding:0;
+    margin-bottom: 20px;
+}
+div#listCapteur ul#displayCapteur h3 {
+    padding:0;
+    margin:0;
+}
+
+div#listCapteur ul#displayCapteur li.capteur {
+    border:solid transparent 1px;
+    box-shadow: 1px 1px 3px black;
+    border-radius :5px;
+    display: block;
+    width:90%;
+    margin:5px auto 5px auto;
+    padding:10px;
+}
+div#listCapteur ul#displayCapteur li.capteur span {
+    display: inline-block;
+    width:40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

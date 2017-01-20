@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <list default="true" id="5dc6a2a6-aa51-4eb0-90c0-6b663df542e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+=======
+    <list default="true" id="5dc6a2a6-aa51-4eb0-90c0-6b663df542e4" name="Default" comment="" />
+>>>>>>> Stashed changes
 =======
     <list default="true" id="5dc6a2a6-aa51-4eb0-90c0-6b663df542e4" name="Default" comment="" />
 >>>>>>> Stashed changes
@@ -45,8 +49,13 @@
         <entry file="file://$PROJECT_DIR$/vue/style/style.css">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <state relative-caret-position="96">
               <caret line="477" column="22" lean-forward="false" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
+=======
+            <state relative-caret-position="794">
+              <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
+>>>>>>> Stashed changes
 =======
             <state relative-caret-position="794">
               <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
@@ -59,6 +68,7 @@
       <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/espaceClient/connexion.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             <state relative-caret-position="315">
               <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
@@ -112,6 +122,11 @@
             <state relative-caret-position="570">
               <caret line="64" column="89" lean-forward="true" selection-start-line="64" selection-start-column="89" selection-end-line="64" selection-end-column="89" />
               <folding />
+=======
+            <state relative-caret-position="221">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -580,7 +595,11 @@
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="188207000" />
+=======
+    <option name="totallyTimeSpent" value="188212000" />
+>>>>>>> Stashed changes
 =======
     <option name="totallyTimeSpent" value="188212000" />
 >>>>>>> Stashed changes
@@ -648,7 +667,10 @@
         <state relative-caret-position="60">
           <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           <folding />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         </state>
@@ -682,7 +704,10 @@
         <state relative-caret-position="346">
           <caret line="88" column="23" lean-forward="false" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           <folding />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         </state>
@@ -736,6 +761,9 @@
 =======
         <state relative-caret-position="435">
           <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="73" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         </state>
       </provider>
@@ -1018,6 +1046,9 @@
         <state relative-caret-position="-585">
 =======
         <state relative-caret-position="221">
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
@@ -1027,8 +1058,13 @@
     <entry file="file://$PROJECT_DIR$/vue/style/style.css">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <state relative-caret-position="96">
           <caret line="477" column="22" lean-forward="false" selection-start-line="477" selection-start-column="22" selection-end-line="477" selection-end-column="22" />
+=======
+        <state relative-caret-position="794">
+          <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
+>>>>>>> Stashed changes
 =======
         <state relative-caret-position="794">
           <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />

@@ -16,12 +16,14 @@ ob_start();
                         <li><a href="/espace-client/ma-maison">Maison</a></li>
                         <li><a href="/espace-client/modes">Modes</a></li>
                         <?php if ($_SESSION["role"] == "principal"){?>
+                            <li><a href="/espace-client/capteurs">Capteurs</a></li>
                             <li id="menuLast"><a href="/espace-client/modifier-donnees-perso">Comptes</a></li>
                         <?php }?>
                     <?php } ?>
                 </ul>
             </li>
-            <li class="nonderoulant"><a href="/contact">contact</a></li>
+            <!--<li class ="nonderoulant"><a href="/faq">Faq</a></li>-->
+            <li class="nonderoulant"><a href="/contact">Contact</a></li>
         </ul>
     </nav>
     <?php if (isset($messageGeneral)) { ?>

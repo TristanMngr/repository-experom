@@ -28,6 +28,10 @@ $titre = "donnée perso";
                                                                                      name="modifierNumero"
                                                                                      id="modifierNumero"
                         value="<?php echo $_SESSION['numero'] ?>"></div>
+                    <hr class="separator">
+                    <div><label for="ancienMdp">Ancien mot de passe</label><input type="password"
+                                                                             name="ancienMdp"
+                                                                             id="ancienMdp"></div>
                     <div><label for="modifierMdp">Mot de passe</label><input type="password"
                                                                                           name="modifierMdp"
                                                                                           id="modifierMdp"></div>
@@ -38,7 +42,9 @@ $titre = "donnée perso";
                                                                              id="verifMdp"></div>
 
 
-                    <input type="submit" value="Valider" class="envoyer">
+                    <div id="envoyer-modifier">
+                        <input type="submit" value="Valider" class="envoyer">
+                    </div>
 
 
                 </form>

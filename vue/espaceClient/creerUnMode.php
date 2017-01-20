@@ -13,14 +13,15 @@ $titre = "créer un modes";
             <form action='<?php if($editMode == true) {echo '/espace-client/modes/modifier-controller';} else {echo "/espace-client/modes/creer-un-mode";} ?>' method="post">
             <div id="creerMode">
 
-                <h1>Creer un mode</h1>
+                <h1><?= isset($editionMode)?"Editer mode":"Creer un mode";   ?></h1>
                 <ul id="configMode">
 
                     <li class="template first">
                         <div id="temp">
-                            <h2>Température</h2>
+
                             <div class="placementConf">
-                                <input type="text" name="tempMode" id="tempMode" class="inputModeConf" autofocus value="<?php if($typeModeTemp) {echo $consigneTemp;} ?>"><label for="tempMode">°C </label>
+                                <h2 class="titre-capteur"><img src="/vue/style/images/thermometer.png" alt="temperature" class="logo-capteur"></h2>
+                                <input type="number" name="tempMode" id="tempMode" class="inputModeConf" autofocus value="<?php if($typeModeTemp) {echo $consigneTemp;} ?>"><label for="tempMode">°C </label>
                                 <span>de </span><input type="number" name="timeBeginTemp" id="timeBeginTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $beginTemp;} ?>">
                                 <span>à </span><input type="number" name="timeEndTemp" id="timEndTemp" class="inputModeConf" min="1" max="24" value="<?php if($typeModeTemp) {echo $endTemp;} ?>">
 
@@ -33,9 +34,10 @@ $titre = "créer un modes";
 
                     <li class="template">
                         <div id="hum">
-                            <h2>Humidité</h2>
+
                             <div class="placementConf">
-                                <input type="text" name="humMode" id="humMode" class="inputModeConf" value="<?php if($typeModeHum) {echo $consigneHum;} ?> "><label for="humMode">% </label>
+                                <h2 class="titre-capteur"><img src="/vue/style/images/humidity.png" alt="humidite" class="logo-capteur"></h2>
+                                <input type="number" name="humMode" id="humMode" class="inputModeConf" value="<?php if($typeModeHum) { echo $consigneHum; } ?>"><label for="humMode">% </label>
                                 <span>de </span><input type="number" name="timeBeginHum" id="timBeginHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $beginHum;} ?>">
                                 <span>à </span><input type="number" name="timeEndHum" id="timEndHum" class="inputModeConf" min="1" max="24" value="<?php if($typeModeHum) {echo $endHum;} ?>">
 
@@ -48,6 +50,7 @@ $titre = "créer un modes";
                 <div id="submitMode">
                     <input type="input" name="nom" id="inputNomMode" placeholder="nom du mode" value="<?php if($modeName!=null){ echo $modeName;} ?>">
                         <input type="submit" id="submitNomMode" value="<?php if($editMode==true){echo "modifier";} else {echo "Créer";} ?>">
+                        <input type="hidden" name="editMode" value="<?= isset($modeName)? $modeName: ""; ?>"/>
                 </div>
             </div>
             </form>
@@ -67,16 +70,16 @@ $titre = "créer un modes";
                         <?php if ($mode == "mode nuit" or $mode == "mode jour") {
                             ?><input type="submit" value="supprimer"  class="modeRight inputRemove disabled"  disabled></li>
                             <?php } else { ?>
-                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove"></div></li>
+                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove not-disabled"></div></li>
                     <?php }} ?>
 
                     <li class="submit">
                         <form action="/espace-client/modes/creer"><input type="submit" id="submitCreerMode" value="Creer un mode"></form>
                     </li>
                     <?php if(isset($messageError)){  ?>
-                    <li class="messageError modeLeft"><?php echo $messageError; ?></li>
+                    <li class="messageError"><?php echo $messageError; ?></li>
                       <?php  } if (isset($messageSuccess)) {?>
-                    <li class="messageSuccess modeLeft"><?php echo $messageSuccess; ?></li>
+                    <li class="messageSuccess"><?php echo $messageSuccess; ?></li>
                       <?php }?>
                 </ul>
 

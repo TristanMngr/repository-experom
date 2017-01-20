@@ -4,6 +4,7 @@ include("modele/modes.php");
 include("modele/salles.php");
 include('controller/debug.php');
 include("controller/capteurSelect.php");
+include('modele/capteurs.php');
 
 
 $messageError = null;
@@ -64,9 +65,32 @@ function getModeSalle($db,$idSalle)
         return $nomMode;
     }
 }
+function getIdMode($db,$nomMode) {
+    $idMode = false;
+    $tableau = array('typeDeRequete'=>'select', 'table'=>'modes', 'param'=>array('nom'=>$nomMode));
+    $arrayMode = requeteDansTable($db,$tableau);
+    if (isset($arrayMode[0]['ID'])) {
+        $idMode = $arrayMode[0]['ID'];
+    }
+
+    return $idMode;
+}
+
+// retourne un tableau type=>valeur du mode
+function getTypeValueMode($db,$idMode) {
+    $arrayTypeValue = array();
+    $tableau = array('typeDeRequete'=>'select', 'table'=>'modes_config','param'=>array('ID_mode'=>$idMode));
+    $arrayDataMode = requeteDansTable($db,$tableau);
+
+    foreach($arrayDataMode as $key=>$value) {
+        $arrayTypeValue[$value['type']] = $value['consigne'];
+    }
+    return $arrayTypeValue;
+
+}
 
 
-// fonction qui retourne la valeur du type demandé.
+// fonction qui retourne la valeur du type demandé. donné du capteurs
 function getdataCapteur($db,$idSalle) {
     $value = array();
     $tableau = array('param'=>array('ID_salle'=>$idSalle));
@@ -89,9 +113,11 @@ function getdataCapteur($db,$idSalle) {
 
 
 
-
-if ($_GET['target2'] == 'ajouter') {
-    include('controller/espaceClient/maison/createSalle.php');
+if (!empty($_GET['target3']) & $_GET['target2'] == 'creation') {
+    include('controller/espaceClient/maison/ajax/getCapteurs.php');
+}
+else if ($_GET['target2'] == 'ajouter') {
+    include('controller/espaceClient/maison/createSalleV2.php');
 }
 else if ($_GET['target2'] == 'supprimer') {
     include('controller/espaceClient/maison/removeSalle.php');

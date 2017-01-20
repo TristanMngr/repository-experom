@@ -44,7 +44,7 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
 
 
             } else {
-                $messageError = "Le mail ou le mot de passe est incorrect";
+                $messageError = "Le pseudo ou le mot de passe est incorrect";
                 include("vue/espaceClient/connexion.php");
             }
         }else {

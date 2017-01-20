@@ -31,30 +31,61 @@ $titre = "vue des capteurs";
             <a href="/espace-client/ma-maison"><i class="flaticon-cancel-music" aria-hidden="true"></i></a>
             <h1>Création d'une salle</h1>
 
-            <form action="/espace-client/ma-maison/ajouter" method="post">
+            <form action="/espace-client/ma-maison/ajouter" method="post" onclick="sendArrayCapteur()"> <!--envoie la tableau des serialKey-->
 
-                <ul>
-                    <li><span>Température</span>
+                <ul id="parentElement">
+                    <?php /** ancienne version  */?>
+                    <!--<li><span>Température</span>
                         <select name="chooseCapteurTemp">
                             <option value="false">désactiver</option>
-                            <?php for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){?>
+                            <?php /*for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){*/?>
 
-                             <option value="<?php echo $arraySelectCapt['temperature'][$capteur];?>"><?php /*echo displayCapteur($arraySelectCapt['temperature'][$capteur]);*/echo $arraySelectCapt['temperature'][$capteur]; ?></option>
-                            <?php }?>
+                             <option value="<?php /*echo $arraySelectCapt['temperature'][$capteur];*/?>">/*echo displayCapteur($arraySelectCapt['temperature'][$capteur]);/*echo $arraySelectCapt['temperature'][$capteurs]; */*/?></option>
+                            <?php /*}*/?>
                         </select>
                     </li>
                     <li><span>Humidité</span>
                         <select name="chooseCapteurHum">
                                 <option value="false">désactiver</option>
-                            <?php for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){?>
-                                <option value="<?php echo $arraySelectCapt['humidite'][$capteur];?>"><?php /*echo displayCapteur($arraySelectCapt['humidite'][$capteur]);*/echo $arraySelectCapt['humidite'][$capteur];?></option>
-                            <?php }?>
+                            <?php /*for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){*/?>
+                                <option value="<?php /*echo $arraySelectCapt['humidite'][$capteur];*/?>">/*echo displayCapteur($arraySelectCapt['humidite'][$capteur]);/*echo $arraySelectCapt['humidite'][$capteurs];*/*/?></option>
+                            <?php /*}*/?>
                         </select>
-                    </li>
-                    <li>
-                        <span><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></li>
+                    </li>-->
+
+                    <?php /** Version Ajax */ ?>
+                    <h2>Quelle type de capteur</h2>
+                    <div id="chooseCapteurType">
+                        <div id="temperature" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/thermometer.png" class="logo-capteur"></div>
+                        <div id="humidite" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/humidity.png" class="logo-capteur"</div>
+                    </div>
+                    <!--<li id="selectType">
+                        <span>choisir un capteur</span>
+                        <select name="typeOfCapteur" id="select" onchange="selectCapteur(this.value)">
+                            <option value="rien">Aucun</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="humidite">Humidite</option>
+                        </select>
+
+                    </li>-->
+
+                    <div id="displayCapteur"></div>
+
+                    <div id="conteneurList" style="display:none">
+                        <h2>capteur selectionné</h2>
+                        <div ><ul id="allListCapteurTemp" style="display:none">
+                                <h3>température</h3>
+                            </ul>
+                            <ul id="allListCapteurHum" style="display:none">
+                                <h3>humidité</h3>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="serialKey" name="serialKey"> <!--javascript insert le tableau en value-->
+                    <div id="inputSalleName"><label for="nomSalle">Choisir un nom de salle</label></span><input type="text" name="nomSalle" id="nomSalle"></div>
                 </ul>
-                <div><input type="submit" value="créer salle" id="creation"></div>
+                <div><input type="submit" value="ajouter salle" id="creation"></div>
             </form>
         </div>
     <?php } ?>
@@ -67,10 +98,18 @@ $titre = "vue des capteurs";
                 </form>
                 <h1 id="<?php echo $tableauDonneesSalles[$salle]['nom']; ?>"><?php echo $tableauDonneesSalles[$salle]['nom'];?></h1>
                 <ul>
-                    <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']); ?>
+                    <?php $dataCapteur= getdataCapteur($db,$tableauDonneesSalles[$salle]['ID']);
+                          $nomDuMode = getModeSalle($db,$tableauDonneesSalles[$salle]['ID']);
+                          /*$idMode = null;*/
+
+                          /*if (getIdMode($db,$nomDuMode)!=false) {*/
+                            $idMode = getIdMode($db,$nomDuMode);
+                            $arrayTypeValueMode = getTypeValueMode($db,$idMode);  ?>
                     <?php if($tableauDonneesSalles[$salle]['isTemperature']==true) { ?>
+                        <li><h2 class="temp titre-capteur"><span></span><span class="data">Actuellement</span><span><?php if ($arrayTypeValueMode != false) echo  "Mode"; else ""?></span></li>
                     <li>
-                        <h2 class="temp"><span>Température</span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span>
+                        <!--Refaire cette ligne -->
+                        <h2 class="temp titre-capteur"><span><img src="/vue/style/images/thermometer.png" alt="temperature" class="logo-capteur"></span><span class="data"><?php if (isset($dataCapteur['temp'])) { echo $dataCapteur['temp'];} ?> °C</span><span><?= isset($arrayTypeValueMode['temperature']) ? $arrayTypeValueMode['temperature']: ""; ?> </span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchTemp">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -82,7 +121,7 @@ $titre = "vue des capteurs";
                     if ($tableauDonneesSalles[$salle]['isHumidite']==true) {
                     ?>
                     <li>
-                        <h2 class="hum"><span>Humidité</span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span>
+                        <h2 class="hum titre-capteur"><span><img src="/vue/style/images/humidity.png" alt="humidite" class="logo-capteur"><!--Humidité--></span><span class="data"><?php if (isset($dataCapteur['hum'])) { echo $dataCapteur['hum'];} ?> %</span><span><?= isset($arrayTypeValueMode['humidite'])? $arrayTypeValueMode['humidite']: ""; ?> </span>
                             <label class="switch">
                                 <input type="checkbox" checked name="switchHum">
                                 <i class="flaticon-power" aria-hidden="true"></i>
@@ -90,20 +129,22 @@ $titre = "vue des capteurs";
                         </h2>
 
                     </li>
+                        <hr class="margin-info">
                     <?php } ?>
                     <?php $idSalle = $tableauDonneesSalles[$salle]['ID'];
                     $nameMode = getModeSalle($db,$idSalle);
 
                     if (isset($nameMode)) { ?>
-                    <li>
+
+                    <li class="configMode">
                         <span><h2 class="modeActif">Mode actif</h2></span><span class="modeActif green"><?php echo $nameMode ;?></span>
                     </li>
                     <?php } else {?>
-                    <li>
+                    <li class="configMode">
                         <span><h2 class="modeActif">Mode actif</h2></span><span class="modeActif red">Aucun</span>
                     </li>
                 <?php } ?>
-                    <li>
+                    <li class="configMode">
                         <span>
                             <h2 class="modeSalle"><span>Choisir un mode</span></h2>
                             <form class="modeSalle" action="/espace-client/ma-maison/activer-mode#<?php echo $tableauDonneesSalles[$salle]['nom']; ?>" method="post">

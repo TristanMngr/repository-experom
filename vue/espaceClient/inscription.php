@@ -10,13 +10,16 @@ $titre = "inscription";
     <article id="inscription">
         <h1><?php if ($utilisateurSecondaire == False){echo "Inscription" ;} else {echo "Création d'un utilisateur secondaire";} ?></h1>
         <form method="post" action=<?php if ($utilisateurSecondaire == False) {echo "/espace-client/inscription-control";} else if ($utilisateurSecondaire == True) {echo "/espace-client/modifier-donnees-perso/ajouter-un-utilisateur-control";}?>>
+            <?php if ($utilisateurSecondaire == False){ ?><div><label for="clef">Clef d'identification</label><input type="clef" name="clef"
+                                                                                                                     id="clef"></div><?php }?>
             <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : ""; ?>" autofocus></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="nom">Nom</label><input type="text" name="nom" id="nom" value="<?= isset($_POST['nom']) ? $_POST['nom'] : ""; ?>"></div><?php } ?>
             <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail" placeholder="exemple@mail.com" value="<? if ($utilisateurSecondaire == False && isset($_POST['mail'])) { echo $_POST['mail']; } else { echo "";} if ($utilisateurSecondaire) {echo $_SESSION['mail'];} ?>"></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero" value="<?= isset($_POST['numero']) ? $_POST['numero'] : ""; ?>"></div><?php }?>
-            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div><div id="helpMdp"></div>
+            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp" oninputw="password(this)"></div><div id="helpMdp"></div>
             <div><label for="rmdp">Vérification du mot de passe</label><input type="password" name="rmdp"
                                                                             id="rmdp"></div>
+
 
             <div id="envoyer"><input type="submit" class="submit" name="submit" value="Envoyer"></div>
         </form>
@@ -33,7 +36,7 @@ $titre = "inscription";
 
 <?php
 $section = ob_get_clean();
-?><?php
+?><script type="text/javascript" src="/vue/javaScript/inscription.js"></script><?php
 include("gabarit.php");
 ?>
 
