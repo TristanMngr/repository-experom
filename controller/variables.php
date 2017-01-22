@@ -40,7 +40,6 @@ function variablesSession($db,$champ,$param) {
 
 
 
-
     $_SESSION["pseudo"] = $donneesUtilisateur[0]["pseudo"];
     $_SESSION["ID"] = $donneesUtilisateur[0]["ID"];
     $_SESSION['mdp'] = $donneesUtilisateur[0]['mdp'];
@@ -54,6 +53,7 @@ function variablesSession($db,$champ,$param) {
     else if ($donneesUtilisateur[0]["role"] == "secondaire"){
         $_SESSION["role"] = "secondaire";
     }
+
 }
 
 

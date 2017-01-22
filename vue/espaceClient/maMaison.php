@@ -34,24 +34,7 @@ $titre = "vue des capteurs";
             <form action="/espace-client/ma-maison/ajouter" method="post" onclick="sendArrayCapteur()"> <!--envoie la tableau des serialKey-->
 
                 <ul id="parentElement">
-                    <?php /** ancienne version  */?>
-                    <!--<li><span>Température</span>
-                        <select name="chooseCapteurTemp">
-                            <option value="false">désactiver</option>
-                            <?php /*for ($capteur = 0; $capteur < count($arraySelectCapt['temperature']); $capteur++){*/?>
 
-                             <option value="<?php /*echo $arraySelectCapt['temperature'][$capteur];*/?>">/*echo displayCapteur($arraySelectCapt['temperature'][$capteur]);/*echo $arraySelectCapt['temperature'][$capteurs]; */*/?></option>
-                            <?php /*}*/?>
-                        </select>
-                    </li>
-                    <li><span>Humidité</span>
-                        <select name="chooseCapteurHum">
-                                <option value="false">désactiver</option>
-                            <?php /*for ($capteur = 0; $capteur < count($arraySelectCapt['humidite']); $capteur++){*/?>
-                                <option value="<?php /*echo $arraySelectCapt['humidite'][$capteur];*/?>">/*echo displayCapteur($arraySelectCapt['humidite'][$capteur]);/*echo $arraySelectCapt['humidite'][$capteurs];*/*/?></option>
-                            <?php /*}*/?>
-                        </select>
-                    </li>-->
 
                     <?php /** Version Ajax */ ?>
                     <h2>Selection capteur</h2>
@@ -59,15 +42,7 @@ $titre = "vue des capteurs";
                         <div id="temperature" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/thermometer.png" class="logo-capteur"></div>
                         <div id="humidite" class="chooseType" onclick="selectCapteur(this.id)"><img src="/vue/style/images/humidity.png" class="logo-capteur"</div>
                     </div>
-                    <!--<li id="selectType">
-                        <span>choisir un capteur</span>
-                        <select name="typeOfCapteur" id="select" onchange="selectCapteur(this.value)">
-                            <option value="rien">Aucun</option>
-                            <option value="temperature">Temperature</option>
-                            <option value="humidite">Humidite</option>
-                        </select>
-
-                    </li>-->
+                    
 
                     <div id="displayCapteur"></div>
 
@@ -133,8 +108,8 @@ $titre = "vue des capteurs";
                         </h2>
 
                     </li>
-                        <hr class="margin-info">
                     <?php } ?>
+                    <hr class="margin-info">
                     <?php $idSalle = $tableauDonneesSalles[$salle]['ID'];
                     $nameMode = getModeSalle($db,$idSalle);
 

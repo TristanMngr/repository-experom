@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="/vue/style/style.css" />
     <link rel="stylesheet" type="text/css" href="/vue/style/font_general/flaticon.css">
     <script type="text/javascript" src="/controller/espaceClient/maison/ajax/getCapteurs.js"></script>
+    <script type="text/javascript" src="/controller/back-office/ajax/users.js"></script>
+    <script type="text/javascript" src="/controller/back-office/ajax/home.js"></script>
 
 
     <title>

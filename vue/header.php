@@ -6,7 +6,7 @@ ob_start();
     <nav class="inline">
         <ul id="menuAccueil">
             <li class="nonderoulant"><a href="/accueil">accueil</a></li>
-            <li class="deroulant"><a href="/espace-client">espace client</a>
+            <li class="deroulant"><a href='/espace-client'>espace client</a>
                 <?php if (isset($_SESSION["ID"]) & isset($_SESSION['IDmaison'])) { ?>
                     <div id="fleche"></div>
                 <?php } ?>

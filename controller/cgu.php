@@ -1,7 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tristanmenager
- * Date: 21/01/2017
- * Time: 16:58
- */
+
+
+$tableau = array('typeDeRequete'=>'select', 'table'=>'cgu','param'=>array('ID'=>1));
+$dataCGU = requeteDansTable($db,$tableau);
+
+$textCGU = "";
+
+if ($dataCGU != array()) {
+    $textCGU = $dataCGU[0]['text'];
+}
+
+
+
+include('vue/cgu.php');
+?>

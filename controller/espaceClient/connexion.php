@@ -6,7 +6,6 @@
  * verification du formulaire de connexion
  */
 
-include("modele/general.php");
 
 if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
     if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) { //sont vide?

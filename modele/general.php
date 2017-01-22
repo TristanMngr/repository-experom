@@ -158,6 +158,27 @@ function implodeChampsValues($tableau)
 }
 
 
+function fetchSubUsers($db,$tableau) {
+
+    $request = $db -> prepare('SELECT pseudo
+ FROM users 
+ WHERE pseudo 
+ LIKE :pseudo 
+ ORDER BY pseudo DESC
+ LIMIT 7');
+
+    $request -> execute($tableau);
+
+    $array = array();
+    while ($data = $request -> fetch()) {
+        $array[] = $data;
+    }
+    return $array;
+
+    $request -> closeCursor();
+}
+
+
 
 
 

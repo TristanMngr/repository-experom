@@ -1,5 +1,4 @@
 <?php
-include("modele/general.php");
 /**
  * modifier ses données perso
  *

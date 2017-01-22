@@ -1,5 +1,4 @@
 <?php
-include("modele/general.php");
 include("controller/debug.php");
 include('modele/modes.php');
 include('controller/espaceClient/modes/functions.php');

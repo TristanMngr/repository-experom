@@ -20,4 +20,29 @@ function getDataSalle($db,$tableau) {
     return $tableau;
 }
 
+/**
+ * récupère les données des capteurs, par rapport à leurs salles
+ * @param $db
+ * @param $tableau
+ * @return array
+ */
+
+function getDataCapteursByNameSalle($db,$tableau) {
+    $request = $db-> prepare('SELECT salles.nom, round(avg(NULLIF(archives.temperature,0)),1), round(avg(NULLIF(archives.humidite,0)),1)
+FROM archives
+JOIN capteurs on capteurs.ID  = archives.ID_capteur
+JOIN salles on salles.ID = capteurs.ID_salle
+JOIN maison on salles.IDmaison = maison.ID
+WHERE salles.IDmaison =:IDmaison 
+GROUP BY salles.nom');
+
+    $request -> execute($tableau);
+
+    $newArray = array();
+    while ($data = $request -> fetch()) {
+        $newArray[] = $data;
+    }
+    return $newArray;
+}
+
 

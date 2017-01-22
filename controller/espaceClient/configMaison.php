@@ -1,5 +1,4 @@
 <?php
-include("modele/general.php");
 
 // insertion des données envoyé par configMaison.php (vue)
 
@@ -47,4 +46,4 @@ if ($_GET['target'] == 'premiere-connexion') {
 
 }
 
-include('vue/accueil/accueil.php');
+include('vue/accueil/connexion-BO.php');

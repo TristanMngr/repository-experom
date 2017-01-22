@@ -1,7 +1,6 @@
 <?php
 include("controller/capteurSelectV2.php");
 include("controller/debug.php");
-include("modele/general.php");
 
 
 

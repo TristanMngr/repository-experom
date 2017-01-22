@@ -6,12 +6,22 @@ $titre = "accueil-admin";
 ob_start();
 ?>
 
-    <section id="user-BO">
-        <div id="inputUser">
-            <label for="pseudo">pseudo</label><input type="input" name="pseudo" placeholder="pseudo utilisateur">
+<section id="user-BO">
+    <div id="posChooseUser">
+        <div id="chooseUser">
+            <label for="pseudo">Pseudo</label><input type="input" name="pseudo" autofocus placeholder="pseudo utilisateur" oninput="ajaxGetUsers(this)">
+            <hr>
+            <ul id="listUsers">
+
+            </ul>
         </div>
-        <div id="chooseUser"></div>
-    </section>
+    </div>
+    <div id="posMaison-BO">
+        <div id="maison-BO">
+
+        </div>
+    </div>
+</section>
 
 
 <?php

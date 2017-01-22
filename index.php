@@ -2,6 +2,7 @@
 session_start();
 include("modele/connexionDB.php");
 include("controller/variables.php");
+include("modele/general.php");
 /*include("modele/general.php");*/
 
 
@@ -42,14 +43,27 @@ else if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
         else if ($_SESSION['role'] == "secondaire") {
             include('controller/espaceClient/maison/index.php');
         }
+        else if ($_SESSION['role'] == 'admin') {
+            include('vue/error.php');
+        }
     }
 }
 
+// partie admin
 else if ($_GET['cible'] == 'admin') {
-    include('vue/back-office/accueil.php');
+    include('controller/back-office/index.php');
+
 }
+
+// mention légal/cgu/error
 else if ($_GET['cible'] == 'mention-legal') {
     include('vue/mention-legal.php');
+}
+else if ($_GET['cible'] == 'cgu') {
+    include('controller/cgu.php');
+}
+else if ($_GET['cible'] == 'error'){
+    include('vue/error.php');
 }
 
 
@@ -92,7 +106,18 @@ else if ($_GET['cible'] == 'espace-client') {
 
 
     else if ($_GET['target'] == 'capteurs') {
-        include('controller/espaceClient/capteurs/index.php');
+        if (isset($_SESSION['role'])){
+            if ($_SESSION['role'] == "principal") {
+                include('controller/espaceClient/capteurs/index.php');
+            }
+            else {
+                include('vue/error.php');
+            }
+        }
+        else {
+                include('vue/error.php');
+
+        }
     }
 
 
@@ -100,21 +125,27 @@ else if ($_GET['cible'] == 'espace-client') {
     /*donner perso*/
 
     else if ($_GET['target'] == 'modifier-donnees-perso') {
-        if (empty($_GET['target2'])) {
-            include("controller/espaceClient/modifierDonneesPerso.php");
-        }
-        else if ($_GET['target2'] == "ajouter-un-utilisateur") {
-            $utilisateurSecondaire = True;
-            include("vue/espaceClient/inscription.php");
-        }
-        else if ($_GET['target2'] == "ajouter-un-utilisateur-control") {
-            $utilisateurSecondaire = True;
-            include("controller/espaceClient/modifierDonneesPerso.php");
-        }
-        else if ($_GET['target2'] == 'suppression') {
-            include("controller/espaceClient/modifierDonneesPerso.php");
-        }
+        if (isset($_SESSION['role'])){
+            if ($_SESSION['role'] == "principal") {
+                if (empty($_GET['target2'])) {
+                    include("controller/espaceClient/modifierDonneesPerso.php");
+                } else if ($_GET['target2'] == "ajouter-un-utilisateur") {
+                    $utilisateurSecondaire = True;
+                    include("vue/espaceClient/inscription.php");
+                } else if ($_GET['target2'] == "ajouter-un-utilisateur-control") {
+                    $utilisateurSecondaire = True;
+                    include("controller/espaceClient/modifierDonneesPerso.php");
+                } else if ($_GET['target2'] == 'suppression') {
+                    include("controller/espaceClient/modifierDonneesPerso.php");
+                }
+            }
+            else {
+                include('vue/error.php');
+            }
+        }else {
+            include('vue/error.php');
 
+        }
     }
     else if ($_GET['target'] == "modifier-donnees-perso-control") {
         include("controller/espaceClient/modifierDonneesPerso.php");

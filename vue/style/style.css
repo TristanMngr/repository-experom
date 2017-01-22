@@ -59,6 +59,8 @@ ul#footer {
     height:50px;
     line-height:50px;
 }
+
+
 #footer li {
     display:inline-block;
     padding:0;
@@ -74,6 +76,11 @@ ul#footer {
     width:200px;
     vertical-align: middle;
     height:50px;
+}
+#footer a#redirAdmin {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
 }
 #footer a {
     margin:0;
@@ -130,6 +137,32 @@ header h1.logo {
     padding:0;
     border-bottom: 3px solid #DBDDDB;
 }
+header  ul#menuAccueil-BO {
+    vertical-align: middle;
+    height:100px;
+    line-height:100px;
+    padding:0;
+    margin:0;
+}
+header ul#menuAccueil-BO li {
+    display: inline-block;
+    vertical-align: middle;
+    height:100px;
+    line-height:100px;
+
+}
+
+header nav ul#menuAccueil-BO li h1 {
+    display: inline-block;
+    font-size:1.3em;
+    margin:0;
+    padding:0;
+    line-height:100px;
+    height:100px;
+    vertical-align: middle;
+}
+
+
 
 /*section*/
 section {
@@ -382,7 +415,6 @@ section#maMaison > h1 img {
     box-shadow: 1px 1px 3px black;
     height:65px;
     margin-bottom: 15px;  /* à virer */
-    position: fixed;
 
 
 }
@@ -932,7 +964,7 @@ div#conteneurDonnerPerso div#maFamille {
 div#maFamille div#utilisateurs {
     border:solid transparent 1px;
     margin :auto;
-    width: 500px;
+    width: 80%;
     text-align: left;
     padding: 20px;
     line-height: 30px;
@@ -956,7 +988,7 @@ div#modifier {
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
     min-height : 400px;
-    width: 500px;
+    width: 80%;
     text-align:left;
     margin:20px auto 20px auto;
     line-height: 30px;
@@ -1704,6 +1736,250 @@ div#listCapteur .capteur .flaticon-cancel-music {
     width:100%;
 
 }
+
+/*error*/
+
+section#section-error {
+    display: table-cell;
+    vertical-align: middle;
+}
+section#section-error div#error {
+    display: block;
+    margin:auto;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    width:1000px;
+    height: 40px;
+    line-height:40px;
+    text-align: center;
+}
+section#section-error div#error p {
+    line-height: 40px;
+    font-size: 1.3em;
+    margin:0;
+    padding:0 10px;
+    color: green;
+}
+
+
+/*===============================================================================================================*/
+/*===================================================ADMIN=======================================================*/
+
+
+/*création CGU*/
+section#cgu-BO {
+    display: table-cell;
+    vertical-align: middle;
+
+}
+div#cgu h1 {
+    margin-top:0;
+}
+
+div#cgu form,div#cgu input {
+    display: block;
+}
+
+div#cgu form textarea {
+    text-align: left;
+
+    font-size: 1.2em;
+    font-family:Verdana,Arial,sans-serif;
+    line-height:105%;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+
+div#cgu input {
+    margin:auto;
+}
+div#cgu input {
+    display: block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    margin:50px auto 0 auto;
+    height:30px;
+    /*vertical-align: middle;*/
+    padding:0;
+}
+div#cgu input:hover {
+    display: block;
+    width :150px;
+    line-height:25px;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    height:30px;
+    /*vertical-align: middle;*/
+    background:cornflowerblue ;
+    color: white;
+}
+
+div#cgu .messageSuccess {
+    margin-top:20px;
+}
+
+
+/*display CGU*/
+
+section#cgu-foot-section {
+    display: table-cell;
+    vertical-align: middle;
+
+}
+section#cgu-foot-section div#cgu-foot {
+    width: 50%;
+    min-height:500px;
+    display: block;
+    margin:0 auto 20px auto;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    text-align: left;
+    padding:30px;
+    font-size: 1.1em;
+
+}
+
+
+/*users*/
+
+section#user-BO {
+    display: table-cell;
+    vertical-align: middle;
+    height:100%;
+}
+
+section#user-BO div#posChooseUser  {
+    display: inline-block;
+    vertical-align: top;
+    margin:auto;
+    width: 25%;
+    min-height: 90%;
+}
+section#user-BO div#posMaison-BO {
+    display: inline-block;
+    margin:auto;
+    width: 74%;
+    min-height: 90%;
+
+}
+
+div#posChooseUser #chooseUser {
+    display: block;
+    margin: auto;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    width: 95%;
+    min-height: 500px;
+}
+div#posMaison-BO #maison-BO {
+    display: block;
+    margin: auto;
+    /*border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;*/
+    width: 90%;
+    min-height: 400px;
+}
+
+
+
+div#posChooseUser div#chooseUser label {
+    display: inline-block;
+    width:30%;
+    text-align: center;
+    margin-top:20px;
+}
+div#posChooseUser div#chooseUser input {
+    display: inline-block;
+    width: 50%;
+    margin-top:20px;
+}
+div#posChooseUser div#chooseUser hr {
+    margin-top:20px;
+    width:90%;
+}
+div#posChooseUser div#chooseUser ul#listUsers {
+    list-style: none;
+    padding:0;
+    text-align: left;
+}
+div#posChooseUser div#chooseUser ul#listUsers> li {
+    height:30px;
+    line-height: 30px;
+    width: 80%;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 2px;
+    margin: 5px auto ;
+    padding-left:20px;
+    display: block;
+    cursor: pointer;
+}
+
+div#posChooseUser div#chooseUser ul#listUsers> li:hover {
+    background: green;
+    color: white;
+}
+
+
+
+
+
+
+
+#maison-BO div.info-BO {
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    display: inline-block;
+    width:30%;
+    min-height: 300px;
+    vertical-align: top;
+    /*margin-top: 20px;*/
+}
+
+#maison-BO div.info-BO ul {
+    text-align: left;
+    list-style: none;
+    padding:0;
+
+
+}
+#maison-BO div.info-BO ul> li {
+    height: 35px;
+    line-height: 35px;
+    width: 80%;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 2px black;
+    border-radius: 2px;
+    margin: 5px auto ;
+    padding-left:20px;
+    display: block;
+    cursor: pointer;
+}
+
+
+#maison-BO div.info-BO ul> li:hover {
+    background: green;
+    color: white;
+}
+
+
+
+
 
 
 

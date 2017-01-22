@@ -28,7 +28,7 @@ if ($_GET['target2'] == 'ajouter-capteur') {
 
                     foreach ($arrayTranslateTrame as $key => $value) {
                         if ($value['typeOfCapteur'] == 'temperature') {
-                            $tableau = array('typeDeRequete' => 'insert', 'table' => 'archives', 'param' => array('numero' => $value['idCapteur'], 'temperature' => $value['valueOfCapteur'], 'ID_capteur' => $idCapteur));
+                            $tableau = array('typeDeRequete' => 'insert', 'table' => 'archives', 'param' => array('numero' => $value['idCapteur'], 'temperature' => $value['valueOfCapteur'] , 'ID_capteur' => $idCapteur));
                             requeteDansTable($db, $tableau);
                         }
                         if ($value['typeOfCapteur'] == 'humidite') {

@@ -1,6 +1,17 @@
 <?php
-include("vue/header.php");
-include("vue/footer.php");
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] != 'admin') {
+        include("vue/header.php");
+        include("vue/footer.php");
+    } else {
+        include("vue/back-office/header.php");
+        include("vue/back-office/footer.php");
+    }
+}
+else {
+    include("vue/header.php");
+    include("vue/footer.php");
+}
 $titre = "mention légal";
 
 ob_start();
