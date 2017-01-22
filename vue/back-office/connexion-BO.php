@@ -6,8 +6,8 @@ $titre = "ajouter un capteurs";
 ob_start();
 ?>
 
-<section>
-<div id="BO-accueil">
+<section id="conteneur">
+<article id="inscription">
     <h1>Connexion admin</h1>
     <form method="post" action="/espace-client/connexion-control">
 
@@ -25,7 +25,7 @@ ob_start();
         <div class="messageError"><?php echo $messageSuccess; ?></div>
     <?php } ?>
 
-</div>
+</article>
 </section>
 
 
