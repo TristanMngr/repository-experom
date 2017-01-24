@@ -6,18 +6,18 @@ include("controller/capteurSelect.php");
 include('modele/capteurs.php');
 
 
+
 $messageError = null;
 
 
-// récupération de toutes les données des salles
-$tableau = array(
-    'typeDeRequete'=>'select',
-    'table'=>'salles',
-    'param'=>array(
-        'IDmaison'=>$_SESSION['IDmaison']
-    ));
 
-$tableauDonneesSalles = requeteDansTable($db,$tableau);
+
+/**
+ * nouvelle recherche sur les salles
+ */
+
+$tableau = array('IDmaison'=> $_SESSION['IDmaison']);
+$tableauDonneesSalles = getDataCapteursByNameSalle($db,$tableau);
 
 
 
@@ -55,8 +55,8 @@ function getModeSalle($db,$idSalle)
 
     $tableauDonneesSalles = requeteDansTable($db,$tableau);
 
-    /*$tableau = array('param' => array('nom' => $tableauDonneesSalles[0]['nom'], 'IDmaison' => $_SESSION['IDmaison']));*/
-    /*$arrayCapteurSelect = getDataModeByName($db, $tableau);*/
+    $tableau = array('param' => array('nom' => $tableauDonneesSalles[0]['nom'], 'IDmaison' => $_SESSION['IDmaison']));
+    $arrayCapteurSelect = getDataModeByName($db, $tableau);
     $tableau = array('typeDeRequete' => 'select', 'table' => 'modes', 'param' => array('ID' => $tableauDonneesSalles[0]['ID_mode']));
     $arrayDataModeBySalle = requeteDansTable($db, $tableau);
     if (isset($arrayDataModeBySalle[0]['nom'])) {
@@ -64,16 +64,8 @@ function getModeSalle($db,$idSalle)
         return $nomMode;
     }
 }
-function getIdMode($db,$nomMode) {
-    $idMode = false;
-    $tableau = array('typeDeRequete'=>'select', 'table'=>'modes', 'param'=>array('nom'=>$nomMode));
-    $arrayMode = requeteDansTable($db,$tableau);
-    if (isset($arrayMode[0]['ID'])) {
-        $idMode = $arrayMode[0]['ID'];
-    }
 
-    return $idMode;
-}
+
 
 // retourne un tableau type=>valeur du mode
 function getTypeValueMode($db,$idMode) {
@@ -89,25 +81,6 @@ function getTypeValueMode($db,$idMode) {
 }
 
 
-// fonction qui retourne la valeur du type demandé. donné du capteurs
-function getdataCapteur($db,$idSalle) {
-    $value = array();
-    $tableau = array('param'=>array('ID_salle'=>$idSalle));
-    $dataSalle = getDataSalle($db,$tableau);
-    foreach ($dataSalle as $key => $data)
-
-    if ($data['type'] == 'temperature') {
-        if ($data['temperature']!= null) {
-            $value['temp'] = $data["temperature"];
-        }
-    }
-    if ($data['type'] == 'humidite') {
-        if ($data['humidite']!= null) {
-            $value['hum'] = $data["humidite"];
-        }
-    }
-    return $value;
-}
 
 
 

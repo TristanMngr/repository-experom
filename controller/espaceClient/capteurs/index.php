@@ -12,7 +12,12 @@ $arrayCapteurs = requeteDansTable($db,$tableau);
 function getNameSalle($db,$capteur) {
     $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('ID' =>$capteur));
     $salleName = requeteDansTable($db,$tableau);
-    return $salleName[0]['nom'];
+    if ($salleName != array()) {
+        return $salleName[0]['nom'];
+    }
+    else {
+        return false;
+    }
 
 }
 

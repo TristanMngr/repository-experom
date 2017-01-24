@@ -13,12 +13,12 @@ if (isset($_GET['target3'])) {
     $dataSalle = requeteDansTable($db,$tableau);
 
 
-    $idSalle = $dataSalle[0]['ID'];
+    $nomSalle = $dataSalle[0]['nom'];
 
 
     // on remet les valeurs des ID_salle à 0
 
-    $tableau = array('typeDeRequete'=>'update', 'table'=>'capteurs','setValeur'=>'ID_salle','champ'=>'ID_salle' , 'param'=>array('setValeur'=>0,'champ'=>$idSalle));
+    $tableau = array('typeDeRequete'=>'update', 'table'=>'capteurs','setValeur'=>'ID_salle','champ'=>'nom' , 'param'=>array('setValeur'=>0,'champ'=>$nomSalle));
     requeteDansTable($db,$tableau);
 
     /*$tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_salle'=>$idSalle));
@@ -48,13 +48,8 @@ if (isset($_GET['target3'])) {
 
 // On réactualise les données.
 
-$tableau = array(
-    'typeDeRequete'=>'select',
-    'table'=>'salles',
-    'param'=>array(
-        'IDmaison'=>$_SESSION['IDmaison']
-    ));
+$tableau = array('IDmaison'=> $_SESSION['IDmaison']);
+$tableauDonneesSalles = getDataCapteursByNameSalle($db,$tableau);
 
-$tableauDonneesSalles = requeteDansTable($db,$tableau);
 
 include('vue/espaceClient/maMaison.php');

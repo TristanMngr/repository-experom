@@ -7,16 +7,16 @@ ob_start();
 ?>
 
 <section id="conteneur">
-    <article id="inscription">
+    <article id="connexion">
         <h1>Connexion admin</h1>
         <form method="post" action="/admin/connexion-control">
 
-            <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" autofocus></div>
+            <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" autofocus></div>
 
-            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
+            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp" class="input"></div>
 
 
-            <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" value="Connexion"></div>
+            <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" class="input" value="Connexion"></div>
 
         </form>
         <?php if (isset($messageError)) { ?>

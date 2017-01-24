@@ -42,14 +42,7 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
 
 //on réactualise les données.
 
-
-$tableau = array(
-    'typeDeRequete'=>'select',
-    'table'=>'salles',
-    'param'=>array(
-        'IDmaison'=>$_SESSION['IDmaison']
-    ));
-
-$tableauDonneesSalles = requeteDansTable($db,$tableau);
+$tableau = array('IDmaison'=> $_SESSION['IDmaison']);
+$tableauDonneesSalles = getDataCapteursByNameSalle($db,$tableau);
 
 include('vue/espaceClient/maMaison.php');

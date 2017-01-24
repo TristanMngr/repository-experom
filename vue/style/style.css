@@ -517,7 +517,35 @@ div#creationSalle div.chooseType {
 
 div#creationSalle #chooseCapteurType {
     padding-left: 40px;
+}
 
+div#creationSalle #chooseCapteurType  div.capteurNone {
+    border:solid transparent 1px;
+    box-shadow: 1px 1px 3px black;
+    border-radius :5px;
+    display: inline-block;
+    padding:0 10px 0 10px;
+    margin-top: 30px;
+    height:30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+div#creationSalle #chooseCapteurType  div.capteurNone a {
+    color: #42444E;
+    display: block;
+    width: 100%;
+    height:30px
+}
+div#creationSalle #chooseCapteurType  div.capteurNone a:hover {
+    display: block;
+    width: 100%;
+    height:30px;
+    color:white;
+}
+
+div#creationSalle #chooseCapteurType  div.capteurNone:hover {
+    background: green;
+    color: white;
 }
 
 div#creationSalle .logo-capteur {
@@ -632,7 +660,15 @@ div#creationSalle div#conteneurList {
     border: solid transparent 1px;
     padding-bottom: 20px;
     margin-top: 30px;
-
+}
+div#creationSalle div#conteneurList h2{
+    padding-left: 20px;
+}
+div#creationSalle div#conteneurList div {
+    display: inline-block;
+}
+div#creationSalle div#conteneurList h3 {
+    display: inline-block;
 }
 
 #creationSalle ul#allListCapteurTemp,#creationSalle ul#allListCapteurHum {
@@ -641,12 +677,13 @@ div#creationSalle div#conteneurList {
     /*min-height: 40px;
     line-height: 40px;*/
     width:90%;
-    border-radius: 5px;
+    /*border-radius: 5px;
     box-shadow: 1px 1px 3px #3F4D5E;
-    border: solid transparent 1px;
+    border: solid transparent 1px;*/
     list-style: none;
-    padding-bottom:20px;
+    /*padding-bottom:20px;*/
 }
+
 #creationSalle ul#allListCapteurTemp li, #creationSalle ul#allListCapteurHum li {
     display: inline-block;
     min-width: 100px;
@@ -869,15 +906,22 @@ section#conteneur{
 
 
 section#conteneur article#inscription {
-    width: 500px;
-    padding:20px 0px 40px 0px;
+    width: 600px;
+    padding:10px 0 40px 0;
     border-radius:5px;
     color : rgb(63,78,95);
     border: solid transparent 1px;
     box-shadow: 1px 1px 10px #3F4D5E;
     display: inline-block;
+    font-size: 1em;
+}
+article#inscription input.input {
+    display: inline-block;
+    height: 30px;
 
-
+    line-height: 20px;
+    width: 40%;
+    font-size: 1em;
 }
 
 section#conteneur article#inscription #helpMdp {
@@ -885,6 +929,7 @@ section#conteneur article#inscription #helpMdp {
 }
 section#conteneur article#inscription form {
     margin-left: 20px;
+    margin-top:20px;
 }
 
 
@@ -896,17 +941,23 @@ section#conteneur form  {
 
     display:inline-block;
     line-height: 35px;
+
+}
+
+section#conteneur form div {
+
 }
 section#conteneur form div label {
     display:inline-block;
-    width:250px;
+    width:59%;
     text-align: left;
 }
 div#envoyer {
     display:block;
-    text-align: left;
+    text-align: right;
     vertical-align: middle;
     line-height: 30px;
+    padding-right:5px;
 
 }
 div.leftInscription {
@@ -935,6 +986,73 @@ section#conteneur .messageError {
     margin-top: 20px;
     color: #CC3366;
 }
+
+section#conteneur form#connexion {
+    display: block;
+    width: 90%;
+}
+
+/*!*!*connexion */
+section#conteneur article#connexion {
+    width: 550px;
+    padding:20px 0 40px 0;
+    border-radius:5px;
+    color : rgb(63,78,95);
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 10px #3F4D5E;
+    display: inline-block;
+    font-size: 1em;
+}
+section#conteneur article#connexion form{
+    width: 80% ;
+    margin:40px auto 0 auto;
+}
+
+section#conteneur article#connexion div {
+    width:95%;
+    display: block;
+    margin:auto;
+    text-align: right;
+}
+section#conteneur article#connexion div label {
+    display:inline-block ;
+    width: 45%;
+    text-align: left;
+}
+
+section#conteneur article#connexion .input,section#conteneur article#connexion label, article#connexion div.input {
+    display: inline-block;
+}
+
+article#connexion a {
+    display:block;
+    width:80%;
+    color:rgb(63,78,95);
+    line-height: 35px;
+    border:solid transparent 1px;
+    background: #FFFFFF;
+    border-radius:5px;
+    margin : 30px auto 0px auto;
+    /*margin-left:20px;*/
+    text-align: center;
+    box-shadow: 1px 1px 3px #3F4D5E;
+}
+article#connexion a:hover {
+    color: black;
+    background: ghostwhite;
+}
+article#connexion input.input {
+    display: inline-block;
+    height: 20px;
+
+    line-height: 20px;
+    width: 45%;
+    font-size: 1em;
+}
+
+
+
+
 /*modifier mes donnees personnel*/
 
 section#modifierDonnerPersonnel {
@@ -1001,7 +1119,7 @@ div#modifier .informations {
     font-style: normal;
 }
 div#modifier em.informations {
-    width : 200px;
+    width : 50%;
 }
 div#modifier div.informations {
     margin-left : 20px;
@@ -1010,13 +1128,18 @@ div#modifier div.informations {
 section #modifier > form > div {
     display:block;
     margin-left:50px;
+    height:35px;
+    line-height: 35px;
 }
 div#modifier input {
     display:inline-block;
 }
 div#modifier #modifierMail, div#modifier #modifierMdp, div#modifier #modifierAdresse, div#modifier #modifierNumero, div#modifier #modifierNom, div#modifier #verifMdp, div#modifier #ancienMdp {
     margin-left: 20px;
-    width:150px;
+    width:40%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1em;
 }
 
 div#modifier #verifMdp {
@@ -1033,24 +1156,24 @@ div#monCompte .separator {
 
 div#modifier label {
     display:inline-block;
-    width:200px;
+    width:50%;
 }
 
 div#modifier div#envoyer-modifier {
-    display: inline-block;
-    width:500px;
+    display: block;
+    width:90%;
     height:30px;
+    padding:0;
+    line-height:30px;
 
-    line-height:50px;
-    vertical-align: middle;
-    margin:20px 0 20px 0;
-    text-align: right;
-    position: relative;
+    margin:40px auto 25px auto;
+
 }
 section div#modifier input.envoyer {
     display:block;
     width :150px;
     line-height:25px;
+    margin:auto;
     font-size: 1em;
     border: solid transparent 1px;
     box-shadow: 1px 1px 4px black;
@@ -1059,14 +1182,13 @@ section div#modifier input.envoyer {
     height:30px;
     vertical-align: middle;
     padding:0;
-    margin:0;
-    position: absolute;
     right:80px;
 }
 section div#modifier input.envoyer:hover {
     display:block;
     width :150px;
     line-height:25px;
+    margin:auto;
     font-size: 1em;
     border: solid transparent 1px;
     box-shadow: 1px 1px 4px black;
@@ -1075,8 +1197,6 @@ section div#modifier input.envoyer:hover {
     height:30px;
     vertical-align: middle;
     padding:0;
-    margin:0;
-    position: absolute;
     right:80px;
     background:cornflowerblue ;
     color: white;
@@ -1090,7 +1210,8 @@ section#modifierDonnerPersonnel div.message {
 
 
 section#modifierDonnerPersonnel div#modifier > div.link {
-    margin-top: 10px;
+    margin:auto;
+    display: block;
     border: solid transparent 1px;
     box-shadow: 1px 1px 4px black;
     text-align: center;
@@ -1195,7 +1316,7 @@ div#choixMode, div#creerMode  {
 }
 
 div#choixMode {
-    min-height:300px;
+    min-height:250px;
     line-height: 30px;
 
 }
@@ -1225,6 +1346,13 @@ div#creerMode {
 div.placementConf {
     text-align: left;
     padding-left:50px;
+}
+
+div.placementConf > input[type=number] {
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.2em;
+
 }
 
 
@@ -1625,20 +1753,45 @@ div#addCapteur > div,div#listCapteur > div {
     border:solid transparent 1px;
     border-radius :5px;
     box-shadow: 1px 1px 3px black;
-    width:500px;
+    width:90%;
     margin:auto;
     min-height: 300px;
 
 }
+
+
 section#capteur  h2 {
     margin-bottom: 50px;
 }
 
+div#addCapteur div.divAddCapt {
+    display: block;
+    width: 80%;
+    margin:2px auto;
+    /*border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;*/
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.1em;
+
+}
+
 div#addCapteur label {
     display: inline-block;
-    width: 35%;
+    width: 50%;
     text-align: left;
 }
+
+div#addCapteur input[type=input],div#addCapteur input[type=number]  {
+    margin:0;
+    padding:0;
+    width: 150px;
+    height:20px;
+    line-height: 20px;
+    font-size: 1.2em;
+}
+
 div#addCapteur .submit {
     display: block;
     width :150px;
@@ -1646,8 +1799,8 @@ div#addCapteur .submit {
     font-size: 1em;
     border: solid transparent 1px;
     box-shadow: 1px 1px 4px black;
-    margin:50px auto 0 auto;
     border-radius: 5px;
+    margin:50px auto 0 auto;
     height:30px;
     /*vertical-align: middle;*/
     padding:0;
@@ -1665,7 +1818,9 @@ div#addCapteur .submit:hover {
     background:cornflowerblue ;
     color: white;
 }
-
+div#addCapteur div.messageSuccess, div#addCapteur div.messageError {
+    margin-bottom:20px;
+}
 
 div#listCapteur ul {
     list-style: none;
@@ -1688,7 +1843,7 @@ div#listCapteur ul#displayCapteur .setSalle {
     color: green;
     font-weight:bold;
 }
-div#listCapteur ul#displayCapteur .notSetSalle {
+div#listCapteur ul#displayCapteur .isSet {
     color: red;
 }
 
@@ -1714,14 +1869,14 @@ div#listCapteur ul#displayCapteur li.capteur {
     padding:10px;
 }
 div#listCapteur ul#displayCapteur li.capteur:hover {
-    border:3px solid grey;
+    border:3px solid green;
     cursor: pointer;
 }
 div#listCapteur ul#displayCapteur li.capteur span {
     display: inline-block;
     width:40%;
 }
-div#listCapteur ul#displayCapteur li.capteur a.crossCapteur {
+div#listCapteur ul#displayCapteur li.capteur span.crossCapteur {
     display: inline-block;
     width:9%;
     height:20px;

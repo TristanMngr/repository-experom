@@ -176,14 +176,10 @@ else {
 
 
 // on réactualise les données
-$tableau = array(
-    'typeDeRequete'=>'select',
-    'table'=>'salles',
-    'param'=>array(
-        'IDmaison'=>$_SESSION['IDmaison']
-    ));
+// récupération de tout les noms de modes pour ensuite les affichers
+$tableau = array('param'=> array('champ'=>$_SESSION["IDmaison"]));
 
-$tableauDonneesSalles = requeteDansTable($db,$tableau);
+$tableauDonneesMode = getDataMode($db,$tableau);
 
 
 

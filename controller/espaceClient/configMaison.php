@@ -46,4 +46,4 @@ if ($_GET['target'] == 'premiere-connexion') {
 
 }
 
-include('vue/accueil/connexion-BO.php');
+include('vue/accueil/accueil.php');

@@ -49,7 +49,7 @@ function fetchNameSalle($db,$tableau) {
     $request = $db-> prepare('SELECT salles.nom
 FROM salles
 join maison on salles.IDmaison = maison.ID
-WHERE maison.ID = IDmaison');
+WHERE maison.ID = :IDmaison');
 
     $request -> execute($tableau);
 

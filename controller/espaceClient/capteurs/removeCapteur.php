@@ -9,5 +9,11 @@ if (isset($_GET['target3'])) {
     $messageSuccess = "Le capteurs à bien été supprimé";
 }
 
+
+/*on réactualise les données*/
+$tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_maison'=>$_SESSION['IDmaison']));
+$arrayCapteurs = requeteDansTable($db,$tableau);
+
+
 include('vue/espaceClient/capteurs.php');
 ?>

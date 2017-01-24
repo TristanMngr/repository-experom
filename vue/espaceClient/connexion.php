@@ -6,18 +6,15 @@ $titre = "connexion";
 ob_start();
 ?>
 <section id="conteneur">
-    <article id="inscription">
+    <article id="connexion">
         <h1>Connexion</h1>
-        <form method="post" action="/espace-client/connexion-control">
+        <form method="post" id="connexion" action="/espace-client/connexion-control">
 
-            <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" autofocus></div>
+            <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" autofocus></div>
 
-            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp"></div>
+            <div><label for="mdp">Mot de passe</label><input type="password" class="input" name="mdp" id="mdp"></div>
 
-            <div class="leftInscription"><label for="resterConnecter">Maintenir la session ouverte</label><input type="checkbox"
-                                                                                         name="resterConnecter"
-                                                                                         id="resterConnecter">
-            </div>
+            <!--<div><label for="resterConnecter">Maintenir la session ouverte</label><input type="checkbox" name="resterConnecter" id="resterConnecter"></div>-->
 
             <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" value="Connexion"></div>
 

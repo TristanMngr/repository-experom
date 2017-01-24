@@ -28,12 +28,12 @@ function getDataSalle($db,$tableau) {
  */
 
 function getDataCapteursByNameSalle($db,$tableau) {
-    $request = $db-> prepare('SELECT salles.nom, round(avg(NULLIF(archives.temperature,0)),1), round(avg(NULLIF(archives.humidite,0)),1)
+    $request = $db-> prepare('SELECT salles.ID, salles.nom as nom_salle, salles.isTemperature,salles.isHumidite, round(avg(NULLIF(archives.temperature,0)),1) as temperature, round(avg(NULLIF(archives.humidite,0)),1) as humidite, salles.ID_mode as ID_mode
 FROM archives
 JOIN capteurs on capteurs.ID  = archives.ID_capteur
 JOIN salles on salles.ID = capteurs.ID_salle
 JOIN maison on salles.IDmaison = maison.ID
-WHERE salles.IDmaison =:IDmaison 
+WHERE salles.IDmaison =:IDmaison
 GROUP BY salles.nom');
 
     $request -> execute($tableau);

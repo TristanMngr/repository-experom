@@ -5,10 +5,16 @@
  */
 
 
+/*$salle = $_GET['target3'];
+$mode = $_GET['target4'];
+echo ($_GET['target3']);
+echo ($_GET['target4']);*/
 
 // permet d'éviter des valeurs null si le mode n'a pas de consigne pour un type
 $temp = false;
 $hum = false;
+
+
 if (isset($_POST['getMode'])) {
 
 // récupération des données du mode par rapport a son nom et l'id de la maison.
@@ -60,26 +66,29 @@ $tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs', 'param'=>array(
 $arrayDataCapteur = requeteDansTable($db,$tableau);
 $arrayIdCapt = array();
 
+
 foreach ($arrayDataCapteur as $arrayCapt => $champCapt) {
     if ($champCapt['type'] == 'temperature') {
-        $arrayIdCapt['temperature'] = $champCapt['ID'];
+        $arrayIdCapt[$arrayCapt]['temperature'] = $champCapt['ID'];
     }
     if ($champCapt['type'] == 'humidite') {
-        $arrayIdCapt['humidite'] = $champCapt['ID'];
+        $arrayIdCapt[$arrayCapt]['humidite'] = $champCapt['ID'];
     }
 }
 
 
 // on va chercher les capteurs concerné dans l'archives et on change leurs valeurs.
+for($capteur = 0; $capteur < count($arrayIdCapt); $capteur++) {
+    foreach ($arrayIdCapt[$capteur] as $type => $id) {
+        if ($type == 'temperature' & $temp != false) {
 
-foreach ($arrayIdCapt as $type => $id) {
-    if ($type == 'temperature' & $temp != false) {
-        $tableau = array('typeDeRequete'=>'update', 'table'=>'archives', 'setValeur'=>'temperature','champ'=>'ID_capteur', 'param'=>array('setValeur'=>$modeTempConsigne, 'champ'=>$id));
-        requeteDansTable($db,$tableau);
-    }
-    if ($type == 'humidite' & $hum != false) {
-        $tableau = array('typeDeRequete'=>'update', 'table'=>'archives', 'setValeur'=>'humidite','champ'=>'ID_capteur', 'param'=>array('setValeur'=>$modeHumConsigne, 'champ'=>$id));
-        requeteDansTable($db,$tableau);
+            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'temperature', 'champ' => 'ID_capteur', 'param' => array('setValeur' => $modeTempConsigne, 'champ' => $id));
+            requeteDansTable($db, $tableau);
+        }
+        if ($type == 'humidite' & $hum != false) {
+            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'humidite', 'champ' => 'ID_capteur', 'param' => array('setValeur' => $modeHumConsigne, 'champ' => $id));
+            requeteDansTable($db, $tableau);
+        }
     }
 }
 
@@ -89,6 +98,12 @@ foreach ($arrayIdCapt as $type => $id) {
 $tableau = array('typeDeRequete'=>'select', 'table'=> 'modes', 'param'=>array('ID'=>$arrayCapteurSelect[0]['ID']));
 $arrayDataModeBySalle = requeteDansTable($db,$tableau);
 $nomMode = $arrayDataModeBySalle[0]['nom'];
+
+
+
+// on réactualise les données
+$tableau = array('IDmaison'=> $_SESSION['IDmaison']);
+$tableauDonneesSalles = getDataCapteursByNameSalle($db,$tableau);
 
 
 include('vue/espaceClient/maMaison.php');
