@@ -43,13 +43,13 @@ foreach ($arrayNameMode as $key => $mode) {
 
 // récupération des modes par salles, puis récup du nom, pour mettre à jour la page
 
-function getModeSalle($db,$idSalle)
+function getModeSalle($db,$idSalle,$idMaison)
 {
     $tableau = array(
         'typeDeRequete'=>'select',
         'table'=>'salles',
         'param'=>array(
-            'IDmaison'=>$_SESSION['IDmaison'],
+            'IDmaison'=>$idMaison,
             'ID'=>$idSalle
         ));
 
@@ -80,8 +80,15 @@ function getTypeValueMode($db,$idMode) {
 
 }
 
-
-
+// pour la salle général
+if (isset($_GET['target3'])) {
+    if ($_GET['target2'] == 'general' or $_GET['target3'] == 'general') {
+        $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('ID' => -1));
+        $idModeGeneral = requeteDansTable($db,$tableau)[0]['ID_mode'];
+        $tableau = array('IDmaison' => $_SESSION['IDmaison']);
+        $avgDataHome = avgAllSalle($db, $tableau);
+    }
+}
 
 
 

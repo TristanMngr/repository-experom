@@ -445,6 +445,7 @@ section#maMaison > h1 img {
     padding:0;
     margin:0;
 }
+
 #indexMaison li.index a:hover{
     border-bottom: solid #3F4E5F 3px;
 }
@@ -456,6 +457,22 @@ section#maMaison > h1 img {
     vertical-align: middle;
     padding:0;
     margin:0;
+}
+
+#indexMaison li.index .ajax {
+    color: #3F4E5F;
+    display: inline-block;
+    width: 120px;
+    height:40px;
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 1.2em;
+    padding:0;
+    margin:0;
+    cursor: pointer;
+}
+#indexMaison li.index .ajax:hover {
+    border-bottom: solid #3F4E5F 3px;
 }
 
 #indexMaison li.indexCross a:hover {
@@ -664,15 +681,21 @@ div#creationSalle div#conteneurList {
 div#creationSalle div#conteneurList h2{
     padding-left: 20px;
 }
-div#creationSalle div#conteneurList div {
+div#creationSalle div#conteneurList > div {
     display: inline-block;
+    width: 90%;
+
 }
 div#creationSalle div#conteneurList h3 {
     display: inline-block;
 }
+div#conteneurList .titre{
+    display: inline-block;
+
+}
 
 #creationSalle ul#allListCapteurTemp,#creationSalle ul#allListCapteurHum {
-    display: block;
+    display:block ;
     margin:auto;
     /*min-height: 40px;
     line-height: 40px;*/
@@ -698,6 +721,18 @@ div#creationSalle div#conteneurList h3 {
 
 
 
+section#maMaison div#generalView > div#general {
+    display: block;
+    margin:40px auto;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #3F4D5E;
+    border: solid transparent 1px;
+    width: 70%;
+    min-height: 300px;
+    text-align: left;
+    /*position: relative;*/
+}
+
 
 
 
@@ -709,8 +744,16 @@ div#contenuMaison .salle {
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
     text-align: left;
-    position: relative;
+    /*position: relative;*/
 }
+
+.salle a.cancel .flaticon-cancel-music {
+    display :inline-block;
+    color: black;
+    height:100%;
+    width:100%;
+}
+
 .salle h2.titre-capteur {
     height:60px;
     line-height: 60px;
@@ -733,15 +776,23 @@ img[alt=temperature] {
 }
 
 
-div#contenuMaison .salle >h1 {
+div#contenuMaison .salle >h1,section#maMaison div#generalView > div#general h1,div#creationSalle h1 {
     text-align: center;
+    margin-top: 0px;
 }
 
-.salle ul {
+.salle ul#salleList {
     list-style: none;
     margin:0;
     padding:0;
 }
+div#generalView ul#ulGeneral {
+    list-style: none;
+    display: block;
+    margin:auto;
+    width: 90%;
+}
+
 .salle li {
     font-weight:normal;
 }
@@ -822,19 +873,22 @@ div#contenuMaison .salle >h1 {
     color:forestgreen;
     font-size: 25px;
 }
-div#creationSalle .flaticon-cancel-music {
-    position: absolute;
-    top:10px;
-    left:10px;
+
+div.salle .flaticon-cancel-music, div#creationSalle .flaticon-cancel-music ,div#generalView .flaticon-cancel-music {
+    /*position: absolute;*/
+    /*top:20px;
+    left:20px;*/
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin:10px 0 0 15px;
     font-size:10px;
     cursor: pointer;
 }
-div.salle .flaticon-cancel-music {
-    position: absolute;
-    top:10px;
-    left:10px;
-    font-size:10px;
-    cursor: pointer;
+div.salle .flaticon-cancel-music:hover {
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
 }
 .flaticon-multiply:hover {
     cursor: pointer;

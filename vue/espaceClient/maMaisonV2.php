@@ -33,10 +33,7 @@ $titre = "vue des capteurs";
                     <h1>Création d'une salle</h1>
 
                     <form action="/espace-client/ma-maison/ajouter" method="post" onclick="sendArrayCapteur()"> <!--envoie la tableau des serialKey-->
-
                         <ul id="parentElement">
-
-
                             <?php /** Version Ajax */ ?>
                             <h2>Selection capteur</h2>
                             <div id="chooseCapteurType">

@@ -8,17 +8,20 @@ if (isset($_GET['target3'])) {
 
     $removeSalle = $_GET['target3'];
 
+
     // on récupère l'id de la salle
-    $tableau = array('typeDeRequete'=>'select', 'table'=>'salles','param'=>array('nom'=>$removeSalle));
+    $tableau = array('typeDeRequete'=>'select', 'table'=>'salles','param'=>array('nom'=>$removeSalle, 'IDmaison'=>$_SESSION['IDmaison']));
     $dataSalle = requeteDansTable($db,$tableau);
 
 
     $nomSalle = $dataSalle[0]['nom'];
+    $idSalle = $dataSalle[0]['ID'];
 
 
-    // on remet les valeurs des ID_salle à 0
 
-    $tableau = array('typeDeRequete'=>'update', 'table'=>'capteurs','setValeur'=>'ID_salle','champ'=>'nom' , 'param'=>array('setValeur'=>0,'champ'=>$nomSalle));
+    // on remet les valeurs des ID_capteur à 0
+
+    $tableau = array('typeDeRequete'=>'update', 'table'=>'capteurs','setValeur'=>'ID_salle','champ'=>'ID_salle' , 'param'=>array('setValeur'=>0,'champ'=>$idSalle));
     requeteDansTable($db,$tableau);
 
     /*$tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_salle'=>$idSalle));
@@ -42,6 +45,13 @@ if (isset($_GET['target3'])) {
     $messageError = "Vous avez bien supprimé : ".$removeSalle;
 
 
+}
+
+// on remet à zero l'id du mode si il n'y'a aucune salle.
+$tableau = array('typeDeRequete'=>'select', 'table'=>'salles','param'=>array('IDmaison'=>$_SESSION['IDmaison']));
+if (requeteDansTable($db,$tableau) == array()) {
+    $tableau = array('typeDeRequete'=>'update', 'table'=>'salles','setValeur'=>'ID_mode','champ'=>'ID' , 'param'=>array('setValeur'=>0,'champ'=>-1));
+    requeteDansTable($db,$tableau);
 }
 
 

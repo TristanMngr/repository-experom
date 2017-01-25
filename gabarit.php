@@ -8,6 +8,8 @@
     <script type="text/javascript" src="/controller/espaceClient/maison/ajax/getDataMode.js"></script>
     <script type="text/javascript" src="/controller/back-office/ajax/users.js"></script>
     <script type="text/javascript" src="/controller/back-office/ajax/home.js"></script>
+    <script type="text/javascript" src="/controller/espaceClient/maison/ajax/generalView.js"></script>
+    <script type="text/javascript" src="/controller/espaceClient/maison/ajax/getHomeSection.js"></script>
     <!--<script type="text/javascript" src="/controller/getTrames.js"></script>-->
 
 
@@ -25,9 +27,8 @@
 <script type="text/javascript" src="/vue/javaScript/delete.js"></script>
 <script type="text/javascript" src="/vue/javaScript/maison.js"></script>
 <script type="text/javascript" src="/vue/javaScript/capteur.js"></script>
-<script type="text/javascript" src="/vue/jquery/scroll-smooth.js"></script>
 
 
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
 </body>
 </html>

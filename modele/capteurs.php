@@ -15,3 +15,11 @@ function getArchivesFromCapteur($db,$tableau)
     }
     return $array;
 }
+
+function updateTableCapteur($db,$tableau) {
+    $request = $db->prepare('UPDATE capteurs SET ID_salle=:ID_salle WHERE serial_key=:serial_key AND ID_maison=:ID_maison');
+
+    $request -> execute($tableau);
+
+    $request -> closeCursor();
+}

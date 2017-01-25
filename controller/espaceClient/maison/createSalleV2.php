@@ -28,8 +28,10 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
         $idSalle = getLastID($db);
 
         for ($key = 0 ; $key < count($arraySerialKey); $key ++) {
-            $tableau = array('typeDeRequete'=>'update', 'table'=>'capteurs','setValeur'=>'ID_salle','champ'=>'serial_key','param'=>array('setValeur'=>$idSalle,'champ'=>(int)$arraySerialKey[$key]));
-            requeteDansTable($db,$tableau);
+
+            $tableau = array('ID_salle'=>$idSalle, 'serial_key'=>(int)$arraySerialKey[$key], 'ID_maison'=>$_SESSION['IDmaison']);
+
+            updateTableCapteur($db,$tableau);
         }
 
 
