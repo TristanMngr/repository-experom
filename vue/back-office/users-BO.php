@@ -15,6 +15,7 @@ ob_start();
 
             </ul>
         </div>
+        <div>salut</div>
     </div>
     <div id="posMaison-BO">
         <div id="maison-BO">

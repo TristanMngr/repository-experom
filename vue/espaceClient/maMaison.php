@@ -35,7 +35,7 @@ $titre = "vue des capteurs";
         if (isset($messageSuccess)) { ?>
             <div class="messageSuccess"><?php echo $messageSuccess; ?></div>
         <?php } ?>
-        <div id="generalView">
+        <div id="generalDiv">
             <?php if (isset($_GET['target3'])) {
                 if ($_GET['target2'] == 'general' or $_GET['target3']=='general') {
                     include('vue/espaceClient/viewGeneral.php');

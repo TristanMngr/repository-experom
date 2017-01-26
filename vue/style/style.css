@@ -508,8 +508,8 @@ div#contenuAllMaison {
     border-radius :5px;
     position: relative;
     width: 800px;
-    animation-name: slide;
-    animation-duration: 1s;
+    animation-name: animation;
+    animation-duration: 2s;
 }
 @keyframes slide  {
     from {left:40px}
@@ -720,19 +720,39 @@ div#conteneurList .titre{
 }
 
 
+section#maMaison div#generalDiv > div#general {
+    display: block;
+    width:100%;
+    margin: auto;
 
-section#maMaison div#generalView > div#general {
+
+}
+
+
+
+
+section#maMaison div#generalView  {
     display: block;
     margin:40px auto;
     border-radius: 5px;
     box-shadow: 1px 1px 3px #3F4D5E;
     border: solid transparent 1px;
-    width: 70%;
+    width: 900px;
     min-height: 300px;
     text-align: left;
+    position: relative;
+    animation-name: animation;
+    animation-duration: 2s;
+
+
     /*position: relative;*/
 }
-
+@keyframes animation {
+    from {
+        border:green solid 5px;}
+    to{
+        border:solid transparent 1px;}
+}
 
 
 
@@ -744,14 +764,31 @@ div#contenuMaison .salle {
     border-radius :5px;
     box-shadow: 1px 1px 4px black;
     text-align: left;
+    position: relative;
+
     /*position: relative;*/
+}
+
+.salle a.cancel {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .salle a.cancel .flaticon-cancel-music {
     display :inline-block;
     color: black;
-    height:100%;
-    width:100%;
+    padding:0;
+    margin:0;
+    /*height:100%;
+    width:100%;*/
+}
+.salle a.cancel .flaticon-cancel-music:hover {
+    font-size: 30px;
+    height: 50px;
+    line-height: 50px;
 }
 
 .salle h2.titre-capteur {
@@ -776,7 +813,7 @@ img[alt=temperature] {
 }
 
 
-div#contenuMaison .salle >h1,section#maMaison div#generalView > div#general h1,div#creationSalle h1 {
+div#contenuMaison .salle >h1,section#maMaison div#general > div#generalView h1,div#creationSalle h1 {
     text-align: center;
     margin-top: 0px;
 }
@@ -851,6 +888,10 @@ div#generalView ul#ulGeneral {
 .salle .modeSalle {
     display:inline-block;
 }
+
+.salle .modeSalle.general {
+    font-size: 1em;
+}
 .salle select[name=getMode] {
     width:100px;
 }
@@ -879,16 +920,18 @@ div.salle .flaticon-cancel-music, div#creationSalle .flaticon-cancel-music ,div#
     /*top:20px;
     left:20px;*/
     display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    margin:10px 0 0 15px;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    text-align: center;
+    /*margin:10px 0 0 15px;*/
     font-size:10px;
     cursor: pointer;
 }
 div.salle .flaticon-cancel-music:hover {
     font-size: 20px;
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
 }
 .flaticon-multiply:hover {
     cursor: pointer;
@@ -1006,6 +1049,19 @@ section#conteneur form div label {
     width:59%;
     text-align: left;
 }
+/*partie BO*/
+section#conteneur.BO form {
+    width: 90%;
+}
+section#conteneur.BO form label {
+    display: inline-block;
+    width: 50%;
+}
+section#conteneur.BO form .input {
+    height: 20px;
+}
+
+
 div#envoyer {
     display:block;
     text-align: right;

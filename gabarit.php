@@ -8,8 +8,8 @@
     <script type="text/javascript" src="/controller/espaceClient/maison/ajax/getDataMode.js"></script>
     <script type="text/javascript" src="/controller/back-office/ajax/users.js"></script>
     <script type="text/javascript" src="/controller/back-office/ajax/home.js"></script>
-    <script type="text/javascript" src="/controller/espaceClient/maison/ajax/generalView.js"></script>
-    <script type="text/javascript" src="/controller/espaceClient/maison/ajax/getHomeSection.js"></script>
+    <!--<script type="text/javascript" src="/controller/espaceClient/maison/ajax/generalView.js"></script>-->
+    <!--<script type="text/javascript" src="/controller/espaceClient/maison/ajax/getHomeSection.js"></script>-->
     <!--<script type="text/javascript" src="/controller/getTrames.js"></script>-->
 
 

@@ -34,7 +34,7 @@ else if (isset($_SESSION['role'])) {
             include('controller/back-office/cgu.php');
         } else if ($_GET['target'] == 'creation-admin') {
             $isLogin = true;
-            include('vue/back-office/creation-admin.php');
+            include('controller/back-office/admin/creation-admin.php');
         } else {
             include('vue/back-office/connexion-BO.php');
         }

@@ -61,7 +61,7 @@
             <?php } ?>
             <li class="configMode">
                         <span>
-                            <h2 class="modeSalle"><span>Choisir un mode</span></h2>
+                            <h2 class="modeSalle general"><span>Choisir un mode pour toutes les salles</span></h2>
                             <form class="modeSalle"
                                   action="/espace-client/ma-maison/activer-mode/general"
                                   method="post">
