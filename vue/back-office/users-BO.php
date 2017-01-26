@@ -15,9 +15,12 @@ ob_start();
 
             </ul>
         </div>
-        <div>salut</div>
+
     </div>
     <div id="posMaison-BO">
+        <?php if (isset($messageSuccess)) { ?>
+            <div class="messageSuccess BO"><?php echo $messageSuccess; ?></div>
+        <?php } ?>
         <div id="maison-BO">
 
         </div>

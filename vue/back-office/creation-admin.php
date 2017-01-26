@@ -11,7 +11,7 @@ ob_start();
             <h1>Création d'un admin</h1>
             <form method="post" action="/admin/creation-admin/control">
                 <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : ""; ?>" autofocus></div>
-                <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail" placeholder="exemple@mail.com" class="input" value=""></div>
+                <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail" placeholder="exemple@mail.com" class="input" value="<?= isset($_POST['mail']) ? $_POST['mail'] : ""; ?>"></div>
                 <div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero" class="input" value="<?= isset($_POST['numero']) ? $_POST['numero'] : ""; ?>"></div>
                 <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp" class="input" oninput="password(this)"></div><div id="helpMdp"></div>
                 <div><label for="rmdp">Vérification du mot de passe</label><input type="password" class="input" name="rmdp"

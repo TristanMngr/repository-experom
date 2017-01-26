@@ -47,4 +47,7 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
 $tableau = array('IDmaison'=> $_SESSION['IDmaison']);
 $tableauDonneesSalles = getDataCapteursByNameSalle($db,$tableau);
 
+
+
+
 include('vue/espaceClient/maMaison.php');

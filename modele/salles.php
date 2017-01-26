@@ -56,7 +56,7 @@ FROM archives
 JOIN capteurs on capteurs.ID  = archives.ID_capteur
 JOIN salles on salles.ID = capteurs.ID_salle
 JOIN maison on salles.IDmaison = maison.ID
-WHERE salles.IDmaison =:IDmaison AND  salles.ID != -1
+WHERE salles.IDmaison =:IDmaison AND  salles.ID != -1 
 GROUP BY salles.nom');
 
     $request -> execute($tableau);

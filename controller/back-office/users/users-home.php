@@ -4,17 +4,19 @@ if (isset($_GET['target3'])) {
     /*récupération IDmaison*/
     $tableau = array('typeDeRequete'=> 'select','table'=>'users','param'=>array('pseudo'=>$_GET['target3']));
     $IDmaison = requeteDansTable($db,$tableau)[0]['IDmaison'];
+    if ($IDmaison != -1) {
 
-    /*récupération des données des utilisateurs de la même maison*/
-    $tableau = array('IDmaison'=>$IDmaison);
-    $arrayDataUsers = fetchDataUsers($db,$tableau);
+        /*récupération des données des utilisateurs de la même maison*/
+        $tableau = array('IDmaison' => $IDmaison);
+        $arrayDataUsers = fetchDataUsers($db, $tableau);
 
-    /*récupération de tout les noms modes de la maison.*/
-    $tableau = array('IDmaison'=>$IDmaison);
-    $arrayNameMode = fetchNameMode($db,$tableau);
+        /*récupération de tout les noms modes de la maison.*/
+        $tableau = array('IDmaison' => $IDmaison);
+        $arrayNameMode = fetchNameMode($db, $tableau);
 
-    $tableau = array('IDmaison'=>$IDmaison);
-    $arrayNameSalle = fetchNameSalle($db,$tableau);
+        $tableau = array('IDmaison' => $IDmaison);
+        $arrayNameSalle = fetchNameSalle($db, $tableau);
+
 
     ?>
 
@@ -42,6 +44,13 @@ if (isset($_GET['target3'])) {
            <?php } ?>
        </ul>
     </div>
+
+    <?php } else { ?>
+
+    <div class="admin">
+        <div>C'est un admin ! désolé...</div>
+    </div>
+    <?php } ?>
 
 
 <?php

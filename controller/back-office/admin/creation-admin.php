@@ -34,6 +34,7 @@ if ($_GET['target2'] == 'control') {
                                         'mdp' => $_POST['mdp'],
                                         'role' => 'admin',
                                         'dateInscription'=>'',
+                                        'IDmaison'=>-1,
                                         'numero'=>$_POST['numero']
                                     ));
 

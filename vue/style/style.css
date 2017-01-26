@@ -1023,6 +1023,7 @@ article#inscription input.input {
 
 section#conteneur article#inscription #helpMdp {
     text-align: left;
+    /*padding-left:20px;*/
 }
 section#conteneur article#inscription form {
     margin-left: 20px;
@@ -1059,6 +1060,9 @@ section#conteneur.BO form label {
 }
 section#conteneur.BO form .input {
     height: 20px;
+}
+section#conteneur.BO #helpMdp {
+    padding-left: 20px;
 }
 
 
@@ -1118,11 +1122,15 @@ section#conteneur article#connexion form{
     margin:40px auto 0 auto;
 }
 
-section#conteneur article#connexion div {
+section#conteneur article#connexion div#connexion {
     width:95%;
     display: block;
     margin:auto;
     text-align: right;
+}
+section#conteneur article#connexion div.messageError {
+    text-align: center;
+
 }
 section#conteneur article#connexion div label {
     display:inline-block ;
@@ -2149,6 +2157,18 @@ div#posChooseUser #chooseUser {
     width: 95%;
     min-height: 500px;
 }
+
+div#posMaison-BO .messageSuccess.BO {
+    display: block;
+    line-height: 40px;
+    font-size: 1.3em;
+    margin:0px auto 30px auto;
+    width: 500px;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    color: green;
+}
 div#posMaison-BO #maison-BO {
     display: block;
     margin: auto;
@@ -2166,11 +2186,15 @@ div#posChooseUser div#chooseUser label {
     width:30%;
     text-align: center;
     margin-top:20px;
+    font-size: 1.2em;
 }
 div#posChooseUser div#chooseUser input {
     display: inline-block;
     width: 50%;
     margin-top:20px;
+    font-size: 1.2em;
+    height: 20px;
+    line-height: 20px;
 }
 div#posChooseUser div#chooseUser hr {
     margin-top:20px;
@@ -2184,6 +2208,7 @@ div#posChooseUser div#chooseUser ul#listUsers {
 div#posChooseUser div#chooseUser ul#listUsers> li {
     height:30px;
     line-height: 30px;
+    font-size: 1.2em;
     width: 80%;
     border: solid transparent 1px;
     box-shadow: 1px 1px 3px black;
@@ -2216,6 +2241,20 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
     /*margin-top: 20px;*/
 }
 
+#maison-BO div.admin {
+    display: block;
+    margin:auto;
+    height:30px;
+    line-height: 30px;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    vertical-align: middle;
+    width: 300px;
+    font-size: 1.2em;
+    color: green;
+}
+
 #maison-BO div.info-BO ul {
     text-align: left;
     list-style: none;
@@ -2241,9 +2280,6 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
     background: green;
     color: white;
 }
-
-
-
 
 
 

@@ -23,7 +23,7 @@ ob_start();
         <?php if (isset($messageError)) { ?>
             <div class="messageError"><?php echo $messageError; ?></div>
         <?php } if (isset($messageSuccess)) { ?>
-            <div class="messageError"><?php echo $messageSuccess; ?></div>
+            <div class="messageSuccess"><?php echo $messageSuccess; ?></div>
         <?php } ?>
 
     </article>
