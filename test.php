@@ -1,1 +1,1 @@
-salut tristan
+Comment il a une puisance de 7000 ? 
