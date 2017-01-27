@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:8889
--- Généré le :  Dim 22 Janvier 2017 à 14:35
+-- Généré le :  Ven 27 Janvier 2017 à 09:30
 -- Version du serveur :  5.6.28
 -- Version de PHP :  5.6.25
 
@@ -34,10 +34,10 @@ CREATE TABLE `archives` (
 --
 
 INSERT INTO `archives` (`ID`, `numero`, `temperature`, `humidite`, `date`, `ID_capteur`) VALUES
-(41, 2, 42, 0, '0000-00-00', 41),
-(42, 3, 24, 0, '0000-00-00', 42),
-(43, 5, 0, 43, '0000-00-00', 43),
-(44, 2, 0, 26, '0000-00-00', 44);
+(190, 1, 0, 50, '0000-00-00', 164),
+(191, 1, 19, 0, '0000-00-00', 165),
+(192, 2, 0, 45, '0000-00-00', 166),
+(193, 3, 0, 45, '0000-00-00', 167);
 
 -- --------------------------------------------------------
 
@@ -59,10 +59,17 @@ CREATE TABLE `capteurs` (
 --
 
 INSERT INTO `capteurs` (`ID`, `type`, `serial_key`, `nom`, `ID_salle`, `ID_maison`) VALUES
-(41, 'temperature', 302, 'cuisine', 64, 1),
-(42, 'temperature', 303, 'cuisine', 63, 1),
-(43, 'humidite', 405, 'chambre', 0, 1),
-(44, 'humidite', 402, 'salle5', 0, 1);
+(147, 'temperature', 301, 'salon', 149, 7),
+(148, 'temperature', 302, 'salon', 149, 7),
+(149, 'humidite', 401, 'salon', 149, 7),
+(150, 'humidite', 402, 'cuisine', 150, 7),
+(151, 'temperature', 303, 'cuisine', 150, 7),
+(152, 'humidite', 405, 'cuisine', 151, 7),
+(153, 'humidite', 407, 'cuisine', 151, 7),
+(164, 'humidite', 401, 'salon', 171, 1),
+(165, 'temperature', 301, 'salon', 171, 1),
+(166, 'humidite', 402, 'salon', 170, 1),
+(167, 'humidite', 403, 'salon', 170, 1);
 
 -- --------------------------------------------------------
 
@@ -76,6 +83,13 @@ CREATE TABLE `cgu` (
   `last_update` date NOT NULL,
   `last_admin` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `cgu`
+--
+
+INSERT INTO `cgu` (`ID`, `text`, `last_update`, `last_admin`) VALUES
+(1, 'tristan lkamjer ljfelazmfffff', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -95,7 +109,13 @@ CREATE TABLE `maison` (
 --
 
 INSERT INTO `maison` (`ID`, `nom`, `superficie`, `adresse`) VALUES
-(1, 'maison1', 140, 'paris');
+(1, 'maison1', 140, 'paris 9'),
+(2, 'tina', 140, 'paris'),
+(3, 'david', 140, 'paris'),
+(4, 'isep', 140, 'paris'),
+(5, 'isep', 140, 'paris'),
+(6, 'test', 140, 'paris'),
+(7, 'paul', 100, 'paris');
 
 -- --------------------------------------------------------
 
@@ -115,7 +135,12 @@ CREATE TABLE `modes` (
 
 INSERT INTO `modes` (`ID`, `nom`, `IDmaison`) VALUES
 (2, 'mode jour', -1),
-(3, 'mode nuit', -1);
+(3, 'mode nuit', -1),
+(4, 'super mode', 1),
+(5, 'jour et nuit', 2),
+(6, 'mode jour et nuit', 3),
+(7, 'mode2', 6),
+(8, 'mode jour et nuit', 7);
 
 -- --------------------------------------------------------
 
@@ -140,7 +165,12 @@ INSERT INTO `modes_config` (`ID`, `type`, `consigne`, `heure_debut`, `heure_fin`
 (3, 'temperature', 22, 6, 22, 2),
 (4, 'humidite', 45, 22, 6, 2),
 (5, 'temperature', 19, 22, 6, 3),
-(6, 'humidite', 50, 6, 22, 3);
+(6, 'humidite', 50, 6, 22, 3),
+(7, 'temperature', 20, 7, 22, 4),
+(8, 'temperature', 20, 1, 24, 5),
+(9, 'temperature', 20, 1, 23, 6),
+(10, 'temperature', 14, 4, 7, 7),
+(11, 'temperature', 20, 1, 23, 8);
 
 -- --------------------------------------------------------
 
@@ -162,8 +192,9 @@ CREATE TABLE `salles` (
 --
 
 INSERT INTO `salles` (`ID`, `nom`, `isTemperature`, `IDmaison`, `isHumidite`, `ID_mode`) VALUES
-(63, 'salle bain', 1, 1, 0, 0),
-(64, 'cuisine', 1, 1, 0, 0);
+(-1, 'general', 0, -1, 0, 3),
+(170, 'salon2', 0, 1, 1, 2),
+(171, 'salon', 1, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -189,7 +220,17 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `pseudo`, `nom`, `mail`, `numero`, `mdp`, `dateInscription`, `role`, `IDmaison`) VALUES
 (1, 'admin', 'admin', '', '', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-21', 'admin', -1),
-(2, 'tristan', 'menager', 'tristanmenager@gmail.com', '0650020454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-16', 'principal', 1);
+(2, 'tristan', 'menager', 'tristanmenager@gmail.com', '0650020456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-16', 'principal', 1),
+(3, 'junior', 'menager', 'tristanmenager@gmail.com', '0650020454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'secondaire', 1),
+(4, 'tina', 'rey', 'tina@isep.fr', '0650020465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 2),
+(6, 'david', 'bo', 'david@isep.fr', '0650030405', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 3),
+(7, 'test', 'test', 'test@isep.fr', '0650030456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 5),
+(8, 'test2', 'test2', 'test2@isep.fr', '0650020450', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 6),
+(9, 'alexandre', 'menager', 'tristanmenager@gmail.com', '0650020456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
+(10, 'junior2', 'menager', 'tristanmenager@gmail.com', '0650020456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
+(11, 'paul', 'vernay', 'paul@isep.fr', '0650040304', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'principal', 7),
+(12, 'paul2', 'vernay', 'paul@isep.fr', '0650040304', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 7),
+(18, 'admin2', '', 'admin@isep.fr', '0650030465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-26', 'admin', -1);
 
 --
 -- Index pour les tables exportées
@@ -251,34 +292,34 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `archives`
 --
 ALTER TABLE `archives`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 --
 -- AUTO_INCREMENT pour la table `capteurs`
 --
 ALTER TABLE `capteurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 --
 -- AUTO_INCREMENT pour la table `maison`
 --
 ALTER TABLE `maison`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `modes`
 --
 ALTER TABLE `modes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `modes_config`
 --
 ALTER TABLE `modes_config`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `salles`
 --
 ALTER TABLE `salles`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
