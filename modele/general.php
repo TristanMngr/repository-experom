@@ -3,6 +3,26 @@
 
 
 
+/**
+ * traite les informations de sécurités
+ */
+
+function securite($tableau)
+{
+    $tableauEntitiesAndCrypt = array();
+    foreach ($tableau['param'] as $key => $value) {
+        if ($key == 'mdp') {
+            $tableauEntitiesAndCrypt[$key] = 'cocos_'.md5($value);
+        } else {
+            $tableauEntitiesAndCrypt[$key] = htmlentities($value);
+        }
+    }
+
+    unset($tableau['param']);
+
+    $tableau['param'] = $tableauEntitiesAndCrypt;
+    return $tableau;
+}
 
 /**
  * requeteDansTable V3
@@ -69,8 +89,22 @@ function requeteDansTable($db,$tableau){
 }
 
 
+// fonction pour l'oublie du mot de passe
 
+function updateForgetMdp($db,$tableau) {
+    $request = $db -> prepare('UPDATE oublie_mdp SET code=:code WHERE mail=:mail AND pseudo=:pseudo');
 
+    $request -> execute($tableau);
+
+    $request -> closeCursor();
+}
+function updateTableUsers($db,$tableau) {
+    $request = $db -> prepare('UPDATE users SET mdp=:mdp WHERE mail=:mail AND pseudo=:pseudo');
+
+    $request -> execute($tableau);
+
+    $request -> closeCursor();
+}
 
 
 
@@ -84,26 +118,7 @@ function getLastID($db){
 }
 
 
-/**
- * traite les informations de sécurités
- */
 
-function securite($tableau)
-{
-    $tableauEntitiesAndCrypt = array();
-    foreach ($tableau['param'] as $key => $value) {
-        if ($key == 'mdp') {
-            $tableauEntitiesAndCrypt[$key] = 'cocos_'.md5($value);
-        } else {
-            $tableauEntitiesAndCrypt[$key] = htmlentities($value);
-        }
-    }
-
-    unset($tableau['param']);
-
-    $tableau['param'] = $tableauEntitiesAndCrypt;
-    return $tableau;
-}
 
 /**
  * concatène les valeurs et les champs du tableau['param'].

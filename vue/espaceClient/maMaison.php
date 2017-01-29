@@ -169,7 +169,12 @@ $titre = "vue des capteurs";
                                   method="post">
                             <select name="getMode" id="getMode">
                                 <?php for ($mode = 0; $mode < count($arrayMode); $mode++) { ?>
-                                    <option value="<?php echo $arrayMode[$mode]; ?>"><?php echo $arrayMode[$mode]; ?></option>
+                                    <option value="<?php echo $arrayMode[$mode]; ?>"
+                                    <?php if (isset($nameMode)) {
+                                            if ($nameMode==$arrayMode[$mode]) {
+                                                echo 'seleted';
+                                            } else {
+                                                echo ""; }} ?>><?php echo $arrayMode[$mode]; ?></option>
 
                                 <?php } ?>
                             </select>

@@ -8,6 +8,7 @@ ob_start();
 <section id="accueil">
 
     <article id="apropos">
+        <?php /*echo mail('domisep.contact@gmail.com','test','salut je test addresse mail'); */?>
         <h1>Domisep : La Domotique Idéale, Simple Et Pratique</h1>
 
         <h2>La domotique, c’est quoi?</h2>

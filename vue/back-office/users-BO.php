@@ -22,9 +22,12 @@ ob_start();
             <div class="messageSuccess BO"><?php echo $messageSuccess; ?></div>
         <?php } ?>
         <div id="maison-BO">
+        </div>
+        <div id="posEdit-BO">
 
         </div>
     </div>
+
 </section>
 
 

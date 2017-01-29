@@ -969,7 +969,7 @@ input:checked + .flaticon-power {
 
 
 section#conteneur .submit {
-    margin:30px auto 10px auto;
+    margin:5px auto 10px auto;
     width:200px;
     height:35px;
     line-height: 35px;
@@ -1125,8 +1125,9 @@ section#conteneur article#connexion form{
 section#conteneur article#connexion div#connexion {
     width:95%;
     display: block;
-    margin:auto;
+    margin:10px auto 0 auto;
     text-align: right;
+
 }
 section#conteneur article#connexion div.messageError {
     text-align: center;
@@ -1150,7 +1151,7 @@ article#connexion a {
     border:solid transparent 1px;
     background: #FFFFFF;
     border-radius:5px;
-    margin : 30px auto 0px auto;
+    margin : 10px auto 20px auto;
     /*margin-left:20px;*/
     text-align: center;
     box-shadow: 1px 1px 3px #3F4D5E;
@@ -1166,6 +1167,36 @@ article#connexion input.input {
     line-height: 20px;
     width: 45%;
     font-size: 1em;
+}
+
+
+article#connexion div#div-forget-mdp {
+    text-align: right;
+    display: block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    width: 200px;
+    margin-left: 55%;
+}
+div#div-forget-mdp #forget-mdp {
+    border:none;
+    display: block;
+    text-align: center;
+    color: dodgerblue;
+    box-shadow: none;
+    font-size:0.7em;
+    margin-top: 5px;
+    height:20px;
+    line-height:20px;
+    width: 100%;
+
+}
+div#div-forget-mdp #forget-mdp:hover {
+    border:none;
+    color: #42444E;
+    box-shadow: none;
+    background: none;
+
 }
 
 
@@ -2036,6 +2067,64 @@ section#section-error div#error p {
 }
 
 
+/*forget de mot de passe*/
+div#forget-mdp {
+    display: block;
+    margin:auto;
+    width:650px;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+div#forget-mdp input[type=submit] {
+    display:block;
+    width :200px;
+    line-height:25px;
+    margin:20px auto;
+
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+
+    border-radius: 5px;
+    height:30px;
+    vertical-align: middle;
+    padding:0;
+    right:80px;
+}
+div#forget-mdp input[type=submit]:hover {
+    display:block;
+    width :200px;
+    line-height:25px;
+    margin:20px auto;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+
+    border-radius: 5px;
+    height:30px;
+    vertical-align: middle;
+    padding:0;
+    right:80px;
+    background:cornflowerblue ;
+    color: white;
+}
+div#forget-mdp input[type=text], div#forget-mdp input[type=password]{
+    height:20px;
+    font-size: 1em;
+    width: 400px;
+
+    vertical-align: middle;
+    line-height: 20px;
+}
+div#forget-mdp .messageError, div#forget-mdp.messageSuccess {
+    margin: 0 auto 10px auto;
+}
+
+
+
 /*===============================================================================================================*/
 /*===================================================ADMIN=======================================================*/
 
@@ -2145,7 +2234,77 @@ section#user-BO div#posMaison-BO {
     margin:auto;
     width: 74%;
     min-height: 90%;
+}
+div#posEdit-BO {
+    display: none;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    width: 500px;
+    min-height:350px;
+    margin:auto;
+}
+div#posEdit-BO form {
+    display: block;
+    margin:auto;
+    width: 500px;
+    padding-top: 20px;
+    text-align: left;
+    vertical-align: middle;
+}
+div#posEdit-BO form div.block {
+    display: block;
+    margin:auto;
+    width: 400px;
+    height:35px;
+    line-height: 25px;
+    font-size: 1.1em;
+}
+div#posEdit-BO form div.block input[class=line]{
+    height:25px;
+    line-height: 25px;
+    font-size: 1.0em;
+}
 
+div#posEdit-BO form div.block input[class=envoyer] {
+    display:block;
+    width :250px;
+    line-height:25px;
+    margin:30px auto;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    height:30px;
+    vertical-align: middle;
+    padding:0;
+    right:80px;
+}
+div#posEdit-BO form div.block input[class=envoyer]:hover {
+    display:block;
+    width :150px;
+    line-height:25px;
+    margin:30px auto;
+    font-size: 1em;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    height:30px;
+    vertical-align: middle;
+    padding:0;
+    right:80px;
+    background:cornflowerblue ;
+    color: white;
+}
+
+
+
+div#posEdit-BO form label, div#posEdit-BO form .label {
+    width: 150px;
+}
+
+div#posEdit-BO form .line {
+    display: inline-block;
 }
 
 div#posChooseUser #chooseUser {
@@ -2162,7 +2321,7 @@ div#posMaison-BO .messageSuccess.BO {
     display: block;
     line-height: 40px;
     font-size: 1.3em;
-    margin:0px auto 30px auto;
+    margin:0 auto 30px auto;
     width: 500px;
     border: solid transparent 1px;
     box-shadow: 1px 1px 4px black;
@@ -2176,7 +2335,7 @@ div#posMaison-BO #maison-BO {
     box-shadow: 1px 1px 4px black;
     border-radius: 5px;*/
     width: 90%;
-    min-height: 400px;
+    min-height: 320px;
 }
 
 

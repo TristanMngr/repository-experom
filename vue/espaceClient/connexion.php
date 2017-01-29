@@ -17,6 +17,7 @@ ob_start();
             <!--<div><label for="resterConnecter">Maintenir la session ouverte</label><input type="checkbox" name="resterConnecter" id="resterConnecter"></div>-->
 
             <div id="connexion" class="leftInscription"><input class="submit" type="submit" name="connexion" value="Connexion"></div>
+            <div id="div-forget-mdp"><a href="/espace-client/oublie-mdp" id="forget-mdp">J'ai oublié mon mot de passe</a></div>
 
         </form>
         <a href="/espace-client/redirection-inscription">Créer ton compte Experom</a>

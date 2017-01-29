@@ -49,6 +49,9 @@ else if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
     }
 }
 
+
+
+
 // partie admin
 else if ($_GET['cible'] == 'admin') {
     include('controller/back-office/index.php');
@@ -92,10 +95,13 @@ else if ($_GET['cible'] == 'espace-client') {
     if ($_GET['target'] == 'premiere-connexion') {
         include('controller/espaceClient/configMaison.php');
     }
-     if ($_GET['target'] == 'ma-maison') {
+    else if ($_GET['target'] == 'ma-maison') {
         include('controller/espaceClient/maison/index.php');
     }
-
+    // partie oublie-mdp
+    else if ($_GET['target'] == 'oublie-mdp') {
+        include('controller/espaceClient/forget-mdp/index.php');
+    }
     /*creer un modes*/
     else if ($_GET['target'] == 'modes') {
         include('controller/espaceClient/modes/index.php');
