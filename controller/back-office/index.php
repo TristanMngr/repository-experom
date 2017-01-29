@@ -26,7 +26,11 @@ else if (isset($_SESSION['role'])) {
                 include('controller/back-office/users/users-list.php');
             } else if ($_GET['target2'] == 'home') {
                 include('controller/back-office/users/users-home.php');
-            } else {
+            }
+            else if ($_GET['target2'] == 'edit-perso') {
+                include('controller/back-office/users/users-edit.php');
+            }
+            else {
                 include('vue/back-office/users-BO.php');
             }
         } else if ($_GET['target'] == 'cgu-editer') {

@@ -24,7 +24,7 @@ if (isset($_GET['target3'])) {
         <h1>Utilisateurs</h1>
         <ul>
             <?php foreach($arrayDataUsers as $key => $value) { ?>
-            <li><?= $value['pseudo'] ?></li>
+            <li onclick="ajaxEditPerso(this.textContent)"><?= $value['pseudo'] ?></li>
             <?php } ?>
         </ul>
     </div>
