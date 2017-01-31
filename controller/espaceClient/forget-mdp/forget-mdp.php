@@ -25,7 +25,10 @@ if (isset($_POST['mail']) &isset($_POST['pseudo']) & !empty($_POST['mail']) & !e
                 updateForgetMdp($db,$tableau);
             }
             // envoie du mail à l'utilisateur
-            mail($_POST['mail'], 'changer de mot de passe', 'Voici le code de validation :' . $user_code);
+            /*mail($_POST['mail'], 'changer de mot de passe', 'Voici le code de validation :' . $user_code);*/
+            include("vue/espaceClient/format-mail.php");
+            mail($mail,$sujet,$message,$header);
+            $messageSuccess = "Entre le code que nous t'avons envoyé par mail";
 
             // veriable qui permet de charger le bon morceau de page.
             $send_mail = true;
