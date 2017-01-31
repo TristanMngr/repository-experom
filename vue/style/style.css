@@ -2119,9 +2119,10 @@ div#forget-mdp input[type=text], div#forget-mdp input[type=password]{
     vertical-align: middle;
     line-height: 20px;
 }
-div#forget-mdp .messageError, div#forget-mdp.messageSuccess {
+div#forget-mdp .messageError, div#forget-mdp .messageSuccess {
     margin: 0 auto 10px auto;
 }
+
 
 
 
