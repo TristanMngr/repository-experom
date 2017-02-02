@@ -16,15 +16,15 @@ $titre = "inscription";
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="nom">Nom</label><input type="text" name="nom" id="nom" class="input" value="<?= isset($_POST['nom']) ? $_POST['nom'] : ""; ?>"></div><?php } ?>
             <div><label for="mail">E-mail</label><input type="text" name="mail" id="mail" placeholder="exemple@mail.com" class="input" value="<? if ($utilisateurSecondaire == False && isset($_POST['mail'])) { echo $_POST['mail']; } else { echo "";} if ($utilisateurSecondaire) {echo $_SESSION['mail'];} ?>"></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="numero">Numero de telephone</label><input type="text" name="numero" id="numero" class="input" value="<?= isset($_POST['numero']) ? $_POST['numero'] : ""; ?>"></div><?php }?>
-            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp" class="input" oninput="password(this)"></div><div id="helpMdp"></div>
+            <div><label for="mdp">Mot de passe</label><input type="password" name="mdp" id="mdp" class="input" oninput="password(this)"></div><div class="helpMdp" id="helpMdp"></div>
             <div><label for="rmdp">Vérification du mot de passe</label><input type="password" class="input" name="rmdp"
-                                                                            id="rmdp"></div>
+                                                                            id="rmdp" oninput="rpassword(this)"></div><div class="helpMdp"></div>
 
 
             <div id="envoyer"><input type="submit" class="submit" name="submit" value="Envoyer"></div>
         </form>
 
-        <?php if ($utilisateurSecondaire == False){ ?><a href="/espace-client/redirection-connexion" id="redirectionCo">Déja inscrit ? Connecte-toi !</a> <?php } else { ?> <a class="redirectionConfig" href="/espace-client/modifier-donnees-perso">page des configurations </a> <?php } ?>
+        <?php if ($utilisateurSecondaire == False){ ?><a href="/espace-client/redirection-connexion" id="redirectionCo">Déja inscrit ? Connecte-toi !</a> <?php } else { ?> <a class="redirectionConfig" href="/espace-client/modifier-donnees-perso"> Gestion des comptes </a> <?php } ?>
 
         <?php if (isset($messageError)) { ?>
             <div class="messageError"><?php echo $messageError; ?></div>

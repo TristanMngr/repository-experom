@@ -1021,7 +1021,7 @@ article#inscription input.input {
     font-size: 1em;
 }
 
-section#conteneur article#inscription #helpMdp {
+section#conteneur article#inscription .helpMdp {
     text-align: left;
     /*padding-left:20px;*/
 }
