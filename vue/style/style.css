@@ -1335,7 +1335,7 @@ section div#modifier input.envoyer {
 }
 section div#modifier input.envoyer:hover {
     display:block;
-    width :150px;
+    /*width :150px;*/
     line-height:25px;
     margin:auto;
     font-size: 1em;

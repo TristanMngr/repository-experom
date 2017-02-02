@@ -27,7 +27,7 @@ if (isset($_POST['mail']) &isset($_POST['pseudo']) & !empty($_POST['mail']) & !e
             // envoie du mail à l'utilisateur
             /*mail($_POST['mail'], 'changer de mot de passe', 'Voici le code de validation :' . $user_code);*/
             include("vue/espaceClient/format-mail.php");
-            mail($mail,$sujet,$message,$header);
+            mail($mail, "changement de mot de passe", $message, $header);
             $messageSuccess = "Entre le code que nous t'avons envoyé par mail";
 
             // veriable qui permet de charger le bon morceau de page.

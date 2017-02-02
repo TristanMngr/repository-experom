@@ -7,7 +7,7 @@ ob_start();
 ?>
     <section id="conteneur">
         <div id="forget-mdp">
-            <h1>Vous avez oubliez votre mot de passe ?</h1>
+            <h1>Vous avez oublié votre mot de passe ?</h1>
             <?php if (!isset($send_mail)) { ?>
             <form action="/espace-client/oublie-mdp/mail" method="post">
             <div class="inline"><label for="mail">Votre adresse mail</label><input type="text" id="mail" name="mail" autofocus value="<?= isset($_POST['mail'])?$_POST['mail']: ""; ?>" class="inline"></div>

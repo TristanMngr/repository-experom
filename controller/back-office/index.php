@@ -8,6 +8,8 @@ $isLogin = false;
 
 
 
+
+
 if ($_GET['target'] == 'connexion-control') {
     include('controller/back-office/connexion.php');
 } else if ($_GET['target'] == 'cgu') {
@@ -20,7 +22,10 @@ if ($_GET['target'] == 'connexion-control') {
 
 else if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'admin') {
-        if ($_GET['target'] == 'utilisateurs') {
+        if ($_GET['target'] == 'users-edit') {
+            include('controller/back-office/users/users-edit-control.php');
+        }
+        else if  ($_GET['target'] == 'utilisateurs') {
             $isLogin = true;
             if ($_GET['target2'] == 'list') {
                 include('controller/back-office/users/users-list.php');
