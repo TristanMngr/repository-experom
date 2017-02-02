@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:8889
--- Généré le :  Ven 27 Janvier 2017 à 09:30
+-- Généré le :  Jeu 02 Février 2017 à 16:16
 -- Version du serveur :  5.6.28
 -- Version de PHP :  5.6.25
 
@@ -36,8 +36,8 @@ CREATE TABLE `archives` (
 INSERT INTO `archives` (`ID`, `numero`, `temperature`, `humidite`, `date`, `ID_capteur`) VALUES
 (190, 1, 0, 50, '0000-00-00', 164),
 (191, 1, 19, 0, '0000-00-00', 165),
-(192, 2, 0, 45, '0000-00-00', 166),
-(193, 3, 0, 45, '0000-00-00', 167);
+(192, 2, 0, 50, '0000-00-00', 166),
+(193, 3, 0, 50, '0000-00-00', 167);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `cgu` (
 --
 
 INSERT INTO `cgu` (`ID`, `text`, `last_update`, `last_admin`) VALUES
-(1, 'tristan lkamjer ljfelazmfffff', '0000-00-00', '');
+(1, 'dsgejkglmkagj', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,8 @@ INSERT INTO `maison` (`ID`, `nom`, `superficie`, `adresse`) VALUES
 (4, 'isep', 140, 'paris'),
 (5, 'isep', 140, 'paris'),
 (6, 'test', 140, 'paris'),
-(7, 'paul', 100, 'paris');
+(7, 'paul', 100, 'paris'),
+(8, 'domisep', 400, 'paris');
 
 -- --------------------------------------------------------
 
@@ -175,6 +176,30 @@ INSERT INTO `modes_config` (`ID`, `type`, `consigne`, `heure_debut`, `heure_fin`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `oublie_mdp`
+--
+
+CREATE TABLE `oublie_mdp` (
+  `ID` int(11) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `pseudo` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `oublie_mdp`
+--
+
+INSERT INTO `oublie_mdp` (`ID`, `mail`, `pseudo`, `code`) VALUES
+(1, 'tristan@gmail.com', '', '2147483647'),
+(2, 'domisep.contact@gmail.com', '', '9338942223'),
+(3, 'domisep.contact@gmail.com', 'domisep', '0714334984'),
+(4, 'tristanmenager@gmail.com', 'tristan', '2754607547'),
+(5, 'tristanmenager@gmail.com', 'alexandre', '6499590093');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `salles`
 --
 
@@ -193,8 +218,8 @@ CREATE TABLE `salles` (
 
 INSERT INTO `salles` (`ID`, `nom`, `isTemperature`, `IDmaison`, `isHumidite`, `ID_mode`) VALUES
 (-1, 'general', 0, -1, 0, 3),
-(170, 'salon2', 0, 1, 1, 2),
-(171, 'salon', 1, 1, 1, 0);
+(170, 'salon2', 0, 1, 1, 3),
+(171, 'salon', 1, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -220,17 +245,18 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `pseudo`, `nom`, `mail`, `numero`, `mdp`, `dateInscription`, `role`, `IDmaison`) VALUES
 (1, 'admin', 'admin', '', '', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-21', 'admin', -1),
-(2, 'tristan', 'menager', 'tristanmenager@gmail.com', '0650020456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-16', 'principal', 1),
-(3, 'junior', 'menager', 'tristanmenager@gmail.com', '0650020454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'secondaire', 1),
+(2, 'tristan', 'menagerr', 'tristanmenagerr@gmail.com', '0650020457', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-16', 'principal', 1),
+(3, 'junior', 'menagerr', 'tristanmenagerr@gmail.com', '0650020454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'secondaire', 1),
 (4, 'tina', 'rey', 'tina@isep.fr', '0650020465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 2),
 (6, 'david', 'bo', 'david@isep.fr', '0650030405', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 3),
 (7, 'test', 'test', 'test@isep.fr', '0650030456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 5),
 (8, 'test2', 'test2', 'test2@isep.fr', '0650020450', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 6),
-(9, 'alexandre', 'menager', 'tristanmenager@gmail.com', '0650020456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
-(10, 'junior2', 'menager', 'tristanmenager@gmail.com', '0650020456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
+(9, 'alexandre', 'menagerr', 'tristanmenagerr@gmail.com', '0650020457', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
+(10, 'junior2', 'menagerr', 'tristanmenagerr@gmail.com', '0650020457', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
 (11, 'paul', 'vernay', 'paul@isep.fr', '0650040304', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'principal', 7),
 (12, 'paul2', 'vernay', 'paul@isep.fr', '0650040304', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 7),
-(18, 'admin2', '', 'admin@isep.fr', '0650030465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-26', 'admin', -1);
+(18, 'admin2', '', 'admin@isep.fr', '0650030465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-26', 'admin', -1),
+(19, 'domisep', 'domisep', 'domisep.contact@gmail.com', '0650030454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-28', 'principal', 8);
 
 --
 -- Index pour les tables exportées
@@ -273,6 +299,12 @@ ALTER TABLE `modes_config`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Index pour la table `oublie_mdp`
+--
+ALTER TABLE `oublie_mdp`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Index pour la table `salles`
 --
 ALTER TABLE `salles`
@@ -302,7 +334,7 @@ ALTER TABLE `capteurs`
 -- AUTO_INCREMENT pour la table `maison`
 --
 ALTER TABLE `maison`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `modes`
 --
@@ -314,6 +346,11 @@ ALTER TABLE `modes`
 ALTER TABLE `modes_config`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
+-- AUTO_INCREMENT pour la table `oublie_mdp`
+--
+ALTER TABLE `oublie_mdp`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT pour la table `salles`
 --
 ALTER TABLE `salles`
@@ -322,4 +359,4 @@ ALTER TABLE `salles`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;

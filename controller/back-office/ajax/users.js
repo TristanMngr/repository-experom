@@ -24,6 +24,8 @@ function ajaxGetUsers(cible)
     {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
         {
+            document.getElementById("error").innerHTML = "";
+
 
             if (cible.value.length > 1) {
                 document.getElementById("listUsers").innerHTML = xmlhttp.responseText;

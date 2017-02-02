@@ -2329,6 +2329,18 @@ div#posMaison-BO .messageSuccess.BO {
     border-radius: 5px;
     color: green;
 }
+div#posMaison-BO .messageError.BO {
+    display: block;
+    line-height: 40px;
+    font-size: 1.3em;
+    margin:0 auto 30px auto;
+    width: 500px;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 4px black;
+    border-radius: 5px;
+    color: darkred;
+}
+
 div#posMaison-BO #maison-BO {
     display: block;
     margin: auto;
@@ -2356,6 +2368,15 @@ div#posChooseUser div#chooseUser input {
     height: 20px;
     line-height: 20px;
 }
+div#posChooseUser div#chooseUser input[name=pseudo] {
+    display: inline-block;
+    width: 50%;
+    margin-top:20px;
+    font-size: 1.2em;
+    height: 20px;
+    line-height: 20px;
+}
+
 div#posChooseUser div#chooseUser hr {
     margin-top:20px;
     width:90%;
