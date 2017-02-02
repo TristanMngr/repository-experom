@@ -19,12 +19,15 @@ ob_start();
     </div>
     <div id="posMaison-BO">
         <div id="error">
-            <?php if ($messageSuccess != "") { ?>
+            <?php if (isset($messageSuccess)) {
+             if ($messageSuccess != "") { ?>
                 <div class="messageSuccess BO"><?php echo $messageSuccess; ?></div>
-            <?php } ?>
-            <?php if ($messageError != "") { ?>
+            <?php }} ?>
+            <?php if (isset($messageError)) {
+
+              if ($messageError != "") { ?>
                 <div class="messageError BO"><?php echo $messageError; ?></div>
-            <?php } ?>
+            <?php }} ?>
         </div>
         <div id="maison-BO">
         </div>

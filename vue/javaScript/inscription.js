@@ -8,14 +8,17 @@ function password(element) {
         if (mdp.length > 8) {
             lengthMdp = "Très bien";
             color = "green";
+            element.style.border = "green solid 2px"
         }
         else if (mdp.length <= 7 & mdp.length >= 4) {
             lengthMdp = "Bien";
             color = "orange";
+            element.style.border = "green solid 2px"
         }
         else if (mdp.length < 4) {
             lengthMdp = "Faible";
             color = "red";
+            element.style.border = "red solid 2px"
         }
     }
 
@@ -27,16 +30,34 @@ function password(element) {
 function rpassword(element) {
     mdpElement = document.getElementById('mdp');
 
-    console.log(mdpElement.value);
-    console.log(element.value);
     if (mdpElement.value == element.value) {
 
         element.style.border = "green solid 2px";
     }
-    else {
-        element.style.border = "black transparent 1px";
+    else if (element.value.length > 1) {
+        element.style.border = "red solid 2px";
 
     }
+}
+
+function verifNum(element) {
+    var regex =  new RegExp('^0[1-68]([ .-]?[0-9]{2}){4}$');
+    if (regex.test(element.value)) {
+        element.style.border = "green solid 2px"
+    }
+    else {
+        element.style.border = "solid transparent 1px"
+    }
+}
+function verifMail(element) {
+    var regex = new RegExp('^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$');
+    if (regex.test(element.value)) {
+        element.style.border = "green solid 2px"
+    }
+    else {
+        element.style.border = "solid transparent 1px"
+    }
+
 }
 
 

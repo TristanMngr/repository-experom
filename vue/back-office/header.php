@@ -7,7 +7,7 @@ ob_start();
 
             <?php if ($isLogin == true) { ?>
             <ul id="menuAccueil">
-                <li class="nonderoulant"><a href="/admin/utilisateurs">Utilisteurs</a></li>
+                <li class="nonderoulant"><a href="/admin/utilisateurs">Utilisateurs</a></li>
                 <li class="nonderoulant"><a href="/admin/cgu-editer">CGU</a></li>
                 <li class="nonderoulant"><a href="/admin/creation-admin">Créer un admin</a></li>
             </ul>

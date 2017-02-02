@@ -24,7 +24,7 @@ if (isset($_GET['target3'])) {
         <h1>Utilisateurs</h1>
         <ul>
             <?php foreach($arrayDataUsers as $key => $value) { ?>
-            <li onclick="ajaxEditPerso(this.textContent)"><?= $value['pseudo'] ?></li>
+            <li class="users" onclick="ajaxEditPerso(this.textContent)"><?= $value['pseudo'] ?></li>
             <?php } ?>
         </ul>
     </div>
@@ -32,7 +32,7 @@ if (isset($_GET['target3'])) {
         <h1>Salles</h1>
         <ul>
             <?php foreach($arrayNameSalle as $key => $value) { ?>
-                <li><?= $value['nom'] ?></li>
+                <li class="autres"><?= $value['nom'] ?></li>
             <?php } ?>
         </ul>
     </div>
@@ -40,7 +40,7 @@ if (isset($_GET['target3'])) {
         <h1>Modes</h1>
        <ul>
            <?php foreach($arrayNameMode as $key => $value) { ?>
-               <li><?= $value['nom'] ?></li>
+               <li class="autres"><?= $value['nom'] ?></li>
            <?php } ?>
        </ul>
     </div>

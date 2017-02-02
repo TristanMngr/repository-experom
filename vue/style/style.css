@@ -2422,6 +2422,7 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
     /*margin-top: 20px;*/
 }
 
+
 #maison-BO div.admin {
     display: block;
     margin:auto;
@@ -2443,7 +2444,7 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
 
 
 }
-#maison-BO div.info-BO ul> li {
+#maison-BO div.info-BO ul> li.users {
     height: 35px;
     line-height: 35px;
     width: 80%;
@@ -2455,9 +2456,20 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
     display: block;
     cursor: pointer;
 }
+#maison-BO div.info-BO ul> li.autres {
+    height: 35px;
+    line-height: 35px;
+    width: 80%;
+    border: solid transparent 1px;
+    box-shadow: 1px 1px 2px black;
+    border-radius: 2px;
+    margin: 5px auto ;
+    padding-left:20px;
+    display: block;
+}
 
 
-#maison-BO div.info-BO ul> li:hover {
+#maison-BO div.info-BO ul> li.users:hover {
     background: green;
     color: white;
 }
