@@ -1,1 +1,0 @@
-l'homme le plus fort
