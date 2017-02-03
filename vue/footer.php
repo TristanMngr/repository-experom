@@ -9,7 +9,6 @@ ob_start();
         <li><a href="/cgu">CGU</a></li>
         <li><a href="/mention-legal">Mentions légales</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/controller/http-request.php">Partenaires</a></li>
     </ul>
 </footer>
 <?php
