@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:8889
--- Généré le :  Jeu 02 Février 2017 à 16:16
+-- Généré le :  Ven 03 Février 2017 à 17:53
 -- Version du serveur :  5.6.28
 -- Version de PHP :  5.6.25
 
@@ -89,7 +89,7 @@ CREATE TABLE `cgu` (
 --
 
 INSERT INTO `cgu` (`ID`, `text`, `last_update`, `last_admin`) VALUES
-(1, 'dsgejkglmkagj', '0000-00-00', '');
+(1, 'Entrez vos CGU ici', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -195,7 +195,8 @@ INSERT INTO `oublie_mdp` (`ID`, `mail`, `pseudo`, `code`) VALUES
 (2, 'domisep.contact@gmail.com', '', '9338942223'),
 (3, 'domisep.contact@gmail.com', 'domisep', '0714334984'),
 (4, 'tristanmenager@gmail.com', 'tristan', '2754607547'),
-(5, 'tristanmenager@gmail.com', 'alexandre', '6499590093');
+(5, 'tristanmenager@gmail.com', 'alexandre', '6499590093'),
+(6, 'tristanmenagerr@gmail.com', 'tristan', '2111038538');
 
 -- --------------------------------------------------------
 
@@ -349,7 +350,7 @@ ALTER TABLE `modes_config`
 -- AUTO_INCREMENT pour la table `oublie_mdp`
 --
 ALTER TABLE `oublie_mdp`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `salles`
 --
