@@ -1,5 +1,5 @@
 /**
- * Created by tristanmenager on 06/01/2017.
+ fenêtre pop-up confirmation suppression, puis redirection vers controller suppression
  */
 
 

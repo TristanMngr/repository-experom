@@ -1,5 +1,9 @@
 <?php
 
+/**
+ fetch données capteurs
+ */
+
 function getArchivesFromCapteur($db,$tableau)
 {
     $array = array();

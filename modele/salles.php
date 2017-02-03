@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * récupération données salles
+ */
+
 function getDataSalle($db,$tableau) {
     $query = 'SELECT capteurs.type, archives.temperature, archives.humidite, archives.numero 
     FROM salles

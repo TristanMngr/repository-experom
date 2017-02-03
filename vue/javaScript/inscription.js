@@ -1,3 +1,7 @@
+/**
+ * javascript page inscription
+ */
+
 function password(element) {
     var aideElement = document.getElementById('helpMdp');
     var mdp = element.value;

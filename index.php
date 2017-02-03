@@ -3,11 +3,12 @@ session_start();
 include("modele/connexionDB.php");
 include("controller/variables.php");
 include("modele/general.php");
-/*include("modele/general.php");*/
+
+
 
 
 /**
- * redirection suivant la cible de l'url
+ router principal
  */
 
 $messageErreur = null;
@@ -18,9 +19,7 @@ $utilisateurSecondaire = False;
 
 // TODO trame/titre maison/password gauche
 
-/*if (isset($_GET['target']) & $_GET['target']=='popup') {
-    include('vue/popUp/popup.html');
-}*/
+
 
 
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url

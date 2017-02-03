@@ -1,3 +1,9 @@
+/**
+ * affiche la croix lors du clique et redirige vers la page suppression capteurs
+ * @param idSpan
+ * @param idCapteur
+ */
+
 function displayCross(idSpan,idCapteur) {
 
         spanElement = document.getElementById(idCapteur);

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ fetch données modes
+ */
+
+
 // fonction qui récupère les données des capteurs de toute la maison.
 function getDataMode($db,$tableau) {
 $query = "SELECT modes.nom, modes.ID,modes_config.consigne, modes_config.heure_debut, modes_config.heure_fin, modes_config.type
