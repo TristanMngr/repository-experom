@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * controller CGU
+ * permet de modifier ou créer les CGU
+ */
+
+
 $tableau = array('typeDeRequete'=>'select', 'table'=>'cgu','param'=>array('ID'=>1));
 $dataCGU = requeteDansTable($db,$tableau);
 

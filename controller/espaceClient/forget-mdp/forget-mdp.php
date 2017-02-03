@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Oublie de mot de passe
+ * génération d'un numéro
+ * envoie du numéro par mail
+ */
 
 if (isset($_POST['mail']) &isset($_POST['pseudo']) & !empty($_POST['mail']) & !empty($_POST['pseudo'])) {
     // on verifie que l'adresse est valide

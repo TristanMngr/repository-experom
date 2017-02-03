@@ -1,10 +1,8 @@
 <?php
 
-function displayArray($array) {
-    echo '<pre>';
-    print_r($array);
-    echo "</pre>";
-}
+/**
+ page test trames
+ */
 
 
 /*$lecture = file_get_contents('http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=0001');*/

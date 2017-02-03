@@ -1,3 +1,9 @@
+/**
+ * requete sur le pseudo pour générer la page information maison
+ * @param cible
+ * @returns {*}
+ */
+
 function ajaxGetHome(cible)
 {
     if (cible == "")

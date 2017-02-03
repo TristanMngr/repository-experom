@@ -2,12 +2,12 @@
 include("controller/debug.php");
 include("modele/back-office.php");
 
+
+
+
+
 // variable pour modifier le header
 $isLogin = false;
-
-
-
-
 
 
 if ($_GET['target'] == 'connexion-control') {

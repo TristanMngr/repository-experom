@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * ajouter un capteur
+ */
+
+
 if ($_GET['target2'] == 'ajouter-capteur') {
     if (isset($_POST['room']) & !empty($_POST['room'])) {
         if (isset($_POST['key']) & !empty($_POST['key'])) {

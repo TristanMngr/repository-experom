@@ -1,12 +1,14 @@
 <?php
 
-// récupération des données utilisateur.
-// récupération des données maison de l'utilisateur
-$tableau = array('typeDeRequete'=> 'select', 'table'=>'users','param'=>array('pseudo'=>$_GET['target3']));
-$arrayUser = requeteDansTable($db,$tableau);
+/**
+ * AJAX
+ * modification données personnels BO
+ *
+ */
 
-$tableau = array('typeDeRequete'=>'select', 'table'=> 'maison','param'=>array('ID'=> $arrayUser[0]['IDmaison']));
-$arrayHome = requeteDansTable($db,$tableau);
+
+
+include('request-users-edit.php');
 
 
 ?>
@@ -20,10 +22,7 @@ $arrayHome = requeteDansTable($db,$tableau);
                                                         value=<?= $arrayUser[0]['mail'] ?>></div>
     <div class="block"><label for="modifierNom" class="line">Nom</label><input class="line" type="text" name="modifierNom" id="modifierNom" value="<?= $arrayUser[0]['nom'] ?>"></div>
 
-   <!-- <div class="block"><label for="modifierAdresse" class="line">Adresse</label><input class="line" type="text"
-                                                            name="modifierAdresse"
-                                                            id="modifierAdresse"
-                                                            value=<?/*= $arrayHome[0]['adresse'] */?>></div>-->
+
     <div class="block"><label for="modifierNumero" class="line">Téléphone</label><input class="line" type="text"
                                                                        name="modifierNumero"
                                                                        id="modifierNumero"

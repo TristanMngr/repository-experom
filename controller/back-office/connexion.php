@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * connexion Back-office
+ */
+
 if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
     if (!empty($_POST["pseudo"]) && !empty($_POST["mdp"])) { //sont vide?
 
@@ -24,7 +28,7 @@ if (isset($_POST["pseudo"]) and isset($_POST["mdp"])) { //existance des variable
                     include("vue/back-office/users-BO.php");
                 }
                 else {
-                    $messageError = "désolé tu n'es pas admin";
+                    $messageError = "Désolé tu n'es pas admin";
                     $isLogin = false;
                     include('vue/back-office/connexion-BO.php');
                 }

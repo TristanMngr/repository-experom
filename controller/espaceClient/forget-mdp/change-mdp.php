@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * changer de mot de passe
+ * après avoir reçue le code
+ */
 
 $send_mail = true;
 

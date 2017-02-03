@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * première connexion
+ */
+
+
+
 // insertion des données envoyé par configMaison.php (vue)
 
 if ($_GET['target'] == 'premiere-connexion') {

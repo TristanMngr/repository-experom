@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Création d'un admin
+ */
+
+
 if ($_GET['target2'] == 'control') {
     if (isset($_POST["pseudo"]) && isset($_POST["mail"]) && isset($_POST['numero']) && isset($_POST["mdp"]) && isset($_POST["rmdp"])) {
         //même principe que pour connexion

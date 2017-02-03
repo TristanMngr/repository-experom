@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * suppression d'un capteur
+ */
+
 if (isset($_GET['target3'])) {
     $tableau = array('typeDeRequete'=>'delete','table'=>'archives','param'=>array('ID_capteur'=>$_GET['target3']));
     requeteDansTable($db,$tableau);

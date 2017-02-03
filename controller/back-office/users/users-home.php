@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * AJAX
+ * Info maison selon le pseudo (cf ajax/home.js)
+ */
+
 if (isset($_GET['target3'])) {
 
     /*récupération IDmaison*/

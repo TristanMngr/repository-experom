@@ -1,3 +1,7 @@
+/**
+ * création de la salle (capteurs)
+ */
+
 function selectCapteur(cible)
 {
     if (cible == "")

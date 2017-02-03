@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * AJAX
+ * modification des données personnels BO
+ */
+
 $tableau = array('typeDeRequete'=> 'select', 'table'=>'users','param'=>array('pseudo'=>$_GET['target2']));
 
 $arrayUser = requeteDansTable($db,$tableau);

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * AJAX
+ * listes des utilisateurs (input) cf ajax/users.js
+ */
+
 if (isset($_GET['target3'])) {
 
     $tableau = array('pseudo' => $_GET['target3'] . '%');

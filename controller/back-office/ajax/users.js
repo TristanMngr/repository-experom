@@ -1,3 +1,8 @@
+/**
+ * requete pour générer la liste des utilisateurs (input)
+ * @param cible
+ * @returns {*}
+ */
 function ajaxGetUsers(cible)
 {
     if (cible == "")
