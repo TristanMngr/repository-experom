@@ -11,8 +11,8 @@ if (isset($_POST['mail']) &isset($_POST['pseudo']) & !empty($_POST['mail']) & !e
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $mail = htmlspecialchars($_POST['mail']);
     if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-        $tableau = array('typeDeRequete' => 'select', 'table' => 'users', 'param' => array('mail' => $_POST['mail']));
-        // on verifie que le mail envoyé est bien existant dans la base de donnée
+        $tableau = array('typeDeRequete' => 'select', 'table' => 'oublie_mdp', 'param' => array('mail' => $mail,'pseudo'=>$pseudo));
+        // on verifie que le mail envoyé et le pseudo sont bien existant dans la base de donnée
         if (requeteDansTable($db, $tableau) != array()) {
             // on créér un code
             $user_code = "";
@@ -38,7 +38,7 @@ if (isset($_POST['mail']) &isset($_POST['pseudo']) & !empty($_POST['mail']) & !e
             // veriable qui permet de charger le bon morceau de page.
             $send_mail = true;
         } else {
-            $messageError = "Désolé cette adresse mail n'existe pas dans notre base de donnée";
+            $messageError = "Cette adresse ou ce pseudo n'existe pas dans notre base de données";
         }
     } else {
         $messageError = "Ce n'est pas une addresse mail";
