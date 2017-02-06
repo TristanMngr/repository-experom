@@ -28,7 +28,7 @@ function password(element) {
 
     aideElement.textContent = lengthMdp;
     aideElement.style.color = color;
-    element.style.color = color;
+    /*element.style.color = color;*/
 }
 
 function rpassword(element) {
@@ -50,8 +50,9 @@ function verifNum(element) {
         element.style.border = "green solid 2px"
     }
     else {
-        element.style.border = "solid transparent 1px"
+        element.style.border = "solid red 2px"
     }
+
 }
 function verifMail(element) {
     var regex = new RegExp('^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$');
@@ -59,7 +60,7 @@ function verifMail(element) {
         element.style.border = "green solid 2px"
     }
     else {
-        element.style.border = "solid transparent 1px"
+        element.style.border = "solid red 2px"
     }
 
 }
