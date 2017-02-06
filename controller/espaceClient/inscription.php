@@ -81,7 +81,7 @@ if ($utilisateurSecondaire == False) {
                 include("vue/espaceClient/inscription.php");
             }
         } else {
-            $messageError = "Le/les champs est/sont vide(s)";
+            $messageError = "Tous les champs ne sont pas remplis";
             include("vue/espaceClient/inscription.php");
 
         }

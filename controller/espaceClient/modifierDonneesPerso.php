@@ -100,7 +100,7 @@ if (isset($_POST["pseudo"]) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && 
 
         }
     } else {
-        $messageError = "Le/les champs est/sont vide(s)";
+        $messageError = "Tous les champs ne sont pas remplis";
         include("vue/espaceClient/inscription.php");
     }
 }
@@ -144,14 +144,14 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                         $tableauUtilisateurs['mdp'] = "cocos_" . md5($_POST['modifierMdp']);
                         $_SESSION["mdp"] = $_POST['modifierMdp'];
                     } else {
-                        $messageE = "Attention vous devez entrez l'ancien mdp";
+                        $messageE = "Attention vous devez entrez l'ancien mot de passe";
                     }
                 } else {
                     $messageE = "Vos mots de passe ne sont pas identiques";
                 }
             }
             else {
-                $messageE = "vous devez entrer l'ancien mot de passe";
+                $messageE = "Vous devez entrer l'ancien mot de passe";
             }
         }
         else {
@@ -186,7 +186,7 @@ if ($_GET["target"] == "modifier-donnees-perso-control") {
                     $messageE .= ", ";
                 }
                 /*$message .= " Le numéro est déja utilisé";*/
-                $messageE .= " Cette adresse est déja utilisé";
+                $messageE .= " Cette adresse est déja utilisée";
             }
         }
     }

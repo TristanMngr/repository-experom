@@ -24,7 +24,7 @@ if (isset($_GET['target3'])) {
         $messageSuccess = "Le mode a bien été supprimé";
     }
     else {
-        $messageError = "Désolé le mode n'existe pas/plus";
+        $messageError = "Le mode n'existe pas";
     }
 }
 

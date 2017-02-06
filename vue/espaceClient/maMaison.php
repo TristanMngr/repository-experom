@@ -72,12 +72,12 @@ $titre = "vue des capteurs";
                                 <div>
                                     <ul id="allListCapteurTemp" style="display:none">
                                         <div class="titre">
-                                            <h3>température</h3>
+                                            <h3>Température</h3>
                                         </div>
                                     </ul>
                                     <ul id="allListCapteurHum" style="display:none">
                                         <div class="titre">
-                                            <h3>humidité</h3>
+                                            <h3>Humidité</h3>
                                         </div>
                                     </ul>
                                 </div>

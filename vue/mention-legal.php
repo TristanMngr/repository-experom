@@ -28,7 +28,7 @@ ob_start();
 
 
             <h2>Développement</h2>
-            <p>Ce site a été développé par une entreprise d'experts, Experom</p>
+            <p>Ce site a été développé par une entreprise d'expert: Experom</p>
         </div>
     </section>
 <?php

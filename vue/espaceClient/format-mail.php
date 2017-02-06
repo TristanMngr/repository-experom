@@ -12,10 +12,10 @@ $message='
 	<body>
 		<div align="center">
 			<br />
-			<h3 color="blue">Vous avez demandé de changer de mot de passe</h3>
+			<h3 color="blue">Vous avez demandé à changer de mot de passe</h3>
 			Voici le code : '.$user_code.'
 			<br />
-			<p>Entre ce code sur le site de Domisep puis choisie un nouveau mot de passe</p>
+			<p>Entre ce code sur le site de Domisep puis choisi un nouveau mot de passe</p>
 		</div>
 	</body>
 </html>
