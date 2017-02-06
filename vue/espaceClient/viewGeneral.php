@@ -46,7 +46,7 @@
             <?php } ?>
             <hr class="margin-info">
             <?php
-            $nameMode = getModeSalle($db, -1, -1);
+            $nameMode = getModeGeneral($db, $_SESSION['IDmaison']);
 
             if (isset($nameMode)) { ?>
 

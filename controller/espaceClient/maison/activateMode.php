@@ -121,10 +121,11 @@ $tableau = array('IDmaison' => $_SESSION['IDmaison']);
 $tableauDonneesSalles = getDataCapteursByNameSalle($db, $tableau);
 
 
+
 // réactualise les données pour la page viewGénéral
 if (isset($_GET['target3'])) {
     if ($_GET['target2'] == 'general' or $_GET['target3'] == 'general') {
-        $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('ID' => -1));
+        $tableau = array('typeDeRequete'=>'select','table'=>'salles','param'=>array('IDmaison'=>$_SESSION['IDmaison'],'nom'=>'general'));
         $idModeGeneral = requeteDansTable($db,$tableau)[0]['ID_mode'];
         $tableau = array('IDmaison' => $_SESSION['IDmaison']);
         $avgDataHome = avgAllSalle($db, $tableau);

@@ -8,7 +8,7 @@ include('modele/capteurs.php');
 
 
 $messageError = null;
-
+$showGeneral = false;
 
 
 
@@ -45,6 +45,7 @@ foreach ($arrayNameMode as $key => $mode) {
 
 function getModeSalle($db,$idSalle,$idMaison)
 {
+
     $tableau = array(
         'typeDeRequete'=>'select',
         'table'=>'salles',
@@ -64,7 +65,24 @@ function getModeSalle($db,$idSalle,$idMaison)
         return $nomMode;
     }
 }
+function getModeGeneral($db,$idMaison) {
+    $tableau = array('typeDeRequete'=>'select',
+        'table'=>'salles',
+        'param'=>array(
+            'IDmaison'=>$idMaison,
+            'nom'=>'general'
+        ));
+    $tableauDonneesSalles = requeteDansTable($db,$tableau);
 
+    $tableau = array('param' => array('nom' => $tableauDonneesSalles[0]['nom'], 'IDmaison' => $_SESSION['IDmaison']));
+    $arrayCapteurSelect = getDataModeByName($db, $tableau);
+    $tableau = array('typeDeRequete' => 'select', 'table' => 'modes', 'param' => array('ID' => $tableauDonneesSalles[0]['ID_mode']));
+    $arrayDataModeBySalle = requeteDansTable($db, $tableau);
+    if (isset($arrayDataModeBySalle[0]['nom'])) {
+        $nomMode = $arrayDataModeBySalle[0]['nom'];
+        return $nomMode;
+    }
+}
 
 
 // retourne un tableau type=>valeur du mode
@@ -83,11 +101,16 @@ function getTypeValueMode($db,$idMode) {
 // pour la salle général
 if (isset($_GET['target3'])) {
     if ($_GET['target2'] == 'general' or $_GET['target3'] == 'general') {
-        $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('ID' => -1));
+        $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('nom'=>'general','IDmaison'=>$_SESSION['IDmaison']));
         $idModeGeneral = requeteDansTable($db,$tableau)[0]['ID_mode'];
         $tableau = array('IDmaison' => $_SESSION['IDmaison']);
         $avgDataHome = avgAllSalle($db, $tableau);
     }
+}
+
+$tableau = array('typeDeRequete'=>'select','table'=>'salles','param'=>array('IDmaison'=>$_SESSION['IDmaison'],'nom'=>'general'));
+if (requeteDansTable($db,$tableau) != array()) {
+    $showGeneral = true;
 }
 
 

@@ -15,7 +15,7 @@ $titre = "vue des capteurs";
         </h1>
         <div id="indexMaison">
             <ul>
-                <?php if (isset($tableauDonneesSalles[0])) { ?>
+                <?php if ($showGeneral==true) { ?>
                     <li class="index"><a href="/espace-client/ma-maison/general">Général</a></li>
                 <?php }
                 for ($salle = 0; $salle < count($tableauDonneesSalles); $salle++) { ?>

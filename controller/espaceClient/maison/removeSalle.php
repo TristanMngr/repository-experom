@@ -39,8 +39,18 @@ if (isset($_GET['target3'])) {
 
     requeteDansTable($db,$tableau);
 
+    $tableau = array('typeDeRequete'=>'select', 'table'=>'salles','param'=> array('IDmaison'=>$_SESSION['IDmaison']));
+    if (count(requeteDansTable($db,$tableau)) == 1) {
+        $tableau = array('typeDeRequete'=>'delete',
+            'table'=>'salles',
+            'param'=>array(
+                'IDmaison'=>$_SESSION['IDmaison'],
+                'nom'=>'general'));
+        requeteDansTable($db,$tableau);
+        $showGeneral = false;
 
 
+    }
 
     $messageError = "Vous avez bien supprimé : ".$removeSalle;
 

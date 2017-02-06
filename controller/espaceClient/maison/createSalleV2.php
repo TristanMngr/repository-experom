@@ -33,7 +33,17 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
 
             updateTableCapteur($db,$tableau);
         }
+        //TODO ajout salle general si n'existe pas
 
+        $tableau = array('typeDeRequete'=>'select','table'=>'salles','param'=>array('IDmaison'=>$_SESSION['IDmaison'],'nom'=>'general'));
+
+
+
+        if (requeteDansTable($db,$tableau) == array()) {
+            $tableau = array('typeDeRequete'=>'insert','table'=>'salles','param'=>array('IDmaison'=>$_SESSION['IDmaison'],'nom'=>'general'));
+            requeteDansTable($db,$tableau);
+            $showGeneral= true;
+        }
 
         $messageSuccess = 'Votre salle a été créée avec succès';
     }
