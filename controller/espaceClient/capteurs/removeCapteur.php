@@ -11,7 +11,7 @@ if (isset($_GET['target3'])) {
     $tableau = array('typeDeRequete'=>'delete','table'=>'capteurs','param'=>array('ID'=>$_GET['target3']));
     requeteDansTable($db,$tableau);
 
-    $messageSuccess = "Le capteurs à bien été supprimé";
+    $messageSuccess = "Le capteurs a bien été supprimé";
 }
 
 

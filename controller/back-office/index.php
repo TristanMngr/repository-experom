@@ -23,6 +23,7 @@ if ($_GET['target'] == 'connexion-control') {
 else if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'admin') {
         if ($_GET['target'] == 'users-edit') {
+            $isLogin = true;
             include('controller/back-office/users/users-edit-control.php');
         }
         else if  ($_GET['target'] == 'utilisateurs') {

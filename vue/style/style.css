@@ -1209,6 +1209,8 @@ section#modifierDonnerPersonnel {
 }
 #conteneurDonnerPerso .messageError, #conteneurDonnerPerso .messageSuccess {
     font-size: 1em;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 

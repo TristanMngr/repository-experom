@@ -17,10 +17,10 @@ $titre = "mention légal";
 ob_start();
 ?>
     <section id="mention-legale">
-        <div <!--onclick="scrollSmooth()-->">
-            <h1>Mentions légale</h1>
+        <div>
+            <h1>Mentions légales</h1>
 
-            <h2>Propiétaire du site Internet</h2>
+            <h2>Propriétaire du site Internet</h2>
             <p>Ce site Internet est la propriété de Domisep</p>
 
             <h2>Hébergement</h2>
@@ -28,7 +28,7 @@ ob_start();
 
 
             <h2>Développement</h2>
-            <p>Ce site a été développé par une entreprise d'expert, Experom</p>
+            <p>Ce site a été développé par une entreprise d'experts, Experom</p>
         </div>
     </section>
 <?php

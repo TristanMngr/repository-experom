@@ -3,7 +3,7 @@
     <div class="salle" id="generalView">
         <a href="/espace-client/ma-maison" class="cancel"><i class="flaticon-cancel-music" aria-hidden="true"></i></a>
 
-        <h1>Vue général de la maison</h1>
+        <h1>Vue générale de la maison</h1>
         <ul id="ulGeneral">
             <?php
             $arrayTypeValueMode = getTypeValueMode($db,$idModeGeneral);

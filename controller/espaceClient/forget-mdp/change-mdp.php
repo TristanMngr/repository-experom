@@ -20,7 +20,7 @@ if (isset($_POST['code']) & isset($_POST['mdp']) & isset($_POST['rmdp'])) {
                 $mdp_crypte = 'cocos_'.md5($mdp);
                 $tableau = array('mdp'=>$mdp_crypte,'mail'=>$user_mail, 'pseudo'=>$user_pseudo);
                 updateTableUsers($db,$tableau);
-                $messageSuccess = "Votre mot de passe à bien été modifié";
+                $messageSuccess = "Votre mot de passe a bien été modifié";
                 include('vue/espaceClient/connexion.php');
 
             }
@@ -29,13 +29,13 @@ if (isset($_POST['code']) & isset($_POST['mdp']) & isset($_POST['rmdp'])) {
             }
         }
         else {
-            $messageError = "Désolé ce code n'existe pas";
+            $messageError = "Ce code n'existe pas";
         }
 
 
     }
     else {
-        $messageError = "Désolé tout les champs ne sont pas remplies";
+        $messageError = "Tous les champs ne sont pas remplies";
     }
 }
 

@@ -50,7 +50,7 @@ if ($_GET['target2'] == 'ajouter-capteur') {
                 }
             }
             else {
-                $messageError = "Attention ce capteur à déja été renseigné";
+                $messageError = "Attention ce capteur a déja été renseigné";
             }
         }
         else {
@@ -58,7 +58,7 @@ if ($_GET['target2'] == 'ajouter-capteur') {
         }
     }
     else {
-        $messageError = "Vous devez entré un nom de salle";
+        $messageError = "Vous devez entrer un nom de salle";
     }
 }
 
