@@ -50,7 +50,7 @@ if ($_GET['target2'] == 'ajouter-capteur') {
                 }
             }
             else {
-                $messageError = "Attention ce capteur à déja été renseigné";
+                $messageError = "Attention ce capteur a déja été renseigné";
             }
         }
         else {

@@ -33,7 +33,7 @@ else {
         }
     }
 }
-// réactualisation des donnée
+// réactualisation des données
 $tableau = array('typeDeRequete'=>'select', 'table'=>'cgu','param'=>array('ID'=>1));
 $dataCGU = requeteDansTable($db,$tableau);
 

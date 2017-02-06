@@ -35,7 +35,7 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
         }
 
 
-        $messageSuccess = 'Votre salle à été créee avec succès';
+        $messageSuccess = 'Votre salle a été créée avec succès';
     }
     else {
         $messageError =  'Ce nom est déja utilisé';

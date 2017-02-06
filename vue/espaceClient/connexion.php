@@ -20,7 +20,7 @@ ob_start();
             <div id="div-forget-mdp"><a href="/espace-client/oublie-mdp" id="forget-mdp">J'ai oublié mon mot de passe</a></div>
 
         </form>
-        <a href="/espace-client/redirection-inscription">Créer ton compte Experom</a>
+        <a href="/espace-client/redirection-inscription">Créer un compte Experom</a>
         <?php if (isset($messageError)) { ?>
             <div class="messageError"><?php echo $messageError; ?></div>
         <?php } if (isset($messageSuccess)) { ?>

@@ -20,7 +20,7 @@ ob_start();
     <section id="cgu-foot-section">
         <h1>Conditions Générales d'utilisation</h1>
         <div id="cgu-foot">
-            <p><?php if ($textCGU != "") { echo $textCGU; } else { echo "Les CGU doivent être mise à jour"; } ?></p>
+            <p><?php if ($textCGU != "") { echo $textCGU; } else { echo "Les CGU doivent être mises à jour"; } ?></p>
         </div>
     </section>
 <?php

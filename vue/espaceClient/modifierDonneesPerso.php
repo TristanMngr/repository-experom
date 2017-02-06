@@ -61,7 +61,7 @@ $titre = "donnée perso";
         <div id="maFamille">
             <h1>Ma famille</h1>
             <div id="utilisateurs">
-                <h2>Tout mes utilisateurs</h2>
+                <h2>Tous mes utilisateurs</h2>
                     <ul>
                         <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) { ?>
                         <li>

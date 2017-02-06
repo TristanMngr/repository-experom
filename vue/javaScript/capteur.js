@@ -33,7 +33,7 @@ function displayCross(idSpan,idCapteur) {
                     document.location.href = '/espace-client/capteurs/remove/' + idCapteur;
                 }
                 else {
-                    alert("Désolé, vous devez d'abord supprimer la salle avec ce capteur pour pouvoir le supprimer");
+                    alert("Vous devez d'abord supprimer la salle avec ce capteur pour pouvoir le supprimer");
                 }
 
             });

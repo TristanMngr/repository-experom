@@ -64,17 +64,17 @@ $titre = "créer un modes";
                     <li class="modeLeft"><span class="listMode"><? echo $mode;?></span>
                         <div class="right"><form class="modeRight" action="/espace-client/modes/modifier" method="post">
                             <input type="hidden" name="editMode" value="<?php echo $mode ?>">
-                            <!--<span class="modeRight">--><input type="submit" value="modifier" class="inputEdit">
+                            <!--<span class="modeRight">--><input type="submit" value="Modifier" class="inputEdit">
                         </form>
 
                         <?php if ($mode == "mode nuit" or $mode == "mode jour") {
-                            ?><input type="submit" value="supprimer"  class="modeRight inputRemove disabled"  disabled></li>
+                            ?><input type="submit" value="Supprimer"  class="modeRight inputRemove disabled"  disabled></li>
                             <?php } else { ?>
-                            <input type="submit" value="supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove not-disabled"></div></li>
+                            <input type="submit" value="Supprimer" onclick="deleteConf('<?php echo $mode ?>','mode')" class="inputRemove not-disabled"></div></li>
                     <?php }} ?>
 
                     <li class="submit">
-                        <form action="/espace-client/modes/creer"><input type="submit" id="submitCreerMode" value="Creer un mode"></form>
+                        <form action="/espace-client/modes/creer"><input type="submit" id="submitCreerMode" value="Créer un mode"></form>
                     </li>
                     <?php if(isset($messageError)){  ?>
                     <li class="messageError"><?php echo $messageError; ?></li>

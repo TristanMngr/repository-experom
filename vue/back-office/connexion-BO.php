@@ -8,7 +8,7 @@ ob_start();
 
 <section id="conteneur">
     <article id="connexion">
-        <h1>Connexion admin</h1>
+        <h1>Connexion administrateur</h1>
         <form method="post" action="/admin/connexion-control">
 
             <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" autofocus></div>
