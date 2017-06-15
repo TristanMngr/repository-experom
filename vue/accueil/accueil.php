@@ -6,6 +6,7 @@ $titre = "accueil";
 ob_start();
 ?>
 <section id="accueil">
+    <!--<img src="ressources/images/buildings.png" alt="buildings" class="images">-->
 
     <article id="apropos">
         <?php /*echo mail('domisep.contact@gmail.com','test','salut je test addresse mail'); */?>

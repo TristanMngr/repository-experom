@@ -12,9 +12,9 @@ $titre = "Inscription";
 
 // inscription utilisateur principal
 if ($utilisateurSecondaire == False) {
-    if (isset($_POST["pseudo"]) && isset($_POST["nom"]) && isset($_POST["mail"]) && isset($_POST['numero']) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && $_GET['target'] == "inscription-control") {
+    if (isset($_POST["pseudo"]) && isset($_POST["nom"]) && isset($_POST["mail"]) && isset($_POST['numero']) && isset($_POST["mdp"]) && isset($_POST["rmdp"]) && isset($_POST["clef"]) && $_GET['target'] == "inscription-control") {
         //même principe que pour connexion
-        if (isset($_POST["pseudo"]) && !empty($_POST["nom"]) && !empty($_POST["mail"]) && !empty($_POST['numero']) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"])) {
+        if (!empty($_POST["pseudo"]) && !empty($_POST["nom"]) && !empty($_POST["mail"]) && !empty($_POST['numero']) && !empty($_POST["mdp"]) && !empty($_POST["rmdp"]) && !empty($_POST["clef"])) {
             if ($_POST["mdp"] == $_POST["rmdp"]) {
                 if (preg_match("#^[a-z0-9_.-]+@[a-z0-9_.-]{2,}\.[a-z]{2,4}$#",$_POST['mail']) && preg_match("#^0[1-68]([ .-]?[0-9]{2}){4}#",$_POST['numero'])) {
                     $tableau = array(
@@ -51,6 +51,11 @@ if ($utilisateurSecondaire == False) {
                                     ));
 
                                 requeteDansTable($db, $tableau);
+
+                                $_SESSION['clef'] = $_POST['clef'];
+
+
+
                                 variablesSession($db, 'pseudo', $_POST['pseudo']);
 
 

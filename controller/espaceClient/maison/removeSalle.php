@@ -19,16 +19,22 @@ if (isset($_GET['target3'])) {
         $idSalle = $dataSalle[0]['ID'];
 
 
+        $tableau = array('typeDeRequete' => 'select', 'table' => 'capteurs', 'param' => array('ID_salle' => $idSalle, 'ID_maison' => $_SESSION['IDmaison']));
+        $dataCapteurs = requeteDansTable($db, $tableau);
+
+
         // on remet les valeurs des ID_capteur à 0
 
         $tableau = array('typeDeRequete' => 'update', 'table' => 'capteurs', 'setValeur' => 'ID_salle', 'champ' => 'ID_salle', 'param' => array('setValeur' => 0, 'champ' => $idSalle));
         requeteDansTable($db, $tableau);
 
-        /*$tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_salle'=>$idSalle));
-        $capteursSalle = requeteDansTable($db,$tableau);*/
 
+        //TODO truc
 
-        /*for ($capteur = 0; $capteur < count())*/
+        for ($id = 0; $id < count($dataCapteurs); $id ++) {
+            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'ID_capteur', 'champ' => 'ID_capteur', 'param' => array('setValeur' => 0, 'champ' => $dataCapteurs[$id]['ID']));
+            requeteDansTable($db, $tableau);
+        }
 
         $tableau = array(
             'typeDeRequete' => 'delete',
@@ -72,4 +78,4 @@ if (isset($_GET['target3'])) {
 
 }
 
-include('vue/espaceClient/maMaison.php');
+include('vue/espaceClient/maMaison2.php');

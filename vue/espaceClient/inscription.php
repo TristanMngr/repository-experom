@@ -10,7 +10,7 @@ $titre = "inscription";
     <article id="inscription">
         <h1><?php if ($utilisateurSecondaire == False){echo "Inscription" ;} else {echo "Création d'un utilisateur secondaire";} ?></h1>
         <form method="post" action=<?php if ($utilisateurSecondaire == False) {echo "/espace-client/inscription-control";} else if ($utilisateurSecondaire == True) {echo "/espace-client/modifier-donnees-perso/ajouter-un-utilisateur-control";}?>>
-            <?php if ($utilisateurSecondaire == False){ ?><div><label for="clef">Clef d'identification</label><input type="clef" name="clef" class="input" placeholder="0001"
+            <?php if ($utilisateurSecondaire == False){ ?><div><label for="clef">Clef d'identification</label><input type="clef" name="clef" class="input" placeholder="3401"
                                                                                                                      id="clef" value="<?= isset($_POST['clef']) ? $_POST['clef'] : ""; ?>"></div><?php }?>
             <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : ""; ?>" autofocus></div>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="nom">Nom</label><input type="text" name="nom" id="nom" class="input" value="<?= isset($_POST['nom']) ? $_POST['nom'] : ""; ?>"></div><?php } ?>

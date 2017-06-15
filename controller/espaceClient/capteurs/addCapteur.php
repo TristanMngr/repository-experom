@@ -14,9 +14,12 @@ if ($_GET['target2'] == 'ajouter-capteur') {
             if (requeteDansTable($db,$tableau) == array()) {
 
 
+
                 /*on verifie que la clef existe*/
                 if (getTrameSerialKey($arrayTrame, $_POST['key']) != array()) {
 
+
+                    // TODO ici ajout des trames
                     $trame = getTrameSerialKey($arrayTrame, $_POST['key']);
                     $arrayKeyType = getKeyTypeTrame($trame);
                     $tableau = array('typeDeRequete' => 'insert', 'table' => 'capteurs', 'param' => array('type' => $arrayKeyType['type'], 'serial_key' => $arrayKeyType['key'], 'nom' => $_POST['room'], 'ID_maison' => $_SESSION['IDmaison']));
@@ -28,6 +31,7 @@ if ($_GET['target2'] == 'ajouter-capteur') {
                      */
 
                     $arrayTrame = getAllTrameWithSerialKey($arrayTrame, $_POST['key']);
+                    displayArray("voila",$arrayTrame);
 
                     $arrayTranslateTrame = arrayRequestData($arrayTrame);
 

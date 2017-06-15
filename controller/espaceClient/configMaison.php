@@ -35,6 +35,10 @@ if ($_GET['target'] == 'premiere-connexion') {
     );
     requeteDansTable($db, $tableau);
 
+    /*$tableau = array('typeDeRequete'=>'select','table'=>'maison','param'=>array('ID'=>$_SESSION['IDmaison']));
+    if (requeteDansTable($db,$tableau)[0]['number_object']== 0) {*/
+
+
 
 // selection de toute les données de maison.
 
@@ -46,6 +50,16 @@ if ($_GET['target'] == 'premiere-connexion') {
         ));
     $donneesMaison = requeteDansTable($db, $tableau);
     $_SESSION['IDmaison'] = $donneesMaison[0]['ID'];
+
+
+    // update clef
+    $tableau = array('typeDeRequete'=>'update','table'=>'maison','setValeur'=>'number_object','champ'=>'ID','param'=> array(
+        'setValeur'=>$_SESSION['clef'],
+        'champ'=>$_SESSION['IDmaison']
+    ));
+    requeteDansTable($db,$tableau);
+
+
     $_SESSION['adresse'] = $donneesMaison[0]['adresse'];
     $_SESSION['nomMaison'] = $donneesMaison[0]['nom'];
 

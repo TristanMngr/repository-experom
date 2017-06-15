@@ -66,7 +66,8 @@ ul#footer {
     padding:0;
     margin:0;
     text-align: center;
-    width:24%;
+    /*width: 24%;*/
+    width:19%;
     line-height:70px;
     height:70px;
     vertical-align: middle;
@@ -767,6 +768,9 @@ div#contenuMaison .salle {
     position: relative;
 
     /*position: relative;*/
+}
+div#contenuMaison div.rien {
+    height: 40px;
 }
 
 .salle a.cancel {
@@ -2485,8 +2489,11 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
 
 
 
-
-
+/*image*/
+/*.images {
+    width: 100%;
+    height: 100%;
+}*/
 
 
 

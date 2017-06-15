@@ -97,8 +97,13 @@ $titre = "vue des capteurs";
                 for ($salle = 0; $salle < count($tableauDonneesSalles); $salle++) {
                     ?>
                     <div class="salle" id="<?php echo "salle" . $tableauDonneesSalles[$salle]['ID'] ?>">
+                        <?php if ($_SESSION['role'] == 'principal') { ?>
                         <i class="flaticon-cancel-music" aria-hidden="true"
                            onclick="deleteConf('<?php echo $tableauDonneesSalles[$salle]['nom_salle']; ?>','maison');"></i>
+                        <?php } else { ?>
+                        <div class="rien"></div>
+                        <?php } ?>
+
                         </form>
                         <h1 id="<?php echo $tableauDonneesSalles[$salle]['nom_salle']; ?>"><?php echo $tableauDonneesSalles[$salle]['nom_salle']; ?></h1>
                         <ul id="salleList">

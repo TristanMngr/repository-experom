@@ -115,6 +115,8 @@ if (requeteDansTable($db,$tableau) != array()) {
 
 
 
+
+
 if (!empty($_GET['target3']) & $_GET['target2'] == 'creation') {
     include('controller/espaceClient/maison/ajax/getCapteurs.php');
 }
@@ -131,5 +133,5 @@ else if ($_GET['target2'] == "consommation") {
     include('vue/espaceClient/commation.php');
 }
 else {
-    include('vue/espaceClient/maMaison.php');
+    include('vue/espaceClient/maMaison2.php');
 }

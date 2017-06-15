@@ -8,11 +8,14 @@ $isHum = false;
 $stringSerialKey = $_POST['serialKey'];
 
 $arraySerialKey = explode(',',$stringSerialKey);
+displayArray('array', $arraySerialKey);
 
 
 if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
     if ($_POST['nomSalle'] != "general") {
         if ($stringSerialKey != "") {
+
+            // si le nom de la salle n'existe pas déja
             $tableau = array('typeDeRequete' => 'select', 'table' => 'salles', 'param' => array('nom' => $_POST['nomSalle'], 'IDmaison' => $_SESSION['IDmaison']));
             if (requeteDansTable($db, $tableau) == array()) {
                 // récupère le type
@@ -64,8 +67,9 @@ if (isset($_POST['nomSalle']) & !empty($_POST['nomSalle'])) {
 
 $tableau = array('IDmaison'=> $_SESSION['IDmaison']);
 $tableauDonneesSalles = getDataCapteursByNameSalle($db,$tableau);
+displayArray("array",$tableauDonneesSalles);
 
 
 
 
-include('vue/espaceClient/maMaison.php');
+include('vue/espaceClient/maMaison2.php');

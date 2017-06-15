@@ -77,6 +77,9 @@ else if ($_GET['cible']== 'accueil') {
 else if ($_GET['cible'] == 'contact') {
     include("vue/contact/contact.php");
 }
+else if ($_GET['cible'] == 'trame') {
+    include("controller/trame.php");
+}
 
 
 /*deconnexion*/
@@ -110,10 +113,12 @@ else if ($_GET['cible'] == 'espace-client') {
     /** ajouter un capteurs */
 
 
+
     else if ($_GET['target'] == 'capteurs') {
         if (isset($_SESSION['role'])){
             if ($_SESSION['role'] == "principal") {
-                include('controller/espaceClient/capteurs/index.php');
+                include('controller/espaceClient/capteursV2/index.php');
+                /*include('controller/espaceClient/capteurs/index.php');*/
             }
             else {
                 include('vue/error.php');

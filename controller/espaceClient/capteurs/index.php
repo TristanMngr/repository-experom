@@ -3,6 +3,8 @@ include("controller/capteurSelectV2.php");
 include("controller/debug.php");
 
 
+/*$tableau = array('typeDeRequete' => 'insert', 'table' => 'capteurs', 'param' => array('type' => $arrayKeyType['type'], 'serial_key' => $arrayKeyType['key'], 'nom' => $_POST['room'], 'ID_maison' => $_SESSION['IDmaison']));*/
+
 
 // récupération de tout les capteurs pour affichage
 $tableau = array('typeDeRequete'=>'select', 'table'=>'capteurs','param'=>array('ID_maison'=>$_SESSION['IDmaison']));
@@ -18,7 +20,6 @@ function getNameSalle($db,$capteur) {
     else {
         return false;
     }
-
 }
 
 

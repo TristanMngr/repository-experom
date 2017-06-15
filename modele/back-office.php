@@ -26,6 +26,7 @@ function fetchDataUsers($db,$tableau) {
 }
 
 
+
 function fetchNameMode($db,$tableau) {
     $query = "SELECT modes.nom
 FROM modes

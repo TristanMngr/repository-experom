@@ -94,15 +94,17 @@ foreach ($arrayDataCapteur as $arrayCapt => $champCapt) {
 
 
 // on va chercher les capteurs concerné dans l'archives et on change leurs valeurs.
+
+// TODO on modifie toute les trames attention !
 for ($capteur = 0; $capteur < count($arrayIdCapt); $capteur++) {
     foreach ($arrayIdCapt[$capteur] as $type => $id) {
         if ($type == 'temperature' & $temp != false) {
 
-            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'temperature', 'champ' => 'ID_capteur', 'param' => array('setValeur' => $modeTempConsigne, 'champ' => $id));
+            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'value', 'champ' => 'ID_capteur', 'param' => array('setValeur' => $modeTempConsigne, 'champ' => $id));
             requeteDansTable($db, $tableau);
         }
         if ($type == 'humidite' & $hum != false) {
-            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'humidite', 'champ' => 'ID_capteur', 'param' => array('setValeur' => $modeHumConsigne, 'champ' => $id));
+            $tableau = array('typeDeRequete' => 'update', 'table' => 'archives', 'setValeur' => 'value', 'champ' => 'ID_capteur', 'param' => array('setValeur' => $modeHumConsigne, 'champ' => $id));
             requeteDansTable($db, $tableau);
         }
     }
@@ -133,4 +135,4 @@ if (isset($_GET['target3'])) {
 }
 
 
-include('vue/espaceClient/maMaison.php');
+include('vue/espaceClient/maMaison2.php');
