@@ -6,8 +6,8 @@ $titre = "connexion";
 ob_start();
 ?>
 <section id="conteneur">
-    <article id="connexion">
-        <h1>Connexion</h1>
+    <article id="connexion" class="theme">
+        <h1 class="titre">Connexion</h1>
         <form method="post" id="connexion" action="/espace-client/connexion-control">
 
             <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" autofocus></div>

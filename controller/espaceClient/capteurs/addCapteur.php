@@ -31,7 +31,6 @@ if ($_GET['target2'] == 'ajouter-capteur') {
                      */
 
                     $arrayTrame = getAllTrameWithSerialKey($arrayTrame, $_POST['key']);
-                    displayArray("voila",$arrayTrame);
 
                     $arrayTranslateTrame = arrayRequestData($arrayTrame);
 

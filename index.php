@@ -23,7 +23,8 @@ $utilisateurSecondaire = False;
 
 
 if (!isset($_GET["cible"])) {  // redirige vers la page cible de l'url
-    include("vue/accueil/accueil.php");
+    /*include("vue/accueil/accueil.php");*/
+    include("vue/espaceClient/connexion.php");
 }
 else if ($_GET['cible'] == 'espace-client' & empty($_GET['target'])) {
     if (!isset($_SESSION["ID"])) {
@@ -72,7 +73,8 @@ else if ($_GET['cible'] == 'error'){
 /*principaux*/
 
 else if ($_GET['cible']== 'accueil') {
-    include("vue/accueil/accueil.php");
+    /*include("vue/accueil/accueil.php");*/
+    include("vue/espaceClient/connexion.php");
 }
 else if ($_GET['cible'] == 'contact') {
     include("vue/contact/contact.php");

@@ -14,7 +14,7 @@ $titre = "vue des capteurs";
             <!--<a href="/espaceClient/ma-maison/consommation"><img src=<?php /*if($_GET['target']=='ma-maison'){echo "/style/images/diagram.png"; } else {echo "vue/style/images/diagram.png"; } */ ?>></a>-->
         </h1>
         <div id="indexMaison">
-            <ul>
+            <ul class="theme">
                 <?php if ($showGeneral==true) { ?>
                     <li class="index"><a href="/espace-client/ma-maison/general">Général</a></li>
                 <?php }
@@ -45,7 +45,7 @@ $titre = "vue des capteurs";
 
         <div id="contenuAllMaison">
             <?php if (isset($_GET['target2']) & $_GET['target2'] == 'creation') { ?>
-                <div id="creationSalle">
+                <div id="creationSalle" class="theme">
                     <a href="/espace-client/ma-maison"><i class="flaticon-cancel-music" aria-hidden="true"></i></a>
                     <h1>Création d'une salle</h1>
 
@@ -96,7 +96,7 @@ $titre = "vue des capteurs";
                 <?php
                 for ($salle = 0; $salle < count($tableauDonneesSalles); $salle++) {
                     ?>
-                    <div class="salle" id="<?php echo "salle" . $tableauDonneesSalles[$salle]['ID'] ?>">
+                    <div class="salle theme" id="<?php echo "salle" . $tableauDonneesSalles[$salle]['ID'] ?>">
                         <?php if ($_SESSION['role'] == 'principal') { ?>
                         <i class="flaticon-cancel-music" aria-hidden="true"
                            onclick="deleteConf('<?php echo $tableauDonneesSalles[$salle]['nom_salle']; ?>','maison');"></i>

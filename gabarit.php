@@ -22,8 +22,11 @@
 <body>
 <div id="page">
     <?php echo($header);?>
+
     <?php echo($section);?>
+
     <?php echo($footer);?>
+
 </div>
 <script type="text/javascript" src="/vue/javaScript/inscription.js"></script>
 <script type="text/javascript" src="/vue/javaScript/delete.js"></script>

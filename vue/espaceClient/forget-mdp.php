@@ -6,7 +6,7 @@ $titre = "mot de passe";
 ob_start();
 ?>
     <section id="conteneur">
-        <div id="forget-mdp">
+        <div id="forget-mdp" class="theme">
             <h1>Vous avez oublié votre mot de passe ?</h1>
             <?php if (!isset($send_mail)) { ?>
             <form action="/espace-client/oublie-mdp/mail" method="post">

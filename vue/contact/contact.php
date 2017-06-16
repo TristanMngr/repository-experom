@@ -5,7 +5,7 @@ $titre = "contact";
 ob_start();
 ?>
 <section id="contact">
-    <div class="contact">
+    <div class="contact theme">
     <h1>Nous contacter</h1>
 
 

@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:8889
--- Généré le :  Ven 03 Février 2017 à 17:53
--- Version du serveur :  5.6.28
--- Version de PHP :  5.6.25
+-- Généré le :  Ven 16 Juin 2017 à 14:43
+-- Version du serveur :  5.6.35
+-- Version de PHP :  7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `experomV2`
+-- Base de données :  `experom`
 --
 
 -- --------------------------------------------------------
@@ -22,10 +22,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `archives` (
   `ID` int(11) NOT NULL,
-  `numero` int(11) NOT NULL,
-  `temperature` int(11) NOT NULL,
-  `humidite` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `type_trame` int(11) NOT NULL,
+  `number_object` int(11) NOT NULL,
+  `type_requete` int(11) NOT NULL,
+  `type_capteur` int(11) NOT NULL,
+  `number_capteur` int(11) NOT NULL,
+  `value` int(11) NOT NULL,
+  `number_trame` int(11) NOT NULL,
+  `checksum` int(11) NOT NULL,
+  `date_time` datetime NOT NULL,
   `ID_capteur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -33,11 +38,12 @@ CREATE TABLE `archives` (
 -- Contenu de la table `archives`
 --
 
-INSERT INTO `archives` (`ID`, `numero`, `temperature`, `humidite`, `date`, `ID_capteur`) VALUES
-(190, 1, 0, 50, '0000-00-00', 164),
-(191, 1, 19, 0, '0000-00-00', 165),
-(192, 2, 0, 50, '0000-00-00', 166),
-(193, 3, 0, 50, '0000-00-00', 167);
+INSERT INTO `archives` (`ID`, `type_trame`, `number_object`, `type_requete`, `type_capteur`, `number_capteur`, `value`, `number_trame`, `checksum`, `date_time`, `ID_capteur`) VALUES
+(5215, 1, 3401, 1, 3, 7, 20, 5, 4, '2017-06-12 16:40:57', 217),
+(5216, 1, 3401, 1, 3, 1, 20, 0, 45, '2017-06-12 16:43:23', 218),
+(5217, 1, 3401, 1, 3, 1, 20, 0, 46, '2017-06-12 16:45:07', 218),
+(5218, 1, 3401, 1, 4, 3, 33, 0, 47, '2017-06-14 09:29:01', 219),
+(5219, 1, 3401, 1, 4, 1, 34, 1, 47, '2017-06-14 09:29:28', 220);
 
 -- --------------------------------------------------------
 
@@ -50,6 +56,7 @@ CREATE TABLE `capteurs` (
   `type` varchar(255) NOT NULL,
   `serial_key` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
+  `number_capteur` int(11) NOT NULL,
   `ID_salle` int(11) NOT NULL,
   `ID_maison` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -58,18 +65,11 @@ CREATE TABLE `capteurs` (
 -- Contenu de la table `capteurs`
 --
 
-INSERT INTO `capteurs` (`ID`, `type`, `serial_key`, `nom`, `ID_salle`, `ID_maison`) VALUES
-(147, 'temperature', 301, 'salon', 149, 7),
-(148, 'temperature', 302, 'salon', 149, 7),
-(149, 'humidite', 401, 'salon', 149, 7),
-(150, 'humidite', 402, 'cuisine', 150, 7),
-(151, 'temperature', 303, 'cuisine', 150, 7),
-(152, 'humidite', 405, 'cuisine', 151, 7),
-(153, 'humidite', 407, 'cuisine', 151, 7),
-(164, 'humidite', 401, 'salon', 171, 1),
-(165, 'temperature', 301, 'salon', 171, 1),
-(166, 'humidite', 402, 'salon', 170, 1),
-(167, 'humidite', 403, 'salon', 170, 1);
+INSERT INTO `capteurs` (`ID`, `type`, `serial_key`, `nom`, `number_capteur`, `ID_salle`, `ID_maison`) VALUES
+(217, 'temperature', 37, '', 7, 1, 1),
+(218, 'temperature', 31, '', 1, 1, 1),
+(219, 'humidite', 43, '', 3, 1, 1),
+(220, 'humidite', 41, '', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `cgu` (
 --
 
 INSERT INTO `cgu` (`ID`, `text`, `last_update`, `last_admin`) VALUES
-(1, 'Entrez vos CGU ici', '0000-00-00', '');
+(1, 'je change les CGU', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -101,22 +101,39 @@ CREATE TABLE `maison` (
   `ID` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `superficie` int(11) NOT NULL,
-  `adresse` varchar(255) NOT NULL
+  `adresse` varchar(255) NOT NULL,
+  `number_object` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `maison`
 --
 
-INSERT INTO `maison` (`ID`, `nom`, `superficie`, `adresse`) VALUES
-(1, 'maison1', 140, 'paris 9'),
-(2, 'tina', 140, 'paris'),
-(3, 'david', 140, 'paris'),
-(4, 'isep', 140, 'paris'),
-(5, 'isep', 140, 'paris'),
-(6, 'test', 140, 'paris'),
-(7, 'paul', 100, 'paris'),
-(8, 'domisep', 400, 'paris');
+INSERT INTO `maison` (`ID`, `nom`, `superficie`, `adresse`, `number_object`) VALUES
+(1, 'maison1', 140, 'paris 9', 3401),
+(2, 'tina', 140, 'paris', 0),
+(3, 'david', 140, 'paris', 0),
+(4, 'isep', 140, 'paris', 0),
+(5, 'isep', 140, 'paris', 0),
+(6, 'test', 140, 'paris', 0),
+(7, 'paul', 100, 'paris', 0),
+(8, 'domisep', 400, 'paris', 0),
+(9, '', 0, '', 3401),
+(10, 'supermaison', 250, '14 avenue lazare', 3401),
+(11, 'maison', 145, 'efqs', 0),
+(12, 'maison', 14, '3def', 0),
+(13, 'maison', 14, '3def', 0),
+(14, 'dqfmlj', 143, 'dgljg', 0),
+(15, 'dqfmlj', 143, 'dgljg', 0),
+(16, 'aflekj', 2134, 'fmlzj', 0),
+(17, 'flzaj', 134, 'qlkja', 3401),
+(18, 'flzaj', 134, 'qlkja', 3401),
+(19, 'qmflj', 3415, 'gmljk', 3401),
+(20, 'rergljm', 45, 'gqmlkejg', 3401),
+(21, 'qlmdfj', 34, 'aefjm', 9999),
+(22, 'zfmkj', 145, 'dflj', 3401),
+(23, 'azfkjm', 34, 'afzlkjf', 3401),
+(24, 'aemkj', 1234, 'aelzfj', 3401);
 
 -- --------------------------------------------------------
 
@@ -141,7 +158,8 @@ INSERT INTO `modes` (`ID`, `nom`, `IDmaison`) VALUES
 (5, 'jour et nuit', 2),
 (6, 'mode jour et nuit', 3),
 (7, 'mode2', 6),
-(8, 'mode jour et nuit', 7);
+(8, 'mode jour et nuit', 7),
+(9, 'mode1', 1);
 
 -- --------------------------------------------------------
 
@@ -171,7 +189,8 @@ INSERT INTO `modes_config` (`ID`, `type`, `consigne`, `heure_debut`, `heure_fin`
 (8, 'temperature', 20, 1, 24, 5),
 (9, 'temperature', 20, 1, 23, 6),
 (10, 'temperature', 14, 4, 7, 7),
-(11, 'temperature', 20, 1, 23, 8);
+(11, 'temperature', 20, 1, 23, 8),
+(12, 'humidite', 30, 5, 4, 9);
 
 -- --------------------------------------------------------
 
@@ -218,9 +237,9 @@ CREATE TABLE `salles` (
 --
 
 INSERT INTO `salles` (`ID`, `nom`, `isTemperature`, `IDmaison`, `isHumidite`, `ID_mode`) VALUES
-(-1, 'general', 0, -1, 0, 3),
-(170, 'salon2', 0, 1, 1, 3),
-(171, 'salon', 1, 1, 1, 3);
+(-1, 'general', 0, -1, 0, 0),
+(1, 'salon', 1, 1, 1, 2),
+(2, 'general', 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -253,11 +272,23 @@ INSERT INTO `users` (`ID`, `pseudo`, `nom`, `mail`, `numero`, `mdp`, `dateInscri
 (7, 'test', 'test', 'test@isep.fr', '0650030456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 5),
 (8, 'test2', 'test2', 'test2@isep.fr', '0650020450', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-23', 'principal', 6),
 (9, 'alexandre', 'menagerr', 'tristanmenagerr@gmail.com', '0650020457', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
-(10, 'junior2', 'menagerr', 'tristanmenagerr@gmail.com', '0650020457', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 1),
 (11, 'paul', 'vernay', 'paul@isep.fr', '0650040304', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'principal', 7),
 (12, 'paul2', 'vernay', 'paul@isep.fr', '0650040304', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-24', 'secondaire', 7),
 (18, 'admin2', '', 'admin@isep.fr', '0650030465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-26', 'admin', -1),
-(19, 'domisep', 'domisep', 'domisep.contact@gmail.com', '0650030454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-28', 'principal', 8);
+(19, 'domisep', 'domisep', 'domisep.contact@gmail.com', '0650030454', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-01-28', 'principal', 8),
+(20, 'salut', 'menagerr', 'tristanmenagerr@gmail.com', '0650020457', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-02', 'secondaire', 1),
+(21, 'tristan2', 'menager', 'tristanmenagerrr@gmail.com', '0605060504', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 10),
+(22, 'tristan3', 'menager', 'tristanmenagerrrr@gmail.com', '0650020560', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 11),
+(23, 'tristan4', 'menager', 'tristanmenagerrrrr@gmail.com', '06500205605', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 13),
+(24, 'tristan5', 'menager', 'tristanmenagerrrrrr@gmail.com', '0650020563', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 15),
+(25, 'tristan6', 'me', 'tristanmenagerrrrdrr@gmail.com', '0650020546', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 16),
+(26, 'tristan8', 'menager', 'tristanmenagerddrr@gmail.com', '0650025465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 18),
+(27, 'tristan9', 'menager', 'tristanmenagerddddrr@gmail.com', '0650204504', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 19),
+(28, 'tristan24', 'menager', 'tristanmenagerdddddrr@gmail.com', '0650405465', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 20),
+(29, 'tristanM', 'menager', 'tristan@gmail.com', '0650454543', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 21),
+(30, 'tristanme', 'meanger', 'tristanm@gmail.com', '0650020543', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 22),
+(31, 'tristanmen', 'menager', 'tristanmena@gmail.com', '0650454542', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 23),
+(32, 'tristanmenager', 'menagers', 'trsit@gmail.com', '0650045456', 'cocos_a8f391726f52e289eef056481cb8ebf8', '2017-06-14', 'principal', 24);
 
 --
 -- Index pour les tables exportées
@@ -325,27 +356,27 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `archives`
 --
 ALTER TABLE `archives`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5220;
 --
 -- AUTO_INCREMENT pour la table `capteurs`
 --
 ALTER TABLE `capteurs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
 --
 -- AUTO_INCREMENT pour la table `maison`
 --
 ALTER TABLE `maison`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT pour la table `modes`
 --
 ALTER TABLE `modes`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT pour la table `modes_config`
 --
 ALTER TABLE `modes_config`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `oublie_mdp`
 --
@@ -355,9 +386,9 @@ ALTER TABLE `oublie_mdp`
 -- AUTO_INCREMENT pour la table `salles`
 --
 ALTER TABLE `salles`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=172;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;

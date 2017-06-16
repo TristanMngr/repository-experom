@@ -11,10 +11,9 @@ $tableau = array(
 
 $number_object = strval(requeteDansTable($db,$tableau)[0]['number_object']);
 
-echo $number_object;
+
 $ch = curl_init();
-curl_setopt(
-$ch, CURLOPT_URL, "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=".$number_object);
+curl_setopt($ch, CURLOPT_URL, "http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=".$number_object);
 curl_setopt($ch, CURLOPT_HEADER, FALSE); curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); $data = curl_exec($ch);
 curl_close($ch);
 //3401
@@ -54,10 +53,10 @@ for($i=0;  $i< count($data_tab); $i++){
         "minute"=>$min,
         "second"=>$sec);
  }
-echo "<pre>";
+/*echo "<pre>";
 echo "toutes les trames</br>";
 print_r($arrayTrame);
-echo "</pre>";
+echo "</pre>";*/
 
 
 

@@ -7,7 +7,7 @@ ob_start();
 ?>
 
     <section id="conteneur" class="BO">
-        <article id="inscription">
+        <article id="inscription" class="theme">
             <h1>Création d'un administrateur</h1>
             <form method="post" action="/admin/creation-admin/control">
                 <div><label for="pseudo">Pseudo</label><input type="text" name="pseudo" id="pseudo" class="input" value="<?= isset($_POST['pseudo']) ? $_POST['pseudo'] : ""; ?>" autofocus></div>

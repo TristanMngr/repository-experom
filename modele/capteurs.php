@@ -126,3 +126,20 @@ function updateIntoArchives($db,$tableau) {
   $request->execute($tableau);
 
 }
+
+function getLastTrame($db,$id_capteur,$number_object) {
+    $requete = $db->prepare('SELECT *
+        FROM archives
+        WHERE ID_capteur=:ID_capteur
+        AND number_object=:number_object
+        AND date_time = (SELECT max(date_time)
+        FROM archives
+        WHERE ID_capteur=:ID_capteur
+        AND number_object=:number_object)');
+
+    $requete->execute(array('ID_capteur'=>$id_capteur, 'number_object'=>$number_object));
+    while($data = $requete->fetch()) {
+        $array[] = $data;
+    }
+    return $array;
+}

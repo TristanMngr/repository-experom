@@ -21,10 +21,6 @@ div#page {
 
 
 }
-
-h1 {
-    font-weight: normal;
-}
 section, header, footer  {
     display: table-row;
 }
@@ -100,7 +96,7 @@ ul#footer {
 header {
     height:100px;
     background: #42444E;
-    color : white;
+    color : #DBDDDB;
     text-transform: uppercase;
     padding: 0;
     margin:0;
@@ -114,7 +110,7 @@ header > .inline {
 /*logo*/
 header a.logo {
     width:24%;
-    color:white;
+    color:#DBDDDB;
     line-height: 100px;
     height: 100px;
     vertical-align: middle;
@@ -393,10 +389,6 @@ section#maMaison {
     margin:0px;
 }
 
-section#maMaison h1 {
-    font-weight: normal;
-}
-
 section#maMaison #nomMaison {
     color: #228B22;
 }
@@ -434,7 +426,6 @@ section#maMaison > h1 img {
     padding:0;
     margin:0;
     height:65px;
-
 }
 
 #indexMaison li {
@@ -675,12 +666,6 @@ div#chooseCapteurType #inputSalleName {
     padding:0;
 }
 
-#creationSalle ul#parentElement h2 {
-    padding-left:30px ;
-    font-weight: normal;
-    margin-bottom: 30px;
-}
-
 #creationSalle ul#listCapteur li.list {
     display: inline-block;
     width: 120px;
@@ -911,32 +896,15 @@ div#generalView ul#ulGeneral {
 .salle h2 span.data {
     color:rgb(34,139,34)
 }
-.salle input.modeSalle {
+.salle .modeSalle {
     display:inline-block;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid black;
 }
 
-.salle .modeSalle .general {
+.salle .modeSalle.general {
     font-size: 1em;
 }
 .salle select[name=getMode] {
     width:100px;
-    display: inline-block;
-
-}
-form select#getMode {
-    display: inline-block;
-    height:30px;
-    line-height: 30px;
-}
-
-h2.modeSalle {
-    display: inline-block;
-}
-form.modeSalle {
-    display: inline-block;
 }
 
 .salle .modeActif {
@@ -1050,7 +1018,6 @@ section#conteneur article#inscription {
     padding:10px 0 40px 0;
     border-radius:5px;
     color : rgb(63,78,95);
-    margin : 50px auto 50px auto;
     border: solid transparent 1px;
     box-shadow: 1px 1px 10px #3F4D5E;
     display: inline-block;
@@ -1058,17 +1025,11 @@ section#conteneur article#inscription {
 }
 article#inscription input.input {
     display: inline-block;
-    height: 27px;
+    height: 30px;
 
-    padding-left:10px;
-    border:solid grey 1px;
-    border-radius: 2px;
     line-height: 20px;
     width: 40%;
     font-size: 1em;
-}
-article#inscription input.input:focus {
-    border-color: #2188ff;
 }
 
 section#conteneur article#inscription .helpMdp {
@@ -1158,7 +1119,7 @@ section#conteneur form#connexion {
 
 /*!*!*connexion */
 section#conteneur article#connexion {
-    width: 550px;
+    width: 400px;
     padding:20px 0 40px 0;
     border-radius:5px;
     color : rgb(63,78,95);
@@ -1172,16 +1133,11 @@ section#conteneur article#connexion form{
     margin:40px auto 0 auto;
 }
 
-section#conteneur article#connexion h1.titre {
-
-    font-weight: normal;
-}
-
 section#conteneur article#connexion div#connexion {
     width:95%;
     display: block;
     margin:10px auto 0 auto;
-    text-align: right;
+    text-align: center;
 
 }
 section#conteneur article#connexion div.messageError {
@@ -1189,27 +1145,18 @@ section#conteneur article#connexion div.messageError {
 
 }
 section#conteneur article#connexion div label {
-    display:inline-block ;
-    width: 45%;
+    display:block ;
+    width: 100%;
     text-align: left;
 }
 
 section#conteneur article#connexion .input,section#conteneur article#connexion label, article#connexion div.input {
-    display: inline-block;
-
-
-}
-section#conteneur  article#connexion label, section#conteneur  article#inscription label {
-    font-weight: bold;
-}
-
-section#conteneur  article#inscription h1 {
-    font-weight: normal;
+    display: block;
 }
 
 article#connexion a {
     display:block;
-    width:80%;
+    width:95%;
     color:rgb(63,78,95);
     line-height: 35px;
     border:solid transparent 1px;
@@ -1226,20 +1173,13 @@ article#connexion a:hover {
 }
 article#connexion input.input {
     display: inline-block;
-    height: 25px;
+    height: 20px;
 
-    padding-left:10px;
-    border-radius: 3px;
-    border:solid grey 1px;
     line-height: 20px;
     width: 45%;
     font-size: 1em;
 }
-article#connexion input.input:focus {
-    border-color: #2188ff;
 
-
-}
 
 article#connexion div#div-forget-mdp {
     text-align: right;
@@ -1456,10 +1396,6 @@ div#maFamille .inputRemove {
     display:inline-block;
     width:80px;
     height:30px;
-    border-radius: 5px;
-    background: white;
-    border: solid transparent 1px;
-    box-shadow: 1px 1px 1px black;
 
 
 }
@@ -1483,17 +1419,10 @@ div#maFamille div.supprimerCompte {
 
 
 /*Mode*/
-
-
-
 section#modes {
     margin-top:20px;
     margin-bottom :0;
 
-}
-
-section#modes h1{
-    font-weight: normal;
 }
 
 div#conteneurModes {
@@ -1551,8 +1480,6 @@ div#choixMode, div#creerMode  {
 div#choixMode {
     min-height:250px;
     line-height: 30px;
-    width: 500px;
-    padding:20px;
 
 }
 div#creerMode {
@@ -1593,13 +1520,6 @@ div.placementConf > input[type=number] {
 
 #choixMode ul {
     padding:0;
-    list-style: none;
-}
-
-#choixMode ul li{
-    padding:0;
-
-
 }
 
 #choixMode ul li.modeLeft {
@@ -1610,8 +1530,7 @@ div.placementConf > input[type=number] {
     width:45%;
     display: inline-block;
     text-align: right;
-    padding-right: 40px;
-
+    padding-right: 10px;
 
 }
 #choixMode ul li.submit {
@@ -1623,12 +1542,8 @@ div.placementConf > input[type=number] {
 }
 #choixMode .inputEdit, #choixMode .inputRemove {
     display: inline-block;
-    height:25px;
+    height:30px;
     width:80px;
-    border-radius: 5px;
-
-    border:1px solid grey;
-
 }
 #choixMode input.disabled {
     cursor: default;
@@ -1639,7 +1554,7 @@ div.placementConf > input[type=number] {
     width:80px;
     color: white;
     border-radius: 5px;
-    border:1px solid black;
+    border:1px;
 }
 #choixMode .not-disabled:hover {
     background: red;
@@ -1655,7 +1570,7 @@ div.placementConf > input[type=number] {
 
 input#submitCreerMode {
     display: inline-block;
-    margin:20px auto 20px auto;
+    margin:50px auto 10px auto;
     height:35px;
     font-size: 1em;
     border-radius: 5px;
@@ -1751,9 +1666,6 @@ section#contact:before {
 section#contact {
     display: table-cell;
     vertical-align: middle;
-}
-section#contact h1 {
-    margin-top: 40px;
 }
 section#contact .contact {
     width :500px;
@@ -2624,19 +2536,6 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
 }
 
 
-header input {
-    height: 25px;
-    border-radius: 3px;
-    border:solid grey 1px;
-    background: white;
-}
-header input:hover {
-    background: red;
-    color: white;
-    border:1px solid red;
-
-
-}
 
 
 /*image*/

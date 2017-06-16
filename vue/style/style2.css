@@ -2,29 +2,24 @@
 html   {
     height:100%;
     margin:0;
-    padding:0;
 
 }
 body {
     font-family:Helvetica,Verdana,Arial,sans-serif;
     padding:0;
     margin:0;
-    background: #FFFFFF ;
+
+
+    
     height:100%;
 }
 div#page {
     display: table;
     height:100%;
     width:100%;
-    padding:0;
-    margin:0;
-
-
 }
 
-h1 {
-    font-weight: normal;
-}
+
 section, header, footer  {
     display: table-row;
 }
@@ -32,10 +27,10 @@ section, header, footer  {
 
 a {
     text-decoration: none;
-    color:#DBDDDB;
+    color:white;
 }
 a:visited {
-    color:#DBDDDB;
+    color:white;
     text-decoration:none;
 }
 
@@ -46,9 +41,10 @@ footer {
     height :70px;
     width:100%;
     /*line-height: 50px;*/
-    background: #42444E;
+    background: rgba(0,0,0,0.5);
     color: #DBDDDB;
     vertical-align: middle;
+    border-top:1px solid #fff
 }
 
 
@@ -95,12 +91,14 @@ ul#footer {
     padding:0;
     line-height:50px;
     height:50px;
- }
+}
 /*Header*/
 header {
     height:100px;
-    background: #42444E;
-    color : white;
+    /*background: #42444E;*/
+    background: rgba(0,0,0,0.5);
+    border-bottom:1px solid #fff;
+    color : #DBDDDB;
     text-transform: uppercase;
     padding: 0;
     margin:0;
@@ -114,7 +112,7 @@ header > .inline {
 /*logo*/
 header a.logo {
     width:24%;
-    color:white;
+    color:#DBDDDB;
     line-height: 100px;
     height: 100px;
     vertical-align: middle;
@@ -157,6 +155,7 @@ header ul#menuAccueil-BO li {
     vertical-align: middle;
     height:100px;
     line-height:100px;
+
 
 }
 
@@ -225,10 +224,12 @@ nav > ul li.nonderoulant a:hover, nav .deroulant li:hover{
     border-bottom: solid rgb(45, 179, 74) 1px;
     color:rgb(45, 179, 74);
     cursor:pointer;
+
 }
 nav .deroulant a:hover {
     color:rgb(45, 179, 74);
     border-bottom: solid rgb(45, 179, 74) 1px;
+    /*background: rgba(0,0,0,0.8);*/
 }
 
 
@@ -273,7 +274,7 @@ ul.deroulant li#menuLast:hover {
 
 
 li:hover > ul.deroulant li {
-    background: #42444E;
+    background: rgba(0,0,0,0.5);
     display: block;
     cursor:pointer;
     z-index:3;
@@ -303,7 +304,7 @@ header form.inline input {
     position: absolute;
     top:40px;
     right:10px;
-    
+
 
 }
 #deconnexion {
@@ -354,7 +355,7 @@ section#accueil h1 {
 }
 section#accueil #apropos {
     padding:20px;
-    :sborderolid transparent 1px;
+:sborderolid transparent 1px;
     box-shadow: 1px 1px 3px black;
 }
 section#accueil h2 {
@@ -391,10 +392,6 @@ section#accueil #apropos h1 {
 section#maMaison {
     color:rgb(63,78,95);  /*a changer*/
     margin:0px;
-}
-
-section#maMaison h1 {
-    font-weight: normal;
 }
 
 section#maMaison #nomMaison {
@@ -434,7 +431,6 @@ section#maMaison > h1 img {
     padding:0;
     margin:0;
     height:65px;
-
 }
 
 #indexMaison li {
@@ -528,10 +524,6 @@ div#contenuAllMaison {
     from {left:40px}
     to {left:0px}
 }
-
-
-
-
 
 div#listCapteur ul {
     list-style: none;
@@ -673,12 +665,6 @@ div#chooseCapteurType #inputSalleName {
 
 #creationSalle ul#parentElement {
     padding:0;
-}
-
-#creationSalle ul#parentElement h2 {
-    padding-left:30px ;
-    font-weight: normal;
-    margin-bottom: 30px;
 }
 
 #creationSalle ul#listCapteur li.list {
@@ -911,32 +897,15 @@ div#generalView ul#ulGeneral {
 .salle h2 span.data {
     color:rgb(34,139,34)
 }
-.salle input.modeSalle {
+.salle .modeSalle {
     display:inline-block;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid black;
 }
 
-.salle .modeSalle .general {
+.salle .modeSalle.general {
     font-size: 1em;
 }
 .salle select[name=getMode] {
     width:100px;
-    display: inline-block;
-
-}
-form select#getMode {
-    display: inline-block;
-    height:30px;
-    line-height: 30px;
-}
-
-h2.modeSalle {
-    display: inline-block;
-}
-form.modeSalle {
-    display: inline-block;
 }
 
 .salle .modeActif {
@@ -1050,7 +1019,6 @@ section#conteneur article#inscription {
     padding:10px 0 40px 0;
     border-radius:5px;
     color : rgb(63,78,95);
-    margin : 50px auto 50px auto;
     border: solid transparent 1px;
     box-shadow: 1px 1px 10px #3F4D5E;
     display: inline-block;
@@ -1058,17 +1026,11 @@ section#conteneur article#inscription {
 }
 article#inscription input.input {
     display: inline-block;
-    height: 27px;
+    height: 30px;
 
-    padding-left:10px;
-    border:solid grey 1px;
-    border-radius: 2px;
     line-height: 20px;
     width: 40%;
     font-size: 1em;
-}
-article#inscription input.input:focus {
-    border-color: #2188ff;
 }
 
 section#conteneur article#inscription .helpMdp {
@@ -1172,11 +1134,6 @@ section#conteneur article#connexion form{
     margin:40px auto 0 auto;
 }
 
-section#conteneur article#connexion h1.titre {
-
-    font-weight: normal;
-}
-
 section#conteneur article#connexion div#connexion {
     width:95%;
     display: block;
@@ -1196,15 +1153,6 @@ section#conteneur article#connexion div label {
 
 section#conteneur article#connexion .input,section#conteneur article#connexion label, article#connexion div.input {
     display: inline-block;
-
-
-}
-section#conteneur  article#connexion label, section#conteneur  article#inscription label {
-    font-weight: bold;
-}
-
-section#conteneur  article#inscription h1 {
-    font-weight: normal;
 }
 
 article#connexion a {
@@ -1226,20 +1174,13 @@ article#connexion a:hover {
 }
 article#connexion input.input {
     display: inline-block;
-    height: 25px;
+    height: 20px;
 
-    padding-left:10px;
-    border-radius: 3px;
-    border:solid grey 1px;
     line-height: 20px;
     width: 45%;
     font-size: 1em;
 }
-article#connexion input.input:focus {
-    border-color: #2188ff;
 
-
-}
 
 article#connexion div#div-forget-mdp {
     text-align: right;
@@ -1456,10 +1397,6 @@ div#maFamille .inputRemove {
     display:inline-block;
     width:80px;
     height:30px;
-    border-radius: 5px;
-    background: white;
-    border: solid transparent 1px;
-    box-shadow: 1px 1px 1px black;
 
 
 }
@@ -1483,17 +1420,10 @@ div#maFamille div.supprimerCompte {
 
 
 /*Mode*/
-
-
-
 section#modes {
     margin-top:20px;
     margin-bottom :0;
 
-}
-
-section#modes h1{
-    font-weight: normal;
 }
 
 div#conteneurModes {
@@ -1551,8 +1481,6 @@ div#choixMode, div#creerMode  {
 div#choixMode {
     min-height:250px;
     line-height: 30px;
-    width: 500px;
-    padding:20px;
 
 }
 div#creerMode {
@@ -1593,13 +1521,6 @@ div.placementConf > input[type=number] {
 
 #choixMode ul {
     padding:0;
-    list-style: none;
-}
-
-#choixMode ul li{
-    padding:0;
-
-
 }
 
 #choixMode ul li.modeLeft {
@@ -1610,8 +1531,7 @@ div.placementConf > input[type=number] {
     width:45%;
     display: inline-block;
     text-align: right;
-    padding-right: 40px;
-
+    padding-right: 10px;
 
 }
 #choixMode ul li.submit {
@@ -1623,12 +1543,8 @@ div.placementConf > input[type=number] {
 }
 #choixMode .inputEdit, #choixMode .inputRemove {
     display: inline-block;
-    height:25px;
+    height:30px;
     width:80px;
-    border-radius: 5px;
-
-    border:1px solid grey;
-
 }
 #choixMode input.disabled {
     cursor: default;
@@ -1639,7 +1555,7 @@ div.placementConf > input[type=number] {
     width:80px;
     color: white;
     border-radius: 5px;
-    border:1px solid black;
+    border:1px;
 }
 #choixMode .not-disabled:hover {
     background: red;
@@ -1655,7 +1571,7 @@ div.placementConf > input[type=number] {
 
 input#submitCreerMode {
     display: inline-block;
-    margin:20px auto 20px auto;
+    margin:50px auto 10px auto;
     height:35px;
     font-size: 1em;
     border-radius: 5px;
@@ -1751,9 +1667,6 @@ section#contact:before {
 section#contact {
     display: table-cell;
     vertical-align: middle;
-}
-section#contact h1 {
-    margin-top: 40px;
 }
 section#contact .contact {
     width :500px;
@@ -1992,48 +1905,6 @@ section#mention-legale > div h2 {
 
 /*capteurs*/
 
-div#listCapteurs {
-
-    display: block;
-    width:750px;
-    margin:70px auto 0 auto;
-    border:solid transparent 1px;
-    border-radius :5px;
-    box-shadow: 1px 1px 3px black;
-    text-align: center;
-    padding: 20px;
-}
-div#listCapteurs div#placement {
-    display: inline-block;
-    margin:auto;
-}
-
-div#listCapteurs ul  {
-    list-style: none;
-    text-align: left;
-    padding:0;
-}
-
-
-
-div#listCapteurs ul > li.capteur {
-    display: inline-block;
-    border:solid transparent 1px;
-    border-radius :5px;
-    box-shadow: 1px 1px 3px black;
-    text-align: left;
-    width: 150px;
-    padding:10px;
-
-
-}
-
-div#listCapteurs ul > li.capteur img {
-    display: block;
-    margin:0 auto 10px auto;
-    width:80px;
-
-}
 
 
 section#capteur div#addCapteur, section#capteur div#listCapteur {
@@ -2624,35 +2495,33 @@ div#posChooseUser div#chooseUser ul#listUsers> li:hover {
 }
 
 
-header input {
-    height: 25px;
-    border-radius: 3px;
-    border:solid grey 1px;
-    background: white;
-}
-header input:hover {
-    background: red;
-    color: white;
-    border:1px solid red;
 
 
-}
-
-
-/*image*/
-/*html {
+/*images*/
+html {
     margin:0;
     padding:0;
-    background: url(/ressources/images/buildings.png) no-repeat center center fixed;
+    background: url(/ressources/images/lampes.png) no-repeat center center fixed;
     background-size: cover;
-}*/
+}
+
+/*
+article#connexion {
+    background: #3D334C;
+    opacity: 0.9;
+    color:white!important;
+}
+*/
+
 
 .theme {
-    background :#fafbfc;
+    background: white;
+
+
 }
 
 
-/*new style*/
+
 
 
 

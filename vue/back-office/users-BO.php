@@ -8,7 +8,7 @@ ob_start();
 
 <section id="user-BO">
     <div id="posChooseUser">
-        <div id="chooseUser">
+        <div id="chooseUser" class="theme">
             <label for="pseudo">Pseudo</label><input type="input" name="pseudo" autofocus placeholder="pseudo utilisateur" oninput="ajaxGetUsers(this)">
             <hr>
             <ul id="listUsers">
@@ -17,7 +17,7 @@ ob_start();
         </div>
 
     </div>
-    <div id="posMaison-BO">
+    <div id="posMaison-BO" class="theme">
         <div id="error">
             <?php if (isset($messageSuccess)) {
              if ($messageSuccess != "") { ?>

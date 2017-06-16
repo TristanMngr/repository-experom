@@ -7,7 +7,7 @@ ob_start();
 ?>
 
 <section id="conteneur">
-    <article id="connexion">
+    <article id="connexion" class="theme">
         <h1>Connexion administrateur</h1>
         <form method="post" action="/admin/connexion-control">
 

@@ -7,7 +7,7 @@ $titre = "inscription";
 
 ?>
 <section id="conteneur">
-    <article id="inscription">
+    <article id="inscription" class="theme">
         <h1><?php if ($utilisateurSecondaire == False){echo "Inscription" ;} else {echo "Création d'un utilisateur secondaire";} ?></h1>
         <form method="post" action=<?php if ($utilisateurSecondaire == False) {echo "/espace-client/inscription-control";} else if ($utilisateurSecondaire == True) {echo "/espace-client/modifier-donnees-perso/ajouter-un-utilisateur-control";}?>>
             <?php if ($utilisateurSecondaire == False){ ?><div><label for="clef">Clef d'identification</label><input type="clef" name="clef" class="input" placeholder="3401"

@@ -16,12 +16,12 @@ if (isset($_SESSION['role'])) {
     session_destroy();  //détruit la session
     $messageGeneral = "Vous êtes bien déconnecté";
     if ($role != 'admin') {
-        include("vue/accueil/accueil.php");
+        include("vue/espaceClient/connexion.php");
     } else {
         $isLogin = false;
         include("vue/back-office/connexion-BO.php");
     }
 }
 else {
-    include("vue/accueil/accueil.php");
+    include("vue/espaceClient/connexion.php");
 }

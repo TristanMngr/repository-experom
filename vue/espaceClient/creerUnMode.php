@@ -11,7 +11,7 @@ $titre = "créer un modes";
         <?php if ($displayConfig == true) { ?>
         <div id="placementConfigMode">
             <form action='<?php if($editMode == true) {echo '/espace-client/modes/modifier-controller';} else {echo "/espace-client/modes/creer-un-mode";} ?>' method="post">
-            <div id="creerMode">
+            <div id="creerMode" class="theme">
 
                 <h1><?= isset($editionMode)?"Editer mode":"Creer un mode";   ?></h1>
                 <ul id="configMode">
@@ -57,7 +57,7 @@ $titre = "créer un modes";
         </div>
     <?php } ?>
         <div id="placementChoixMode">
-            <div id="choixMode">
+            <div id="choixMode" class="theme">
                 <h1>Choisir un mode</h1>
                 <ul>
                     <?php foreach($arrayNameMode as $key => $mode) {?>

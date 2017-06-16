@@ -96,7 +96,7 @@ foreach ($arrayDataCapteur as $arrayCapt => $champCapt) {
 // on va chercher les capteurs concerné dans l'archives et on change leurs valeurs.
 
 // TODO on modifie toute les trames attention !
-for ($capteur = 0; $capteur < count($arrayIdCapt); $capteur++) {
+/*for ($capteur = 0; $capteur < count($arrayIdCapt); $capteur++) {
     foreach ($arrayIdCapt[$capteur] as $type => $id) {
         if ($type == 'temperature' & $temp != false) {
 
@@ -108,7 +108,11 @@ for ($capteur = 0; $capteur < count($arrayIdCapt); $capteur++) {
             requeteDansTable($db, $tableau);
         }
     }
-}
+}*/
+
+// envoyer la trame vers la passerelle
+
+include "controller/postTrame.php";
 
 
 // tableau regroupant les données du modes. puis récupération du nom

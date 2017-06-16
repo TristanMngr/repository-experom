@@ -7,6 +7,7 @@ include("modele/capteurs.php");
 // on insert les trames dans la table Archives
 for ($trame = 0; $trame < count($arrayTrame); $trame ++) {
 
+    if ($arrayTrame[$trame] )
     $tableau = array(
         'number_object' =>$arrayTrame[$trame]['number_object'],
         'type_requete'=> $arrayTrame[$trame]['type_requete'],
@@ -87,7 +88,7 @@ foreach ($arrayCapteursToArchives as $key => $value) {
 
 }
 
-displayArray('voila',$arrayCapteursToArchives);
+
 
 
 

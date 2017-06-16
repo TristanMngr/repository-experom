@@ -9,7 +9,7 @@ $titre = "donnée perso";
     <div id="conteneurDonnerPerso">
         <div id="monCompte">
             <h1>Mon compte</h1>
-            <div id="modifier">
+            <div id="modifier" class="theme">
                 <h2>Modifier mes informations</h2>
                 <form method="post" action="/espace-client/modifier-donnees-perso-control">
                     <div><em class="informations">Rôle: </em><div class="informations"><?php echo $_SESSION['role'] ?></div></div>
@@ -60,7 +60,7 @@ $titre = "donnée perso";
         <?php if($isPresentUtilisateur == True) { ?>
         <div id="maFamille">
             <h1>Ma famille</h1>
-            <div id="utilisateurs">
+            <div id="utilisateurs" class="theme">
                 <h2>Tous mes utilisateurs</h2>
                     <ul>
                         <?php for ($comptes=1; $comptes<=count($donneesComptes); $comptes++) { ?>

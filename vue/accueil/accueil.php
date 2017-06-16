@@ -6,11 +6,11 @@ $titre = "accueil";
 ob_start();
 ?>
 <section id="accueil">
-    <!--<img src="ressources/images/buildings.png" alt="buildings" class="images">-->
+
 
     <article id="apropos">
-        <?php /*echo mail('domisep.contact@gmail.com','test','salut je test addresse mail'); */?>
-        <h1>Domisep : La Domotique Idéale, Simple Et Pratique</h1>
+
+        <!--<h1>Domisep : La Domotique Idéale, Simple Et Pratique</h1>
 
         <h2>La domotique, c’est quoi?</h2>
         <p>
@@ -35,7 +35,7 @@ ob_start();
         <p class="last">
         Les automatismes que nous avons vus plus haut peuvent tout à fait contribuer à la sécurité de vos biens, en réalisant ce qu’on appelle une simulation de présence :  même en votre absence, des lumières s’allument aléatoirement. Ainsi, de l’extérieur, il devient très difficile de savoir si la maison est inoccupée, ce qui dissuade de nombreux cambrioleurs.
         Une détection de fuite d’eau peut être détecté afin d’éviter de gros dégats.
-        </p>
+        </p>-->
 
 
 
